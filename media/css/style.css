@@ -129,7 +129,7 @@ nav a {
 	color:#000000;
 }
 nav a:hover {
-	background-color:#cccccc;
+	background-color:#525252;
 	text-decoration:none;
 	color:#f9f9f9;
 	-webkit-transition:color .2s linear;

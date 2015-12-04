@@ -2,7 +2,7 @@
 layout: post
 title: "JavaScript Rss Reader"
 description: "一个前端的RSS Reader"
-category: 工具
+category: 演示
 tags: [javascript]
 ---
 
@@ -17,3 +17,5 @@ tags: [javascript]
 </script>
 
 <div id="ticker1"></div>
+
+
