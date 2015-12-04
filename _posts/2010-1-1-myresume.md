@@ -1,0 +1,9 @@
+---
+layout: post
+title: "第一篇"
+description: "又一次重新在Github搭建了博客"
+category: 记录
+tags: [note]
+---
+
+博客是用Jekyll和Github搭建的，目的是分享一些有意思的工具。
