@@ -10,8 +10,8 @@ comments: no
 豆瓣：[FreezeSoul](http://www.douban.com/people/FreezeSoul/)  
 邮箱: [freezesoul@gmail.com](mailto:freezesoul@gmail.com)     
 github : [FreezeSoul](https://github.com/freezesoul)
-
-<br/>
-<img src="/files/My knowledge.svg" width="80%">
 <br/>
 简历：<a href="/files/NoResume">Donwload</a>
+<br/>
+<img src="/files/My knowledge.svg" width="80%">
+
