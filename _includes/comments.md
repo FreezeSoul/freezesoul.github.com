@@ -1,5 +1,5 @@
 <!-- Duoshuo Comment BEGIN -->
-	<div class="ds-thread"></div>
+	<div class="ds-thread" data-thread-key="{{ page.title }}"></div>
 	<script type="text/javascript">
 	var duoshuoQuery = {short_name:"diginfo"};
 	(function() {
