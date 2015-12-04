@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "From Now On"
+title: "All From Now On"
 description: "又一次重新在Github搭建了博客"
 category: 记录
 tags: [note]
