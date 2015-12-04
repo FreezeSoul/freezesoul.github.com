@@ -12,8 +12,10 @@ tags: [javascript]
 	$(document).ready(function () {
 		var rssFees = [
 			"http://feed.cnblogs.com/blog/sitehome/rss",
-			"http://blogs.msdn.com/b/mainfeed.aspx?Type=BlogsOnly",
+			"http://blog.csdn.net/rss.html?type=Home",
 			"http://blog.51cto.com/rss_recommend.php",
+			"http://blogs.msdn.com/b/mainfeed.aspx?Type=BlogsOnly",
+			"http://feed.cnblogs.com/news/rss",
 			"http://www.csdn.net/article/rss_lastnews",
 			"http://www.infoq.com/cn/feed?token=7XcC3W3VEePsRMnPrkPQ9q2XNxYfXSuJ",
 			"http://www.v2ex.com/index.xml"
@@ -28,9 +30,10 @@ tags: [javascript]
 </script>
 <style type="text/css">
 	.rssHeader a{
-		font-size: 24px;
-		line-height: 30px;
-		font-weight: bold;
+		color: #FF0000 !important;
+		font-size: 24px !important;
+		line-height: 30px !important;
+		font-weight: bold !important;
 	}
 </style>
 
