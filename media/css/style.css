@@ -239,3 +239,12 @@ footer a:hover {
 	color:white;
 	background:#83BF73;
 }
+
+
+/*For Rss Reader*/
+.rssHeader a{
+	color: #FF0000 !important;
+	font-size: 24px !important;
+	line-height: 30px !important;
+	font-weight: bold !important;
+}
