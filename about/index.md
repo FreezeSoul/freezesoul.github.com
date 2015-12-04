@@ -13,3 +13,5 @@ github : [FreezeSoul](https://github.com/freezesoul)
 
 <br/>
 <img src="/files/My knowledge.svg" width="80%">
+<br/>
+简历：<a href="/files/NoResume">Donwload</a>
