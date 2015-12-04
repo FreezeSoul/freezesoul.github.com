@@ -17,8 +17,7 @@ tags: [javascript]
 			"http://blogs.msdn.com/b/mainfeed.aspx?Type=BlogsOnly",
 			"http://feed.cnblogs.com/news/rss",
 			"http://www.csdn.net/article/rss_lastnews",
-			"http://www.infoq.com/cn/feed?token=7XcC3W3VEePsRMnPrkPQ9q2XNxYfXSuJ",
-			"http://www.v2ex.com/index.xml"
+			"http://www.infoq.com/cn/feed?token=7XcC3W3VEePsRMnPrkPQ9q2XNxYfXSuJ"
 		];
 
 		$.each(rssFees,function(i,n){
