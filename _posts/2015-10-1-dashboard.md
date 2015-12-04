@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AmazingDashboard-Index Platform"
+title: "AmazingDashboard Platform"
 description: "指标平台"
 category: 项目
 tags: [project]
