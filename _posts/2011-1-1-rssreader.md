@@ -6,6 +6,14 @@ category: 演示
 tags: [javascript]
 ---
 
+<style type="text/css">
+	.rssHeader a{
+		color: #FF0000 !important;
+		font-size: 24px !important;
+		line-height: 30px !important;
+		font-weight: bold !important;
+	}
+</style>
 <script type="text/javascript" src="/media/js/jquery.zrssfeed.js"></script>
 <script type="text/javascript" src="/media/js/jquery.vticker.js"></script>
 <script type="text/javascript">
@@ -26,14 +34,7 @@ tags: [javascript]
 		});
 	});
 </script>
-<style type="text/css">
-	.rssHeader a{
-		color: #FF0000 !important;
-		font-size: 24px !important;
-		line-height: 30px !important;
-		font-weight: bold !important;
-	}
-</style>
+
 
 <div id="rssContainer"></div>
 
