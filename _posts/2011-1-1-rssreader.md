@@ -16,8 +16,7 @@ tags: [javascript]
 			"http://blog.51cto.com/rss_recommend.php",
 			"http://blogs.msdn.com/b/mainfeed.aspx?Type=BlogsOnly",
 			"http://feed.cnblogs.com/news/rss",
-			"http://www.csdn.net/article/rss_lastnews",
-			"http://www.infoq.com/cn/feed?token=7XcC3W3VEePsRMnPrkPQ9q2XNxYfXSuJ"
+			"http://www.csdn.net/article/rss_lastnews"
 		];
 
 		$.each(rssFees,function(i,n){
