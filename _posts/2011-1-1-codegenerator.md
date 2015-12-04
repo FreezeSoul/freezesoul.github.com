@@ -6,7 +6,7 @@ category: 项目
 tags: [project]
 ---
 
-在项目中做了个基于MSSQL Server和T4模板的代码生成器，可生成三层架构或SQL脚本，可方便团队快速开发。
+这是之前项目做过的一个基于MSSQL Server和T4模板的代码生成器，可生成三层架构或SQL脚本，方便团队快速开发。
 <br/>
 <img src="/images/codegenerate.png" width="80%">
 <br/>
