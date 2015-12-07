@@ -11,4 +11,5 @@ tags: [project]
 采用SPA方式开发，运用的技术有Backbone，Underscore，Seajs，PubSubJS，Webkit等。  
 效果截图：  
 <img src="/images/webdesktop.jpg" width="80%">  
+演示程序：<a href="/files/NoDownload">Donwload</a>  
 感兴趣的朋友可以联系我。
