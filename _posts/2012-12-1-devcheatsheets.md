@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Web Dev CheatSheets"
-description: "Web开发备忘表"
+title: "Development CheatSheets"
+description: "开发着常用备忘表"
 category: 资源
 tags: [website]
 ---
