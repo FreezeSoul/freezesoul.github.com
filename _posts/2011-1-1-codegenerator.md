@@ -10,4 +10,3 @@ tags: [project]
 <img src="/images/codegenerate.png" width="80%">  
 <img src="/images/codegenerate2.png" width="80%">  
 下载地址：<a href="/files/CodeGenerator.rar">Donwload</a>  
-感兴趣的朋友可以联系我。

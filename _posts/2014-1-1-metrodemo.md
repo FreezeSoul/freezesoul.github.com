@@ -19,4 +19,3 @@ tags: [javascript]
 <div style="width: 100%;height: 600px; overflow: hidden">
     <iframe src="/demo/MetroTest/index-linkpage.html" width="100%" height="100%" frameborder="0"></iframe>
 </div>  
-感兴趣的朋友可以联系我。
