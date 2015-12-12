@@ -33,7 +33,7 @@ function GetQueryString(name) {
   if (r!=null) return (r[2]); return null;
 }
 
-var DEFAULT_URL = '/files/' + GetQueryString("file");
+var DEFAULT_URL = '/files/' + GetQueryString("pdf");
 var DEFAULT_SCALE_DELTA = 1.1;
 var MIN_SCALE = 0.25;
 var MAX_SCALE = 10.0;
