@@ -10,3 +10,4 @@ tags: [project]
 基于SPA模式开发，运用的技术有：HTML5 + AngularJs + Requires + Bootstrap + Echarts +Python + Ionic + Phonegap + Crosswalk + Webkit 等。  
 <img src="/images/dashboard1.jpg" width="80%">  
 <img src="/images/dashboard2.png" width="80%">  
+演示程序：<a href="/files/NoDownload">Donwload</a>  

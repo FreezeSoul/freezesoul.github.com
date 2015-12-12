@@ -6,6 +6,8 @@ category: 演示
 tags: [javascript]
 ---
 
+<a href="http://www.inoreader.com/" target="_blank"><h4>http://www.inoreader.com/</h4></a>  
+
 <script type="text/javascript" src="/media/js/jquery.zrssfeed.js"></script>
 <script type="text/javascript" src="/media/js/jquery.vticker.js"></script>
 <script type="text/javascript">
