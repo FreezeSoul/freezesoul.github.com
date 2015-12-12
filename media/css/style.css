@@ -92,6 +92,9 @@ blockquote p {
 .listing-item a {
 	padding:.2em 1em;
 }
+.listing-item a span{
+	color:#525252 ;
+}
 .listing-item time {
 	color:#999999;
 }
