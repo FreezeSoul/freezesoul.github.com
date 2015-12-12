@@ -27,6 +27,12 @@
 
 'use strict';
 
+function GetQueryString(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
+  var r = window.location.search.substr(1).match(reg);
+  if (r!=null) return (r[2]); return null;
+}
+
 var DEFAULT_URL = '../../files/' + GetQueryString("file");
 var DEFAULT_SCALE_DELTA = 1.1;
 var MIN_SCALE = 0.25;
