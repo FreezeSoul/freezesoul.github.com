@@ -264,6 +264,7 @@ blockquote:after {
     position: relative;
     right: -80px;
     bottom: 10px;
+    float: right;
 }
 blockquote p {
   display: inline;
