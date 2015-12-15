@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "DDD:Domain-driven design"
-description: "单位做的DDD培训的PPT"
+description: "前阵子在单位做DDD培训的PPT"
 category: 架构
 tags: [architecture]
 ---
 
-这两天在单位普及了一下DDD开发方法，下面是培训PPT和一些笔记:  
+前阵子在单位普及了一下DDD开发方法，下面是培训PPT和一些笔记:  
 <div style="width: 100%;height: 600px; overflow: hidden">
     <iframe src="/other/PdfDemo/viewer.html?pdf=DomainDrivenDesign.pdf" width="100%" height="100%" frameborder="0"></iframe>
 </div>  
