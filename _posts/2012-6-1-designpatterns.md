@@ -46,7 +46,7 @@ tags: [architecture]
 
 
 <div style="width: 100%;height: 600px; overflow: hidden">
-    <iframe src="/demo/PdfDemo/viewer.html?pdf=designpatternscard.pdf" width="100%" height="100%" frameborder="0"></iframe>
+    <iframe src="/other/PdfDemo/viewer.html?pdf=designpatternscard.pdf" width="100%" height="100%" frameborder="0"></iframe>
 </div>  
 注:PDF浏览需要HTML5浏览器支持  
 

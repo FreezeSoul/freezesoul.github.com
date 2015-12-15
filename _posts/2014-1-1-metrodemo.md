@@ -13,9 +13,9 @@ tags: [javascript]
 其中1只支持纵向扩展，并不太符合Metro风格，2虽然支持横向扩展，但本身有些不完善，我在<a href="https://github.com/hootsuite/grid/issues/38">github issues</a>提出了建议，但由于项目紧迫，我就临时做了完善。  
 下面最终效果。   
 <div style="width: 100%;height: 600px; overflow: hidden">
-    <iframe src="/demo/MetroTest/index.html" width="100%" height="100%" frameborder="0"></iframe>
+    <iframe src="/other/MetroTest/index.html" width="100%" height="100%" frameborder="0"></iframe>
 </div>  
 
 <div style="width: 100%;height: 600px; overflow: hidden">
-    <iframe src="/demo/MetroTest/index-linkpage.html" width="100%" height="100%" frameborder="0"></iframe>
+    <iframe src="/other/MetroTest/index-linkpage.html" width="100%" height="100%" frameborder="0"></iframe>
 </div>  
