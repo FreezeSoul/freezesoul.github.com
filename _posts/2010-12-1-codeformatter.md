@@ -2,8 +2,8 @@
 layout: post
 title: "Free Code Format online"
 description: "在线格式化代码工具"
-category: 工具
-tags: [javascript]
+category: 资源
+tags: [website]
 ---
 
 <a href="http://www.freecodeformat.com/" target="_blank"><h4>http://www.freecodeformat.com/</h4></a>   
