@@ -6,7 +6,7 @@ category: 资源
 tags: [website]
 ---
 
-More CheatSheets : 
+More CheatSheets :   
 <a href="http://www.cheat-sheets.org/">http://www.cheat-sheets.org/</a>  
 <a href="http://www.cheatography.com/">http://www.cheatography.com/</a>  
 <a href="https://www.google.com/search?q=cheat+sheets">Google Search</a>  
