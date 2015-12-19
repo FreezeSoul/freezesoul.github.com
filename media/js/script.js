@@ -10,3 +10,4 @@ jQuery(window).load(function() {
 jQuery(window).unload(function() {
     NProgress.start()
 });
+document.body.addEventListener('input', POWERMODE);
