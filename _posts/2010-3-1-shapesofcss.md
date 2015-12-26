@@ -6,33 +6,33 @@ category: 资源
 tags: [code]
 ---
   
-<a href="https://css-tricks.com/examples/ShapesOfCSS/" target="_blank"><h4>https://css-tricks.com/examples/ShapesOfCSS/</h4></a>   
+<a href="https://css-tricks.com/examples/ShapesOfCSS/" target="_blank"><h4>http://www.freecodeformat.com/</h4></a>   
 
 <div id="shapes">
 
 				<div class="shape">
 					<h2>Square</h2>
 					<div id="square"></div>
-					<pre>
+					<style  type="text/css">
 #square {
 	width: 100px;
 	height: 100px;
 	background: red;
 }
-					</pre>
+					</style>
 
 				</div>
 
 				<div class="shape">
 					<h2>Rectangle</h2>
 					<div id="rectangle"></div>
-					<pre>
+					<style  type="text/css">
 #rectangle {
 	width: 200px;
 	height: 100px;
 	background: red;
 }
-					</pre>
+					</style>
 
 
 			</div>
@@ -40,7 +40,7 @@ tags: [code]
 				<div class="shape">
 					<h2>Circle</h2>
 					<div id="circle"></div>
-					<pre>
+					<style  type="text/css">
 #circle {
 	width: 100px;
 	height: 100px;
@@ -50,15 +50,14 @@ tags: [code]
 	border-radius: 50px;
 }
 
-/* Cleaner, but slightly less support: use "50%" as value */
-					</pre>
+					</style>
 
 				</div>
 
 				<div class="shape">
 					<h2>Oval</h2>
 					<div id="oval"></div>
-					<pre>
+					<style  type="text/css">
 #oval {
 	width: 200px;
 	height: 100px;
@@ -68,8 +67,7 @@ tags: [code]
 	border-radius: 100px / 50px;
 }
 
-/* Cleaner, but slightly less support: use "50%" as value */
-					</pre>
+					</style>
 
 				</div>
 
@@ -78,7 +76,7 @@ tags: [code]
 					<h2>Triangle Up</h2>
 					<div id="triangle-up"></div>
 
-					<pre>
+					<style  type="text/css">
 #triangle-up {
 	width: 0;
 	height: 0;
@@ -86,14 +84,14 @@ tags: [code]
 	border-right: 50px solid transparent;
 	border-bottom: 100px solid red;
 }
-					</pre>
+					</style>
 
 				</div>
 
 				<div class="shape">
 					<h2>Triangle Down</h2>
 					<div id="triangle-down"></div>
-					<pre>
+					<style  type="text/css">
 #triangle-down {
 	width: 0;
 	height: 0;
@@ -101,13 +99,13 @@ tags: [code]
 	border-right: 50px solid transparent;
 	border-top: 100px solid red;
 }
-					</pre>
+					</style>
 				</div>
 
 				<div class="shape">
 					<h2>Triangle Left</h2>
 					<div id="triangle-left"></div>
-					<pre>
+					<style  type="text/css">
 #triangle-left {
 	width: 0;
 	height: 0;
@@ -115,13 +113,13 @@ tags: [code]
 	border-right: 100px solid red;
 	border-bottom: 50px solid transparent;
 }
-					</pre>
+					</style>
 				</div>
 
 				<div class="shape">
 					<h2>Triangle Right</h2>
 					<div id="triangle-right"></div>
-					<pre>
+					<style  type="text/css">
 #triangle-right {
 	width: 0;
 	height: 0;
@@ -129,27 +127,27 @@ tags: [code]
 	border-left: 100px solid red;
 	border-bottom: 50px solid transparent;
 }
-					</pre>
+					</style>
 				</div>
 
 
 				<div class="shape">
 					<h2>Triangle Top Left</h2>
 					<div id="triangle-topleft"></div>
-					<pre>
+					<style  type="text/css">
 #triangle-topleft {
 	width: 0;
 	height: 0;
 	border-top: 100px solid red;
 	border-right: 100px solid transparent;
 }
-					</pre>
+					</style>
 				</div>
 
 				<div class="shape">
 				<h2>Triangle Top Right</h2>
 				<div id="triangle-topright"></div>
-				<pre>
+				<style  type="text/css">
 #triangle-topright {
 	width: 0;
 	height: 0;
@@ -157,33 +155,33 @@ tags: [code]
 	border-left: 100px solid transparent;
 
 }
-				</pre>
+				</style>
 				</div>
 
 				<div class="shape">
 					<h2>Triangle Bottom Left</h2>
 					<div id="triangle-bottomleft"></div>
-					<pre>
+					<style  type="text/css">
 #triangle-bottomleft {
 	width: 0;
 	height: 0;
 	border-bottom: 100px solid red;
 	border-right: 100px solid transparent;
 }
-					</pre>
+					</style>
 				</div>
 
 				<div class="shape">
 					<h2>Triangle Bottom Right</h2>
 					<div id="triangle-bottomright"></div>
-					<pre>
+					<style  type="text/css">
 #triangle-bottomright {
 	width: 0;
 	height: 0;
 	border-bottom: 100px solid red;
 	border-left: 100px solid transparent;
 }
-					</pre>
+					</style>
 				</div>
 
 				<div class="shape">
@@ -192,7 +190,7 @@ tags: [code]
 
 					<div id="curvedarrow"></div>
 
-					<pre>
+					<style  type="text/css">
 #curvedarrow {
   position: relative;
   width: 0;
@@ -219,7 +217,7 @@ tags: [code]
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
 }
-					</pre>
+					</style>
 
 				</div>
 
@@ -229,7 +227,7 @@ tags: [code]
 
 					<div id="trapezoid"></div>
 
-					<pre>
+					<style  type="text/css">
 #trapezoid {
 	border-bottom: 100px solid red;
 	border-left: 50px solid transparent;
@@ -237,7 +235,7 @@ tags: [code]
 	height: 0;
 	width: 100px;
 }
-					</pre>
+					</style>
 
 				</div>
 
@@ -247,7 +245,7 @@ tags: [code]
 
 					<div id="parallelogram"></div>
 
-					<pre>
+					<style  type="text/css">
 #parallelogram {
 	width: 150px;
 	height: 100px;
@@ -256,7 +254,7 @@ tags: [code]
 	     -o-transform: skew(20deg);
 	background: red;
 }
-					</pre>
+					</style>
 
 				</div>
 
@@ -266,7 +264,7 @@ tags: [code]
 
 					<div id="star-six"></div>
 
-					<pre>
+					<style  type="text/css">
 #star-six {
 	width: 0;
 	height: 0;
@@ -286,7 +284,7 @@ tags: [code]
 	top: 30px;
 	left: -50px;
 }
-					</pre>
+					</style>
 
 				</div>
 
@@ -296,7 +294,7 @@ tags: [code]
 
 					<div id="star-five"></div>
 
-					<pre>
+					<style  type="text/css">
 #star-five {
    margin: 50px 0;
    position: relative;
@@ -346,7 +344,7 @@ tags: [code]
    -o-transform:      rotate(-70deg);
    content: '';
 }
-					</pre>
+					</style>
 
 				</div>
 
@@ -356,7 +354,7 @@ tags: [code]
 
 					<div id="pentagon"></div>
 
-					<pre>
+					<style  type="text/css">
 #pentagon {
     position: relative;
     width: 54px;
@@ -375,7 +373,7 @@ tags: [code]
     border-style: solid;
     border-color: transparent transparent red;
 }
-					</pre>
+					</style>
 
 				</div>
 
@@ -385,7 +383,7 @@ tags: [code]
 
 					<div id="hexagon"></div>
 
-					<pre>
+					<style  type="text/css">
 #hexagon {
 	width: 100px;
 	height: 55px;
@@ -414,7 +412,7 @@ tags: [code]
 	border-right: 50px solid transparent;
 	border-top: 25px solid red;
 }
-					</pre>
+					</style>
 
 				</div>
 
@@ -424,7 +422,7 @@ tags: [code]
 
 					<div id="octagon"></div>
 
-					<pre>
+					<style  type="text/css">
 #octagon {
 	width: 100px;
 	height: 100px;
@@ -455,7 +453,7 @@ tags: [code]
 	width: 42px;
 	height: 0;
 }
-					</pre>
+					</style>
 
 				</div>
 
@@ -465,7 +463,7 @@ tags: [code]
 
 					<div id="heart"></div>
 
-					<pre>
+					<style  type="text/css">
 #heart {
     position: relative;
     width: 100px;
@@ -506,7 +504,7 @@ tags: [code]
          -o-transform-origin: 100% 100%;
             transform-origin :100% 100%;
 }
-					</pre>
+					</style>
 
 				</div>
 
@@ -516,7 +514,7 @@ tags: [code]
 
 					<div id="infinity"></div>
 
-					<pre>
+					<style  type="text/css">
 #infinity {
     position: relative;
     width: 212px;
@@ -552,7 +550,7 @@ tags: [code]
          -o-transform: rotate(45deg);
             transform: rotate(45deg);
 }
-					</pre>
+					</style>
 
 				</div>
 
@@ -562,7 +560,7 @@ tags: [code]
 
 					<div id="diamond"></div>
 
-					<style scoped contenteditable>
+					<style scoped  type="text/css">
 #diamond {
 	width: 0;
 	height: 0;
@@ -581,7 +579,7 @@ tags: [code]
 	border: 50px solid transparent;
 	border-top-color: red;
 }
-</pre>
+</style>
 
 				</div>
 
@@ -591,7 +589,7 @@ tags: [code]
 
 					<div id="diamond-shield"></div>
 
-					<style scoped contenteditable>
+					<style scoped  type="text/css">
 #diamond-shield {
 	width: 0;
 	height: 0;
@@ -609,7 +607,7 @@ tags: [code]
 	border: 50px solid transparent;
 	border-top: 70px solid red;
 }
-</pre>
+</style>
 
 				</div>
 
@@ -619,7 +617,7 @@ tags: [code]
 
 					<div id="diamond-narrow"></div>
 
-					<style scoped contenteditable>
+					<style scoped  type="text/css">
 #diamond-narrow {
 	width: 0;
 	height: 0;
@@ -637,7 +635,7 @@ tags: [code]
 	border: 50px solid transparent;
 	border-top: 70px solid red;
 }
-</pre>
+</style>
 
 				</div>
 
@@ -647,7 +645,7 @@ tags: [code]
 
 					<div id="cut-diamond"></div>
 
-					<style scoped contenteditable>
+					<style scoped  type="text/css">
 #cut-diamond {
     border-style: solid;
     border-color: transparent transparent red transparent;
@@ -669,7 +667,7 @@ tags: [code]
     border-width: 70px 50px 0 50px;
 }
 
-</pre>
+</style>
 
 				</div>
 
@@ -679,7 +677,7 @@ tags: [code]
 
 					<div id="egg"></div>
 
-					<style scoped contenteditable>
+					<style scoped  type="text/css">
 #egg {
    display:block;
    width: 126px;
@@ -689,7 +687,7 @@ tags: [code]
    border-radius:         50%  50%  50%  50%  / 60%   60%   40%  40%;
 }
 
-</pre>
+</style>
 
 				</div>
 
@@ -699,7 +697,7 @@ tags: [code]
 
 					<div id="pacman"></div>
 
-					<style scoped contenteditable>
+					<style scoped  type="text/css">
 #pacman {
   width: 0px;
   height: 0px;
@@ -713,7 +711,7 @@ tags: [code]
   border-bottom-right-radius: 60px;
 }
 
-</pre>
+</style>
 
 				</div>
 
@@ -723,7 +721,7 @@ tags: [code]
 
 					<div id="talkbubble"></div>
 
-					<style scoped contenteditable>
+					<style scoped  type="text/css">
 #talkbubble {
    width: 120px;
    height: 80px;
@@ -745,7 +743,7 @@ tags: [code]
    border-bottom: 13px solid transparent;
 }
 
-</pre>
+</style>
 
 				</div>
 
@@ -755,7 +753,7 @@ tags: [code]
 
 					<div id="burst-12"></div>
 
-					<style scoped contenteditable>
+					<style scoped  type="text/css">
 #burst-12 {
     background: red;
     width: 80px;
@@ -785,7 +783,7 @@ tags: [code]
          -o-transform: rotate(60deg);
 }
 
-</pre>
+</style>
 
 				</div>
 
@@ -795,7 +793,7 @@ tags: [code]
 
 					<div id="burst-8"></div>
 
-					<style scoped contenteditable>
+					<style scoped  type="text/css">
 #burst-8 {
     background: red;
     width: 80px;
@@ -821,7 +819,7 @@ tags: [code]
          -o-transform: rotate(135deg);
 }
 
-</pre>
+</style>
 
 				</div>
 
@@ -831,7 +829,7 @@ tags: [code]
 
 					<div id="yin-yang"></div>
 
-					<style scoped contenteditable>
+					<style scoped  type="text/css">
 #yin-yang {
 	width: 96px;
 	height: 48px;
@@ -867,7 +865,7 @@ tags: [code]
 	height: 12px;
 }
 
-</pre>
+</style>
 
 				</div>
 
@@ -877,7 +875,7 @@ tags: [code]
 
 					<div id="badge-ribbon"></div>
 
-					<style scoped contenteditable>
+					<style scoped  type="text/css">
 #badge-ribbon {
  position: relative;
  background: red;
@@ -912,7 +910,7 @@ tags: [code]
   -o-transform:      rotate(140deg);
 }
 
-</pre>
+</style>
 
 				</div>
 
@@ -922,7 +920,7 @@ tags: [code]
 
           <div id="space-invader"></div>
 
-          <style scoped contenteditable>
+          <style scoped  type="text/css">
 #space-invader{
 
   box-shadow:
@@ -965,7 +963,7 @@ tags: [code]
     margin: 50px 0 70px 65px;
   }
 
-</pre>
+</style>
 
         </div>
 
@@ -975,7 +973,7 @@ tags: [code]
 
           <div id="tv"></div>
 
-          <style scoped contenteditable>
+          <style scoped  type="text/css">
 #tv {
   position: relative;
   width: 200px;
@@ -998,7 +996,7 @@ tags: [code]
   border-radius: 5% / 50%;
 }
 
-</pre>
+</style>
 
         </div>
 
@@ -1008,7 +1006,7 @@ tags: [code]
 
           <div id="chevron"></div>
 
-          <style scoped contenteditable>
+          <style scoped  type="text/css">
 #chevron {
   position: relative;
   text-align: center;
@@ -1048,7 +1046,7 @@ tags: [code]
 }​
 
 
-</pre>
+</style>
 
         </div>
 
@@ -1058,7 +1056,7 @@ tags: [code]
 
           <div id="magnifying-glass"></div>
 
-          <pre>
+          <style  type="text/css">
 #magnifying-glass
 {
  font-size: 10em; /* This controls the size. */
@@ -1085,7 +1083,7 @@ tags: [code]
      -ms-transform: rotate(45deg);
       -o-transform: rotate(45deg);
 }
-          </pre>
+          </style>
 
         </div>
 
@@ -1095,7 +1093,7 @@ tags: [code]
 
           <div id="facebook-icon"></div>
 
-          <pre>
+          <style  type="text/css">
 #facebook-icon {
   background: red;
   text-indent: -999em;
@@ -1127,7 +1125,7 @@ tags: [code]
   background: #eee;
   right: 5px;
 }
-          </pre>
+          </style>
 
         </div>
 
@@ -1137,16 +1135,15 @@ tags: [code]
 
           <div id="moon"></div>
 
-          <pre>
+          <style  type="text/css">
 #moon {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   box-shadow: 15px 15px 0 0 red;
 }
-          </pre>
+          </style>
 
-        </div>
 
         </div>
 
@@ -1156,7 +1153,7 @@ tags: [code]
 
           <div id="flag"></div>
 
-          <pre>
+          <style  type="text/css">
 #flag {
   width: 110px;
   height: 56px;
@@ -1180,7 +1177,7 @@ tags: [code]
   border-left: 55px solid transparent;
   border-right: 55px solid transparent;
 }
-          </pre>
+          </style>
 
         </div>
 
@@ -1190,7 +1187,7 @@ tags: [code]
 
         <div id="cone"></div>
 
-          <pre>
+          <style  type="text/css">
 #cone {
   width: 0;
   height: 0;
@@ -1201,7 +1198,7 @@ tags: [code]
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-          </pre>
+          </style>
 
         </div>
 
@@ -1211,7 +1208,7 @@ tags: [code]
 
           <div id="cross"></div>
 
-          <pre>
+          <style  type="text/css">
 #cross {
   background: red;
   height: 100px;
@@ -1227,7 +1224,7 @@ tags: [code]
   top: 40px;
   width: 100px;
 }
-          </pre>
+          </style>
 
         </div>
 
@@ -1237,7 +1234,7 @@ tags: [code]
 
           <div id="base"></div>
 
-          <pre>
+          <style  type="text/css">
 #base {
   background: red;
   display: inline-block;
@@ -1258,10 +1255,9 @@ tags: [code]
   top: -35px;
   width: 0;
 }
-          </pre>
+          </style>
 
         </div>
 
       </div>
 
-		</div>
