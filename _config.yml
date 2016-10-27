@@ -36,8 +36,9 @@ twitter_username: FreezeSoul
 
 # Mailchimp.com - Email subscribtion settings
 # Refer to http://kb.mailchimp.com/lists/signup-forms/advanced-form-customization
-form_action: "//tylercubell.us11.list-manage.com/subscribe/post?u=25ec516894b013df92dca1a8d&amp;id=8906705de6"
-list_id: "b_25ec516894b013df92dca1a8d_8906705de6"
+# help in http://402v.com/ghostbo-ke-shi-yong-mailchimppei-zhi-you-jian-ding-yue/
+form_action: "//diginfo.us14.list-manage.com/subscribe/post?u=8b667b0757743775b7864937a&amp;id=339190c42a"
+list_id: "339190c42a"
 
 # Formspreee.io - Contact form settings
 # Note: submit form once to activate
