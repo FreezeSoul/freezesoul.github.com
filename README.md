@@ -1,2 +1,2 @@
-# tylercubell.github.io
+# freezesoul.github.io
 Personal Blog

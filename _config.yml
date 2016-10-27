@@ -1,5 +1,5 @@
 # Site settings
-title: Tyler Cubell
+title: FreezeSoul's Blog
 meta_description: Blog
 baseurl:  "" # Subpath, e.g. /blog/
 url: "http://www.diginfo.me" # Base protocol and hostname
@@ -32,8 +32,7 @@ copyright_notice: on
 # Social settings
 github_username:  FreezeSoul
 twitter_username: FreezeSoul
-facebook_username: FreezeSoul
-linkedin_username: FreezeSoul
+
 
 # Mailchimp.com - Email subscribtion settings
 # Refer to http://kb.mailchimp.com/lists/signup-forms/advanced-form-customization
