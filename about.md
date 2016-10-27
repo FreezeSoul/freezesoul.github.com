@@ -4,7 +4,7 @@ title: About
 date: 2015-08-28 11:00:00
 permalink: /about/
 ---
-Full stack developer from the Greater Boston Area.
+Full stack developer.
 
 <div class="container">
     <div class="row">
