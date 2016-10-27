@@ -10,5 +10,4 @@ categories: project
 Ionic作为H5 APP快发框架，内核部分采用Phonegap，UI框架则集成自Angular，其自身又封装了很多移动端的UI组件，而且性能还是不错的，可以方便的快速构建APP。   
 相关技术：HTML5 + Ionic + Requires + Python + Flask + Phonegap + Crosswalk 等。  
 <img src="/images/journeyapp1.png" width="80%">  
-<img src="/images/journeyapp2.png" width="80%">  
 下载地址：<a href="https://itunes.apple.com/us/app/you-zai-tang-shan/id1112388088?l=zh&ls=1&mt=8">IosAppStore</a>、<a href="http://shouji.baidu.com/software/9333477.html">BaiduAppStore</a>
