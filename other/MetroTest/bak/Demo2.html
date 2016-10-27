@@ -1,0 +1,1077 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Metro Flexible Navigation</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" media="all" href="Resources/metro.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="Resources/jquery.plugins.min.js"></script>
+    <script src="Resources/metro.js"></script>
+    <!--[if lt IE 9]>
+    <script src="Resources/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="metro-layout horizontal">
+    <div class="header">
+        <h1 onclick="javascript:window.location = 'index.html'">Back</h1>
+        <div class="controls">
+            <span class="down" title="Scroll down"></span>
+            <span class="up" title="Scroll up"></span>
+            <span class="next" title="Scroll left"></span>
+            <span class="prev" title="Scroll right"></span>
+            <span class="toggle-view" title="Toggle layout"></span>
+        </div>
+    </div>
+    <div class="content clearfix">
+        <div class="items">
+            <a class="box" href="#">
+                <span>Mail</span>
+                <img class="icon" src="http://html.cerchez.com/metro-layout/images/mail.png" alt="" />
+            </a>
+            <a class="box" href="#" style="background: #6b6b6b;">
+                <div id="main" style="width: 100%; height: 100%; "></div>
+            </a>
+            <a class="box" href="#" style="background: #43b51f;">
+                <div id="main1" style="width: 100%; height: 100%;"></div>
+            </a>
+            <a class="box width2 height2" href="#">
+                <div id="main2" style="width: 100%; height: 100%;"></div>
+            </a>
+            <a class="box" href="#" style="background: #00aeef;">
+                <div id="main3" style="width: 100%; height: 100%;"></div>
+            </a>
+            <a class="box" href="#" style="background: #f58d00;">
+                <div id="main4" style="width: 100%; height: 100%;"></div>
+            </a>
+            <a class="box" href="#" style="background: #640f6c;">
+                <div id="main5" style="width: 100%; height: 100%;"></div>
+            </a>
+            <a class="box height2" href="#" style="background: #d32c2c;">
+                <div id="main6" style="width: 100%; height: 100%; "></div>
+            </a>
+            <a class="box" href="#" style="background: #3c5b9b;">
+                <div id="main7" style="width: 100%; height: 100%; "></div>
+            </a>
+            <a class="box" href="#" style="background: #ffc808;">
+                <span>Winamp</span>
+                <img class="icon" src="http://html.cerchez.com/metro-layout/images/winamp.png" alt="" />
+            </a>
+            <a class="box" href="#" style="background: #00a9ec;">
+                <span>Tasks</span>
+                <img class="icon" src="http://html.cerchez.com/metro-layout/images/tasks.png" alt="" />
+            </a>
+            <a class="box height2" href="#" style="background: #4c5e51;">
+                <span>DeviantART</span>
+                <img class="icon big" src="http://html.cerchez.com/metro-layout/images/deviantart.png" alt="" />
+            </a>
+            <a class="box" href="#" style="background: #f874a4;">
+                <span>Dribbble</span>
+                <img class="icon" src="http://html.cerchez.com/metro-layout/images/dribbble.png" alt="" />
+            </a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="Resources/esl.js"></script>
+
+<script type="text/javascript">
+var gridster;
+$(function(){
+    gridster = $(".gridster ul").gridster({
+        widget_base_dimensions: [100, 55],
+        widget_margins: [5, 5],
+        helper: 'clone',
+        resize: {
+            enabled: false,
+            max_size: [4, 4],
+            min_size: [1, 1]
+        }
+    }).data('gridster');
+
+    //from echarts example
+
+});
+
+require.config({
+    packages: [
+        {
+            name: 'echarts',
+            location: 'Resources/echart',
+            main: 'echarts'
+        },
+        {
+            name: 'zrender',
+            //location: 'http://ecomfe.github.io/zrender/src',
+            location: 'Resources/zrender',
+            main: 'zrender'
+        }
+    ]
+});
+
+// Step:4 require echarts and use it in the callback.
+// Step:4 动态加载echarts然后在回调函数中开始使用，注意保持按需加载结构定义图表路径
+require(
+        [
+            'echarts',
+            'echarts/chart/line',
+            'echarts/chart/bar',
+            'echarts/chart/scatter',
+            'echarts/chart/k',
+            'echarts/chart/pie',
+            'echarts/chart/radar',
+            'echarts/chart/force',
+            'echarts/chart/chord',
+            'echarts/chart/map'
+        ],
+        function(ec) {
+            renderChart(ec);
+            renderChart1(ec);
+            renderChart2(ec);
+            renderChart3(ec);
+            renderChart4(ec);
+            renderChart5(ec);
+            renderChart6(ec);
+            renderChart7(ec)
+        }
+);
+var renderChart = function(ec){
+
+    option = {
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['邮件营销','联盟广告','直接访问','搜索引擎']
+        },
+        toolbox: {
+            show : false
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                data : ['周一','周二','周三','周四','周五','周六','周日']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                splitArea : {show : true}
+            }
+        ],
+        series : [
+            {
+                name:'邮件营销',
+                type:'line',
+                stack: '总量',
+                symbol: 'none',
+                itemStyle: {
+                    normal: {
+                        areaStyle: {
+                            // 区域图，纵向渐变填充
+                            color : (function(){
+                                var zrColor = require('zrender/tool/color');
+                                return zrColor.getLinearGradient(
+                                        0, 200, 0, 400,
+                                        [[0, 'rgba(255,0,0,0.8)'],[0.8, 'rgba(255,255,255,0.1)']]
+                                )
+                            })()
+                        }
+                    }
+                },
+                data:[
+                    120, 132, 301, 134,
+                    {value:90, symbol:'droplet',symbolSize:5},
+                    230, 210
+                ]
+            },
+            {
+                name:'联盟广告',
+                type:'line',
+                stack: '总量',
+                smooth: true,
+                symbol: 'image://../../doc/asset/ico/favicon.png',     // 系列级个性化拐点图形
+                symbolSize: 8,
+                data:[
+                    120, 82,
+                    {
+                        value:201,
+                        symbol: 'star',  // 数据级个性化拐点图形
+                        symbolSize : 15,
+                        itemStyle : { normal: {label : {
+                            show: true,
+                            textStyle : {
+                                fontSize : '20',
+                                fontFamily : '微软雅黑',
+                                fontWeight : 'bold'
+                            }
+                        }}}
+                    },
+                    {
+                        value:134,
+                        symbol: 'none'
+                    },
+                    190,
+                    {
+                        value : 230,
+                        symbol: 'emptypin',
+                        symbolSize: 8
+                    },
+                    110
+                ]
+            },
+            {
+                name:'直接访问',
+                type:'line',
+                stack: '总量',
+                symbol: 'arrow',
+                symbolSize: 6,
+                symbolRotate: -45,
+                itemStyle: {
+                    normal: {
+                        color: 'red',
+                        lineStyle: {        // 系列级个性化折线样式
+                            width: 2,
+                            type: 'dashed'
+                        }
+                    },
+                    emphasis: {
+                        color: 'blue'
+                    }
+                },
+                data:[
+                    320, 332, '-', 334,
+                    {
+                        value: 390,
+                        symbol: 'star6',
+                        symbolSize : 20,
+                        symbolRotate : 10,
+                        itemStyle: {        // 数据级个性化折线样式
+                            normal: {
+                                color: 'yellowgreen'
+                            },
+                            emphasis: {
+                                color: 'orange',
+                                label : {
+                                    show: true,
+                                    position: 'inside',
+                                    textStyle : {
+                                        fontSize : '20'
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    330, 320
+                ]
+            },
+            {
+                name:'搜索引擎',
+                type:'line',
+                symbol:'emptyCircle',
+                itemStyle: {
+                    normal: {
+                        lineStyle: {            // 系列级个性化折线样式，横向渐变描边
+                            width: 2,
+                            color: (function(){
+                                var zrColor = require('zrender/tool/color');
+                                return zrColor.getLinearGradient(
+                                        0, 0, 1000, 0,
+                                        [[0, 'rgba(255,0,0,0.8)'],[0.8, 'rgba(255,255,0,0.8)']]
+                                )
+                            })(),
+                            shadowColor : 'rgba(0,0,0,0.5)',
+                            shadowBlur: 10,
+                            shadowOffsetX: 8,
+                            shadowOffsetY: 8
+                        }
+                    },
+                    emphasis : {
+                        label : {show: true}
+                    }
+                },
+                data:[
+                    620, 732, 791,
+                    {value:734, symbol:'emptyHeart',symbolSize:10},
+                    890, 930, 820
+                ],
+                markPoint : {
+                    data : [
+                        {name : '周最高', value : 930, xAxis: '周六', yAxis: 935}
+                    ]
+                }
+            }
+        ]
+    };
+    //--- 折柱 ---
+    var myChart = ec.init(document.getElementById('main'));
+    myChart.setOption(option);
+
+};
+var renderChart1 = function(ec){
+    option = {
+        tooltip : {
+            show: true,
+            trigger: 'item'
+        },
+        legend: {
+            data:['邮件营销','联盟广告','直接访问','搜索引擎']
+        },
+        toolbox: {
+            show : false,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                data : ['周一','周二','周三','周四','周五','周六','周日']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                splitArea : {show : true}
+            }
+        ],
+        series : [
+            {
+                name:'邮件营销',
+                type:'bar',
+                itemStyle: {        // 系列级个性化样式，纵向渐变填充
+                    normal: {
+                        borderColor:'red',
+                        color : (function(){
+                            var zrColor = require('zrender/tool/color');
+                            return zrColor.getLinearGradient(
+                                    0, 400, 0, 300,
+                                    [[0, 'green'],[1, 'yellow']]
+                            )
+                        })()
+                    },
+                    emphasis: {
+                        borderWidth: 5,
+                        borderColor:'green',
+                        color: (function(){
+                            var zrColor = require('zrender/tool/color');
+                            return zrColor.getLinearGradient(
+                                    0, 400, 0, 300,
+                                    [[0, 'red'],[1, 'orange']]
+                            )
+                        })(),
+                        label : {
+                            show : true,
+                            position : 'top',
+                            formatter : "{a} {b} {c}",
+                            textStyle : {
+                                color: 'blue'
+                            }
+                        }
+                    }
+                },
+                data:[220, 232, 101, 234, 190, 330, 210]
+            },
+            {
+                name:'联盟广告',
+                type:'bar',
+                stack: '总量',
+                data:[120, '-', 451, 134, 190, 230, 110]
+            },
+            {
+                name:'直接访问',
+                type:'bar',
+                stack: '总量',
+                itemStyle: {                // 系列级个性化
+                    normal: {
+                        borderWidth: 6,
+                        borderColor:'tomato',
+                        color: 'red'
+                    },
+                    emphasis: {
+                        borderColor:'red',
+                        color: 'blue'
+                    }
+                },
+                data:[
+                    320, 332, 100, 334,
+                    {
+                        value: 390,
+                        symbolSize : 10,   // 数据级个性化
+                        itemStyle: {
+                            normal: {
+                                color :'lime'
+                            },
+                            emphasis: {
+                                color: 'skyBlue'
+                            }
+                        }
+                    },
+                    330, 320
+                ]
+            },
+            {
+                name:'搜索引擎',
+                type:'bar',
+                barWidth: 40,                   // 系列级个性化，柱形宽度
+                itemStyle: {
+                    normal: {                   // 系列级个性化，横向渐变填充
+                        borderRadius: 5,
+                        color : (function(){
+                            var zrColor = require('zrender/tool/color');
+                            return zrColor.getLinearGradient(
+                                    0, 0, 1000, 0,
+                                    [[0, 'rgba(30,144,255,0.8)'],[1, 'rgba(138,43,226,0.8)']]
+                            )
+                        })(),
+                        label : {
+                            show : true,
+                            textStyle : {
+                                fontSize : '20',
+                                fontFamily : '微软雅黑',
+                                fontWeight : 'bold'
+                            }
+                        }
+                    }
+                },
+                data:[
+                    620, 732,
+                    {
+                        value: 701,
+                        itemStyle : { normal: {label : {position: 'inside'}}}
+                    },
+                    734, 890,
+                    {
+                        value: 930,
+                        itemStyle : { normal: {label : {show: false}}}
+                    },
+                    820
+                ],
+                markPoint : {
+                    data : [
+                        {name : '最高', value : 930, xAxis: '周六', yAxis: 930, symbolSize:14}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        [
+                            {type : 'average', name : '平均值'},
+                            {type : 'max'},
+                            {type : 'min'}
+                        ]
+                    ]
+                }
+            }
+        ]
+    };
+    var myChart = ec.init(document.getElementById('main1'));
+    myChart.setOption(option);
+};
+
+var renderChart2 = function(ec) {
+    option = {
+        title : {
+            text: '测试数据'
+        },
+        tooltip : {
+            trigger: 'item'
+        },
+        legend: {
+            x: 'right',
+            data:['g1','g2', 'g3', 'g4']
+        },
+        series : [
+            {
+                type:'chord',
+                radius : ['55%', '75%'],
+                center : ['50%', '50%'],
+                padding : 2,
+                sort : 'descending', // can be 'none', 'ascending', 'descending'
+                sortSub : 'descending', // can be 'none', 'ascending', 'descending'
+                startAngle : 90,
+                clockWise : false,
+                showScale : true,
+                showScaleText : true,
+                itemStyle : {
+                    normal : {
+                        lineStyle : {
+                            width : 0,
+                            color : '#000'
+                        },
+                        chordStyle : {
+                            lineStyle : {
+                                width : 1,
+                                color : '#333'
+                            }
+                        },
+                        label: {
+                            show: true,
+                            color: 'red'
+                        }
+                    },
+                    emphasis : {
+                        lineStyle : {
+                            width : 0,
+                            color : '#000'
+                        },
+                        chordStyle : {
+                            lineStyle : {
+                                width : 2,
+                                color : 'black'
+                            }
+                        }
+                    }
+                },
+                data : [
+                    {
+                        name : 'g1',
+                        itemStyle : {
+                            normal: {
+                                color: 'rgba(255,30,30,0.5)',
+                                lineStyle : {
+                                    width: 1,
+                                    color: 'green'
+                                }
+                            },
+                            emphasis: {
+                                color: 'yellow',
+                                lineStyle : {
+                                    width: 2,
+                                    color: 'blue'
+                                }
+                            }
+                        }
+                    },
+                    {name : 'g2'},
+                    {name : 'g3'},
+                    {name : 'g4'}
+                ],
+                matrix : [
+                    [11975,  5871, 8916, 2868],
+                    [ 1951, 10048, 2060, 6171],
+                    [ 8010, 16145, 8090, 8045],
+                    [ 1013,   990,  940, 6907]
+                ],
+                markPoint : {
+                    symbol: 'star',
+                    data : [
+                        {name : '打酱油的标注', value : 100, x:'5%', y:'50%', symbolSize:32},
+                        {name : '打酱油的标注', value : 100, x:'95%', y:'50%', symbolSize:32}
+                    ]
+                }
+            }
+        ]
+    };
+    var myChart = ec.init(document.getElementById('main2'));
+    myChart.setOption(option);
+};
+
+var renderChart3 = function(ec) {
+    option = {
+        series : [
+            {
+                name: 'Map',
+                type: 'map',
+                mapLocation: {
+                    x : 'left',
+                    y : 'top'
+                },
+                selectedMode: 'multiple',
+                itemStyle: {
+                    normal: {
+                        borderWidth:2,
+                        borderColor:'lightgreen',
+                        color: 'orange',
+                        label: {
+                            show: false
+                        }
+                    },
+                    emphasis: {                 // 也是选中样式
+                        borderWidth:2,
+                        borderColor:'#fff',
+                        color: '#32cd32',
+                        label: {
+                            show: true,
+                            textStyle: {
+                                color: '#fff'
+                            }
+                        }
+                    }
+                },
+                data:[
+                    {
+                        name: '广东',
+                        value: Math.round(Math.random()*1000),
+                        itemStyle: {
+                            normal: {
+                                color: '#32cd32',
+                                label: {
+                                    show: true,
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 15
+                                    }
+                                }
+                            },
+                            emphasis: {                 // 也是选中样式
+                                borderWidth:5,
+                                borderColor:'yellow',
+                                color: '#cd5c5c',
+                                label: {
+                                    show: false,
+                                    textStyle: {
+                                        color: 'blue'
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                markPoint : {
+                    itemStyle : {
+                        normal:{
+                            color:'skyblue'
+                        }
+                    },
+                    data : [
+                        {name : '天津', value : 350},
+                        {name : '上海', value : 103}
+                    ]
+                },
+                geoCoord: {
+                    '上海': [121.4648,31.2891],
+                    '天津': [117.4219,39.4189]
+                }
+            }
+        ]
+    };
+    var myChart = ec.init(document.getElementById('main3'));
+    myChart.setOption(option);
+};
+
+var renderChart4 = function(ec) {
+    option = {
+        tooltip : {
+            trigger: 'axis'
+        },
+        toolbox: {
+            show : false,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType: {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        legend: {
+            data:['蒸发量','降水量','平均温度']
+        },
+        xAxis : [
+            {
+                type : 'category',
+                data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                name : '水量',
+                axisLabel : {
+                    formatter: '{value} ml'
+                },
+                splitArea : {show : true}
+            },
+            {
+                type : 'value',
+                name : '温度',
+                axisLabel : {
+                    formatter: '{value} °C'
+                },
+                splitLine : {show : false}
+            }
+        ],
+        series : [
+
+            {
+                name:'蒸发量',
+                type:'bar',
+                data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+            },
+            {
+                name:'降水量',
+                type:'bar',
+                data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+            },
+            {
+                name:'平均温度',
+                type:'line',
+                yAxisIndex: 1,
+                data:[2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
+            }
+        ]
+    };
+
+    var myChart = ec.init(document.getElementById('main4'));
+    myChart.setOption(option);
+};
+
+var renderChart5 = function(ec) {
+    option = {
+        title : {
+            text: '人物关系：乔布斯',
+            subtext: '数据来自人立方',
+            x:'right',
+            y:'bottom'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: '{a} : {b}'
+        },
+        legend: {
+            x: 'left',
+            data:['家人','朋友']
+        },
+        series : [
+            {
+                type:'force',
+                name : "人物关系",
+                categories : [
+                    {
+                        name: '人物',
+                        itemStyle: {
+                            normal: {
+                                color : '#ff7f50'
+                            }
+                        }
+                    },
+                    {
+                        name: '家人',
+                        itemStyle: {
+                            normal: {
+                                color : '#87cdfa'
+                            }
+                        }
+                    },
+                    {
+                        name:'朋友',
+                        itemStyle: {
+                            normal: {
+                                color : '#9acd32'
+                            }
+                        }
+                    }
+                ],
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true,
+                            textStyle: {
+                                color: '#800080'
+                            }
+                        },
+                        nodeStyle : {
+                            brushType : 'both',
+                            strokeColor : 'rgba(255,215,0,0.4)',
+                            lineWidth : 8
+                        }
+                    },
+                    emphasis: {
+                        label: {
+                            show: false
+                            // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+                        },
+                        nodeStyle : {
+                            r: 30
+                        },
+                        linkStyle : {}
+                    }
+                },
+                minRadius : 15,
+                maxRadius : 25,
+                density : 0.05,
+                attractiveness: 1.2,
+                nodes:[
+                    {category:0, name: '乔布斯', value : 10},
+                    {category:1, name: '丽萨-乔布斯',value : 2},
+                    {category:1, name: '保罗-乔布斯',value : 3},
+                    {category:1, name: '克拉拉-乔布斯',value : 3},
+                    {category:1, name: '劳伦-鲍威尔',value : 7},
+                    {category:2, name: '史蒂夫-沃兹尼艾克',value : 5},
+                    {category:2, name: '奥巴马',value : 8},
+                    {category:2, name: '比尔-盖茨',value : 9},
+                    {category:2, name: '乔纳森-艾夫',value : 4},
+                    {category:2, name: '蒂姆-库克',value : 4},
+                    {category:2, name: '龙-韦恩',value : 1}
+                ],
+                links : [
+                    {source : 1, target : 0, weight : 1},
+                    {source : 2, target : 0, weight : 2},
+                    {source : 3, target : 0, weight : 1},
+                    {source : 4, target : 0, weight : 2},
+                    {source : 5, target : 0, weight : 3},
+                    {source : 6, target : 0, weight : 6},
+                    {source : 7, target : 0, weight : 6},
+                    {source : 8, target : 0, weight : 1},
+                    {source : 9, target : 0, weight : 1},
+                    {source : 10, target : 0, weight : 1},
+                    {source : 3, target : 2, weight : 1},
+                    {source : 6, target : 2, weight : 1},
+                    {source : 6, target : 3, weight : 1},
+                    {source : 6, target : 4, weight : 1},
+                    {source : 6, target : 5, weight : 1},
+                    {source : 7, target : 6, weight : 6},
+                    {source : 7, target : 3, weight : 1},
+                    {source : 9, target : 6, weight : 1}
+                ],
+                markPoint : {
+                    symbol: 'emptyCircle',
+                    data : [
+                        {name : '打酱油的标注', value : 100, x:'5%', y:'50%', symbolSize:32},
+                        {name : '打酱油的标注', value : 100, x:'95%', y:'50%', symbolSize:32}
+                    ]
+                }
+            }
+        ]
+    };
+
+    var myChart = ec.init(document.getElementById('main5'));
+    myChart.setOption(option);
+};
+
+var renderChart6 = function(ec) {
+    option = {
+        title : {
+            text: '浏览器占比变化',
+            subtext: '纯属虚构',
+            x:'right',
+            y:'bottom'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient : 'vertical',
+            x : 'left',
+            data:['Chrome','Firefox','Safari','IE9+','IE8-']
+        },
+        toolbox: {
+            show : false,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : false,
+        series : (function(){
+            var series = [];
+            for (var i = 0; i < 30; i++) {
+                series.push({
+                    name:'浏览器（数据纯属虚构）',
+                    type:'pie',
+                    itemStyle : {normal : {
+                        label : {show : i > 28},
+                        labelLine : {show : i > 28, length:20}
+                    }},
+                    radius : [i * 4 + 40, i * 4 + 43],
+                    data:[
+                        {value: i * 128 + 80,  name:'Chrome'},
+                        {value: i * 64  + 160,  name:'Firefox'},
+                        {value: i * 32  + 320,  name:'Safari'},
+                        {value: i * 16  + 640,  name:'IE9+'},
+                        {value: i * 8  + 1280, name:'IE8-'}
+                    ]
+                })
+            }
+            series[0].markPoint = {
+                symbol:'emptyCircle',
+                symbolSize:series[0].radius[0],
+                effect:{show:true,scaleSize:12,color:'rgba(250,225,50,0.8)',shadowBlur:10,period:30},
+                data:[{x:'50%',y:'50%'}]
+            };
+            return series;
+        })()
+    };
+    setTimeout(function(){
+        var _ZR = myChart.getZrender();
+        // 补充千层饼
+        _ZR.addShape({
+            shape : 'text',
+            style : {
+                x : _ZR.getWidth() / 2,
+                y : _ZR.getHeight() / 2,
+                color: '#666',
+                text : '恶梦的过去',
+                textAlign : 'center'
+            }
+        });
+        _ZR.addShape({
+            shape : 'text',
+            style : {
+                x : _ZR.getWidth() / 2 + 200,
+                y : _ZR.getHeight() / 2,
+                brushType:'fill',
+                color: 'orange',
+                text : '美好的未来',
+                textAlign : 'left',
+                textFont:'normal 20px 微软雅黑'
+            }
+        });
+        _ZR.refresh();
+    }, 2000);
+
+
+    var myChart = ec.init(document.getElementById('main6'));
+    myChart.setOption(option);
+};
+
+
+var renderChart7 = function(ec) {
+
+    var nodes = [];
+    var links = [];
+    var constMaxDepth = 2;
+    var constMaxChildren = 7;
+    var constMinChildren = 4;
+    var constMaxRadius = 10;
+    var constMinRadius = 2;
+
+    function rangeRandom(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    function createRandomNode(depth) {
+        var node = {
+            name : 'NODE_' + nodes.length,
+            value : rangeRandom(constMinRadius, constMaxRadius),
+            // Custom properties
+            id : nodes.length,
+            depth : depth,
+            category : depth === constMaxDepth ? 0 : 1
+        }
+        nodes.push(node);
+
+        return node;
+    }
+
+    function forceMockThreeData() {
+        var depth = 0;
+        var rootNode = {
+            name : 'ROOT',
+            value : rangeRandom(constMinRadius, constMaxRadius),
+            // Custom properties
+            id : 0,
+            depth : 0,
+            category : 2
+        }
+        nodes.push(rootNode);
+
+        function mock(parentNode, depth) {
+            var nChildren = Math.round(rangeRandom(constMinChildren, constMaxChildren));
+
+            for (var i = 0; i < nChildren; i++) {
+                var childNode = createRandomNode(depth);
+                links.push({
+                    source : parentNode.id,
+                    target : childNode.id,
+                    weight : 1
+                });
+                if (depth < constMaxDepth) {
+                    mock(childNode, depth + 1);
+                }
+            }
+        }
+
+        mock(rootNode, 0);
+    }
+
+    forceMockThreeData();
+
+    option = {
+        title : {
+            text: 'Force',
+            subtext: 'Force-directed tree',
+            x:'right',
+            y:'bottom'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: '{a} : {b}'
+        },
+        legend: {
+            x: 'left',
+            data:['叶子节点','非叶子节点', '根节点']
+        },
+        series : [
+            {
+                type:'force',
+                name : "Force tree",
+                categories : [
+                    {
+                        name: '叶子节点',
+                        itemStyle: {
+                            normal: {
+                                color : '#ff7f50'
+                            }
+                        }
+                    },
+                    {
+                        name: '非叶子节点',
+                        itemStyle: {
+                            normal: {
+                                color : '#6f57bc'
+                            }
+                        }
+                    },
+                    {
+                        name: '根节点',
+                        itemStyle: {
+                            normal: {
+                                color : '#af0000'
+                            }
+                        }
+                    }
+                ],
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: false
+                        },
+                        nodeStyle : {
+                            brushType : 'both',
+                            strokeColor : 'rgba(255,215,0,0.6)',
+                            lineWidth : 1
+                        }
+                    }
+                },
+                minRadius : constMinRadius,
+                maxRadius : constMaxRadius,
+                density : 1,
+                attractiveness: 1.2,
+                nodes : nodes,
+                links : links
+            }
+        ]
+    };
+
+    var myChart = ec.init(document.getElementById('main7'));
+    myChart.setOption(option);
+};
+</script>
+</body>
+</html>

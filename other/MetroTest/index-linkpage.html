@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from www.melonhtml5.com/demo/metro_ui_html/ by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 15 Apr 2014 12:30:02 GMT -->
+<head>
+    <title>MelonHTML5 - Metro Framework</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/metro.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <script type="text/javascript" src="demo/metro_ui_html/javascript/jquery.js"></script>
+    <script type="text/javascript" src="demo/metro_ui_html/javascript/metro.js"></script>
+    <script type="text/javascript" src="demo/metro_ui_html/javascript/demo.js"></script>
+    <link rel="stylesheet" type="text/css" href="Resources/jquery.gridster.css">
+    <link rel="stylesheet" type="text/css" href="Resources/demo.css">
+    <script src="Resources/jquery.gridster.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/highcharts.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/highcharts-3d.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/highcharts-more.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/modules/solid-gauge.src.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/modules/data.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/modules/drilldown.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/DemoHightCharts.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/jquery.mousewheel.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/h5utils.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="Resources/esl.js"></script>
+    <style type="text/css">
+            .gridster li div.header {
+                position: relative;
+                z-index: 1000;
+                height: 30px;
+                cursor: move;
+                background-image: url("images/tittle_bg_40.png");
+            }
+            .gridster li div.content{
+                margin-top:-30px;
+                width: 100%; height: 100%;
+            }
+            #root{
+                margin-top: 110px;
+                margin-left: 50px;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="HomeButton"></div>
+    <div id="BackButton"></div>
+    <div id="title2">业务指标详情</div>
+    <div id="root" style="display: none;">
+
+        <div class="gridster">
+            <ul>
+                <li data-row="1" data-col="1" data-sizex="5" data-sizey="3">
+                    <div class="header"></div>
+                    <div class="content unloaded animation" id="Demo1" style="background-color: #FFCB08;"></div>
+                </li>
+                <li data-row="4" data-col="1" data-sizex="5" data-sizey="3">
+                    <div class="header"></div>
+                    <div class="content unloaded animation" id="Demo6" style="background-color: #42B618;"></div>
+                </li>
+                <li data-row="1" data-col="6" data-sizex="5" data-sizey="3">
+                    <div class="header"></div>
+                    <div class="content unloaded animation" id="Demo3" style="background-color: #F78E00;"></div>
+                </li>
+                <li data-row="4" data-col="6" data-sizex="5" data-sizey="3">
+                    <div class="header"></div>
+                    <div class="content unloaded animation" id="Demo4" style="background-color: #D62C29;"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </body>
+
+<script type="text/javascript">
+    $(document).ready(Metro.init);
+
+var gridster;
+$(function(){
+    $("#addWidget").hide();
+    $("#removeWidget").hide();
+    $("#widget_preview").show();
+    for (var d = 1; 7 >= d; d++) $("<div>").addClass("dot").css("transition", "right " + (0.6 + d / 10).toFixed(1) + "s ease-out").prependTo($("#widget_preview"));
+    var f = function() {
+                var a = $("div.dot");
+                a.length && (a.toggleClass("open"), setTimeout(f, 1300))
+            },
+            g = (new Date).getTime();
+    var h = function(a) {
+        var b = (new Date).getTime() - g;
+        1300 < b ? (Metro.widget_preview.children("div.dot").remove(), "undefined" !== typeof a && a()) : setTimeout(function() {
+                    Metro.widget_preview.children("div.dot").remove();
+                    "undefined" !== typeof a && a()
+                },
+                        1300 - b)
+    };
+
+    f();
+
+    var r = function(){
+        $("#root").show();
+        $("#widget_preview").hide();
+
+        h();
+        gridster = $(".gridster ul").gridster({
+            widget_base_dimensions: [100, 80],
+            widget_margins: [5, 5],
+            autogrow_cols:true,
+            limit:false,
+            helper: 'clone',
+            draggable: {
+                handle: 'div.header'
+            },
+            resize: {
+                enabled: true,
+                max_size: [6, 6],
+                min_size: [1, 1],
+                resize: function(e, ui, $widget) {
+                    var id = $widget.find("div.content").attr("id");
+                    eval("Demo.BuildChart" + id + "()");
+                },
+                stop: function(e, ui, $widget) {
+                    var id = $widget.find("div.content").attr("id");
+                    eval("Demo.BuildChart" + id + "()");
+                }
+            }
+        }).data('gridster');
+
+        Demo.BuildChartDemo1();
+        Demo.BuildChartDemo6();
+        Demo.BuildChartDemo3();
+        Demo.BuildChartDemo4();
+
+        //$('svg').click(ChartClickEvent);
+        $('#Demo1 svg').click(ChartClickEvent);
+
+
+        $("body").mousewheel(function(event, delta) {
+            console.warn(delta);
+            this.scrollLeft -= (delta * 30);
+            event.preventDefault();
+        });
+
+        $('#BackButton,#HomeButton').click(function(){
+            window.location = "index.html"
+        });
+
+        $("ul li .content").each(function(a) {
+            var b = $(this);
+            //b.addClass("unloaded").addClass("animation");
+            setTimeout(function() {
+                        b.removeClass("unloaded");
+                        setTimeout(function() {
+                                    b.removeClass("animation")
+                                },
+                                300)
+                    },
+                            100 * a)
+        })
+
+    };
+    setTimeout(r,3000);
+
+
+});
+
+var ChartClickEvent = function(e){
+    if(e.currentTarget.nodeName == "svg")
+    {
+        window.location = "index.html"
+    }
+    else if(e.currentTarget.nodeName == "div" && $(e.currentTarget).hasClass("content"))
+    {
+        window.location = "index.html"
+    }
+};
+
+
+</script>
+</html>

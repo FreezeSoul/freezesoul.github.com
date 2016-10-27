@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from www.melonhtml5.com/demo/metro_ui_html/ by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 15 Apr 2014 12:30:02 GMT -->
+<head>
+    <title>MelonHTML5 - Metro Framework</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/metro.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <script type="text/javascript" src="Resources/jquery.js"></script>
+    <script type="text/javascript" src="demo/metro_ui_html/javascript/metro.js"></script>
+    <script type="text/javascript" src="demo/metro_ui_html/javascript/demo.js"></script>
+    <link rel="stylesheet" type="text/css" href="Resources/jquery.gridster.css">
+    <link rel="stylesheet" type="text/css" href="Resources/demo.css">
+    <script src="Resources/jquery.gridster.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/highcharts.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/highcharts-3d.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/highcharts-more.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/modules/solid-gauge.src.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/modules/data.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/modules/drilldown.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/DemoHightCharts.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/jquery.mousewheel.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Resources/h5utils.js" type="text/javascript" charset="utf-8"></script>
+    <!--<script src="Resources/jquery.gridster.with-extras.min.js" type="text/javascript" charset="utf-8"></script>-->
+    <script type="text/javascript" src="Resources/esl.js"></script>
+    <style type="text/css">
+            .gridster li div.header {
+                position: relative;
+                z-index: 1000;
+                height: 30px;
+                cursor: move;
+                background-image: url("images/tittle_bg_40.png");
+            }
+            .gridster li div.content{
+                margin-top:-30px;
+                width: 100%; height: 100%;
+            }
+            #root{
+                margin-top: 110px;
+                margin-left: 50px;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="title">首页</div>
+    <div id="root">
+        <div class="gridster">
+            <ul>
+                <li data-row="1" data-col="1" data-sizex="8" data-sizey="3" >
+                    <div class="header"><div id="linkurl"></div><div id="MaxSize"></div><div class="removed"></div></div>
+                    <div class="content unloaded animation" id="Demo1" style="background-color: #00AAEF;height: 100%"></div>
+                </li>
+                <li data-row="4" data-col="1" data-sizex="4" data-sizey="3" >
+                    <div class="header"><div class="removed"></div></div>
+                    <div class="content unloaded animation" id="Demo2" style="background-color: #42B618;height: 100%"></div>
+                </li>
+                <li data-row="4" data-col="5" data-sizex="4" data-sizey="3" >
+                    <div class="header"><div class="removed"></div></div>
+                    <div class="content unloaded animation" id="Demo4" style="background-color: #F78E00;height: 100%"></div>
+                </li>
+                <li data-row="1" data-col="9" data-sizex="4" data-sizey="3" >
+                    <div class="header"><div class="removed"></div></div>
+                    <div class="content unloaded animation" id="Demo7" style="background-color: #D62C29;height: 100%"></div>
+                </li>
+                <li data-row="4" data-col="9" data-sizex="4" data-sizey="3" >
+                    <div class="header"><div class="removed"></div></div>
+                    <div class="content unloaded animation" id="Demo5" style="background-color: #630C6B;height: 100%"></div>
+                </li>
+                <li data-row="1" data-col="13" data-sizex="4" data-sizey="3" >
+                    <div class="header"><div class="removed"></div></div>
+                    <div class="content unloaded animation" id="Demo8" style="background-color: #FF75A5;height: 100%"></div>
+                </li>
+                <li data-row="4" data-col="13" data-sizex="4" data-sizey="3" >
+                    <div class="header"><div class="removed"></div></div>
+                    <div class="content unloaded animation" id="Demo3" style="background-color: #39599C;height: 100%"></div>
+                </li>
+                <li data-row="1" data-col="17" data-sizex="4" data-sizey="3" >
+                    <div class="header"><div class="removed"></div></div>
+                    <div class="content unloaded animation" id="Demo6" style="background-color: #FFCB08;height: 100%"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div style="display: none">
+        <div class="controls">
+            <button class="js-seralize">Serialize</button>
+        </div>
+        <textarea id="log"></textarea>
+    </div>
+    </body>
+<script type="text/javascript">
+
+var gridster;
+$(function(){
+
+    gridster = $(".gridster ul").gridster({
+        widget_base_dimensions: [80, 80],
+        widget_margins: [5, 5],
+        autogrow_cols:true,
+        draggable: {
+            handle: 'div.header'
+        },
+        resize: {
+            enabled: true,
+            min_size: [1, 1],
+            resize: function(e, ui, $widget) {
+                var id = $widget.find("div.content").attr("id");
+                if(id!="Demo9")
+                    eval("Demo." + id + ".reflow()");
+                else
+                    eval("Demo.BuildChart" + id + "()");
+            },
+            stop: function(e, ui, $widget) {
+                var id = $widget.find("div.content").attr("id");
+                if(id!="Demo9")
+                    eval("Demo." + id + ".reflow()");
+                else
+                    eval("Demo.BuildChart" + id + "()");
+            }
+        }
+    }).data('gridster');
+
+
+    Demo.BuildChartDemo1();
+    Demo.BuildChartDemo2();
+    Demo.BuildChartDemo3();
+    Demo.BuildChartDemo4();
+    Demo.BuildChartDemo5();
+    Demo.BuildChartDemo6();
+    Demo.BuildChartDemo7();
+    Demo.BuildChartDemo8();
+
+    //$('#Demo1 svg,').click(ChartClickEvent);
+    $('#linkurl').click(ChartClickEvent);
+
+    var isCtrl = false;
+
+    function ctrlCheck(e) {
+        if (e.which === 16) {//17 ctrl,16 shift
+            isCtrl = e.type === 'keydown' ? true : false;
+        }
+    }
+
+    $("body").keydown(ctrlCheck).keyup(ctrlCheck).mousewheel(function(event, delta) {
+        //console.warn(delta);
+        if(isCtrl)
+            this.scrollTop -= (delta * 100);
+        else
+            this.scrollLeft -= (delta * 100);
+
+        event.preventDefault();
+    });
+
+
+    $('body').mousedown(function (event) {
+        $(this)
+                .data('down', true)
+                .data('x', event.clientX)
+                .data('y', event.clientY)
+                .data('scrollLeft', this.scrollLeft)
+                .data('scrollTop', this.scrollTop)
+                ;
+
+//        return false;
+    }).mouseup(function (event) {
+        $(this).data('down', false);
+    }).mousemove(function (event) {
+        if ($(this).data('down') == true) {
+            this.scrollLeft = $(this).data('scrollLeft') + $(this).data('x') - event.clientX;
+            this.scrollTop = $(this).data('scrollTop') + $(this).data('y') - event.clientY;
+        }
+    });
+
+
+    $("ul li .content").each(function(a) {
+        var b = $(this);
+        //b.addClass("unloaded").addClass("animation");
+        setTimeout(function() {
+                    b.removeClass("unloaded");
+                    setTimeout(function() {
+                                b.removeClass("animation")
+                            },
+                            300)
+                },
+                        100 * a)
+    })
+});
+$(document).ready(Metro.init);
+
+var ChartClickEvent = function(e){
+    window.location = "index-linkpage.html"
+//    if(e.currentTarget.nodeName == "svg")
+//    {
+//        window.location = "index-linkpage.html"
+//    }
+//    else if(e.currentTarget.nodeName == "div" && $(e.currentTarget).hasClass("content"))
+//    {
+//        window.location = "index-linkpage.html"
+//    }
+};
+
+</script>
+</html>

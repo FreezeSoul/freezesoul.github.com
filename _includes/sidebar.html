@@ -1,0 +1,87 @@
+<section id="sidebar" class="col-md-3">
+    <div id="sticky">
+        <aside id="author" class="content-box">
+            {% if site.author_image %}
+            <a href="/"><img src="{{ site.author_image }}" alt="{{ site.author }}"></a>
+            {% endif %}
+            <h5>{{ site.author_name }}</h5>
+            <p>{{ site.author_description }}</p>
+            <hr>
+            <nav id="navigation">
+                <ul>
+                    {% for page in site.pages %}
+                      {% if page.title %}
+                          <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+                      {% endif %}
+                    {% endfor %}
+
+                    {% for external_page in site.external_pages %}
+                      {% if external_page.title %}
+                          <li><a href="{{ external_page.url | prepend: site.baseurl }}">{{ external_page.title }}</a></li>
+                      {% endif %}
+                    {% endfor %}
+                </ul>
+            </nav>
+        </aside>
+        {% if site.social_widget %}
+        <aside id="social" class="content-box">
+            <ul class="fa-ul">
+              {% if site.github_username %}
+              <li><i class="fa-li fa fa-github"></i><a href="https://www.github.com/{{ site.github_username }}">GitHub</a></li>
+              {% endif %}
+
+              {% if site.facebook_username %}
+              <li><i class="fa-li fa fa-facebook"></i><a href="https://www.facebook.com/{{ site.facebook_username }}">Facebook</a></li>
+              {% endif %}
+
+              {% if site.twitter_username %}
+              <li><i class="fa-li fa fa-twitter"></i><a href="https://www.twitter.com/{{ site.twitter_username }}">Twitter</a></li>
+              {% endif %}
+
+              {% if site.youtube_username %}
+              <li><i class="fa-li fa fa-youtube"></i><a href="https://www.youtube.com/user/{{ site.youtube_username }}">YouTube</a></li>
+              {% endif %}
+
+              {% if site.dribbble_username %}
+              <li><i class="fa-li fa fa-dribbble"></i><a href="https://www.dribbble.com/{{ site.dribbble_username }}">Dribbble</a></li>
+              {% endif %}
+
+              {% if site.googleplus_username %}
+              <li><i class="fa-li fa fa-google-plus"></i><a href="https://plus.google.com/+{{ site.googleplus_username }}">Google+</a></li>
+              {% endif %}
+
+              {% if site.instagram_username %}
+              <li><i class="fa-li fa fa-instagram"></i><a href="https://www.instagram.com/{{ site.instagram_username }}">Instagram</a></li>
+              {% endif %}
+
+              {% if site.pinterest_username %}
+              <li><i class="fa-li fa fa-pinterest"></i><a href="https://www.pinterest.com/{{ site.pinterest_username }}">Pinterest</a></li>
+              {% endif %}
+
+              {% if site.linkedin_username %}
+              <li><i class="fa-li fa fa-linkedin"></i><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">LinkedIn</a></li>
+              {% endif %}
+            </ul>
+        </aside>
+        {% endif %}
+        {% if site.subscribe_widget %}
+        <aside id="subscribe" class="content-box">
+            <h5>Subscribe to posts</h5>
+            <div class="form-group">
+                <form action="{{ site.form_action }}" method="post" target="_blank">
+                    <fieldset class="form-group">
+                        <input id="subscription-email" name="EMAIL" class="form-control" type="email" placeholder="Email address" required>
+                        <div style="position: absolute; left: -5000px;"><input type="text" name="{{ site.list_id }}" tabindex="-1" value=""></div>
+                    </fieldset>
+                    <button type="submit" class="btn btn-primary btn-block subscribe-button">Subscribe</button>
+                </form>
+            </div>
+        </aside>
+        {% endif %}
+        {% if site.copyright_notice %}
+        <aside id="copyright">
+            <p>Copyright&copy; {{ site.time | date: "%Y" }} {{ site.author_name }}. All rights reserved.</p>
+        </aside>
+        {% endif %}
+    </div>
+</section>
