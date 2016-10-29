@@ -26,6 +26,10 @@
         {% if site.social_widget %}
         <aside id="social" class="content-box">
             <ul class="fa-ul">
+			  {% if site.weibo_username %}
+              <li><i class="fa-li fa fa-weibo"></i><a href="https://www.weibo.com/{{ site.weibo_username }}">Weibo</a></li>
+              {% endif %}
+
               {% if site.github_username %}
               <li><i class="fa-li fa fa-github"></i><a href="https://www.github.com/{{ site.github_username }}">GitHub</a></li>
               {% endif %}
