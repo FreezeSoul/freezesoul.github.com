@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Angular2 Android WebWapper"
-permalink:  "angular2-website-android-webwapper"
+title: "Angular2 Android WebWrapper"
+permalink:  "angular2-website-android-webwrapper"
 date:   2016-06-01 00:00:00
 categories: project
 ---
