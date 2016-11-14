@@ -30,4 +30,5 @@ categories: project
   		$('.bxslider').bxSlider();
 	});
 </script>
-演示程序：<a href="/files/NoLink">Donwload</a>  
+
+演示程序：<a href="/files/NoDownload">NoPublic</a> 
