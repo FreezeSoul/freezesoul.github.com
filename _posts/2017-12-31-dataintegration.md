@@ -15,11 +15,11 @@ categories: project
 <link href="/css/jquery.bxslider.css" rel="stylesheet" />
 
 <ul class="bxslider">
-  <li><img src="/images/dataintegration1.PNG" /></li>
-  <li><img src="/images/dataintegration2.PNG" /></li>
-  <li><img src="/images/dataintegration3.PNG" /></li>
-  <li><img src="/images/dataintegration4.PNG" /></li>
-  <li><img src="/images/dataintegration5.PNG" /></li>
+  <li><img src="/images/dataintegration1.png" /></li>
+  <li><img src="/images/dataintegration2.png" /></li>
+  <li><img src="/images/dataintegration3.png" /></li>
+  <li><img src="/images/dataintegration4.png" /></li>
+  <li><img src="/images/dataintegration5.png" /></li>
 </ul>
 
 <script type="text/javascript">
