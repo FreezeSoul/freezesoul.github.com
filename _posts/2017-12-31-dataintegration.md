@@ -7,9 +7,11 @@ categories: project
 ---
 
 为指标平台补充数据集成的能力，近期研究了开源项目kettle，并基于kettle的API开发了Web版本：Kettle数据集成平台。  
+
 方式：  
 1. 通过kettle客户端配置的转换或作业存储至DB的资源库。  
 2. 通过Kettle数据集成平台进行任务调度。  
+
 特点：  
 1. 微服务架构，基于Spring Boot + Dubbo。  
 2. 基于zookeeper api，调度主机可支持多节点主机部署，分摊作业执行节点的压力。  
