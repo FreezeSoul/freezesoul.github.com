@@ -27,7 +27,7 @@ categories: project
 <script src="/js/jquery.bxslider.min.js"></script>
 <link href="/css/jquery.bxslider.css" rel="stylesheet" />
 
-<ul class="bxslider">
+<ul class="bxsliderData">
   <li><img src="/images/dataintegration1.png" /></li>
   <li><img src="/images/dataintegration2.png" /></li>
   <li><img src="/images/dataintegration3.png" /></li>
@@ -37,7 +37,7 @@ categories: project
 
 <script type="text/javascript">
 	$(document).ready(function(){
-  		$('.bxslider').bxSlider();
+  		$('.bxsliderData').bxSlider();
 	});
 </script>
 
