@@ -3,7 +3,7 @@ title: FreezeSoul's Blog
 meta_description: Blog
 baseurl:  "" # Subpath, e.g. /blog/
 url: "http://www.diginfo.me" # Base protocol and hostname
-paginate: 3 # How many posts to show per page
+paginate: 1 # How many posts to show per page
 
 
 # Google Analytics
