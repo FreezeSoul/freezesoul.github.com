@@ -11,8 +11,6 @@
 
 - 👯 I’m looking to collaborate on [DataColour](https://gitee.com/DataColour)
 
-- 🤝 I’m looking for help with [DataColour](https://gitee.com/DataColour)
-
 - 👨‍💻 All of my projects are available at [http://www.diginfo.me](http://www.diginfo.me)
 
 - 💬 Ask me about **everythings about dev**
