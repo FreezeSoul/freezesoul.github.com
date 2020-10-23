@@ -9,11 +9,11 @@
 
 - 🔭 I’m currently working on [DataColour](https://gitee.com/DataColour)
 
-- 🌱 I’m currently learning **TensorFlow**
-
 - 👯 I’m looking to collaborate on [DataColour](https://gitee.com/DataColour)
 
 - 👨‍💻 All of my projects are available at [http://www.diginfo.me](http://www.diginfo.me)
+
+- 🌱 I’m currently learning **TensorFlow**
 
 - 💬 Ask me about **everythings about dev**
 
