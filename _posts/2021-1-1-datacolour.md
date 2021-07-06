@@ -33,7 +33,7 @@ categories: project
 - 前后端均构建了完善的缓存支撑，以确保更优的加载速度与性能。
 - 数据推送服务采用去中心化的推送设计，可根据需求进行节点的灵活扩展。
 
-架构介绍：<a href="http://doc.datacolour.cn/zh/dvp/product-architecture-introduction">更多</a> 
+**架构介绍**：<a href="http://doc.datacolour.cn/zh/dvp/product-architecture-introduction">更多</a> 
 
 ## 二次开发支撑
 
@@ -41,20 +41,21 @@ categories: project
 
 **开发者支持：**
 
-1. **集成开发工具**：`DataColour Cli`，使开发者可以脱离复杂的开发环境配置，结合已有的可视化服务，快速进入开发阶段。
-2. **部件开发模板**：提供了一套完整的插件开发脚手架，基于TypeScript语言与Webpack打包管理，提高开发效率，降低开发的Bug率。
-3. **部件开发规范**：平台提供了一套完备的插件规范，除此之外还提供了插件生命周期、平台调用接口等，让开发者可以轻松应对各种需求。
-4. **平台集成支持**：平台提供了属性自动化配置方案、生命周期与事件管理等支持，让开发者可以快速建立出来可配置的属性编辑功能与生命周期事件调用扩展支持。
-5. **部件发布管理**：平台提供了部件发布管理的功能，使开发者可以轻松的发布与更新开发的视觉部件。
+- **集成开发工具**：`DataColour Cli`，使开发者可以脱离复杂的开发环境配置，结合已有的可视化服务，快速进入开发阶段。
+- **部件开发模板**：提供了一套完整的插件开发脚手架，基于TypeScript语言与Webpack打包管理，提高开发效率，降低开发的Bug率。
+- **部件开发规范**：平台提供了一套完备的插件规范，除此之外还提供了插件生命周期、平台调用接口等，让开发者可以轻松应对各种需求。
+- **平台集成支持**：平台提供了属性自动化配置方案、生命周期与事件管理等支持，让开发者可以快速建立出来可配置的属性编辑功能与生命周期事件调用扩展支持。
+- **部件发布管理**：平台提供了部件发布管理的功能，使开发者可以轻松的发布与更新开发的视觉部件。
 
-开发文档：<a href="http://doc.datacolour.cn/zh/dvp/secondary-development-specification">更多</a>
+**开发文档**：<a href="http://doc.datacolour.cn/zh/dvp/secondary-development-specification">更多</a>
 
 ## 其他
 
-产品官网：<a href="http://www.datacolour.cn/">http://www.datacolour.cn/</a>
+**产品官网**：<a href="http://www.datacolour.cn/">http://www.datacolour.cn/</a>
 
 **试用地址：**
-地址：http://39.101.138.43:8080 
-租户：**【公开项目集】** 
-用户：test 
-密码：123456 
+
+- 地址：http://39.101.138.43:8080
+- 租户：**【公开项目集】**
+- 用户：test
+- 密码：123456
