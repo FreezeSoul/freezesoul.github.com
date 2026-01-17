@@ -1,6 +1,6 @@
 # Site settings
-title: FreezeSoul's Blog
-meta_description: Blog
+title: FreezeSoul's Code Matrix
+meta_description: Exploring the code matrix - AI, Agents, RAG, and beyond
 baseurl:  "" # Subpath, e.g. /blog/
 url: "http://www.diginfo.me" # Base protocol and hostname
 paginate: 1 # How many posts to show per page

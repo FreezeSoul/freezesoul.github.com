@@ -1,46 +1,56 @@
+/* ========================================
+   CYBERPUNK CODE HIGHLIGHTING
+   Enhanced readability with neon style
+   ======================================== */
+
 /* Cyberpunk Color Palette */
 $cyp-neon-pink: #ff006e;
 $cyp-neon-cyan: #00fff5;
 $cyp-neon-purple: #b537f2;
 $cyp-neon-yellow: #faff00;
 $cyp-neon-green: #00ff9f;
+$cyp-neon-orange: #ff6b35;
 $cyp-text-primary: #e0e0e0;
 $cyp-text-secondary: #8888aa;
 $cyp-bg-dark: #0a0a0f;
-$cyp-bg-card: #12121a;
+$cyp-bg-code: #0d1117;
 
-/* Cyberpunk Code Block Styling */
+/* ========================================
+   CODE BLOCK CONTAINER
+   ======================================== */
 .highlight {
-  background: linear-gradient(135deg, rgba(10, 10, 15, 0.95) 0%, rgba(18, 18, 26, 0.95) 100%);
-  padding: 25px 30px 15px 30px;
-  width: calc(100% + 80px);
-  margin: 30px 0px 30px -40px;
-  border: 1px solid rgba(0, 255, 245, 0.3);
-  border-left: 4px solid $cyp-neon-cyan;
+  background: $cyp-bg-code;
+  padding: 20px 25px;
+  margin: 25px 0;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 245, 0.4);
   box-shadow:
-    0 0 20px rgba(0, 255, 245, 0.15),
-    inset 0 0 30px rgba(0, 0, 0, 0.5);
+    0 4px 20px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(0, 255, 245, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
   position: relative;
-  font-family: 'Share Tech Mono', 'Fira Code', 'Consolas', monospace;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-family: 'Share Tech Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  overflow-x: auto;
 
-  /* Terminal header effect */
+  /* Top gradient bar */
   &::before {
-    content: 'CODE_TERMINAL_V3.0//';
+    content: '';
     position: absolute;
     top: 0;
+    left: 0;
     right: 0;
-    background: $cyp-neon-cyan;
-    color: $cyp-bg-dark;
-    font-size: 0.6rem;
-    padding: 3px 10px;
-    font-family: 'Share Tech Mono', monospace;
-    letter-spacing: 1px;
-    font-weight: bold;
+    height: 3px;
+    background: linear-gradient(90deg,
+      $cyp-neon-cyan 0%,
+      $cyp-neon-purple 50%,
+      $cyp-neon-pink 100%
+    );
+    border-radius: 8px 8px 0 0;
   }
 
-  /* Scanline effect over code */
+  /* Subtle grid pattern */
   &::after {
     content: '';
     position: absolute;
@@ -48,143 +58,335 @@ $cyp-bg-card: #12121a;
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(0, 255, 245, 0.03) 2px,
-      rgba(0, 255, 245, 0.03) 4px
-    );
+    background-image:
+      linear-gradient(rgba(0, 255, 245, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 245, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
     pointer-events: none;
   }
 }
 
-/* Cyberpunk Syntax Highlighting */
-.highlight .c { color: #5a6475; font-style: italic; background: rgba(90, 100, 117, 0.1); } /* Comment - muted cyan-gray */
-.highlight .err { color: $cyp-neon-pink; background-color: rgba(255, 0, 110, 0.1); font-weight: bold; } /* Error */
-.highlight .k { color: $cyp-neon-pink; font-weight: bold; text-shadow: 0 0 5px rgba(255, 0, 110, 0.3); } /* Keyword */
-.highlight .o { color: $cyp-neon-purple; font-weight: bold; } /* Operator */
-.highlight .cm { color: #5a6475; font-style: italic; } /* Comment.Multiline */
-.highlight .cp { color: $cyp-neon-yellow; font-weight: bold; } /* Comment.Preproc */
-.highlight .c1 { color: #5a6475; font-style: italic; } /* Comment.Single */
-.highlight .cs { color: $cyp-neon-yellow; font-weight: bold; font-style: italic; } /* Comment.Special */
-.highlight .gd { color: $cyp-text-primary; background-color: rgba(255, 0, 110, 0.15); } /* Generic.Deleted */
-.highlight .gd .x { color: $cyp-text-primary; background-color: rgba(255, 0, 110, 0.3); } /* Generic.Deleted.Specific */
-.highlight .ge { color: $cyp-text-primary; font-style: italic; } /* Generic.Emph */
-.highlight .gr { color: $cyp-neon-pink; font-weight: bold; text-shadow: 0 0 5px rgba(255, 0, 110, 0.5); } /* Generic.Error */
-.highlight .gh { color: $cyp-text-secondary; } /* Generic.Heading */
-.highlight .gi { color: $cyp-text-primary; background-color: rgba(0, 255, 159, 0.15); } /* Generic.Inserted */
-.highlight .gi .x { color: $cyp-text-primary; background-color: rgba(0, 255, 159, 0.3); } /* Generic.Inserted.Specific */
-.highlight .go { color: $cyp-text-secondary; } /* Generic.Output */
-.highlight .gp { color: $cyp-neon-cyan; } /* Generic.Prompt */
-.highlight .gs { color: $cyp-text-primary; font-weight: bold; } /* Generic.Strong */
-.highlight .gu { color: $cyp-neon-purple; } /* Generic.Subheading */
-.highlight .gt { color: $cyp-neon-pink; font-weight: bold; } /* Generic.Traceback */
-.highlight .kc { color: $cyp-neon-pink; font-weight: bold; } /* Keyword.Constant */
-.highlight .kd { color: $cyp-neon-pink; font-weight: bold; } /* Keyword.Declaration */
-.highlight .kp { color: $cyp-neon-pink; font-weight: bold; } /* Keyword.Pseudo */
-.highlight .kr { color: $cyp-neon-pink; font-weight: bold; } /* Keyword.Reserved */
-.highlight .kt { color: $cyp-neon-purple; font-weight: bold; } /* Keyword.Type */
-.highlight .m { color: $cyp-neon-yellow; } /* Literal.Number */
-.highlight .s { color: $cyp-neon-green; text-shadow: 0 0 3px rgba(0, 255, 159, 0.3); } /* Literal.String */
-.highlight .na { color: $cyp-neon-cyan; } /* Name.Attribute */
-.highlight .nb { color: $cyp-neon-purple; } /* Name.Builtin */
-.highlight .nc { color: $cyp-neon-purple; font-weight: bold; } /* Name.Class */
-.highlight .no { color: $cyp-neon-cyan; } /* Name.Constant */
-.highlight .ni { color: $cyp-neon-pink; } /* Name.Entity */
-.highlight .ne { color: $cyp-neon-pink; font-weight: bold; } /* Name.Exception */
-.highlight .nf { color: $cyp-neon-cyan; font-weight: bold; } /* Name.Function */
-.highlight .nn { color: $cyp-text-primary; } /* Name.Namespace */
-.highlight .nt { color: $cyp-neon-pink; font-weight: bold; } /* Name.Tag */
-.highlight .nv { color: $cyp-neon-cyan; } /* Name.Variable */
-.highlight .ow { color: $cyp-neon-purple; font-weight: bold; } /* Operator.Word */
-.highlight .w { color: $cyp-text-secondary; } /* Text.Whitespace */
-.highlight .mf { color: $cyp-neon-yellow; } /* Literal.Number.Float */
-.highlight .mh { color: $cyp-neon-yellow; } /* Literal.Number.Hex */
-.highlight .mi { color: $cyp-neon-yellow; } /* Literal.Number.Integer */
-.highlight .mo { color: $cyp-neon-yellow; } /* Literal.Number.Oct */
-.highlight .sb { color: $cyp-neon-green; } /* Literal.String.Backtick */
-.highlight .sc { color: $cyp-neon-green; } /* Literal.String.Char */
-.highlight .sd { color: $cyp-neon-green; } /* Literal.String.Doc */
-.highlight .s2 { color: $cyp-neon-green; } /* Literal.String.Double */
-.highlight .se { color: $cyp-neon-yellow; } /* Literal.String.Escape */
-.highlight .sh { color: $cyp-neon-green; } /* Literal.String.Heredoc */
-.highlight .si { color: $cyp-neon-green; } /* Literal.String.Interpol */
-.highlight .sx { color: $cyp-neon-green; } /* Literal.String.Other */
-.highlight .sr { color: $cyp-neon-green; font-weight: bold; } /* Literal.String.Regex */
-.highlight .s1 { color: $cyp-neon-green; } /* Literal.String.Single */
-.highlight .ss { color: $cyp-neon-purple; font-weight: bold; } /* Literal.String.Symbol */
-.highlight .bp { color: $cyp-text-secondary; } /* Name.Builtin.Pseudo */
-.highlight .vc { color: $cyp-neon-cyan; } /* Name.Variable.Class */
-.highlight .vg { color: $cyp-neon-cyan; } /* Name.Variable.Global */
-.highlight .vi { color: $cyp-neon-cyan; } /* Name.Variable.Instance */
-.highlight .il { color: $cyp-neon-yellow; } /* Literal.Number.Integer.Long */
+/* ========================================
+   SYNTAX HIGHLIGHTING - Enhanced colors
+   ======================================== */
 
-/* Line numbers */
-.post > .highlight .lineno {
-  color: $cyp-text-secondary;
-  display: inline-block;
-  padding: 0 10px;
-  border-right: 1px solid rgba(0, 255, 245, 0.2);
-  margin-right: 10px;
-  background: rgba(0, 0, 0, 0.3);
-  user-select: none;
+/* Comments */
+.highlight .c,
+.highlight .cm,
+.highlight .c1 {
+  color: #6b7280;
+  font-style: italic;
+  background: rgba(107, 114, 128, 0.1);
+  padding: 1px 4px;
+  border-radius: 3px;
 }
 
-/* Code block content */
+.highlight .cp {
+  color: $cyp-neon-yellow;
+  font-weight: 600;
+}
+
+.highlight .cs {
+  color: $cyp-neon-orange;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Keywords - Pink with glow */
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt {
+  color: $cyp-neon-pink;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(255, 0, 110, 0.4);
+}
+
+/* Operators - Purple */
+.highlight .o,
+.highlight .ow {
+  color: $cyp-neon-purple;
+  font-weight: 600;
+}
+
+/* Strings - Green with glow */
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s2,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .s1,
+.highlight .ss {
+  color: $cyp-neon-green;
+  text-shadow: 0 0 6px rgba(0, 255, 159, 0.3);
+}
+
+.highlight .se {
+  color: $cyp-neon-yellow;
+  font-weight: 600;
+}
+
+.highlight .sr {
+  color: $cyp-neon-green;
+  font-weight: 600;
+  background: rgba(0, 255, 159, 0.15);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+/* Numbers - Yellow */
+.highlight .m,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .il {
+  color: $cyp-neon-yellow;
+  font-weight: 600;
+}
+
+/* Names/Identifiers - Cyan */
+.highlight .na,
+.highlight .nb,
+.highlight .nc,
+.highlight .no,
+.highlight .nf,
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi {
+  color: $cyp-neon-cyan;
+}
+
+.highlight .nc,
+.highlight .nf {
+  font-weight: 600;
+}
+
+.highlight .nf {
+  text-shadow: 0 0 6px rgba(0, 255, 245, 0.3);
+}
+
+/* Special Names */
+.highlight .ni {
+  color: $cyp-neon-pink;
+  font-weight: 600;
+}
+
+.highlight .ne {
+  color: $cyp-neon-pink;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(255, 0, 110, 0.5);
+}
+
+.highlight .nt {
+  color: $cyp-neon-pink;
+  font-weight: 700;
+}
+
+/* Generic */
+.highlight .gd {
+  color: $cyp-text-primary;
+  background: rgba(255, 0, 110, 0.15);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.highlight .gi {
+  color: $cyp-text-primary;
+  background: rgba(0, 255, 159, 0.15);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.highlight .go {
+  color: $cyp-text-secondary;
+}
+
+.highlight .gp {
+  color: $cyp-neon-cyan;
+  font-weight: 600;
+}
+
+.highlight .gh {
+  color: $cyp-neon-purple;
+  font-weight: 700;
+}
+
+.highlight .gu {
+  color: $cyp-neon-purple;
+}
+
+.highlight .gt {
+  color: $cyp-neon-pink;
+  font-weight: bold;
+}
+
+.highlight .gr {
+  color: $cyp-neon-pink;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(255, 0, 110, 0.5);
+}
+
+.highlight .err {
+  color: $cyp-neon-pink;
+  background: rgba(255, 0, 110, 0.2);
+  font-weight: bold;
+}
+
+.highlight .w {
+  color: $cyp-text-secondary;
+}
+
+/* ========================================
+   LINE NUMBERS
+   ======================================== */
+.post > .highlight .lineno {
+  color: #4b5563;
+  display: inline-block;
+  padding: 0 12px;
+  margin-right: 15px;
+  border-right: 2px solid rgba(0, 255, 245, 0.3);
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 0.85rem;
+  user-select: none;
+  min-width: 30px;
+  text-align: right;
+}
+
+/* ========================================
+   PRE & CODE BLOCKS
+   ======================================== */
+.post > .highlight pre {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
 .post > .highlight pre code {
   display: block;
   white-space: pre;
   overflow-x: auto;
-  word-wrap: normal;
+  padding: 0;
   color: $cyp-text-primary;
+  background: transparent;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
 }
 
-/* Inline code styling */
+/* ========================================
+   INLINE CODE
+   ======================================== */
 .post > p > code,
-.post > li > code {
-  background: rgba(0, 255, 245, 0.1);
-  border: 1px solid rgba(0, 255, 245, 0.3);
-  color: $cyp-neon-cyan;
+.post > li > code,
+.post > h1 > code,
+.post > h2 > code,
+.post > h3 > code,
+.post > h4 > code,
+.post > h5 > code,
+.post > h6 > code {
+  background: rgba(250, 255, 0, 0.15);
+  color: $cyp-neon-yellow;
   padding: 3px 8px;
-  border-radius: 3px;
-  font-family: 'Share Tech Mono', monospace;
+  border-radius: 4px;
+  font-family: 'Share Tech Mono', 'Fira Code', monospace;
   font-size: 0.9em;
-  text-shadow: 0 0 5px rgba(0, 255, 245, 0.2);
+  text-shadow: 0 0 8px rgba(250, 255, 0, 0.5);
+  word-wrap: break-word;
+  display: inline;
+  margin: 0 2px;
+  font-weight: 500;
 
   &:hover {
-    background: rgba(0, 255, 245, 0.2);
-    box-shadow: 0 0 10px rgba(0, 255, 245, 0.3);
+    background: rgba(250, 255, 0, 0.25);
+    box-shadow: 0 0 15px rgba(250, 255, 0, 0.5);
   }
 }
 
-/* Gist styling (for embedded GitHub Gists) */
+/* Inline code in headings - smaller */
+.post > h1 > code,
+.post > h2 > code,
+.post > h3 > code {
+  font-size: 0.85em;
+}
+
+/* ========================================
+   GITHUB GIST EMBEDS
+   ======================================== */
 .gist {
-  background: rgba(10, 10, 15, 0.95) !important;
-  border: 1px solid rgba(0, 255, 245, 0.3) !important;
-  border-radius: 0 !important;
+  background: $cyp-bg-code !important;
+  border: 1px solid rgba(0, 255, 245, 0.4) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+  overflow: hidden !important;
 
   .gist-file {
     border: none !important;
     font-family: 'Share Tech Mono', monospace !important;
+    background: rgba(0, 255, 245, 0.05) !important;
+    padding: 10px 15px !important;
   }
 
   .gist-data {
-    background: rgba(18, 18, 26, 0.8) !important;
+    background: rgba(18, 18, 26, 0.5) !important;
     border: none !important;
+    padding: 15px !important;
   }
 
   .gist-meta {
-    background: rgba(181, 55, 242, 0.2) !important;
+    background: rgba(181, 55, 242, 0.15) !important;
     color: $cyp-neon-cyan !important;
     border-top: 1px solid rgba(0, 255, 245, 0.3) !important;
+    padding: 10px 15px !important;
+    font-family: 'Share Tech Mono', monospace !important;
 
     a {
       color: $cyp-neon-cyan !important;
+      text-shadow: 0 0 6px rgba(0, 255, 245, 0.3) !important;
+
+      &:hover {
+        color: $cyp-neon-pink !important;
+        text-shadow: 0 0 6px rgba(255, 0, 110, 0.3) !important;
+      }
     }
   }
 
   pre {
     font-family: 'Share Tech Mono', monospace !important;
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+@media (max-width: 767px) {
+  .highlight {
+    padding: 15px 18px;
+    font-size: 0.85rem;
+    margin: 20px 0;
+    border-radius: 6px;
+  }
+
+  .post > .highlight .lineno {
+    padding: 0 8px;
+    margin-right: 10px;
+    font-size: 0.75rem;
+    min-width: 20px;
+  }
+
+  .post > p > code,
+  .post > li > code {
+    font-size: 0.85em;
+    padding: 2px 6px;
   }
 }
