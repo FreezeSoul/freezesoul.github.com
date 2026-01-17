@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DeepAgent vs DeepResearch：智能体的两条进化路径"
+title: "DeepAgent vs DeepResearch：两种“深度智能体”架构范式的对照分析"
 permalink: "deepagent-vs-deepresearch"
 date:   2025-11-01 00:00:00
 categories: technology
@@ -399,40 +399,6 @@ class UnifiedAgent:
    - 效率 → DeepAgent
    - 深度 → DeepResearch
 
-## 未来的演进
-
-### 短期（2026-2027）
-
-**DeepAgent：**
-- 更强的多模态能力
-- 更自然的交互方式
-- 更广泛的工具集成
-
-**DeepResearch：**
-- 更深入的推理能力
-- 更好的偏见控制
-- 更强的原创性
-
-### 中期（2028-2030）
-
-**融合趋势：**
-- 边界逐渐模糊
-- 复合智能体出现
-- 统一的智能架构
-
-**新形态：**
-- 个人化的智能助手
-- 专业化的智能专家
-- 协作式的智能团队
-
-### 长期愿景
-
-**从工具到伙伴：**
-- 不只是完成任务
-- 能够理解意图
-- 可以主动建议
-- 具备创造性
-
 ## 思考：二分法的局限
 
 DeepAgent vs DeepResearch 的二分法虽然清晰，但可能过于简化。
@@ -464,4 +430,4 @@ DeepAgent vs DeepResearch 的二分法虽然清晰，但可能过于简化。
 
 ---
 
-> *注：本文基于2025年AI技术发展的合理推测，实际情况可能有所不同。*
+> *注：本文基于2025年AI_AGENT技术发展的分析总结。*
