@@ -390,3 +390,93 @@ $cyp-bg-code: #0d1117;
     padding: 2px 6px;
   }
 }
+
+/* ========================================
+   UNIVERSAL CODE COLOR OVERRIDE
+   Maximum priority - overrides everything
+   ======================================== */
+
+/* Force ALL code elements to use neon cyan */
+.post > p > code,
+.post > li > code,
+.post > h1 > code,
+.post > h2 > code,
+.post > h3 > code,
+.post > h4 > code,
+.post > h5 > code,
+.post > h6 > code,
+.post > .highlight pre code,
+.post > .highlight code,
+.highlight code,
+pre code,
+code {
+  color: $cyp-neon-cyan !important;
+}
+
+/* Syntax highlighting keeps its colors, but base text is cyan */
+.post > .highlight pre code {
+  color: $cyp-neon-cyan !important;
+}
+
+/* Ensure syntax-highlighted elements keep their specific colors */
+.post > .highlight .k,
+.post > .highlight .kd,
+.post > .highlight .kn,
+.post > .highlight .kp,
+.post > .highlight .kr,
+.post > .highlight .kt,
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt {
+  color: $cyp-neon-pink !important;
+}
+
+.post > .highlight .s,
+.post > .highlight .sb,
+.post > .highlight .sc,
+.post > .highlight .sd,
+.post > .highlight .s2,
+.post > .highlight .sh,
+.post > .highlight .si,
+.post > .highlight .sx,
+.post > .highlight .s1,
+.post > .highlight .ss,
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s2,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .s1,
+.highlight .ss {
+  color: $cyp-neon-green !important;
+}
+
+.post > .highlight .m,
+.post > .highlight .mf,
+.post > .highlight .mh,
+.post > .highlight .mi,
+.post > .highlight .mo,
+.post > .highlight .il,
+.highlight .m,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .il {
+  color: $cyp-neon-yellow !important;
+}
+
+.post > .highlight .c,
+.post > .highlight .cm,
+.post > .highlight .c1,
+.highlight .c,
+.highlight .cm,
+.highlight .c1 {
+  color: #6b7280 !important;
+}
