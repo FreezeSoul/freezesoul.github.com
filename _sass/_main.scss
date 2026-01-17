@@ -1,156 +1,780 @@
+/* Cyberpunk Color Palette */
+$cyp-neon-pink: #ff006e;
+$cyp-neon-cyan: #00fff5;
+$cyp-neon-purple: #b537f2;
+$cyp-neon-yellow: #faff00;
+$cyp-neon-green: #00ff9f;
+$cyp-text-primary: #e0e0e0;
+$cyp-text-secondary: #8888aa;
+$cyp-border-glow: rgba(0, 255, 245, 0.3);
+
 /* Blog posts */
 .post {
-  padding:50px;
+  padding: 0;
+  position: relative;
+
+  /* Data stream decoration */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom,
+      transparent,
+      $cyp-neon-cyan 50%,
+      transparent
+    );
+    opacity: 0.3;
+    animation: dataStream 3s linear infinite;
+  }
 }
+
+@keyframes dataStream {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0.1; }
+}
+
 .post h1 {
-  margin-bottom:20px;
-  font-family:'Domine', sans-serif;
-  font-weight:700;
-  font-size:2.5rem;
+  margin: 0 0 25px 0;
+  padding: 30px 35px 25px;
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: $cyp-neon-cyan;
+  text-shadow:
+    0 0 10px rgba(0, 255, 245, 0.5),
+    0 0 20px rgba(0, 255, 245, 0.3),
+    2px 2px 0px rgba(181, 55, 242, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 15px;
+  border-bottom: 2px solid $cyp-neon-purple;
+
+  /* Glitch effect on hover */
+  &:hover {
+    animation: glitch 0.3s ease infinite;
+  }
 }
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
 .post header p {
-  margin-bottom:20px;
-  color:#999;
+  margin: 0 35px 25px 35px;
+  color: $cyp-text-secondary;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.85rem;
+  padding: 12px 18px;
+  background: rgba(181, 55, 242, 0.1);
+  border-left: 3px solid $cyp-neon-purple;
+  border-radius: 0 4px 4px 0;
 }
+
 .post header p a[rel="author"] {
-  color:inherit;
+  color: inherit;
   text-decoration: none;
-  border-bottom:1px dotted;
+  border-bottom: 1px dotted $cyp-neon-purple;
 }
+
+.post header p a:hover {
+  color: $cyp-neon-purple;
+  text-shadow: 0 0 10px rgba(181, 55, 242, 0.5);
+}
+
 .post h1 a {
-  color:#555;
+  color: $cyp-neon-cyan;
   text-decoration: none;
-  border-bottom:2px solid #fff;
-  @include transition(.2s);
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $cyp-neon-pink;
+    text-shadow:
+      0 0 15px rgba(255, 0, 110, 0.8),
+      0 0 30px rgba(255, 0, 110, 0.5);
+  }
 }
-.post h1 a:hover {
-  color:#3097d1;
-  border-bottom:3px solid #eee;
-}
+
 .post > p {
-  line-height:1.8rem;
+  line-height: 1.9rem;
+  color: $cyp-text-primary;
+  margin-bottom: 20px;
+  padding: 0 35px;
 }
+
+.post > p:first-of-type {
+  padding-top: 10px;
+}
+
 .post > p img {
-  max-width:100%;
+  max-width: 100%;
+  border: 2px solid $cyp-neon-cyan;
+  box-shadow: 0 0 20px rgba(0, 255, 245, 0.3);
+  border-radius: 0;
 }
+
+.post > p a {
+  color: $cyp-neon-cyan;
+  text-decoration: none;
+  border-bottom: 1px solid $cyp-neon-cyan;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $cyp-neon-pink;
+    border-bottom-color: $cyp-neon-pink;
+    text-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
+  }
+}
+
 blockquote {
-  border-left:4px solid #eee;
-  padding-left:20px;
-  margin:30px;
-  font-style:italic;
+  border-left: 4px solid $cyp-neon-pink;
+  padding: 20px 25px;
+  margin: 30px 35px;
+  font-style: italic;
+  color: $cyp-text-secondary;
+  background: rgba(255, 0, 110, 0.05);
+  border-radius: 0 4px 4px 0;
+  position: relative;
+
+  &::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 3rem;
+    color: $cyp-neon-pink;
+    text-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
+    opacity: 0.5;
+  }
 }
+
 code {
-  white-space:pre;
+  white-space: pre;
+  font-family: 'Share Tech Mono', monospace;
+  background: rgba(0, 255, 245, 0.1);
+  color: $cyp-neon-cyan;
+  padding: 2px 6px;
+  border-radius: 3px;
 }
+
 iframe {
-  max-width:100%;
+  max-width: 100%;
+  border: 2px solid $cyp-neon-purple;
+  box-shadow: 0 0 20px rgba(181, 55, 242, 0.3);
 }
+
 .post ol, .post ul {
-  margin:20px 0;
+  margin: 20px 35px;
+  padding-left: 30px;
 }
-.post > h1, .post > h2, .post > h3, .post > h4, .post > h5, .post > h6 {
-  margin:10px 0;
+
+.post li {
+  margin: 10px 0;
+  color: $cyp-text-primary;
+
+  &::marker {
+    color: $cyp-neon-cyan;
+  }
 }
+
+.post > h2, .post > h3, .post > h4, .post > h5, .post > h6 {
+  margin: 40px 35px 20px 35px;
+  color: $cyp-neon-purple;
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  &:hover {
+    color: $cyp-neon-cyan;
+    text-shadow: 0 0 10px rgba(0, 255, 245, 0.5);
+  }
+}
+
+.post > h2 {
+  font-size: 2rem;
+  border-left: 4px solid $cyp-neon-purple;
+  padding-left: 15px;
+}
+
+.post > h3 {
+  font-size: 1.5rem;
+  color: $cyp-neon-pink;
+  border-left: 3px solid $cyp-neon-pink;
+  padding-left: 12px;
+}
+
 /* Comments */
 #disqus_thread {
-  margin:20px 0px;
+  margin: 30px 35px;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid $cyp-border-glow;
+  border-radius: 8px;
+  position: relative;
+
+  &::before {
+    content: 'COMMUNICATION_CHANNEL//';
+    display: block;
+    font-size: 0.6rem;
+    color: $cyp-neon-cyan;
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
 }
+
 /* Youtube, Vimeo, etc. videos */
 .video-container {
-  position:relative;
-  padding-bottom:56.25%;
-  padding-top:30px;
-  height:0;
-  overflow:hidden;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  border: 2px solid $cyp-neon-purple;
+  box-shadow: 0 0 20px rgba(181, 55, 242, 0.3);
 }
-.video-container iframe, .video-container object, .video-container embed {
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
+
 /* Facebook, Twitter, Google Plus share buttons */
 #social_buttons {
-  padding: 20px 0px;
+  padding: 20px 35px;
+  border-top: 1px solid rgba(0, 255, 245, 0.2);
+  border-bottom: 1px solid rgba(0, 255, 245, 0.2);
+  margin: 30px 0;
+
+  &::before {
+    content: 'SHARE_PROTOCOL//';
+    display: block;
+    font-size: 0.6rem;
+    color: $cyp-neon-cyan;
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
 }
-@media (min-width:544px) {
+
+@media (min-width: 544px) {
   #tweet-button {
-    text-align:center;
+    text-align: center;
   }
   #gplus-button {
-    text-align:right;
-    padding-right:0;
+    text-align: right;
+    padding-right: 0;
   }
   #facebook-button {
-    padding-left:0;
+    padding-left: 0;
   }
 }
+
 /* Next post preview */
 #next_post {
-  text-align:center;
-  padding:0px 0px 20px 0px;
+  text-align: center;
+  padding: 30px 35px;
+  background: linear-gradient(135deg, rgba(0, 255, 245, 0.05) 0%, rgba(181, 55, 242, 0.05) 100%);
+  border: 1px solid $cyp-border-glow;
+  border-radius: 0 0 8px 8px;
+  margin: 30px 0 0 0;
+  position: relative;
+
+  &::before {
+    content: 'NEXT_TRANSMISSION//';
+    display: block;
+    font-size: 0.6rem;
+    color: $cyp-neon-green;
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
 }
+
 #next_post a {
-  text-decoration:none;
+  text-decoration: none;
 }
-#next_post a h2, #next_post a p, #next_post a span {
-  color:#373a3c;
-}
-#next_post a h2 {
-  font-weight:700;
-}
+
+#next_post a h2,
+#next_post a p,
 #next_post a span {
-  padding:5px 10px;
+  color: $cyp-text-primary;
+  transition: all 0.3s ease;
+}
+
+#next_post a h2 {
+  font-weight: 700;
+  color: $cyp-neon-cyan;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+}
+
+#next_post a span {
+  padding: 8px 20px;
   margin: 20px;
-  display:inline-block;
-  border-radius:10px;
-  font-size:0.8rem;
-  color: rgba(0,0,0,0.5);
-  border: 1px solid rgba(0,0,0,0.2);
-  @include transition(.2s);
+  display: inline-block;
+  font-size: 0.8rem;
+  color: $cyp-neon-cyan;
+  border: 1px solid $cyp-neon-cyan;
+  background: rgba(0, 255, 245, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Share Tech Mono', monospace;
+  transition: all 0.3s ease;
 }
+
 #next_post a p {
-  font-weight:400;
-  color: rgba(0,0,0,0.5);
+  font-weight: 400;
+  color: $cyp-text-secondary;
 }
+
+#next_post a:hover h2 {
+  color: $cyp-neon-pink;
+  text-shadow: 0 0 15px rgba(255, 0, 110, 0.5);
+}
+
 #next_post a:hover span {
-  color: rgba(0,0,0,0.6);
-  border: 1px solid rgba(0,0,0,0.4);
+  color: $cyp-neon-pink;
+  border-color: $cyp-neon-pink;
+  background: rgba(255, 0, 110, 0.2);
+  box-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
 }
+
+#next_post a:hover p {
+  color: $cyp-text-primary;
+}
+
 /* Subscribe button at bottom of post */
-.subscribe-button, .subscribe-button:focus, .subscribe-button:active {
-  border:0;
-  background:#9fbb58;
-  outline:none;
-  @include transition(.2s);
+.subscribe-button,
+.subscribe-button:focus,
+.subscribe-button:active {
+  border: 0;
+  background: linear-gradient(135deg, $cyp-neon-pink 0%, $cyp-neon-purple 100%);
+  color: $cyp-text-primary;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow:
+    0 0 20px rgba(255, 0, 110, 0.4),
+    inset 0 0 20px rgba(0, 0, 0, 0.2);
 }
+
 .subscribe-button:hover {
-  background:#8ba644;
-  border:0;
-  outline:none;
+  background: linear-gradient(135deg, $cyp-neon-purple 0%, $cyp-neon-pink 100%);
+  box-shadow:
+    0 0 30px rgba(255, 0, 110, 0.8),
+    0 0 60px rgba(181, 55, 242, 0.4),
+    inset 0 0 30px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
 }
+
 .subscribe-button-post {
-  padding:10px 0;
-  margin:30px auto;
-  min-width:175px;
-  max-width:50%;
+  padding: 15px 30px;
+  margin: 40px 35px;
+  min-width: 200px;
+  max-width: calc(100% - 70px);
+  font-family: 'Share Tech Mono', monospace;
 }
-/* Makes subscribe box pulsate */
-.glowing { 
-  @include animation(pulsate 1.5s ease-in-out infinite alternate);
+
+/* Makes subscribe box pulsate with cyberpunk style */
+.glowing {
+  animation: neonPulsate 2s ease-in-out infinite alternate;
 }
-@include keyframes(pulsate) {
+
+@keyframes neonPulsate {
   from {
-    box-shadow: 0px 0px 20px 0px rgba(255,221,27,0.2);
+    box-shadow:
+      0 0 20px rgba(255, 0, 110, 0.4),
+      0 0 40px rgba(255, 0, 110, 0.2),
+      inset 0 0 20px rgba(0, 0, 0, 0.2);
   }
   to {
-    box-shadow: 0px 0px 40px 0px rgba(255,221,27,1);
+    box-shadow:
+      0 0 40px rgba(255, 0, 110, 0.8),
+      0 0 80px rgba(181, 55, 242, 0.4),
+      inset 0 0 30px rgba(0, 0, 0, 0.3);
   }
 }
+
 /* Pagination next/prev buttons */
-.pager-next a, .pager-prev a {
-  border: 1px solid transparent !important;
-  border-radius: 4px !important;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+.pager-next a,
+.pager-prev a {
+  border: 1px solid $cyp-neon-cyan !important;
+  border-radius: 0 !important;
+  background: rgba(0, 255, 245, 0.05) !important;
+  color: $cyp-neon-cyan !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Share Tech Mono', monospace;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 0 15px rgba(0, 255, 245, 0.2) !important;
+
+  &:hover {
+    background: rgba(0, 255, 245, 0.2) !important;
+    color: $cyp-neon-pink !important;
+    border-color: $cyp-neon-pink !important;
+    box-shadow: 0 0 30px rgba(255, 0, 110, 0.4) !important;
+  }
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+  color: $cyp-text-primary;
+}
+
+th {
+  background: rgba(181, 55, 242, 0.2);
+  color: $cyp-neon-cyan;
+  padding: 15px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Share Tech Mono', monospace;
+  border: 1px solid $cyp-neon-purple;
+}
+
+td {
+  padding: 12px 15px;
+  border: 1px solid rgba(0, 255, 245, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+tr:hover td {
+  background: rgba(0, 255, 245, 0.05);
+  color: $cyp-neon-cyan;
+}
+
+/* Form elements */
+input[type="text"],
+input[type="email"],
+textarea {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid $cyp-neon-purple;
+  color: $cyp-text-primary;
+  padding: 12px 15px;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  font-family: 'Share Tech Mono', monospace;
+
+  &:focus {
+    outline: none;
+    border-color: $cyp-neon-cyan;
+    box-shadow:
+      0 0 15px rgba(0, 255, 245, 0.3),
+      inset 0 0 10px rgba(0, 255, 245, 0.1);
+  }
+
+  &::placeholder {
+    color: $cyp-text-secondary;
+  }
+}
+
+button {
+  background: linear-gradient(135deg, $cyp-neon-cyan 0%, $cyp-neon-purple 100%);
+  border: none;
+  color: $cyp-bg-dark;
+  padding: 12px 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Share Tech Mono', monospace;
+
+  &:hover {
+    background: linear-gradient(135deg, $cyp-neon-purple 0%, $cyp-neon-pink 100%);
+    box-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
+  }
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+
+@media (max-width: 767px) {
+  .post h1 {
+    padding: 20px 20px 15px;
+    font-size: 2rem;
+  }
+
+  .post header p {
+    margin: 0 20px 20px 20px;
+    padding: 10px 15px;
+    font-size: 0.8rem;
+  }
+
+  .post > p {
+    padding: 0 20px;
+  }
+
+  .post > h2,
+  .post > h3,
+  .post > h4,
+  .post > h5,
+  .post > h6 {
+    margin: 30px 20px 15px 20px;
+  }
+
+  .post > h2 {
+    font-size: 1.6rem;
+  }
+
+  .post > h3 {
+    font-size: 1.3rem;
+  }
+
+  .post ol,
+  .post ul {
+    margin: 20px;
+    padding-left: 25px;
+  }
+
+  blockquote {
+    margin: 25px 20px;
+    padding: 15px 20px;
+  }
+
+  #disqus_thread {
+    margin: 25px 20px;
+    padding: 20px;
+  }
+
+  #social_buttons {
+    padding: 15px 20px;
+  }
+
+  #next_post {
+    padding: 25px 20px;
+  }
+
+  .subscribe-button-post {
+    margin: 30px 20px;
+    max-width: calc(100% - 40px);
+  }
+
+  .contact-form {
+    margin: 30px 20px;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .post > p,
+  .post > h2,
+  .post > h3,
+  .post > h4,
+  .post > h5,
+  .post > h6,
+  .post ol,
+  .post ul,
+  blockquote {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .post header p {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+
+/* Contact Form Specific Styles */
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(18, 18, 26, 0.8);
+  border: 1px solid $cyp-border-glow;
+  position: relative;
+
+  /* Header decoration */
+  &::before {
+    content: 'CONTACT_PROTOCOL_V2.0//';
+    display: block;
+    font-size: 0.7rem;
+    color: $cyp-neon-pink;
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 0, 110, 0.3);
+  }
+
+  /* Corner accents */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-right: 3px solid $cyp-neon-cyan;
+    border-bottom: 3px solid $cyp-neon-cyan;
+  }
+
+  .form-group {
+    margin-bottom: 25px;
+    position: relative;
+
+    /* Label decoration */
+    &::before {
+      content: attr(data-label);
+      position: absolute;
+      top: -10px;
+      left: 15px;
+      background: $cyp-bg-dark;
+      padding: 0 10px;
+      font-size: 0.65rem;
+      color: $cyp-neon-purple;
+      font-family: 'Share Tech Mono', monospace;
+      letter-spacing: 2px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:focus-within::before {
+      opacity: 1;
+    }
+  }
+
+  .form-control {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid $cyp-neon-purple;
+    color: $cyp-text-primary;
+    padding: 15px 20px;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+
+    &:focus {
+      outline: none;
+      border-color: $cyp-neon-cyan;
+      background: rgba(0, 0, 0, 0.7);
+      box-shadow:
+        0 0 20px rgba(0, 255, 245, 0.3),
+        inset 0 0 15px rgba(0, 255, 245, 0.1);
+      transform: translateX(5px);
+    }
+
+    &::placeholder {
+      color: $cyp-text-secondary;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.85rem;
+    }
+
+    /* Different border colors for each input */
+    &[name="name"] {
+      border-left: 4px solid $cyp-neon-cyan;
+
+      &:focus {
+        border-color: $cyp-neon-cyan;
+        box-shadow:
+          0 0 20px rgba(0, 255, 245, 0.4),
+          inset 0 0 15px rgba(0, 255, 245, 0.15);
+      }
+    }
+
+    &[name="_replyto"] {
+      border-left: 4px solid $cyp-neon-pink;
+
+      &:focus {
+        border-color: $cyp-neon-pink;
+        box-shadow:
+          0 0 20px rgba(255, 0, 110, 0.4),
+          inset 0 0 15px rgba(255, 0, 110, 0.15);
+      }
+
+      &::placeholder {
+        color: rgba(255, 0, 110, 0.5);
+      }
+    }
+
+    &[name="message"] {
+      border-left: 4px solid $cyp-neon-green;
+      min-height: 150px;
+      resize: vertical;
+
+      &:focus {
+        border-color: $cyp-neon-green;
+        box-shadow:
+          0 0 20px rgba(0, 255, 159, 0.4),
+          inset 0 0 15px rgba(0, 255, 159, 0.15);
+      }
+
+      &::placeholder {
+        color: rgba(0, 255, 159, 0.5);
+      }
+    }
+  }
+
+  /* Submit button */
+  .btn-default {
+    width: 100%;
+    background: linear-gradient(135deg, $cyp-neon-pink 0%, $cyp-neon-purple 100%);
+    border: 2px solid transparent;
+    color: $cyp-text-primary;
+    padding: 18px 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+
+    /* Glow effect */
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    &:hover {
+      background: linear-gradient(135deg, $cyp-neon-purple 0%, $cyp-neon-cyan 100%);
+      color: $cyp-bg-dark;
+      border-color: $cyp-neon-cyan;
+      box-shadow:
+        0 0 30px rgba(0, 255, 245, 0.6),
+        0 0 60px rgba(0, 255, 245, 0.3);
+      transform: scale(1.02);
+
+      &::before {
+        left: 100%;
+      }
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
 }

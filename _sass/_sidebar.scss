@@ -1,70 +1,334 @@
-/* Author image, name, description */
+/* Cyberpunk Color Palette */
+$cyp-neon-pink: #ff006e;
+$cyp-neon-cyan: #00fff5;
+$cyp-neon-purple: #b537f2;
+$cyp-neon-yellow: #faff00;
+$cyp-neon-green: #00ff9f;
+$cyp-text-primary: #e0e0e0;
+$cyp-text-secondary: #8888aa;
+$cyp-border-glow: rgba(0, 255, 245, 0.3);
+
+/* ========================================
+   SIDEBAR WRAPPER
+   ======================================== */
+#sidebar {
+  width: 100%;
+}
+
+#sticky {
+  width: 100%;
+}
+
+/* ========================================
+   PANEL HEADER LABELS
+   ======================================== */
+.panel-label {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  margin-bottom: 12px;
+  border-radius: 3px;
+  font-weight: 600;
+  text-shadow: 0 0 8px currentColor;
+  position: relative;
+  z-index: 2;
+}
+
+/* ========================================
+   AUTHOR SECTION
+   ======================================== */
 #author {
-  text-align:center;
+  text-align: center;
+  padding: 30px 20px 25px;
+  position: relative;
+  background: linear-gradient(135deg, rgba(181, 55, 242, 0.08) 0%, rgba(0, 255, 245, 0.04) 100%);
+  border-bottom: 1px solid $cyp-border-glow;
 }
+
+#author::before {
+  content: 'AUTHOR//';
+  @extend .panel-label;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: $cyp-neon-cyan;
+  background: rgba(0, 255, 245, 0.15);
+  z-index: 2;
+}
+
 #author img {
-  border-radius: 100%;
-  border:5px solid #fff;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  border: 3px solid #fff;
-  max-width:50%;
-  margin-bottom:20px;
+  border-radius: 50%;
+  border: 3px solid $cyp-neon-cyan;
+  box-shadow:
+    0 0 20px rgba(0, 255, 245, 0.4),
+    0 0 40px rgba(0, 255, 245, 0.2);
+  max-width: 55%;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow:
+      0 0 30px rgba(0, 255, 245, 0.6),
+      0 0 50px rgba(0, 255, 245, 0.3);
+    transform: scale(1.03);
+  }
 }
+
 #author h5 {
-  font-weight:bold;
+  font-weight: 700;
+  color: $cyp-neon-cyan;
+  text-shadow: 0 0 15px rgba(0, 255, 245, 0.5);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
+
 #author p {
-  font-size:0.8rem;
-  margin:0px 10px;
+  font-size: 0.92rem;
+  margin: 0px 10px;
+  color: $cyp-text-primary;
+  line-height: 1.7;
+  opacity: 0.95;
 }
-/* Page navigation */
+
+/* ========================================
+   NAVIGATION SECTION
+   ======================================== */
+#navigation {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(181, 55, 242, 0.2);
+}
+
+#navigation::before {
+  content: 'NAV_SYSTEM';
+  @extend .panel-label;
+  margin-left: 18px;
+  margin-bottom: 15px;
+  color: $cyp-neon-purple;
+  background: rgba(181, 55, 242, 0.15);
+  z-index: 2;
+}
+
 #navigation ul {
   list-style-type: none;
-  padding:0px 20px 0px 20px;
+  padding: 0px 18px;
 }
+
 #navigation ul li {
-  display:inline-block;
+  display: block;
+  margin: 5px 0;
 }
-#navigation ul li:nth-child(n):not(:last-child):after {
-  content: " \00b7";
-}
+
 #navigation a {
-  color:#555;
-  font-weight:700;
+  color: $cyp-text-primary;
+  font-weight: 500;
+  font-size: 0.96rem;
+  text-decoration: none;
+  display: block;
+  padding: 11px 14px;
+  border-radius: 6px;
+  margin: 2px 0;
+  transition: all 0.25s ease;
+  position: relative;
+
+  /* Subtle left accent */
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    background: $cyp-neon-cyan;
+    border-radius: 0 2px 2px 0;
+    transition: height 0.25s ease;
+  }
+
+  &:hover {
+    color: $cyp-neon-cyan;
+    background: rgba(0, 255, 245, 0.08);
+    padding-left: 20px;
+    text-shadow: 0 0 10px rgba(0, 255, 245, 0.4);
+
+    &::before {
+      height: 70%;
+    }
+  }
 }
-/* Social links */
+
+/* ========================================
+   SOCIAL LINKS SECTION
+   ======================================== */
 #social {
-  font-weight:300;
+  padding: 20px 0;
 }
+
+#social::before {
+  content: 'CONNECT';
+  @extend .panel-label;
+  margin-left: 18px;
+  margin-bottom: 15px;
+  color: $cyp-neon-pink;
+  background: rgba(255, 0, 110, 0.15);
+  z-index: 2;
+}
+
 #social a {
   text-decoration: none;
+  transition: all 0.25s ease;
 }
+
 #social li {
-  padding-left:5px;
+  padding: 10px 12px;
+  margin: 3px 0;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  list-style: none;
 }
+
 #social ul {
-  padding-left:10px;
+  padding-left: 8px;
+  list-style: none;
 }
+
 #social .fa-li {
-  color:#9da9b0;
-  margin-top:2px;
+  color: $cyp-neon-purple;
+  margin-top: 3px;
+  font-size: 1rem;
+  margin-right: 8px;
 }
-#social a:hover, a:focus {
-  color: #216a94;
-  text-decoration: underline;
+
+#social a {
+  color: $cyp-text-primary;
+  font-size: 0.94rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: $cyp-neon-pink;
+  }
 }
-/* Subscribe form */
+
+#social li:hover {
+  background: rgba(255, 0, 110, 0.08);
+}
+
+/* ========================================
+   SUBSCRIBE FORM SECTION
+   ======================================== */
 #subscribe {
-  padding:20px;
+  padding: 25px 18px;
+  background: linear-gradient(135deg, rgba(255, 0, 110, 0.08) 0%, rgba(181, 55, 242, 0.04) 100%);
+  border-top: 1px solid rgba(255, 0, 110, 0.3);
 }
+
+#subscribe::before {
+  content: 'SUBSCRIBE';
+  @extend .panel-label;
+  display: block;
+  margin-bottom: 18px;
+  color: $cyp-neon-pink;
+  background: rgba(255, 0, 110, 0.15);
+  z-index: 2;
+}
+
 #subscribe h5 {
-  margin-bottom:20px;
-  padding-bottom:5px;
-  border-bottom:1px solid #eee;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 0, 110, 0.3);
+  color: $cyp-text-primary;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
-/* Copyright notice */
+
+#subscribe input[type="email"] {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(181, 55, 242, 0.4);
+  color: $cyp-text-primary;
+  padding: 12px 14px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+    border-color: $cyp-neon-cyan;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(0, 255, 245, 0.25);
+  }
+
+  &::placeholder {
+    color: $cyp-text-secondary;
+  }
+}
+
+#subscribe button {
+  width: 100%;
+  margin-top: 12px;
+  font-size: 0.88rem;
+  padding: 12px 16px;
+  border-radius: 6px;
+}
+
+/* ========================================
+   COPYRIGHT NOTICE
+   ======================================== */
 #copyright {
-  font-weight:300;
-  text-align:center;
-  font-size:0.6rem;
+  text-align: center;
+  padding: 20px 15px;
+  border-top: 1px solid rgba(0, 255, 245, 0.15);
+}
+
+#copyright::before {
+  content: 'SYSTEM: ONLINE';
+  @extend .panel-label;
+  display: block;
+  margin-bottom: 12px;
+  color: $cyp-neon-green;
+  background: rgba(0, 255, 159, 0.15);
+  z-index: 2;
+}
+
+#copyright p {
+  margin: 0;
+  font-size: 0.78rem;
+  color: $cyp-text-primary;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+@media (max-width: 767px) {
+  #author,
+  #navigation,
+  #social,
+  #subscribe,
+  #copyright {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #navigation ul,
+  #social ul {
+    padding-left: 15px;
+  }
+
+  .panel-label,
+  #navigation::before,
+  #social::before,
+  #subscribe::before,
+  #copyright::before {
+    margin-left: 15px;
+    font-size: 0.6rem;
+  }
 }

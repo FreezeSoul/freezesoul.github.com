@@ -1,4 +1,4 @@
-<section id="sidebar" class="col-md-3">
+<section id="sidebar">
     <div id="sticky">
         <aside id="author" class="content-box">
             {% if site.author_image %}
@@ -6,23 +6,22 @@
             {% endif %}
             <h5>{{ site.author_name }}</h5>
             <p>{{ site.author_description }}</p>
-            <hr>
-            <nav id="navigation">
-                <ul>
-                    {% for page in site.pages %}
-                      {% if page.title %}
-                          <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-                      {% endif %}
-                    {% endfor %}
-
-                    {% for external_page in site.external_pages %}
-                      {% if external_page.title %}
-                          <li><a href="{{ external_page.url | prepend: site.baseurl }}">{{ external_page.title }}</a></li>
-                      {% endif %}
-                    {% endfor %}
-                </ul>
-            </nav>
         </aside>
+        <nav id="navigation" class="content-box">
+            <ul>
+                {% for page in site.pages %}
+                  {% if page.title %}
+                      <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+                  {% endif %}
+                {% endfor %}
+
+                {% for external_page in site.external_pages %}
+                  {% if external_page.title %}
+                      <li><a href="{{ external_page.url | prepend: site.baseurl }}">{{ external_page.title }}</a></li>
+                  {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
         {% if site.social_widget %}
         <aside id="social" class="content-box">
             <ul class="fa-ul">

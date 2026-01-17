@@ -2,11 +2,23 @@
 <html lang="en">
     {% include head.html %}
     <body>
-        <div class="container">
-            <div class="row">
-                {% if site.sidebar == 'left' %}{% include sidebar.html %}{% endif %}
-                <section id="main" class="col-md-9">{{ content }}</section>
-                {% if site.sidebar == 'right' %}{% include sidebar.html %}{% endif %}
+        <div class="cyber-wrapper">
+            <!-- Full-width background with grid pattern -->
+            <div class="cyber-background"></div>
+
+            <!-- Modern flexible container -->
+            <div class="cyber-container">
+                <div class="cyber-layout">
+                    {% if site.sidebar == 'left' %}
+                    <aside class="cyber-sidebar">{% include sidebar.html %}</aside>
+                    {% endif %}
+
+                    <main class="cyber-main" id="main">{{ content }}</main>
+
+                    {% if site.sidebar == 'right' %}
+                    <aside class="cyber-sidebar">{% include sidebar.html %}</aside>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </body>
