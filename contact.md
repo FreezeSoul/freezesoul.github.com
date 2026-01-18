@@ -48,7 +48,7 @@ permalink: /contact/
 
     <div class="contact-form-wrapper">
         <h3>Send a Message</h3>
-        <form action="https://formspree.io/f/freezesoul@gmail.com" method="POST" class="contact-form">
+        <form action="https://formspree.io/f/mvzzkwgy" method="POST" class="contact-form">
             <div class="form-group">
                 <label for="email">Your email:</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="your@email.com" required>
