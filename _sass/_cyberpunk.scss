@@ -285,8 +285,8 @@ $cyp-border-glow: rgba(0, 255, 245, 0.3);
   letter-spacing: 1px;
   text-shadow: 0 0 5px rgba(181, 55, 242, 0.3);
 
-  time,
-  span {
+  .time,
+  .author {
     color: $cyp-neon-cyan;
   }
 }

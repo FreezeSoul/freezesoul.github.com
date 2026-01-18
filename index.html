@@ -2,33 +2,36 @@
 layout: default
 ---
 {% for post in paginator.posts %}
-  <article class="content-box post">
-    <header>
-      <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-      <p><span class="post-meta">[AUTHOR: {{ post.author }}] [DATE: <time pubdate datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y-%m-%d" }}</time>]</span></p>
-    </header>
-    <p>{{ post.content }}</p>
-  </article>
+<article class="content-box post">
+     <header>
+          <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+          <p><span class="post-meta">[AUTHOR: <span class="author">{{ post.author }}</span>] [DATE: <time class="time"
+                         pubdate datetime="{{ post.date | date: " %Y-%m-%d" }}">{{ post.date | date: "%Y-%m-%d"
+                         }}</time>]</span></p>
+     </header>
+     <p>{{ post.content }}</p>
+</article>
 {% endfor %}
 
 {% if paginator.total_pages > 1 %}
 <nav>
-  <ul class="pager">
-      {% if paginator.previous_page %}
-      <li class="pager-prev">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Previous">
-          <span aria-hidden="true">&laquo; Newer</span>
-        </a>
-      </li>
-      {% endif %}
+     <ul class="pager">
+          {% if paginator.previous_page %}
+          <li class="pager-prev">
+               <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"
+                    aria-label="Previous">
+                    <span aria-hidden="true">&laquo; Newer</span>
+               </a>
+          </li>
+          {% endif %}
 
-      {% if paginator.next_page %}
-      <li class="pager-next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Next">
-          <span aria-hidden="true">Older &raquo;</span>
-        </a>
-      </li>
-      {% endif %}
-  </ul>
+          {% if paginator.next_page %}
+          <li class="pager-next">
+               <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Next">
+                    <span aria-hidden="true">Older &raquo;</span>
+               </a>
+          </li>
+          {% endif %}
+     </ul>
 </nav>
 {% endif %}

@@ -422,6 +422,11 @@ $cyp-bg-code: #0d1117;
    Maximum priority - overrides everything
    ======================================== */
 
+.highlight pre code{
+ word-break: break-word;
+ white-space: break-spaces;  
+}
+
 /* Force ALL code elements to use neon cyan */
 .post > p > code,
 .post > li > code,
