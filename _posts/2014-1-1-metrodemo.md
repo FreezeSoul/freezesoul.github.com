@@ -7,7 +7,7 @@ date:   2014-01-01 00:00:00
 categories: javascript
 ---
 
-这是之前花了3天时间做的一个Metro风格的Dashboard Demo效果，因为比较急，抠了一套线上的模板，代码非常凌乱。  
+这是之前花了3天时间做的一个Metro风格的Dashboard Demo效果，因为比较急，抠了一套线上的模板，代码比较乱，但效果还不错。  
 演示主要用到了两个重要插件:  
 1. gridster <a href="http://gridster.net">link</a>(下面演示中，点击详情页可查看效果)  
 2. gridList <a href="https://github.com/hootsuite/grid">link</a>(下面演示中，首页即是效果)  

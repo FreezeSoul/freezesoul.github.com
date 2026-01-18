@@ -425,7 +425,7 @@ Modular RAG（模块化）
     └── 链路增强：迭代、递归、自适应
 ```
 
-![Modular RAG Technical Map](/images/ModularRAG.png)
+![Modular RAG Technical Map](/images/RAG-Cheatsheet.png)
 
 ## 七、实践建议
 
