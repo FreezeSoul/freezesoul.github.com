@@ -100,7 +100,7 @@ $cyp-border-glow: rgba(0, 255, 245, 0.3);
    ======================================== */
 #navigation {
   padding: 20px 0;
-  border-bottom: 1px solid rgba(181, 55, 242, 0.2);
+  border-bottom: 1px solid $cyp-border-glow;
 }
 
 #navigation::before {
