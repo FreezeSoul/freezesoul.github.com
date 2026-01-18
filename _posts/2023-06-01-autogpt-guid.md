@@ -77,7 +77,7 @@ AutoGPT 的核心是一个不断循环的执行流程：
 
 这个循环会一直持续，直到所有目标完成。这就是"自主"的本质——AI 自己决定下一步做的事情。
 
-<img src="/images/autogpt-workflow.jpg" alt="AutoGPT 运行机制" />
+<img src="/images/autogpt-workflow.png" alt="AutoGPT 运行机制" />
 
 ## 记忆系统：短期与长期
 
