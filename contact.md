@@ -48,27 +48,17 @@ permalink: /contact/
 
     <div class="contact-form-wrapper">
         <h3>Send a Message</h3>
-        <form action="https://formspree.io/f/{{ site.email }}" method="POST" class="contact-form">
+        <form action="https://formspree.io/f/freezesoul@gmail.com" method="POST" class="contact-form">
             <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Your name" required>
+                <label for="email">Your email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="your@email.com" required>
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="_replyto" placeholder="your@email.com" required>
+                <label for="message">Your message:</label>
+                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Tell me more..." required></textarea>
             </div>
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" class="form-control" id="subject" name="_subject" placeholder="What's this about?" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea rows="6" class="form-control" id="message" name="message" placeholder="Tell me more..." required></textarea>
-            </div>
-            <input type="text" name="_gotcha" style="display:none">
-            <input type="hidden" name="_next" value="{{ "/sent.html" | prepend: site.baseurl | prepend: site.url }}">
-            <button type="submit" class="btn btn-submit">
-                <span>Send Message</span>
+            <button type="submit" class="btn-submit">
+                <span>Send</span>
                 <span class="btn-arrow">→</span>
             </button>
         </form>
@@ -95,7 +85,7 @@ permalink: /contact/
 .contact-intro p {
     font-size: 1.1em;
     line-height: 1.8;
-    color: #8888aa;
+    color: #cccccc;
 }
 
 .contact-container {
@@ -169,7 +159,7 @@ permalink: /contact/
 
 .contact-details p {
     margin: 0 0 8px 0;
-    color: #8888aa;
+    color: #cccccc;
     font-size: 0.9em;
 }
 
