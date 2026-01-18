@@ -109,15 +109,46 @@ body::before {
   }
 
   .cyber-sidebar {
-    position: sticky;
+    position: fixed;
     top: 40px;
-    /* No height limit - let content flow naturally */
-    align-self: start;
+    left: calc((100vw - min(100%, 1400px)) / 2 + 20px);
+    width: 280px;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 100;
+
+    /* Custom scrollbar styling */
+    scrollbar-width: thin;
+    scrollbar-color: $cyp-neon-cyan rgba(0, 0, 0, 0.3);
+
+    /* Hide scrollbar but keep functionality */
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 255, 245, 0.3);
+      border-radius: 2px;
+
+      &:hover {
+        background: rgba(0, 255, 245, 0.5);
+      }
+    }
 
     /* Ensure child elements don't overflow */
     > * {
       max-width: 100%;
     }
+  }
+
+  /* Adjust main content to account for fixed sidebar */
+  .cyber-main {
+    margin-left: 320px;
   }
 }
 
@@ -127,9 +158,13 @@ body::before {
     max-width: 1600px;
   }
 
-  .cyber-layout {
-    grid-template-columns: 320px 1fr;
-    gap: 50px;
+  .cyber-sidebar {
+    width: 320px;
+    left: calc((100vw - min(100%, 1600px)) / 2 + 20px);
+  }
+
+  .cyber-main {
+    margin-left: 370px;
   }
 }
 
@@ -139,9 +174,13 @@ body::before {
     max-width: 1800px;
   }
 
-  .cyber-layout {
-    grid-template-columns: 360px 1fr;
-    gap: 60px;
+  .cyber-sidebar {
+    width: 360px;
+    left: calc((100vw - min(100%, 1800px)) / 2 + 20px);
+  }
+
+  .cyber-main {
+    margin-left: 420px;
   }
 }
 

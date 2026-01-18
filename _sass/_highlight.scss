@@ -64,6 +64,21 @@ $cyp-bg-code: #0d1117;
     background-size: 20px 20px;
     pointer-events: none;
   }
+
+  /* Remove all styling from nested pre.highlight elements */
+  pre.highlight {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+
+    &::before,
+    &::after {
+      display: none !important;
+    }
+  }
 }
 
 /* ========================================
@@ -262,7 +277,18 @@ $cyp-bg-code: #0d1117;
 /* ========================================
    PRE & CODE BLOCKS
    ======================================== */
-.post > .highlight pre {
+/* Remove styling from nested pre.highlight to avoid double borders */
+.post > .highlight pre.highlight,
+.highlight pre.highlight {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.post > .highlight pre,
+.highlight pre {
   margin: 0;
   padding: 0;
   background: transparent;
