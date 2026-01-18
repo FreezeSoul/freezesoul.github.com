@@ -86,7 +86,7 @@ body::before {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
   position: relative;
   z-index: 1;
 }
@@ -96,7 +96,7 @@ body::before {
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
-  padding: 40px 0;
+  padding: 20px;
   min-height: 100vh;
 }
 
@@ -104,51 +104,15 @@ body::before {
 @media (min-width: 768px) {
   .cyber-layout {
     grid-template-columns: 280px 1fr;
-    gap: 40px;
+    gap: 25px;
+    padding: 25px;
     align-items: start;
   }
 
   .cyber-sidebar {
-    position: fixed;
-    top: 40px;
-    left: calc((100vw - min(100%, 1400px)) / 2 + 20px);
-    width: 280px;
-    max-height: calc(100vh - 80px);
-    overflow-y: auto;
-    overflow-x: hidden;
-    z-index: 100;
-
-    /* Custom scrollbar styling */
-    scrollbar-width: thin;
-    scrollbar-color: $cyp-neon-cyan rgba(0, 0, 0, 0.3);
-
-    /* Hide scrollbar but keep functionality */
-    &::-webkit-scrollbar {
-      width: 4px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: rgba(0, 0, 0, 0.2);
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: rgba(0, 255, 245, 0.3);
-      border-radius: 2px;
-
-      &:hover {
-        background: rgba(0, 255, 245, 0.5);
-      }
-    }
-
-    /* Ensure child elements don't overflow */
-    > * {
-      max-width: 100%;
-    }
-  }
-
-  /* Adjust main content to account for fixed sidebar */
-  .cyber-main {
-    margin-left: 320px;
+    position: sticky;
+    top: 25px;
+    align-self: start;
   }
 }
 
@@ -158,13 +122,10 @@ body::before {
     max-width: 1600px;
   }
 
-  .cyber-sidebar {
-    width: 320px;
-    left: calc((100vw - min(100%, 1600px)) / 2 + 20px);
-  }
-
-  .cyber-main {
-    margin-left: 370px;
+  .cyber-layout {
+    grid-template-columns: 320px 1fr;
+    gap: 35px;
+    padding: 35px;
   }
 }
 
@@ -174,24 +135,17 @@ body::before {
     max-width: 1800px;
   }
 
-  .cyber-sidebar {
-    width: 360px;
-    left: calc((100vw - min(100%, 1800px)) / 2 + 20px);
-  }
-
-  .cyber-main {
-    margin-left: 420px;
+  .cyber-layout {
+    grid-template-columns: 360px 1fr;
+    gap: 40px;
+    padding: 40px;
   }
 }
 
 /* Mobile styles */
 @media (max-width: 767px) {
-  .cyber-container {
-    padding: 0 15px;
-  }
-
   .cyber-layout {
-    padding: 20px 0;
+    padding: 15px;
     gap: 20px;
   }
 
