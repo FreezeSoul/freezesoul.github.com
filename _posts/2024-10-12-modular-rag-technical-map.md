@@ -22,6 +22,8 @@ categories: technology
 
 RAG的核心思想是：**让LLM在回答问题时，先从大量文档中检索相关信息，然后基于这些信息生成回答**。
 
+![RAG](/images/LLMRAG.png)
+
 ```
 用户查询 → 检索相关文档 → 生成回答
           ↑
@@ -362,6 +364,8 @@ N次迭代或LLM判断可以回答后停止。
        ↓ 否
     直接生成 → 评判 → 输出
 ```
+
+![‍⁤⁡从传统RAG到Agentic RAG的演进](/images/AgenticRAG.png)
 
 ## 五、RAG评估体系
 
