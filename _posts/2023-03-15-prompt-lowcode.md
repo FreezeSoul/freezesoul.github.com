@@ -2,6 +2,7 @@
 layout: post
 title: "告别代码：Prompt 编程如何重新定义软件开发"
 permalink: "prompt-lowcode"
+author: "FS.IO"
 date:   2023-03-15 00:00:00
 categories: technology
 ---

@@ -2,6 +2,7 @@
 layout: post
 title: "机器学习、深度学习与神经网络的概念解析"
 permalink: "ai-concepts"
+author: "FS.IO"
 date:   2020-12-12 00:00:00
 categories: technology
 ---

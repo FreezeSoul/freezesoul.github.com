@@ -2,6 +2,7 @@
 layout: post
 title: "T4 MSSQL CodeGenerator"
 permalink:  "t4-mssql-codegenerator"
+author: "FS.IO"
 date:   2011-01-01 00:00:00
 categories: project 
 ---

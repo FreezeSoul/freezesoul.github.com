@@ -2,6 +2,7 @@
 layout: post
 title: "Design Patterns Intro"
 permalink:  "design-patterns-intro"
+author: "FS.IO"
 date:   2012-06-01 00:00:00
 categories: architecture
 ---

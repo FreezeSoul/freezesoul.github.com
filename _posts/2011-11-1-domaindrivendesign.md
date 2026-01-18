@@ -2,6 +2,7 @@
 layout: post
 title: "DDD:Domain-driven design"
 permalink:  "ddd-domain-driven-design"
+author: "FS.IO"
 date:   2011-11-01 00:00:00
 categories: architecture
 ---

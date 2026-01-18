@@ -2,6 +2,7 @@
 layout: post
 title: "Auto Generate WinformUI T4 Project"
 permalink:  "auto-generate-winformui-t4-project"
+author: "FS.IO"
 date:   2011-05-01 00:00:00
 categories: architecture
 ---

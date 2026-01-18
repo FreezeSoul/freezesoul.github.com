@@ -2,6 +2,7 @@
 layout: post
 title: "DataColour数据可视化平台"
 permalink:  "datacolour"
+author: "FS.IO"
 date:   2021-01-01 00:00:00
 categories: project
 ---

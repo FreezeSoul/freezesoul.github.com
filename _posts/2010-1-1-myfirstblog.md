@@ -2,6 +2,7 @@
 layout: post
 title: "All From Now On"
 permalink:  "all-from-now-on"
+author: "FS.IO"
 date:   2010-01-01 00:00:00
 categories: note 
 ---

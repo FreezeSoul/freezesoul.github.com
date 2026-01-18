@@ -2,6 +2,7 @@
 layout: post
 title: "从第一性原理看大模型 Agent 技术"
 permalink: "agent-first-principles"
+author: "FS.IO"
 date:   2023-11-05 00:00:00
 categories: technology
 ---

@@ -2,6 +2,7 @@
 layout: post
 title: "智能体经典范式构建：ReAct、Plan-and-Solve 与 Reflection"
 permalink: "agent-paradigms"
+author: "FS.IO"
 date:   2024-04-15 00:00:00
 categories: technology
 ---

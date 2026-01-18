@@ -2,6 +2,7 @@
 layout: post
 title: "Kettle Data Integration"
 permalink:  "angular2-client-kettle-web-host"
+author: "FS.IO"
 date:   2017-12-31 00:00:00
 categories: project
 ---

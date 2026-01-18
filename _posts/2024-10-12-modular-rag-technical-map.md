@@ -2,6 +2,7 @@
 layout: post
 title: "模块化RAG技术路线图：从Naive到Advanced再到Modular"
 permalink: "modular-rag-technical-map"
+author: "FS.IO"
 date:   2024-10-12 00:00:00
 categories: technology
 ---

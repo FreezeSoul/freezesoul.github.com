@@ -2,6 +2,7 @@
 layout: post
 title: "Metro Dashboard Demo"
 permalink:  "metro-dashboard-demo"
+author: "FS.IO"
 date:   2014-01-01 00:00:00
 categories: javascript
 ---

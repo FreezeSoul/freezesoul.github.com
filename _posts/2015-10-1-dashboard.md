@@ -2,6 +2,7 @@
 layout: post
 title: "AmazingDashboard Platform"
 permalink:  "amazingdashboard-platform"
+author: "FS.IO"
 date:   2015-10-01 00:00:00
 categories: project
 ---
