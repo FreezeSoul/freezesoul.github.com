@@ -422,11 +422,6 @@ $cyp-bg-code: #0d1117;
    Maximum priority - overrides everything
    ======================================== */
 
-.highlight pre code{
- word-break: break-word;
- white-space: break-spaces;  
-}
-
 /* Force ALL code elements to use neon cyan */
 .post > p > code,
 .post > li > code,
@@ -442,6 +437,8 @@ $cyp-bg-code: #0d1117;
 pre code,
 code {
   color: $cyp-neon-cyan !important;
+  word-break: break-word;
+  white-space: break-spaces;  
 }
 
 /* Syntax highlighting keeps its colors, but base text is cyan */
