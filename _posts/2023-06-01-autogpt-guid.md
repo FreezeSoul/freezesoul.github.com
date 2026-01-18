@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AutoGPT：当 AI 学会自主思考"
-permalink: "autogpt"
+permalink: "autogpt-guid"
 date:   2023-06-01 00:00:00
 categories: technology
 ---

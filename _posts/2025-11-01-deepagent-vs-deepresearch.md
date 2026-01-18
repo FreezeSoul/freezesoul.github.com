@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DeepAgent vs DeepResearch：两种"深度智能体"架构范式的对照分析"
+title: "DeepAgent vs DeepResearch：两种“深度智能体”架构范式的对照分析"
 permalink: "deepagent-vs-deepresearch"
 date:   2025-11-01 00:00:00
 categories: technology
