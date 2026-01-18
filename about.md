@@ -60,9 +60,7 @@ permalink: /about/
 .cyber-container {
     position: relative;
     z-index: 2;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 80px 20px;
+    padding: 80px 0;
 }
 
 /* Glitch 标题效果 */
@@ -558,7 +556,7 @@ permalink: /about/
     <div class="cyber-container">
         <!-- Glitch 标题 -->
         <div class="glitch-wrapper">
-            <h1 class="glitch-title" data-text="FS.IO">FS.IO</h1>
+            <h1 class="glitch-title" data-text="FS.IO">FREEZESOUL</h1>
             <p class="cyber-subtitle">Full Stack Developer</p>
         </div>
 
@@ -577,7 +575,7 @@ permalink: /about/
                 </div>
                 <div class="cyber-card-content">
                     <p>热爱技术的全栈开发者，专注于构建优雅、高效的软件解决方案。</p>
-                    <p style="margin-top: 15px;">擅长领域包括 .NET、跨平台开发、系统架构设计。相信技术可以改变世界，代码可以创造价值。</p>
+                    <p style="margin-top: 15px;">擅长领域包括 .NET、JAVA、前端、移动端、跨平台开发、系统架构设计及项目管理。相信技术可以改变世界，代码可以创造价值。</p>
                 </div>
             </div>
 
@@ -589,14 +587,16 @@ permalink: /about/
                 </div>
                 <div class="cyber-card-content">
                     <div class="cyber-tags">
-                        <span class="cyber-tag">.NET</span>
                         <span class="cyber-tag">C#</span>
-                        <span class="cyber-tag">Avalonia</span>
-                        <span class="cyber-tag">OSGi.NET</span>
+                        <span class="cyber-tag">JAVA</span>
+                        <span class="cyber-tag">PYTHON</span>
+                        <span class="cyber-tag">GO</span>
+                        <span class="cyber-tag">JS/TS</span>
                         <span class="cyber-tag">DDD</span>
-                        <span class="cyber-tag">微服务</span>
+                        <span class="cyber-tag">MICROSERVICE</span>
                         <span class="cyber-tag">Docker</span>
-                        <span class="cyber-tag">Go</span>
+                        <span class="cyber-tag">LINUX</span>
+                        <span class="cyber-tag">AI/AGENT</span>
                     </div>
                 </div>
             </div>
@@ -611,11 +611,11 @@ permalink: /about/
                     <ul style="list-style: none; padding: 0;">
                         <li style="margin-bottom: 12px; display: flex; align-items: center;">
                             <span style="color: #0ff; margin-right: 10px;">►</span>
-                            插件化架构设计
+                            跨平台应用开发
                         </li>
                         <li style="margin-bottom: 12px; display: flex; align-items: center;">
                             <span style="color: #f0f; margin-right: 10px;">►</span>
-                            跨平台应用开发
+                            全栈开发技术方案
                         </li>
                         <li style="margin-bottom: 12px; display: flex; align-items: center;">
                             <span style="color: #0ff; margin-right: 10px;">►</span>
@@ -623,7 +623,7 @@ permalink: /about/
                         </li>
                         <li style="display: flex; align-items: center;">
                             <span style="color: #f0f; margin-right: 10px;">►</span>
-                            代码生成器开发
+                            大模型智能体开发
                         </li>
                     </ul>
                 </div>
@@ -636,9 +636,9 @@ permalink: /about/
                     <span>PROJECTS</span>
                 </div>
                 <div class="cyber-card-content">
-                    <p style="margin-bottom: 10px;">📦 <strong>OSGi.NET</strong> - .NET 模块化框架</p>
-                    <p style="margin-bottom: 10px;">🎨 <strong>AutoGenerateWinformUI</strong> - T4 代码生成器</p>
-                    <p style="margin-bottom: 10px;">🔧 <strong>CodeGenerator</strong> - 三层架构生成工具</p>
+                    <p style="margin-bottom: 10px;">📦 <strong>OSGi.NET</strong>.NET模块化框架</p>
+                    <p style="margin-bottom: 10px;">📦 <strong>DATACOLOUR</strong>数据可视化平台</p>
+                    <p style="margin-bottom: 10px;">📦 <strong>AGENTFRAMEWORK</strong>智能体通用框架</p>
                     <p>📊 更多项目见 GitHub</p>
                 </div>
             </div>
