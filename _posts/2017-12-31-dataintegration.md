@@ -28,6 +28,7 @@ categories: project
 <script src="/js/jquery.bxslider.min.js"></script>
 <link href="/css/jquery.bxslider.css" rel="stylesheet" />
 
+
 <ul class="bxsliderData">
   <li><img src="/images/dataintegration1.png" /></li>
   <li><img src="/images/dataintegration2.png" /></li>
@@ -38,7 +39,14 @@ categories: project
 
 <script type="text/javascript">
 	$(document).ready(function(){
-  		$('.bxsliderData').bxSlider();
+  		$('.bxsliderData').bxSlider({
+  			maxSlides: 1,
+  			slideWidth: 800,
+  			infiniteLoop: false,
+  			hideControlOnEnd: true,
+  			responsive: true,
+  			touchEnabled: true
+  		});
 	});
 </script>
 
