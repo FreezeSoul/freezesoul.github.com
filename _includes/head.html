@@ -29,6 +29,30 @@
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
     <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
 
+    <!-- Mermaid JS for diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: 'default',
+          securityLevel: 'loose'
+        });
+
+        // Convert language-mermaid code blocks to mermaid diagrams
+        const mermaidBlocks = document.querySelectorAll('code.language-mermaid');
+        mermaidBlocks.forEach(function(block) {
+          const pre = block.parentElement;
+          pre.removeAttribute('class');
+          pre.classList.add('mermaid');
+          pre.textContent = block.textContent;
+        });
+
+        // Initialize mermaid
+        mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+      });
+    </script>
+
     <meta property="og:site_name" value="{{ site.title }}">
     <meta property="og:title" content="{% if post.title %}{{ post.title }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="og:url" content="{% if page.url %}{{ page.url | prepend: site.baseurl | prepend: site.url }}{% elsif post.url %}{{ post.url | prepend: site.baseurl | prepend: site.url }}{% endif %}">
