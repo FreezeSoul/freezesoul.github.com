@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Claude Code 的几项关键技术"
+title: "Claude Code 的几项关键技术：SubAgent、Skills..."
 permalink: "claude-code-key-technologies"
 author: "FS.IO"
 date:   2025-11-12 00:00:00
