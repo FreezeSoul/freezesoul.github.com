@@ -623,11 +623,11 @@ permalink: /about/
                     <span>PROJECTS</span>
                 </div>
                 <div class="cyber-card-content">
-                    <p style="margin-bottom: 10px;">📦 <strong>OSGi.NET</strong> .NET模块化框架</p>
-                    <p style="margin-bottom: 10px;">📦 <strong>DATACOLOUR</strong> 数据可视化平台</p>
-                    <p style="margin-bottom: 10px;">📦 <strong>MICROAPP</strong> 微应用开发平台</p>
-                    <p style="margin-bottom: 10px;">📦 <strong>AGENT.COMMON</strong> 智能体通用框架</p>
-                    <p>📊 更多项目见 GitHub</p>
+                    <p style="margin-bottom: 10px;">📦 <a href="https://github.com/FreezeSoul/OSGi.NET" target="_blank" style="color: #f0f; text-decoration: none;"><strong>OSGi.NET</strong></a> .NET模块化框架</p>
+                    <p style="margin-bottom: 10px;">📦 <a href="https://gitee.com/DataColour/ColourClient" target="_blank" style="color: #f0f; text-decoration: none;"><strong>DATACOLOUR</strong></a> 数据可视化平台</p>
+                    <p style="margin-bottom: 10px;">📦 <a href="https://gitee.com/DataColour/MicroAppClient" target="_blank" style="color: #f0f; text-decoration: none;"><strong>MICROAPP</strong></a> 微应用开发平台</p>
+                    <p style="margin-bottom: 10px;">📦 <a href="https://github.com/FreezeSoul/common-agent-framework" target="_blank" style="color: #f0f; text-decoration: none;"><strong>AGENT.COMMON</strong></a> 智能体通用框架</p>
+                    <p>📊 更多项目见 <a href="https://github.com/FreezeSoul" target="_blank" style="color: #0ff; text-decoration: none;">GitHub</a></p>
                 </div>
             </div>
         </div>
