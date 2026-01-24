@@ -343,7 +343,14 @@ OSGi.NET 提供了三种监听器：
 
 <script type="text/javascript">
 	$(document).ready(function(){
-  		$('.bxslider').bxSlider();
+  		$('.bxslider').bxSlider({
+               maxSlides: 1,
+  			slideWidth: 800,
+  			infiniteLoop: false,
+  			hideControlOnEnd: true,
+  			responsive: true,
+  			touchEnabled: true
+          });
 	});
 </script>
 

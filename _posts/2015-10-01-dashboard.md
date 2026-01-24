@@ -31,7 +31,14 @@ categories: project
 
 <script type="text/javascript">
 	$(document).ready(function(){
-  		$('.bxsliderIndex').bxSlider();
+  		$('.bxsliderIndex').bxSlider({
+               maxSlides: 1,
+  			slideWidth: 800,
+  			infiniteLoop: false,
+  			hideControlOnEnd: true,
+  			responsive: true,
+  			touchEnabled: true
+          });
 	});
 </script>
 
@@ -659,14 +666,14 @@ if (DEBUG_MODE) {
 
 ### RequireJS 管理优势
 
-| 特性 | 实现方式 |
-|------|----------|
-| **按需加载** | 控件仅在首次使用时加载 |
-| **依赖管理** | 自动解析模块依赖关系 |
-| **版本控制** | urlArgs 统一版本号管理 |
-| **缓存策略** | LocalStorage 缓存 manifest |
-| **循环依赖** | 延迟初始化模式解决 |
-| **Shim 适配** | 非模块库兼容处理 |
+| 特性          | 实现方式                   |
+| ------------- | -------------------------- |
+| **按需加载**  | 控件仅在首次使用时加载     |
+| **依赖管理**  | 自动解析模块依赖关系       |
+| **版本控制**  | urlArgs 统一版本号管理     |
+| **缓存策略**  | LocalStorage 缓存 manifest |
+| **循环依赖**  | 延迟初始化模式解决         |
+| **Shim 适配** | 非模块库兼容处理           |
 
 ---
 
@@ -855,40 +862,40 @@ public class AdChartServiceImpl implements AdChartService {
 
 ### 前端技术栈
 
-| 技术 | 版本 | 用途 |
-|------|------|------|
-| **AngularJS** | 1.5.x | SPA 框架 |
-| **RequireJS** | 2.3.x | AMD 模块加载 |
-| **UI-Router** | 0.2.x | 路由管理 |
-| **Bootstrap** | 3.x | UI 框架 |
-| **ECharts** | 3.x | 数据可视化 |
-| **jQuery** | 2.x | DOM 操作 |
-| **OC-LazyLoad** | 1.x | 懒加载模块 |
+| 技术            | 版本  | 用途         |
+| --------------- | ----- | ------------ |
+| **AngularJS**   | 1.5.x | SPA 框架     |
+| **RequireJS**   | 2.3.x | AMD 模块加载 |
+| **UI-Router**   | 0.2.x | 路由管理     |
+| **Bootstrap**   | 3.x   | UI 框架      |
+| **ECharts**     | 3.x   | 数据可视化   |
+| **jQuery**      | 2.x   | DOM 操作     |
+| **OC-LazyLoad** | 1.x   | 懒加载模块   |
 
 ### 后端技术栈
 
-| 技术 | 版本 | 用途 |
-|------|------|------|
-| **Spring Boot** | 1.5.10 | 应用框架 |
-| **Dubbo** | 2.5.10 | RPC 框架 |
-| **Zookeeper** | 3.4.10 | 服务注册中心 |
-| **MyBatis** | 3.x | ORM 框架 |
-| **Redis** | 3.x | 分布式缓存 |
-| **Ehcache** | 2.x | 本地缓存 |
-| **PostgreSQL** | 9.x | 关系型数据库 |
+| 技术            | 版本   | 用途         |
+| --------------- | ------ | ------------ |
+| **Spring Boot** | 1.5.10 | 应用框架     |
+| **Dubbo**       | 2.5.10 | RPC 框架     |
+| **Zookeeper**   | 3.4.10 | 服务注册中心 |
+| **MyBatis**     | 3.x    | ORM 框架     |
+| **Redis**       | 3.x    | 分布式缓存   |
+| **Ehcache**     | 2.x    | 本地缓存     |
+| **PostgreSQL**  | 9.x    | 关系型数据库 |
 
 ### 核心特性
 
-| 特性 | 实现方案 |
-|------|----------|
-| **可扩展控件系统** | 声明式插件 + 属性元数据 |
-| **按需加载** | RequireJS + OC-LazyLoad |
-| **数据绑定** | DataSet + SeriesBinding |
-| **属性编辑器** | 自动生成 + 生命周期脚本 |
-| **微服务架构** | Dubbo + Zookeeper |
-| **缓存策略** | Redis + Ehcache 二级缓存 |
-| **认证授权** | JWT Token |
-| **离线支持** | IndexedDB + LocalStorage |
+| 特性               | 实现方案                 |
+| ------------------ | ------------------------ |
+| **可扩展控件系统** | 声明式插件 + 属性元数据  |
+| **按需加载**       | RequireJS + OC-LazyLoad  |
+| **数据绑定**       | DataSet + SeriesBinding  |
+| **属性编辑器**     | 自动生成 + 生命周期脚本  |
+| **微服务架构**     | Dubbo + Zookeeper        |
+| **缓存策略**       | Redis + Ehcache 二级缓存 |
+| **认证授权**       | JWT Token                |
+| **离线支持**       | IndexedDB + LocalStorage |
 
 ---
 
