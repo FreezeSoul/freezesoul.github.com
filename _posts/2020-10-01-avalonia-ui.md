@@ -4,7 +4,7 @@ title: "Avalonia UI：WPF 开发者的跨平台首选"
 permalink: "avalonia-ui"
 author: "FS.IO"
 date: 2020-10-01 00:00:00
-categories: books
+categories: technology
 tags: [.NET, Avalonia, 跨平台, MVVM, WPF]
 ---
 
