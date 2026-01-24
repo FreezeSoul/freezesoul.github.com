@@ -12,6 +12,11 @@ categories: project
 本项目基于 **HTML5 + AngularJS** 的前端技术栈，结合 **Dubbo 微服务架构** 的后端服务，构建面向桌面/移动多端的数据可视化平台。
 
 平台的核心特点是其**可扩展的插件化指标系统**，通过声明式配置即可新增图表控件，无需修改核心框架代码。
+<img src="/images/dashboard1.jpg" width="100%">  
+<img src="/images/dashboard2.png" width="100%"> 
+
+<script src="/js/jquery.bxslider.min.js"></script>
+<link href="/css/jquery.bxslider.css" rel="stylesheet" />
 
 <ul class="bxsliderIndex">
   <li><img src="/images/dashboards/1.PNG" /></li>
@@ -23,6 +28,12 @@ categories: project
   <li><img src="/images/dashboards/7.PNG" /></li>
   <li><img src="/images/dashboards/8.PNG" /></li>
 </ul>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+  		$('.bxsliderIndex').bxSlider();
+	});
+</script>
 
 前端程序：<a href="https://gitee.com/DataColour/DashboardClient">DashboardClient</a>
 后端程序：<a href="https://gitee.com/DataColour/DashboardService">DashboardService</a>
