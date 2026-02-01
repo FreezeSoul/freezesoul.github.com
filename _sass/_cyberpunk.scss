@@ -330,6 +330,17 @@ $cyp-border-glow: rgba(0, 255, 245, 0.3);
 /* Link Underline Animation */
 a {
   position: relative;
+  color: $cyp-neon-cyan;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:visited {
+    color: $cyp-neon-purple;
+  }
+
+  &:hover {
+    color: $cyp-neon-pink;
+  }
 
   &::after {
     content: '';
