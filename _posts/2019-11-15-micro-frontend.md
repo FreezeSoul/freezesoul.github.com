@@ -1235,7 +1235,7 @@ function restoreSubAppPath(appName) {
 
 ```mermaid
 graph LR
-    A[浏览器 URL] -->|app1_path=/dashboard| B[子应用A<br/>/dashboard]
+    A[浏览器 URL] -->|"app1_path=/dashboard"| B[子应用A<br/>/dashboard]
     A -->|app2_path=/settings| C[子应用B<br/>/settings]
 
     B -->|路由变化| A

@@ -786,7 +786,7 @@ graph TD
     A --> D[Node.js Express]
     A --> E[Go Gin]
 
-    B -->|最高分| F[#1 plaintext<br/>#1 JSON<br/>#2 DB Query]
+    B -->|最高分| F["#1 plaintext<br/>#1 JSON<br/>#2 DB Query"]
     C -->|中高分| G[#5 JSON<br/>#7 DB Query]
     E -->|高分| H[#2 plaintext<br/>#3 JSON]
     D -->|中等| I[#8 JSON<br/>#12 DB Query]
