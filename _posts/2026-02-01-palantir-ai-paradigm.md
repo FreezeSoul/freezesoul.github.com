@@ -224,10 +224,10 @@ graph LR
     D --> D2
     D --> D3
 
-    style A fill:#e7f5ff,stroke:#1971c2
-    style B fill:#fff4e6,stroke:#f59f00
-    style C fill:#ebfbee,stroke:#2b8a3e
-    style D fill:#fff0f6,stroke:#c2255c
+    style A fill:#e7f5ff,stroke:#1971c2,color:#000
+    style B fill:#fff4e6,stroke:#f59f00,color:#000
+    style C fill:#ebfbee,stroke:#2b8a3e,color:#000
+    style D fill:#fff0f6,stroke:#c2255c,color:#000
 ```
 
 ### 演进的核心脉络
