@@ -1011,4 +1011,3 @@ AI 大模型提供了能力，Skills 提供了载体，MCP 提供了连接，Age
 > *本文参考资料：*
 > *- [Palantir Foundry Ontology](https://www.palantir.com/explore/platforms/foundry/ontology/)*
 > *- [Why Ontology Matters for Agentic AI in 2026](https://kenhuangus.substack.com/p/why-ontology-matters-for-agentic)*
-> *- temp 目录中的 Palantir 本体论相关文章*
