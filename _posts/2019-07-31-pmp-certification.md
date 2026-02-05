@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "PMP 认证备考经验分享"
+title: "PMP 认证备考经验分享 - PMP学习资源分享"
 permalink: "pmp-certification"
 author: "FS.IO"
 date: 2019-7-31 00:00:00

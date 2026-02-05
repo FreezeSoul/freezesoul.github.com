@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "WebDesktop Interface"
+title: "WebDesktop Interface： Web版桌面管理（仿IOS操作模式）"
 permalink:  "webdesktop-interface"
 author: "FS.IO"
 date:   2014-12-01 00:00:00

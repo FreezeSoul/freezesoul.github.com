@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Metro Dashboard Demo"
+title: "Metro Dashboard Demo - Metro风格Dashboard演示"
 permalink:  "metro-dashboard-demo"
 author: "FS.IO"
 date:   2014-01-01 00:00:00

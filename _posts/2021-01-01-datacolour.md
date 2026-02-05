@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DataColour数据可视化平台"
+title: "DataColour数据可视化平台 - 快速构建可视化项目利器"
 permalink:  "datacolour"
 author: "FS.IO"
 date:   2021-01-01 00:00:00
