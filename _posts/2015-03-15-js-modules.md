@@ -1570,11 +1570,11 @@ graph LR
   G --> H[2021-2022<br/>Vite兴起<br/>现代构建工具]
   H --> I[2023-2024<br/>Deno/Bun<br/>新一代运行时]
 
-  style A fill:#ff006e
-  style B fill:#b537f2
-  style C fill:#00fff5
-  style E fill:#00ff9f
-  style I fill:#faff00
+  style A fill:#ff006e,stroke:#d6005c,color:#b3004e
+  style B fill:#b537f2,stroke:#8a2be2,color:#6a1b9a
+  style C fill:#00fff5,stroke:#00b8b0,color:#008b82
+  style E fill:#00ff9f,stroke:#00cc7f,color:#009966
+  style I fill:#faff00,stroke:#e6d900,color:#c9b800
 ```
 
 ## 未来展望（2015年视角）
@@ -1802,8 +1802,8 @@ graph TD
   C --> D
   D --> E[ES Modules<br/>官方统一标准]
 
-  style A fill:#ff006e,color:#fff
-  style E fill:#00ff9f
+  style A fill:#ff006e,stroke:#d6005c,color:#b3004e
+  style E fill:#00ff9f,stroke:#00cc7f,color:#009966
 ```
 
 ### 选择建议（2024）

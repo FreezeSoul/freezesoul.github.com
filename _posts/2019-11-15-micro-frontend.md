@@ -34,12 +34,12 @@ graph TB
     B --> E[子应用 C<br/>Angular]
     B --> F[子应用 D<br/>jQuery]
 
-    style A fill:#ff006e
-    style B fill:#00fff5
-    style C fill:#b537f2
-    style D fill:#faff00
-    style E fill:#00ff9f
-    style F fill:#ff9500
+    style A fill:#ff006e,stroke:#d6005c,color:#b3004e
+    style B fill:#00fff5,stroke:#00b8b0,color:#008b82
+    style C fill:#b537f2,stroke:#8a2be2,color:#6a1b9a
+    style D fill:#faff00,stroke:#e6d900,color:#c9b800
+    style E fill:#00ff9f,stroke:#00cc7f,color:#009966
+    style F fill:#ff9500,stroke:#e65100,color:#bf360c
 ```
 
 ### 核心价值主张
@@ -185,9 +185,9 @@ graph TD
 
     D --> D1[micro-app<br/>组件化 + 多沙箱]
 
-    style B fill:#ff006e
-    style C fill:#00fff5
-    style D fill:#faff00
+    style B fill:#ff006e,stroke:#d6005c,color:#b3004e
+    style C fill:#00fff5,stroke:#00b8b0,color:#008b82
+    style D fill:#faff00,stroke:#e6d900,color:#c9b800
 ```
 
 ### 演进时间线
@@ -200,9 +200,9 @@ graph LR
     D --> E[2022<br/>micro-app<br/>京东开源]
     E --> F[2023+<br/>百花齐放<br/>方案成熟]
 
-    style A fill:#ff006e
-    style C fill:#00fff5
-    style E fill:#faff00
+    style A fill:#ff006e,stroke:#d6005c,color:#b3004e
+    style C fill:#00fff5,stroke:#00b8b0,color:#008b82
+    style E fill:#faff00,stroke:#e6d900,color:#c9b800
 ```
 
 ## 四、主流微前端框架深度解析
@@ -777,9 +777,9 @@ graph TB
 
     E -->|代理 DOM 操作| B
 
-    style A fill:#ff006e
-    style B fill:#00fff5
-    style C fill:#faff00
+    style A fill:#ff006e,stroke:#d6005c,color:#b3004e
+    style B fill:#00fff5,stroke:#00b8b0,color:#008b82
+    style C fill:#faff00,stroke:#e6d900,color:#c9b800
 ```
 
 #### 基本用法
@@ -1242,9 +1242,9 @@ graph LR
     B -->|路由变化| A
     C -->|路由变化| A
 
-    style A fill:#ff006e
-    style B fill:#00fff5
-    style C fill:#faff00
+    style A fill:#ff006e,stroke:#d6005c,color:#b3004e
+    style B fill:#00fff5,stroke:#00b8b0,color:#008b82
+    style C fill:#faff00,stroke:#e6d900,color:#c9b800
 ```
 
 ### 5.4 资源加载优化
@@ -1348,10 +1348,10 @@ graph TD
     J -->|高| I
     J -->|中| K[micro-app]
 
-    style E fill:#00fff5
-    style I fill:#ff006e
-    style K fill:#faff00
-    style G fill:#ff9500
+    style E fill:#00fff5,stroke:#00b8b0,color:#008b82
+    style I fill:#ff006e,stroke:#d6005c,color:#b3004e
+    style K fill:#faff00,stroke:#e6d900,color:#c9b800
+    style G fill:#ff9500,stroke:#e65100,color:#bf360c
 ```
 
 ### 选型建议

@@ -78,10 +78,10 @@ graph TD
         H[可控优先] -.-> D
     end
 
-    style A fill:#ff6b6b
-    style B fill:#feca57
-    style C fill:#48dbfb
-    style D fill:#1dd1a1
+    style A fill:#ff6b6b,stroke:#d32f2f,color:#b71c1c
+    style B fill:#feca57,stroke:#fbc02d,color:#f57f17
+    style C fill:#48dbfb,stroke:#00b8b0,color:#008b82
+    style D fill:#1dd1a1,stroke:#00cc7f,color:#009966
 ```
 
 ### Vibe Coding：跟着感觉走
@@ -208,10 +208,10 @@ graph LR
     A3 --> B3
     A4 --> B4
 
-    style B1 fill:#feca57
-    style B2 fill:#1dd1a1
-    style B3 fill:#ff6b6b
-    style B4 fill:#48dbfb
+    style B1 fill:#feca57,stroke:#fbc02d,color:#f57f17
+    style B2 fill:#1dd1a1,stroke:#00cc7f,color:#009966
+    style B3 fill:#ff6b6b,stroke:#d32f2f,color:#b71c1c
+    style B4 fill:#48dbfb,stroke:#00b8b0,color:#008b82
 ```
 
 **为什么"可控性"如此重要？**
@@ -247,9 +247,9 @@ graph TD
         B3 --> B4[规范是核心资产]
     end
 
-    style A4 fill:#ff6b6b
-    style B1 fill:#1dd1a1
-    style B4 fill:#1dd1a1
+    style A4 fill:#ff6b6b,stroke:#d32f2f,color:#b71c1c
+    style B1 fill:#1dd1a1,stroke:#00cc7f,color:#009966
+    style B4 fill:#1dd1a1,stroke:#00cc7f,color:#009966
 ```
 
 **传统开发中**：
@@ -391,9 +391,9 @@ graph TD
         B4 --> B5[维护规范]
     end
 
-    style A3 fill:#ff6b6b
-    style B3 fill:#1dd1a1
-    style B5 fill:#1dd1a1
+    style A3 fill:#ff6b6b,stroke:#d32f2f,color:#b71c1c
+    style B3 fill:#1dd1a1,stroke:#00cc7f,color:#009966
+    style B5 fill:#1dd1a1,stroke:#00cc7f,color:#009966
 ```
 
 **核心能力的迁移**：
@@ -485,8 +485,8 @@ graph TD
         B2 -.->|集中管理| B5[业务逻辑]
     end
 
-    style B2 fill:#1dd1a1
-    style B5 fill:#1dd1a1
+    style B2 fill:#1dd1a1,stroke:#00cc7f,color:#009966
+    style B5 fill:#1dd1a1,stroke:#00cc7f,color:#009966
 ```
 
 **传统模式的困境**：
@@ -523,10 +523,10 @@ graph LR
         C3[AI工作流]
     end
 
-    style B1 fill:#1dd1a1
-    style C1 fill:#48dbfb
-    style C2 fill:#48dbfb
-    style C3 fill:#48dbfb
+    style B1 fill:#1dd1a1,stroke:#00cc7f,color:#009966
+    style C1 fill:#48dbfb,stroke:#00b8b0,color:#008b82
+    style C2 fill:#48dbfb,stroke:#00b8b0,color:#008b82
+    style C3 fill:#48dbfb,stroke:#00b8b0,color:#008b82
 ```
 
 **这个转变意味着什么？**
@@ -565,8 +565,8 @@ graph TD
         A5 -.->|符合预期| A6[部署上线]
     end
 
-    style A2 fill:#1dd1a1
-    style A5 fill:#48dbfb
+    style A2 fill:#1dd1a1,stroke:#00cc7f,color:#009966
+    style A5 fill:#48dbfb,stroke:#00b8b0,color:#008b82
 ```
 
 **关键变化**：
@@ -605,10 +605,10 @@ graph TD
     H -->|是| D
     H -->|否| I[调整或放弃]
 
-    style C fill:#feca57
-    style D fill:#1dd1a1
-    style E fill:#ff6b6b
-    style F fill:#48dbfb
+    style C fill:#feca57,stroke:#fbc02d,color:#f57f17
+    style D fill:#1dd1a1,stroke:#00cc7f,color:#009966
+    style E fill:#ff6b6b,stroke:#d32f2f,color:#b71c1c
+    style F fill:#48dbfb,stroke:#00b8b0,color:#008b82
 ```
 
 ### 组合使用策略
@@ -809,9 +809,9 @@ graph TD
     D --> G[可接受代码]
     E --> H[快速原型]
 
-    style C fill:#1dd1a1
-    style D fill:#feca57
-    style E fill:#ff6b6b
+    style C fill:#1dd1a1,stroke:#00cc7f,color:#009966
+    style D fill:#feca57,stroke:#fbc02d,color:#f57f17
+    style E fill:#ff6b6b,stroke:#d32f2f,color:#b71c1c
 ```
 
 **具体建议**：

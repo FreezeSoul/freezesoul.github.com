@@ -43,9 +43,9 @@ graph TD
     B --> F[价值观与原则]
     B --> G[具体实现框架]
 
-    style A fill:#e1f5ff
-    style B fill:#fff4e1
-    style G fill:#ffe1e1
+    style A fill:#e1f5ff,stroke:#0288d1,color:#01579b
+    style B fill:#fff4e1,stroke:#f57c00,color:#e65100
+    style G fill:#ffe1e1,stroke:#d32f2f,color:#b71c1c
 ```
 
 **关键区别**：
@@ -75,10 +75,10 @@ graph LR
     C --> F[负责流程和障碍清除]
     D --> G[负责交付可工作的增量]
 
-    style A fill:#e8f5e9
-    style B fill:#fff3e0
-    style C fill:#e3f2fd
-    style D fill:#f3e5f5
+    style A fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+    style B fill:#fff3e0,stroke:#f57c00,color:#e65100
+    style C fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+    style D fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
 ```
 
 **产品负责人**：
@@ -115,7 +115,7 @@ graph TD
     D --> H[展示成果、收集反馈]
     E --> I[总结经验、持续改进]
 
-    style A fill:#ffebee
+    style A fill:#ffebee,stroke:#d32f2f,color:#b71c1c
 ```
 
 **时间盒说明**：为了帮助建立约束和聚焦，每个 Scrum 事件都有预定义的时间限制。
@@ -272,7 +272,7 @@ graph TD
     C --> D
     D --> C
 
-    style A fill:#f3e5f5
+    style A fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
 ```
 
 **透明度**：工作中的重要方面必须对负责产出结果的人可见。透明度让决策基于相同的信息基础。

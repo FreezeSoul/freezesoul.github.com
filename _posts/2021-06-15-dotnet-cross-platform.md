@@ -51,10 +51,10 @@ graph LR
     D --> E[.NET 5<br/>统一平台]
     E --> F[.NET 6<br/>LTS版本]
 
-    style A fill:#ff006e
-    style D fill:#00fff5
-    style E fill:#faff00
-    style F fill:#00ff9f
+    style A fill:#ff006e,stroke:#d6005c,color:#b3004e
+    style D fill:#00fff5,stroke:#00b8b0,color:#008b82
+    style E fill:#faff00,stroke:#e6d900,color:#c9b800
+    style F fill:#00ff9f,stroke:#00cc7f,color:#009966
 ```
 
 ### .NET Framework 时代：Windows 的特权
@@ -149,8 +149,8 @@ graph TD
 
     D --> I[CoreFX<br/>基础类库]
 
-    style D fill:#00fff5
-    style I fill:#faff00
+    style D fill:#00fff5,stroke:#00b8b0,color:#008b82
+    style I fill:#faff00,stroke:#e6d900,color:#c9b800
 ```
 
 **CoreCLR**：跨平台的通用语言运行时，负责 JIT 编译和内存管理。
@@ -791,8 +791,8 @@ graph TD
     E -->|高分| H[#2 plaintext<br/>#3 JSON]
     D -->|中等| I[#8 JSON<br/>#12 DB Query]
 
-    style F fill:#00ff9f
-    style G fill:#ff006e
+    style F fill:#00ff9f,stroke:#00cc7f,color:#009966
+    style G fill:#ff006e,stroke:#d6005c,color:#b3004e
 ```
 
 **关键数据**：

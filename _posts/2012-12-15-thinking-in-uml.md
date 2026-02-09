@@ -74,11 +74,11 @@ graph LR
     C -->|详细设计| D[设计模型]
     D -->|编码实现| E[可执行系统]
 
-    style A fill:#e1f5ff
-    style B fill:#fff3e0
-    style C fill:#f3e5f5
-    style D fill:#e8f5e9
-    style E fill:#fff9c4
+    style A fill:#e1f5ff,stroke:#0288d1,color:#01579b
+    style B fill:#fff3e0,stroke:#f57c00,color:#e65100
+    style C fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
+    style D fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+    style E fill:#fff9c4,stroke:#fbc02d,color:#f57f17
 ```
 
 **各阶段的输入输出**：
@@ -209,12 +209,12 @@ graph TD
     D --> F
     E --> F
 
-    style A fill:#ffebee
-    style B fill:#fff3e0
-    style C fill:#e1f5ff
-    style D fill:#f3e5f5
-    style E fill:#e8f5e9
-    style F fill:#e8f5e9
+    style A fill:#ffebee,stroke:#d32f2f,color:#b71c1c
+    style B fill:#fff3e0,stroke:#f57c00,color:#e65100
+    style C fill:#e1f5ff,stroke:#0288d1,color:#01579b
+    style D fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
+    style E fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+    style F fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
 ```
 
 ### 业务实体、分析类、设计类
@@ -258,12 +258,12 @@ graph TD
     A1[用户界面] -->|A| B1[业务逻辑]
     B1 -->|B| C1[数据对象]
 
-    style A fill:#e1f5ff
-    style B fill:#fff3e0
-    style C fill:#f3e5f5
-    style A1 fill:#e8f5e9
-    style B1 fill:#fff9c4
-    style C1 fill:#fce4ec
+    style A fill:#e1f5ff,stroke:#0288d1,color:#01579b
+    style B fill:#fff3e0,stroke:#f57c00,color:#e65100
+    style C fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
+    style A1 fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+    style B1 fill:#fff9c4,stroke:#fbc02d,color:#f57f17
+    style C1 fill:#fce4ec,stroke:#d81b60,color:#ad1457
 ```
 
 **设计类（Design Class）**：
@@ -298,10 +298,10 @@ graph TD
     D --> L[精化]
     D --> M[泛化]
 
-    style A fill:#e1f5ff
-    style B fill:#fff3e0
-    style C fill:#f3e5f5
-    style D fill:#e8f5e9
+    style A fill:#e1f5ff,stroke:#0288d1,color:#01579b
+    style B fill:#fff3e0,stroke:#f57c00,color:#e65100
+    style C fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
+    style D fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
 ```
 
 **关系详解**：
@@ -369,9 +369,9 @@ graph TD
     C --> I[时序图]
     C --> J[协作图]
 
-    style A fill:#e1f5ff
-    style B fill:#fff3e0
-    style C fill:#f3e5f5
+    style A fill:#e1f5ff,stroke:#0288d1,color:#01579b
+    style B fill:#fff3e0,stroke:#f57c00,color:#e65100
+    style C fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
 ```
 
 #### 用例图（Use Case Diagram）
@@ -399,9 +399,9 @@ graph TD
     B[银行系统] -->|管理账户| UC4(账户管理)
     C[管理员] -->|系统维护| UC5(系统管理)
 
-    style A fill:#e1f5ff
-    style B fill:#fff3e0
-    style C fill:#f3e5f5
+    style A fill:#e1f5ff,stroke:#0288d1,color:#01579b
+    style B fill:#fff3e0,stroke:#f57c00,color:#e65100
+    style C fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
 ```
 
 **用例图的实践价值**：
@@ -487,9 +487,9 @@ graph TD
     Presentation -->|依赖| Business
     Business -->|依赖| Persistence
 
-    style Presentation fill:#e1f5ff
-    style Business fill:#fff3e0
-    style Persistence fill:#f3e5f5
+    style Presentation fill:#e1f5ff,stroke:#0288d1,color:#01579b
+    style Business fill:#fff3e0,stroke:#f57c00,color:#e65100
+    style Persistence fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
 ```
 
 **包图的核心价值**：
@@ -705,8 +705,8 @@ flowchart TD
     Sequence --> Verify[验证场景完整性]
     Verify --> END[完成用例实现]
 
-    style START fill:#e1f5ff
-    style END fill:#e8f5e9
+    style START fill:#e1f5ff,stroke:#0288d1,color:#01579b
+    style END fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
 ```
 
 **分析类的获取来源**：
@@ -744,9 +744,9 @@ graph TD
     J[参与者] -->|转化为| K[用户]
     K -->|配置为| L[权限角色]
 
-    style A fill:#e1f5ff
-    style B fill:#fff3e0
-    style C fill:#f3e5f5
+    style A fill:#e1f5ff,stroke:#0288d1,color:#01579b
+    style B fill:#fff3e0,stroke:#f57c00,color:#e65100
+    style C fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
 ```
 
 **设计模型需要考虑的问题**：
@@ -784,10 +784,10 @@ graph TB
     S1 & S2 & S3 & S4 -.影响.-> B
     S1 & S2 & S3 & S4 -.影响.-> D
 
-    style P fill:#e1f5ff
-    style B fill:#fff3e0
-    style D fill:#f3e5f5
-    style I fill:#e8f5e9
+    style P fill:#e1f5ff,stroke:#0288d1,color:#01579b
+    style B fill:#fff3e0,stroke:#f57c00,color:#e65100
+    style D fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
+    style I fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
 ```
 
 ---

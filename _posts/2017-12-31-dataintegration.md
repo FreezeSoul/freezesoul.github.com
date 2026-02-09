@@ -79,9 +79,9 @@ graph TD
     B --> C[执行作业]
     C --> D[日志文件]
 
-    style A fill:#ff006e
-    style B fill:#00fff5
-    style D fill:#faff00
+    style A fill:#ff006e,stroke:#d6005c,color:#b3004e
+    style B fill:#00fff5,stroke:#00b8b0,color:#008b82
+    style D fill:#faff00,stroke:#e6d900,color:#c9b800
 ```
 
 **传统调度方式的问题**：

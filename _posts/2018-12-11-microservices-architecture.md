@@ -33,8 +33,8 @@ graph TD
     B --> F[集成层]
     B --> G[单一数据库]
 
-    style B fill:#e8f5e9
-    style G fill:#fff3e0
+    style B fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+    style G fill:#fff3e0,stroke:#e65100,color:#bf360c
 ```
 
 ### 单体架构的优势
@@ -85,7 +85,7 @@ graph TD
     E --> I[支付数据库]
     F --> J[配送数据库]
 
-    style B fill:#e3f2fd
+    style B fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
 ```
 
 ### 微服务的定义
@@ -147,7 +147,7 @@ graph LR
     C --> F[微服务<br/>按业务拆分]
     D --> G[分库分表<br/>数据分区]
 
-    style A fill:#f3e5f5
+    style A fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
 ```
 
 - **X 轴**：运行多个应用副本，通过负载均衡器分发请求
@@ -198,7 +198,7 @@ graph TD
     B -.OrderCreated.-> C
     B -.OrderPaid.-> D
 
-    style A fill:#f3e5f5
+    style A fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
 ```
 
 **其他拆分策略**
@@ -294,10 +294,10 @@ graph TD
     E[支付服务] --> F[支付数据库]
     G[用户服务] --> H[用户数据库]
 
-    style A fill:#e3f2fd
-    style C fill:#e3f2fd
-    style E fill:#e3f2fd
-    style G fill:#e3f2fd
+    style A fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    style C fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    style E fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    style G fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
 ```
 
 **为什么需要独享数据库**？
@@ -341,7 +341,7 @@ graph LR
     E -->|否| G[补偿库存]
     G --> H[补偿订单]
 
-    style A fill:#e3f2fd
+    style A fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
 ```
 
 **2. 协同式（Choreography）**
@@ -356,7 +356,7 @@ graph LR
     C -->|PaymentFailed| E[库存服务]
     E -->|InventoryReleased| A
 
-    style A fill:#e3f2fd
+    style A fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
 ```
 
 **对比**：
@@ -382,7 +382,7 @@ graph TD
     C --> G[重放事件]
     G --> H[恢复状态]
 
-    style D fill:#fff3e0
+    style D fill:#fff3e0,stroke:#e65100,color:#bf360c
 ```
 
 **事件溯源的优势**：
@@ -413,9 +413,9 @@ graph LR
 
     C --> G
 
-    style D fill:#fff3e0
-    style E fill:#fff3e0
-    style G fill:#e3f2fd
+    style D fill:#fff3e0,stroke:#e65100,color:#bf360c
+    style E fill:#fff3e0,stroke:#e65100,color:#bf360c
+    style G fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
 ```
 
 **CQRS 的优势**：
@@ -452,7 +452,7 @@ graph LR
     D --> E[选择实例]
     E --> F[直接调用]
 
-    style B fill:#fff3e0
+    style B fill:#fff3e0,stroke:#e65100,color:#bf360c
 ```
 
 服务实例启动时，将自己的网络位置注册到服务注册表。客户端从注册表查询可用实例，并使用负载均衡算法选择一个实例直接调用。
@@ -469,7 +469,7 @@ graph LR
     C[客户端] --> B
     B --> D[路由请求]
 
-    style B fill:#e3f2fd
+    style B fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
 ```
 
 客户端通过负载均衡器向服务发送请求，负载均衡器查询服务注册表并将请求路由到可用的实例。
@@ -599,9 +599,9 @@ graph TD
     B -.认证/授权.-> G[认证服务]
     B -.监控/日志.-> H[监控系统]
 
-    style B fill:#e3f2fd
-    style G fill:#fff3e0
-    style H fill:#f3e5f5
+    style B fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    style G fill:#fff3e0,stroke:#e65100,color:#bf360c
+    style H fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
 ```
 
 **API 网关的核心职责**：
@@ -626,7 +626,7 @@ graph TD
     H --> I
     I --> J[返回给客户端]
 
-    style B fill:#e3f2fd
+    style B fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
 ```
 
 **4. 横切关注点**：
@@ -658,8 +658,8 @@ graph TD
     D --> F[返回结果]
     E --> F
 
-    style B fill:#e3f2fd
-    style E fill:#ffebee
+    style B fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    style E fill:#ffebee,stroke:#c62828,color:#b71c1c
 ```
 
 **Strangler 模式的步骤**：
@@ -715,10 +715,10 @@ graph TD
     F --> I
     H --> I
 
-    style B fill:#e3f2fd
-    style D fill:#fff3e0
-    style F fill:#fff3e0
-    style H fill:#f3e5f5
+    style B fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    style D fill:#fff3e0,stroke:#e65100,color:#bf360c
+    style F fill:#fff3e0,stroke:#e65100,color:#bf360c
+    style H fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
 ```
 
 **为什么需要 BFF**：
@@ -759,10 +759,10 @@ graph LR
     B1 --> C1[API网关]
     C1 --> D1[数百个微服务]
 
-    style A fill:#ffebee
-    style B fill:#fff3e0
-    style C fill:#e3f2fd
-    style D fill:#f3e5f5
+    style A fill:#ffebee,stroke:#c62828,color:#b71c1c
+    style B fill:#fff3e0,stroke:#e65100,color:#bf360c
+    style C fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    style D fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
 ```
 
 **关键技术决策**：
@@ -824,7 +824,7 @@ graph TD
     E --> E1[持续部署]
     E --> E2[自动化测试]
 
-    style A fill:#f3e5f5
+    style A fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
 ```
 
 **Amazon 的实践**：
@@ -852,11 +852,11 @@ graph TD
     C1 --> D1[服务化改造]
     D1 --> E1[全面微服务化]
 
-    style A fill:#ffebee
-    style B fill:#fff3e0
-    style C fill:#e3f2fd
-    style D fill:#e3f5f5
-    style E fill:#f3e5f5
+    style A fill:#ffebee,stroke:#c62828,color:#b71c1c
+    style B fill:#fff3e0,stroke:#e65100,color:#bf360c
+    style C fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    style D fill:#e3f5f5,stroke:#00838f,color:#006064
+    style E fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
 ```
 
 **eBay 的关键经验**：
@@ -982,10 +982,10 @@ graph TD
     B --> C[服务测试<br/>大量]
     C --> D[单元测试<br/>最多]
 
-    style A fill:#ffebee
-    style B fill:#fff3e0
-    style C fill:#e3f2fd
-    style D fill:#f3e5f5
+    style A fill:#ffebee,stroke:#c62828,color:#b71c1c
+    style B fill:#fff3e0,stroke:#e65100,color:#bf360c
+    style C fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    style D fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
 ```
 
 **解决方案**：

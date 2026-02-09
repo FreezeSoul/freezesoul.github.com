@@ -54,9 +54,9 @@ graph LR
     E --> G[Flutter<br/>2018+]
     F --> G
 
-    style B fill:#00fff5
-    style D fill:#4c8af5
-    style G fill:#faff00
+    style B fill:#00fff5,stroke:#00b8b0,color:#008b82
+    style D fill:#4c8af5,stroke:#1a5fb4,color:#134a8f
+    style G fill:#faff00,stroke:#e6d900,color:#c9b800
 ```
 
 ### 2017 年的技术格局
