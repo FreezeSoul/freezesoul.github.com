@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "23种设计模式的回顾与总结"
+title: "23种设计模式(Design Patterns)回顾与总结"
 permalink: "design-patterns-intro"
 author: "FS.IO"
 date: 2012-06-01 00:00:00
