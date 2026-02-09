@@ -5,6 +5,7 @@ permalink:  "webdesktop-interface"
 author: "FS.IO"
 date:   2014-12-01 00:00:00
 categories: project
+tags: [Web桌面, 混合应用, Awesomium, HTML5]
 ---
 
 

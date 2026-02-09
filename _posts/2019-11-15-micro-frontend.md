@@ -5,6 +5,7 @@ permalink: "micro-frontend-guide"
 author: "FreezeSoul"
 date: 2019-11-15 14:30:00
 categories: technology
+tags: [微前端, 前端开发, 架构]
 ---
 
 ## 引言：巨石应用的困境

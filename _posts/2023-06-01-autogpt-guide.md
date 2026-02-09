@@ -5,6 +5,7 @@ permalink: "autogpt-guide"
 author: "FS.IO"
 date:   2023-06-01 00:00:00
 categories: technology
+tags: [AutoGPT, AI, 自主智能体]
 ---
 
 ChatGPT 的出现让我们看到了 AI 对话的强大能力，但你有没有想过：如果 AI 不仅能回答问题，还能自主规划、执行任务，会是什么样子？

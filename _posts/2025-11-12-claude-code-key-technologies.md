@@ -5,6 +5,7 @@ permalink: "claude-code-key-technologies"
 author: "FS.IO"
 date:   2025-11-12 00:00:00
 categories: technology
+tags: [Claude Code, AI编程, SubAgent, Skills]
 ---
 
 2025年，Claude Code 的出现标志着 AI 编程助手进入了一个新的阶段。它不仅是一个代码生成工具，更是一个完整的技术架构范例。本文将深入分析 Claude Code 的几项关键技术。

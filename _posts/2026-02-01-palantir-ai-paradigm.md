@@ -5,6 +5,7 @@ permalink: "palantir-ai-paradigm"
 author: "FS.IO"
 date:   2026-02-01 00:00:00
 categories: technology
+tags: [本体论, Palantir, AI, 数据建模]
 ---
 
 Palantir 在 2024 年股价翻了三倍，市值突破千亿美元。很多人归因于 AI 浪潮，但真正的秘密藏在一个概念背后——**本体论（Ontology）**。

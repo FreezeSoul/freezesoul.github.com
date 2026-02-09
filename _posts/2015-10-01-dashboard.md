@@ -5,6 +5,7 @@ permalink:  "amazingdashboard-platform"
 author: "FS.IO"
 date:   2015-10-01 00:00:00
 categories: project
+tags: [数据可视化, HTML5, AngularJS, 微服务, Dashboard]
 ---
 
 ## AmazingDashboard 指标可视化平台

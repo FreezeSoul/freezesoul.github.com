@@ -6,6 +6,7 @@ permalink: "ionic-hybrid-app/"
 author: "FreezeSoul"
 date: 2017-03-15 09:00:00
 categories: technology
+tags: [Ionic, 混合应用, 跨平台, 移动开发, 前端开发]
 ---
 
 ## 引言：一个前端开发者的移动应用之路

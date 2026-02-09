@@ -4,7 +4,7 @@ title: "基于 T4 + DevExpress 的 WinForm 自动化开发脚手架"
 permalink: "auto-generate-winformui-t4-project"
 author: "FS.IO"
 date: 2011-05-01 00:00:00
-categories: architecture
+categories: project
 tags: [.NET, WinForms, T4, DevExpress, Entity Framework, 代码生成]
 ---
 

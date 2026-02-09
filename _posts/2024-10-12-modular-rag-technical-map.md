@@ -5,6 +5,7 @@ permalink: "modular-rag-technical-map"
 author: "FS.IO"
 date:   2024-10-12 00:00:00
 categories: technology
+tags: [RAG, AI, 检索增强生成, LLM]
 ---
 
 2024年，RAG（Retrieval-Augmented Generation，检索增强生成）技术已经成为AI应用的核心架构之一。从最初的Naive RAG到Advanced RAG，再到如今的Modular RAG，这条技术路线图清晰地展示了RAG技术的演进路径。

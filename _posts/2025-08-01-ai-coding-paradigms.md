@@ -5,6 +5,7 @@ permalink: "ai-coding-paradigms-evolution"
 author: "FS.IO"
 date:   2025-08-01 08:00:00
 categories: technology
+tags: [AI编程, Copilot, Cursor, 软件工程]
 ---
 
 ## 引言

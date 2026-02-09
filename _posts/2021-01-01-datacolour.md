@@ -5,6 +5,7 @@ permalink:  "datacolour"
 author: "FS.IO"
 date:   2021-01-01 00:00:00
 categories: project
+tags: [数据可视化, 低代码, 商业智能]
 ---
 
 经过半年多的努力，终于完成了可视化平台2.0的开发工作，目前平台已具备可视化项目快速落地的支撑能力，强烈推荐。

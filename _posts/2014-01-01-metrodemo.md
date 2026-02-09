@@ -4,7 +4,8 @@ title: "Metro Dashboard Demo - Metro风格Dashboard演示"
 permalink:  "metro-dashboard-demo"
 author: "FS.IO"
 date:   2014-01-01 00:00:00
-categories: javascript
+categories: language
+tags: [JavaScript, 前端开发, Dashboard]
 ---
 
 这是之前花了1-2天时间完成一个Metro风格的Dashboard 高保真Demo效果，单看效果还不错，推介一下。

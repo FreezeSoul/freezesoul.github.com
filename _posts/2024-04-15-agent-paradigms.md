@@ -5,6 +5,7 @@ permalink: "agent-paradigms"
 author: "FS.IO"
 date:   2024-04-15 00:00:00
 categories: technology
+tags: [Agent, ReAct, Plan-and-Solve, Reflection, AI]
 ---
 
 如果说 2023 年是 AutoGPT 引爆 Agent 概念的一年，那么 2024 年则是这些概念逐渐沉淀、范式逐渐清晰的一年。

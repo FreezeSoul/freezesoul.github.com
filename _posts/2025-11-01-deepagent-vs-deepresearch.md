@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "DeepAgent vs DeepResearch：两种“深度智能体”架构范式的对照分析"
+title: "DeepAgent vs DeepResearch：两种"深度智能体"架构范式的对照分析"
 permalink: "deepagent-vs-deepresearch"
 author: "FS.IO"
 date:   2025-11-01 00:00:00
 categories: technology
+tags: [Agent, DeepAgent, DeepResearch, AI]
 ---
 
 当 AI Agent 从"调用工具的脚本"进化到能够自主决策的系统时，一个关键的问题浮现出来：**你的 Agent 应该有多大的自主权？**

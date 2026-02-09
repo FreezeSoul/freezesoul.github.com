@@ -5,7 +5,7 @@ permalink: "all-from-now-on"
 author: "FS.IO"
 date: 2010-01-01 00:00:00
 categories: note
-tags: [博客, Jekyll, GitHub, 开启]
+tags: [Jekyll, GitHub, 博客搭建]
 ---
 
 ## Hello, World!

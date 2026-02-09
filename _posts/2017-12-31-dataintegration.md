@@ -6,6 +6,7 @@ permalink:  "kettle-web-host"
 author: "FS.IO"
 date:   2017-12-31 09:00:00
 categories: technology
+tags: [Kettle, ETL, Spring Boot, Dubbo, 数据集成]
 ---
 
 ## 引言：Kettle 与企业数据集成

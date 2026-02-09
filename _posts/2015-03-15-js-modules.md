@@ -4,7 +4,8 @@ title: "JavaScript 模块化演进史：从 CommonJS 到 ES Modules"
 permalink: "js-modules-history"
 author: "FreezeSoul"
 date: 2015-03-15 14:30:00
-categories: technology
+categories: language
+tags: [JavaScript, CommonJS, ES Modules, 模块化]
 ---
 
 ## 引言：模块化的必要性

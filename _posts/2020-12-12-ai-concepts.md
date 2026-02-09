@@ -5,6 +5,7 @@ permalink: "ai-concepts"
 author: "FS.IO"
 date:   2020-12-12 00:00:00
 categories: technology
+tags: [机器学习, 深度学习, 神经网络, AI]
 ---
 
 最近几年，人工智能（AI）、机器学习（Machine Learning）和深度学习（Deep Learning）成为了技术圈最热门的话题。从 Google DeepMind 的 AlphaGo 战胜围棋大师李世乭，到各种智能应用的普及，这些概念频繁出现在媒体和日常讨论中。但很多人并不清楚它们之间的区别和联系。
