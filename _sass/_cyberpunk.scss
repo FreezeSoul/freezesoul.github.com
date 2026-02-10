@@ -378,6 +378,10 @@ a {
   }
 }
 
+pre.mermaid{
+  text-align: center;
+}
+
 @keyframes loading {
   0% { left: -50%; }
   100% { left: 100%; }
