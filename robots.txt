@@ -1,2 +1,4 @@
 User-agent: *
-Sitemap: http://yourdomain.com/sitemap.xml
+Allow: /
+
+Sitemap: https://diginfo.me/sitemap.xml
