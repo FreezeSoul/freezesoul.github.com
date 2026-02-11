@@ -35,6 +35,7 @@ graph TD
 
     style B fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
     style G fill:#fff3e0,stroke:#e65100,color:#bf360c
+
 ```
 
 ### 单体架构的优势
@@ -86,6 +87,7 @@ graph TD
     F --> J[配送数据库]
 
     style B fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+
 ```
 
 ### 微服务的定义
@@ -148,6 +150,7 @@ graph LR
     D --> G[分库分表<br/>数据分区]
 
     style A fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
+
 ```
 
 - **X 轴**：运行多个应用副本，通过负载均衡器分发请求
@@ -199,6 +202,7 @@ graph TD
     B -.OrderPaid.-> D
 
     style A fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
+
 ```
 
 **其他拆分策略**
@@ -298,6 +302,7 @@ graph TD
     style C fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
     style E fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
     style G fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+
 ```
 
 **为什么需要独享数据库**？
@@ -342,6 +347,7 @@ graph LR
     G --> H[补偿订单]
 
     style A fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+
 ```
 
 **2. 协同式（Choreography）**
@@ -357,6 +363,7 @@ graph LR
     E -->|InventoryReleased| A
 
     style A fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+
 ```
 
 **对比**：
@@ -383,6 +390,7 @@ graph TD
     G --> H[恢复状态]
 
     style D fill:#fff3e0,stroke:#e65100,color:#bf360c
+
 ```
 
 **事件溯源的优势**：
@@ -416,6 +424,7 @@ graph LR
     style D fill:#fff3e0,stroke:#e65100,color:#bf360c
     style E fill:#fff3e0,stroke:#e65100,color:#bf360c
     style G fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+
 ```
 
 **CQRS 的优势**：
@@ -453,6 +462,7 @@ graph LR
     E --> F[直接调用]
 
     style B fill:#fff3e0,stroke:#e65100,color:#bf360c
+
 ```
 
 服务实例启动时，将自己的网络位置注册到服务注册表。客户端从注册表查询可用实例，并使用负载均衡算法选择一个实例直接调用。
@@ -470,6 +480,7 @@ graph LR
     B --> D[路由请求]
 
     style B fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+
 ```
 
 客户端通过负载均衡器向服务发送请求，负载均衡器查询服务注册表并将请求路由到可用的实例。
@@ -560,6 +571,7 @@ graph TD
     I -->|是| J[打开熔断器]
     I -->|否| K[记录失败]
     J --> L[降级处理]
+
 ```
 
 > **实践建议**：容错机制应该在服务设计阶段就考虑进去，而不是事后补救。Netflix 的 Hystrix（虽已停止维护，但理念仍值得借鉴）提供了完整的容错实现，包括熔断器、隔离、降级等功能。
@@ -571,6 +583,7 @@ stateDiagram-v2
     打开 --> 半开: 超时后
     半开 --> 关闭: 请求成功
     半开 --> 打开: 请求失败
+
 ```
 
 **熔断器的三种状态**：
@@ -602,6 +615,7 @@ graph TD
     style B fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
     style G fill:#fff3e0,stroke:#e65100,color:#bf360c
     style H fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
+
 ```
 
 **API 网关的核心职责**：
@@ -627,6 +641,7 @@ graph TD
     I --> J[返回给客户端]
 
     style B fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+
 ```
 
 **4. 横切关注点**：
@@ -660,6 +675,7 @@ graph TD
 
     style B fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
     style E fill:#ffebee,stroke:#c62828,color:#b71c1c
+
 ```
 
 **Strangler 模式的步骤**：
@@ -690,6 +706,7 @@ CircuitBreaker breaker = CircuitBreaker.builder()
     .timeout(3000)            // 超时时间：3秒
     .halfOpenAfter(60000)     // 半开等待时间：60秒后进入半开状态
     .build();
+
 ```
 
 **断路器的实践建议**：
@@ -719,6 +736,7 @@ graph TD
     style D fill:#fff3e0,stroke:#e65100,color:#bf360c
     style F fill:#fff3e0,stroke:#e65100,color:#bf360c
     style H fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
+
 ```
 
 **为什么需要 BFF**：
@@ -763,6 +781,7 @@ graph LR
     style B fill:#fff3e0,stroke:#e65100,color:#bf360c
     style C fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
     style D fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
+
 ```
 
 **关键技术决策**：
@@ -825,6 +844,7 @@ graph TD
     E --> E2[自动化测试]
 
     style A fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
+
 ```
 
 **Amazon 的实践**：
@@ -857,6 +877,7 @@ graph TD
     style C fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
     style D fill:#e3f5f5,stroke:#00838f,color:#006064
     style E fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
+
 ```
 
 **eBay 的关键经验**：
@@ -874,6 +895,7 @@ graph TD
 ```
 ❌ 错误做法：停止新功能开发，全力重写整个系统
 ✅ 正确做法：在维护现有系统的同时，逐步将功能迁移到新架构
+
 ```
 
 **2. 技术转型需要组织转型配合**
@@ -936,9 +958,11 @@ graph TD
 **配置项数量**：需要管理的配置项数量爆炸
 
 **复杂性的转移**：
+
 ```
 单体应用：代码复杂度高，运维复杂度低
 微服务：代码复杂度降低，运维复杂度暴增
+
 ```
 
 ### 与 SOA 的区别
@@ -986,6 +1010,7 @@ graph TD
     style B fill:#fff3e0,stroke:#e65100,color:#bf360c
     style C fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
     style D fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
+
 ```
 
 **解决方案**：
@@ -1080,6 +1105,7 @@ gantt
     调用库存服务 :00:00:56, 15ms
     调用支付服务 :00:01:12, 20ms
     更新订单 :00:01:33, 30ms
+
 ```
 
 **分布式追踪的价值**：
@@ -1124,6 +1150,7 @@ public Health health() {
 
     return Health.up().build();
 }
+
 ```
 
 > **实践建议**：在微服务架构中，可观测性不是可有可无的，而是必需品。在设计微服务时，就应该把监控、日志、追踪纳入设计范围，而不是事后补充。

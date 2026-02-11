@@ -27,6 +27,7 @@ var utils = {
 
 // script3.js - 使用时出现意外行为
 utils.formatDate(new Date()); // 调用的是哪个实现？
+
 ```
 
 这种命名冲突在引入多个第三方库时尤为严重。著名的例子是早期的 Prototype.js 与 jQuery 之间的 `$` 符号冲突。
@@ -45,6 +46,7 @@ utils.formatDate(new Date()); // 调用的是哪个实现？
 <!-- 如果顺序错误，就会报错 -->
 <script src="app.js"></script>  <!-- Uncaught Error: Backbone is not defined -->
 <script src="backbone.js"></script>
+
 ```
 
 ### 作用域问题
@@ -63,6 +65,7 @@ var MyModule = (function() {
     }
   };
 })();
+
 ```
 
 虽然 IIFE（立即执行函数表达式）提供了一定的封装能力，但这种方式无法解决模块间的依赖管理问题。
@@ -149,6 +152,7 @@ console.log(add(5, 3)); // 8
 const mod1 = require('./myModule'); // 执行模块代码
 const mod2 = require('./myModule'); // 从缓存返回
 console.log(mod1 === mod2); // true - 同一个实例
+
 ```
 
 ### 模块加载流程
@@ -177,6 +181,7 @@ function require(modulePath) {
   // 6. 返回导出内容
   return module.exports;
 }
+
 ```
 
 ### 模块解析算法
@@ -202,6 +207,7 @@ Node.js 按照以下顺序查找模块：
 ../node_modules/myModule
 ../../node_modules/myModule
 // ... 直到根目录
+
 ```
 
 ### 循环依赖处理
@@ -236,6 +242,7 @@ const b = require('./b');
 // b 结束
 // a 中，b.loaded = true   ← b 已完全加载
 // a 结束
+
 ```
 
 ### 同步加载的原理
@@ -248,6 +255,7 @@ const content = fs.readFileSync('config.json', 'utf8');
 // 在服务器端，I/O 操作虽然快，但仍然是同步阻塞的
 // 这在浏览器中会导致界面卡死
 const module = require('./heavy-computation'); // 阻塞直到加载完成
+
 ```
 
 ### 优缺点分析
@@ -309,6 +317,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(3000);
+
 ```
 
 ## AMD (Asynchronous Module Definition) - 浏览器端的探索
@@ -336,6 +345,7 @@ AMD 规范定义了一个简单的 API：
 
 ```javascript
 define(id?, dependencies?, factory);
+
 ```
 
 - **id**（可选）：模块标识符
@@ -403,6 +413,7 @@ define(function(require, exports, module) {
   var dep = require('dependency');
   exports.value = dep.transform();
 });
+
 ```
 
 ### RequireJS 配置
@@ -450,6 +461,7 @@ requirejs.config({
 require(['app/main'], function(App) {
   App.initialize();
 });
+
 ```
 
 ### 异步加载机制
@@ -473,6 +485,7 @@ define(['module1', 'module2', 'module3'], function(mod1, mod2, mod3) {
 //   └── module3.js ─┐ │   │
 //                    ↓ ↓   ↓
 //                  [全部完成] → 执行回调
+
 ```
 
 ### 依赖前置 vs 就近依赖
@@ -499,6 +512,7 @@ define(['jquery', './utils', './config'], function($, utils, config) {
     initB: initFeatureB
   };
 });
+
 ```
 
 ### 优缺点分析
@@ -532,6 +546,7 @@ define(['jquery', './utils', './config'], function($, utils, config) {
   <div id="app"></div>
 </body>
 </html>
+
 ```
 
 ```javascript
@@ -556,6 +571,7 @@ requirejs.config({
 require(['app'], function(App) {
   App.start();
 });
+
 ```
 
 ```javascript
@@ -570,6 +586,7 @@ define(['jquery', 'backbone', 'views/appView'], function($, Backbone, AppView) {
 
   return App;
 });
+
 ```
 
 ```javascript
@@ -590,6 +607,7 @@ define(['backbone', 'collections/todos'], function(Backbone, TodoList) {
 
   return AppView;
 });
+
 ```
 
 ## CMD (Common Module Definition) - 国内探索
@@ -618,6 +636,7 @@ CMD 规范的特点：
 define(function(require, exports, module) {
   // 模块代码
 });
+
 ```
 
 - **require**：导入函数（同步）
@@ -660,6 +679,7 @@ define(function(require, exports, module) {
   exports.featureA = featureA;
   exports.featureB = featureB;
 });
+
 ```
 
 ### 与 AMD 的核心区别
@@ -703,6 +723,7 @@ define(function(require, exports, module) {
   exports.init = init;
   exports.process = process;
 });
+
 ```
 
 ### 延迟执行机制
@@ -728,6 +749,7 @@ define(function(require, exports, module) {
 
   exports.later = later;
 });
+
 ```
 
 ### SeaJS 配置
@@ -774,6 +796,7 @@ seajs.config({
 
 // 加载主模块
 seajs.use('./main');
+
 ```
 
 ### 优缺点分析
@@ -820,6 +843,7 @@ define(function(require, exports, module) {
 
   module.exports = Dialog;
 });
+
 ```
 
 ```javascript
@@ -840,6 +864,7 @@ define(function(require, exports, module) {
 
   exports.init = init;
 });
+
 ```
 
 ```javascript
@@ -851,6 +876,7 @@ define(function(require) {
     app.init();
   });
 });
+
 ```
 
 ### AMD vs CMD 对比表
@@ -893,6 +919,7 @@ UMD 的核心思想是通过运行时环境检测，使用适当的模块系统�
   // 模块实现
   return {};
 }));
+
 ```
 
 ### 详细实现模式
@@ -923,6 +950,7 @@ UMD 的核心思想是通过运行时环境检测，使用适当的模块系统�
 
   return MyLibrary;
 }));
+
 ```
 
 #### 模式2：带依赖的 UMD
@@ -952,6 +980,7 @@ UMD 的核心思想是通过运行时环境检测，使用适当的模块系统�
 
   return MyLibrary;
 }));
+
 ```
 
 #### 模式3：jQuery 插件风格
@@ -995,6 +1024,7 @@ UMD 的核心思想是通过运行时环境检测，使用适当的模块系统�
   };
 
 }));
+
 ```
 
 ### 使用工具生成 UMD
@@ -1019,6 +1049,7 @@ export default {
     commonjs()
   ]
 };
+
 ```
 
 ```javascript
@@ -1031,6 +1062,7 @@ module.exports = {
     filename: 'my-library.js'
   }
 };
+
 ```
 
 ### UMD 模板
@@ -1050,6 +1082,7 @@ var umd = (function(factory) {
   // 模块代码
   exports.value = "something";
 });
+
 ```
 
 ### 优缺点分析
@@ -1107,6 +1140,7 @@ var umd = (function(factory) {
 
   return Utils;
 }));
+
 ```
 
 ```javascript
@@ -1126,6 +1160,7 @@ require(['utils'], function(Utils) {
 <script>
   Utils.formatDate(new Date());
 </script>
+
 ```
 
 ## ES Modules (ESM) - 官方标准
@@ -1249,6 +1284,7 @@ export * from './helpers.js';
 
 // 默认导出重新导出
 export { default } from './main.js';
+
 ```
 
 ### 静态模块结构
@@ -1266,6 +1302,7 @@ import { multiply } from './' + moduleName; // ❌ 错误
 
 // 必须使用静态字符串字面量
 import { multiply } from './math.js';  // ✅ 正确
+
 ```
 
 ### 导入导出详解
@@ -1284,6 +1321,7 @@ import { count, increment } from './counter.js';
 console.log(count);  // 0
 increment();
 console.log(count);  // 1 ← 实时更新，不是值拷贝
+
 ```
 
 #### 循环依赖处理
@@ -1305,6 +1343,7 @@ import './a.js';
 // 输出：
 // b.js: undefined  ← a 还未初始化
 // a.js: b
+
 ```
 
 ### Tree-shaking 支持
@@ -1330,6 +1369,7 @@ import { used } from './utils.js';
 used();
 
 // 打包后，unused 和 alsoUnused 会被移除
+
 ```
 
 ### 浏览器原生支持
@@ -1348,6 +1388,7 @@ used();
     console.log(module.add(5, 3));
   });
 </script>
+
 ```
 
 ### Node.js 中的 ESM
@@ -1369,6 +1410,7 @@ export const add = (a, b) => a + b;
 
 // 导入
 import { add } from './math.js';
+
 ```
 
 ### 导入.meta 对象
@@ -1382,6 +1424,7 @@ console.log(import.meta.url);
 // 使用场景：动态加载相对资源
 const response = await fetch(new URL('data.json', import.meta.url));
 const data = await response.json();
+
 ```
 
 ### 顶级 await（ES2022）
@@ -1394,6 +1437,7 @@ export const config = await response.json();
 // main.js
 import { config } from './config.js';
 console.log(config.apiKey);
+
 ```
 
 ### 优缺点分析
@@ -1431,6 +1475,7 @@ export default {
   area: calculateArea,
   circumference: calculateCircumference
 };
+
 ```
 
 ```javascript
@@ -1453,6 +1498,7 @@ export function debounce(func, wait) {
     timeout = setTimeout(later, wait);
   };
 }
+
 ```
 
 ```javascript
@@ -1490,6 +1536,7 @@ class App {
 }
 
 export default App;
+
 ```
 
 ```javascript
@@ -1499,6 +1546,7 @@ import App from './app.js';
 const app = new App();
 app.init();
 app.setupSearch();
+
 ```
 
 ## 方案对比总结
@@ -1554,6 +1602,7 @@ if (condition) {
   // 动态导入需要 import()
   const mod = await import('./module.js');
 }
+
 ```
 
 ### 模块化演进时间线
@@ -1575,6 +1624,7 @@ graph LR
   style C fill:#00fff5,stroke:#00b8b0,color:#008b82
   style E fill:#00ff9f,stroke:#00cc7f,color:#009966
   style I fill:#faff00,stroke:#e6d900,color:#c9b800
+
 ```
 
 ## 未来展望（2015年视角）
@@ -1619,6 +1669,7 @@ npm install --save-dev @babel/core @babel/preset-env
     }]
   ]
 }
+
 ```
 
 ```javascript
@@ -1631,6 +1682,7 @@ import { add } from './math.js';
 var _math = require('./math.js');
 
 // 或转为 UMD 格式
+
 ```
 
 ### 2019-2020: Node.js ESM 原生支持
@@ -1646,6 +1698,7 @@ export const add = (a, b) => a + b;
 // math.cjs - CommonJS
 const add = (a, b) => a + b;
 module.exports = { add };
+
 ```
 
 #### package.json 的 type 字段
@@ -1660,6 +1713,7 @@ module.exports = { add };
     "./legacy": "./dist/legacy.cjs"
   }
 }
+
 ```
 
 #### 条件导出
@@ -1672,6 +1726,7 @@ module.exports = { add };
     "default": "./index.js"
   }
 }
+
 ```
 
 ### 2021-2022: 打包工具演进
@@ -1696,6 +1751,7 @@ export default defineConfig({
     include: ['lodash-es']
   }
 });
+
 ```
 
 #### 现代打包配置
@@ -1720,6 +1776,7 @@ export default {
     }
   ]
 };
+
 ```
 
 ### 2023-2024: 新一代方案
@@ -1735,6 +1792,7 @@ async function handler(req: Request): Promise<Response> {
 }
 
 await serve(handler, { port: 8000 });
+
 ```
 
 #### Bun - 高性能运行时
@@ -1749,6 +1807,7 @@ Bun.serve({
     return new Response("Hello Bun!");
   },
 });
+
 ```
 
 #### TypeScript 类型集成
@@ -1770,6 +1829,7 @@ import { distance, Point } from './math.js';
 const p1: Point = { x: 0, y: 0 };
 const p2: Point = { x: 3, y: 4 };
 console.log(distance(p1, p2)); // 5
+
 ```
 
 ### 模块化最佳实践（2024）
@@ -1804,6 +1864,7 @@ graph TD
 
   style A fill:#ff006e,stroke:#d6005c,color:#b3004e
   style E fill:#00ff9f,stroke:#00cc7f,color:#009966
+
 ```
 
 ### 选择建议（2024）

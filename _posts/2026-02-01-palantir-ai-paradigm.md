@@ -39,6 +39,7 @@ BI 系统显示：库存周转率 = 8 次/年
 - 是客户大量取消了订单？
 
 传统 BI 无法回答这个问题。
+
 ```
 
 ### 问题的根源：OLTP 与 OLAP 的分离
@@ -68,6 +69,7 @@ graph LR
 
     style A4 fill:#ff6b6b,stroke:#c92a2a,color:#fff
     style B4 fill:#ffe066,stroke:#f59f00,color:#000
+
 ```
 
 **关键问题**：当数据从 OLTP 系统流向 OLAP 系统时，**业务语义和行为规则丢失了**。
@@ -93,6 +95,7 @@ graph LR
 │   └── 数据库表、字段、关系清晰可见
 └── 行为规则模型：不可见，隐藏在编译后的代码中
     └── 业务语义丢失，无法追溯
+
 ```
 
 **关键洞察**：传统软件建模中，数据模型和行为规则模型在运行态**完全分离**。
@@ -131,6 +134,7 @@ class OrderController:
         # 触发后续流程
         self.send_notification(order)
         self.update_inventory(order)
+
 ```
 
 **问题在哪里？**
@@ -169,6 +173,7 @@ class Order(Object):
 
 # 业务人员可以直接理解和修改
 ontology.execute_action("Order.approve", order_id)
+
 ```
 
 **差异是什么？**
@@ -229,6 +234,7 @@ graph LR
     style B fill:#fff4e6,stroke:#f59f00,color:#000
     style C fill:#ebfbee,stroke:#2b8a3e,color:#000
     style D fill:#fff0f6,stroke:#c2255c,color:#000
+
 ```
 
 ### 演进的核心脉络
@@ -272,6 +278,7 @@ graph LR
 现在：业务建模（本体论）→ AI 理解并直接执行
       ↓                  ↓
    业务人员可维护      无需代码转换
+
 ```
 
 **根本原因**：AI 大模型让**"模型即程序"** 成为可能。
@@ -304,6 +311,7 @@ CREATE TABLE orders (
 -- - status = 'approved' 意味着什么？
 -- - 什么条件下可以变为 'approved'？
 -- - 审批通过后应该触发什么流程？
+
 ```
 
 **本质局限**：只记录数据状态，不记录业务规则。
@@ -330,6 +338,7 @@ DDD 领域模型的核心构造块：
     └── OrderApprovedEvent：订单批准事件
 
 # 这些概念通过代码（类、接口）实现
+
 ```
 
 ```python
@@ -350,6 +359,7 @@ class OrderRepository(Repository):
     """仓储接口"""
     def save(self, order: Order): ...
     def find_by_id(self, id: OrderId) -> Order: ...
+
 ```
 
 **本质局限**：虽然将业务概念从技术细节中分离出来，但**最终仍是代码表达，业务人员无法直接参与**。
@@ -379,6 +389,7 @@ class OrderRepository(Repository):
             └── 触发 库存更新
 
 # 这些描述可以直接用自然语言维护
+
 ```
 
 **本体论的核心洞察：围绕对象建模**
@@ -393,6 +404,7 @@ class OrderRepository(Repository):
     ↓ 可复用
     ↓ 对象的行为可复用
     ↓ 业务流程 = 对象行为的灵活组装和编排
+
 ```
 
 **为什么对象是核心？**
@@ -444,6 +456,7 @@ DDD：业务概念 → 代码模式 → 程序运行
 本体论：业务概念 → 语义模型 → AI 执行
         ↓           ↓          ↓
     业务人员    可视化工具    AI 引擎
+
 ```
 
 **没有 AI 大模型，本体论就只是 DDD 的另一种说法。有了 AI，模型才真正成为可执行的资产。**
@@ -496,6 +509,7 @@ graph TD
     style A1 fill:#51cf66,stroke:#2b8a3e,color:#fff
     style C1 fill:#ffe066,stroke:#f59f00,color:#000
     style C2 fill:#ffe066,stroke:#f59f00,color:#000
+
 ```
 
 ## Palantir 本体论解决的核心问题
@@ -509,6 +523,7 @@ Palantir 最初是一家做数据服务、数据中台的公司。他们的发�
 ├── 可以看到：指标的结果
 ├── 可以看到：指标的计算公式
 └── 无法看到：形成指标的业务语义和业务流转规则
+
 ```
 
 **Palantir 的解决方案**：
@@ -525,6 +540,7 @@ Palantir 本体论：
 ├── 行为模型（动作、流程）
 └── 规则模型（条件、约束）
     └── 既能看到"是什么"，又能追溯"为什么"
+
 ```
 
 这样构建的完整本体，才真正解决了**"知其然又知其所以然"**的问题。
@@ -536,6 +552,7 @@ Palantir 本体论：
 一个关键问题：**OLAP 聚合需要预计算，本体论如何处理海量数据的性能问题？**
 
 **传统 OLAP 的做法**：
+
 ```
 预聚合（成本高，一次性）
 ├── 构建 Cube
@@ -544,6 +561,7 @@ Palantir 本体论：
     ↓
 查询（毫秒级）
 └── 读取预聚合结果
+
 ```
 代价：构建时间长、存储空间大、灵活性差。
 
@@ -559,6 +577,7 @@ Palantir 本体论：
 ├── 小数据/热数据 → 实时计算
 ├── 大数据/高频查询 → 预聚合
 └── 历史数据 → 批处理 + 增量更新
+
 ```
 
 **关键洞察**：
@@ -606,6 +625,7 @@ class OrderDSL:
   - 需要额外审查
   - 金额限制：单笔不超过5万
   - 需要客服回访确认
+
 ```
 
 **AI 代码生成的范式转移**：
@@ -616,6 +636,7 @@ class OrderDSL:
 
 现在：业务概念 → 本体论定义 → AI 理解并执行
       （业务概念直接可执行）
+
 ```
 
 ## 开发者角色的转移：从代码编写者到本体论设计师
@@ -635,6 +656,7 @@ class OrderDSL:
 7. 部署到生产环境
 
 时间：2周
+
 ```
 
 ### 本体论开发者的一天
@@ -649,6 +671,7 @@ class OrderDSL:
 4. 一键发布到生产环境
 
 时间：2小时
+
 ```
 
 **开发者关注点的转移**：
@@ -679,6 +702,7 @@ generated_code = ai.generate_code(
 #         item.product.stock -= item.quantity
 #         if item.product.stock < item.product.safety_stock:
 #             trigger_replenishment(item.product)
+
 ```
 
 ## Agentic AI 基础设施：支撑本体论工程
@@ -697,6 +721,7 @@ generated_code = ai.generate_code(
 ├─────────────────────────────────────────────────────────┤
 │  执行层：API 调用、数据库操作、外部系统                       │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ### 多范式智能化的商业解决方案
@@ -749,6 +774,7 @@ class EnterpriseOntologyAgent:
         - "找出所有高风险客户，并生成风险报告"
         """
         return self.agent.execute(intent)
+
 ```
 
 ### 架构设计的核心原则
@@ -764,6 +790,7 @@ Skills 层：定义"怎么做"
 
 Tools 层：定义"用什么"
     ↓ 技术实现的抽象
+
 ```
 
 **2. 业务价值显性化**
@@ -791,6 +818,7 @@ class Order(Object):
             expected_outcome="订单在2小时内完成处理"
         )
     }
+
 ```
 
 **3. 可演化的设计**
@@ -807,6 +835,7 @@ ontology.update_rule("Order.approve", """
 # Agent 自动理解新规则
 # 自动调整执行逻辑
 # 自动记录变更历史
+
 ```
 
 ## 范式转移：从代码为中心到业务为中心
@@ -829,6 +858,7 @@ ontology.update_rule("Order.approve", """
 第四代：本体论工程
   关注点：业务概念、规则、价值
   业务参与度：直接维护业务模型
+
 ```
 
 ### 转移的本质
@@ -868,6 +898,7 @@ graph TB
     style B2 fill:#51cf66,stroke:#2b8a3e,color:#fff
     style A5 stroke-dasharray: 5 5
     style B5 stroke-dasharray: 5 5
+
 ```
 
 ## 实践路径
@@ -889,6 +920,7 @@ class SemanticLayer:
         # orders.amount → "订单金额"
         # orders.status → "订单状态"
         pass
+
 ```
 
 **价值**：让数据有"含义"，而不只是"值"。
@@ -905,6 +937,7 @@ class SemanticLayer:
 ├── 属性：amount, status, created_at
 ├── 动作：approve, reject, cancel
 └── 规则：如果金额>10万，需要...
+
 ```
 
 ```python
@@ -915,6 +948,7 @@ ontology = Ontology(
     actions=[...],
     rules=[...]
 )
+
 ```
 
 **价值**：业务模型显性化、可操作。
@@ -931,6 +965,7 @@ Skills = 业务的"句子"
     ├── 调用 Order.approve()
     ├── 发送通知
     └── 更新库存
+
 ```
 
 **与本体论的关联**：Skill 通过引用本体论中定义的对象、属性、动作和规则，组合成完整的业务流程。
@@ -943,6 +978,7 @@ skills/
           ├── 引用本体论：Order.approve
           ├── 引用本体论：Customer.get_credit_score
           └── 封装完整流程
+
 ```
 
 **价值**：业务逻辑模块化、可复用。
@@ -957,6 +993,7 @@ AI 直接理解并执行业务意图，实现自然语言交互。
 # AI 直接理解并执行业务意图
 agent = BusinessAgent(ontology=ontology)
 agent.execute("审批高风险订单，需要财务总监确认")
+
 ```
 
 **价值**：自然语言交互，降低使用门槛。
@@ -995,6 +1032,7 @@ graph TB
     style B3 fill:#fff4e6,stroke:#f59f00,color:#000
     style C3 fill:#ebfbee,stroke:#2b8a3e,color:#000
     style D3 fill:#fff0f6,stroke:#c2255c,color:#000
+
 ```
 
 ---

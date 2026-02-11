@@ -30,6 +30,7 @@ tags: [机器学习, 深度学习, 神经网络, AI]
 │   └─────────────────────────┘   │
 │                                 │
 └─────────────────────────────────┘
+
 ```
 
 人工智能是最早出现的，也是涵盖范围最广的概念；机器学习是人工智能的子集；深度学习则是机器学习的进一步细分，是当前 AI 技术爆发的核心驱动力。
@@ -63,6 +64,7 @@ tags: [机器学习, 深度学习, 神经网络, AI]
 │                 权重更新 (Weight Update)                │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 **核心组成要素**：
@@ -128,6 +130,7 @@ def backward_propagation(X, y, output, cache, weights):
 
     gradients = {'dW1': dW1, 'db1': db1, 'dW2': dW2, 'db2': db2, 'dW3': dW3, 'db3': db3}
     return gradients
+
 ```
 
 ---
@@ -191,6 +194,7 @@ def backward_propagation(X, y, output, cache, weights):
 │           └──────────────────┘                            │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 **卷积运算原理**：
@@ -213,6 +217,7 @@ def backward_propagation(X, y, output, cache, weights):
 (1×1) + (2×0) + (3×-1) +
 (2×1) + (3×0) + (4×-1) +
 (3×1) + (4×0) + (5×-1) = -3
+
 ```
 
 #### RNN 与 LSTM 架构
@@ -250,6 +255,7 @@ def backward_propagation(X, y, output, cache, weights):
 │  • 输出门 oₜ：决定输出哪些信息                              │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -284,6 +290,7 @@ def backward_propagation(X, y, output, cache, weights):
 │ • XGBoost     │    │ • Autoencoder     │    │                 │
 │ • Neural Net  │    │ • GAN             │    │                 │
 └───────────────┘    └──────────────────┘    └─────────────────┘
+
 ```
 
 #### 监督学习算法对比
@@ -316,6 +323,7 @@ def backward_propagation(X, y, output, cache, weights):
 深度学习端到端流程：
 原始数据 ──────────────────────────→ 深度神经网络 ──→ 预测
               (自动特征学习 + 模型训练)
+
 ```
 
 ### 2. 数据量和计算性能
@@ -350,6 +358,7 @@ def backward_propagation(X, y, output, cache, weights):
 
 深度学习方法（端到端）：
 输入图像 ──────────────────────────→ YOLO/Mask R-CNN ──→ 结果
+
 ```
 
 ### 4. 可解释性
@@ -427,6 +436,7 @@ def backward_propagation(X, y, output, cache, weights):
 │              Encoder 输出 → Decoder 输入                    │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 推荐系统
@@ -502,6 +512,7 @@ model.summary()
 #                     epochs=10,
 #                     batch_size=128,
 #                     validation_data=(x_val, y_val))
+
 ```
 
 ---

@@ -46,6 +46,7 @@ namespace <#= Namespace #>
         <# } #>
     }
 }
+
 ```
 
 ---
@@ -79,6 +80,7 @@ namespace <#= Namespace #>
     ├── User_Update.sql
     ├── User_Delete.sql
     └── User_Get.sql
+
 ```
 
 #### 2. 自动生成的代码特性
@@ -143,6 +145,7 @@ graph LR
     C --> D[执行模板转换]
     D --> E[生成代码文件]
     E --> F[保存到指定目录]
+
 ```
 
 ---
@@ -157,6 +160,7 @@ graph LR
          connectionString="Server=localhost;Database=MyDB;User Id=sa;Password=***;"
          providerName="System.Data.SqlClient" />
 </connectionStrings>
+
 ```
 
 ### 2. 选择要生成的表

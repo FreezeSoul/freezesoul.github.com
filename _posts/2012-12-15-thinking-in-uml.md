@@ -79,6 +79,7 @@ graph LR
     style C fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
     style D fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
     style E fill:#fff9c4,stroke:#fbc02d,color:#f57f17
+
 ```
 
 **各阶段的输入输出**：
@@ -215,6 +216,7 @@ graph TD
     style D fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
     style E fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
     style F fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+
 ```
 
 ### 业务实体、分析类、设计类
@@ -264,6 +266,7 @@ graph TD
     style A1 fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
     style B1 fill:#fff9c4,stroke:#fbc02d,color:#f57f17
     style C1 fill:#fce4ec,stroke:#d81b60,color:#ad1457
+
 ```
 
 **设计类（Design Class）**：
@@ -302,6 +305,7 @@ graph TD
     style B fill:#fff3e0,stroke:#f57c00,color:#e65100
     style C fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
     style D fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+
 ```
 
 **关系详解**：
@@ -343,6 +347,7 @@ graph TD
         NO  → 是临时使用吗？
             YES → 依赖
             NO  → 关联
+
 ```
 
 ---
@@ -372,6 +377,7 @@ graph TD
     style A fill:#e1f5ff,stroke:#0288d1,color:#01579b
     style B fill:#fff3e0,stroke:#f57c00,color:#e65100
     style C fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
+
 ```
 
 #### 用例图（Use Case Diagram）
@@ -402,6 +408,7 @@ graph TD
     style A fill:#e1f5ff,stroke:#0288d1,color:#01579b
     style B fill:#fff3e0,stroke:#f57c00,color:#e65100
     style C fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
+
 ```
 
 **用例图的实践价值**：
@@ -452,6 +459,7 @@ classDiagram
 
     User <|-- Customer : 继承
     User <|-- Administrator : 继承
+
 ```
 
 **类图的核心价值**：
@@ -490,6 +498,7 @@ graph TD
     style Presentation fill:#e1f5ff,stroke:#0288d1,color:#01579b
     style Business fill:#fff3e0,stroke:#f57c00,color:#e65100
     style Persistence fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
+
 ```
 
 **包图的核心价值**：
@@ -532,6 +541,7 @@ flowchart TD
     Success --> Ship[等待发货]
     Ship --> Receive([确认收货])
     Receive --> END([结束])
+
 ```
 
 **活动图的核心价值**：
@@ -564,6 +574,7 @@ stateDiagram-v2
     已取消 --> [*]
     已关闭 --> [*]
     已退款 --> [*]
+
 ```
 
 **状态图的核心价值**：
@@ -602,6 +613,7 @@ sequenceDiagram
         S-->>C: 登录失败
         C-->>UI: 显示错误信息
     end
+
 ```
 
 **时序图的核心价值**：
@@ -707,6 +719,7 @@ flowchart TD
 
     style START fill:#e1f5ff,stroke:#0288d1,color:#01579b
     style END fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+
 ```
 
 **分析类的获取来源**：
@@ -747,6 +760,7 @@ graph TD
     style A fill:#e1f5ff,stroke:#0288d1,color:#01579b
     style B fill:#fff3e0,stroke:#f57c00,color:#e65100
     style C fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
+
 ```
 
 **设计模型需要考虑的问题**：
@@ -788,6 +802,7 @@ graph TB
     style B fill:#fff3e0,stroke:#f57c00,color:#e65100
     style D fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
     style I fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+
 ```
 
 ---
@@ -851,6 +866,7 @@ graph TB
 ├── 类设计
 ├── 数据库设计
 └── 部署模型
+
 ```
 
 **决定抽象层次的因素**：

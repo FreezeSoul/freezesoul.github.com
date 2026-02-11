@@ -16,6 +16,7 @@ tags: [.NET, .NET Core, 跨平台, 微服务, Entity Framework, Spring Cloud]
 
 ```
 ASP → VB → VB.NET → ASP.NET WebForms → WinForms → ASP.NET MVC → Silverlight → WPF → .NET Core MVC + Avalonia UI
+
 ```
 
 **早期时代**：从 ASP 的服务器端脚本起步，经历了 VB.NET 、WebForms、WinForms 的事件驱动与控件化抽象，虽然它屏蔽了底层细节，但开发效率是顶级的。
@@ -55,6 +56,7 @@ graph LR
     style D fill:#00fff5,stroke:#00b8b0,color:#008b82
     style E fill:#faff00,stroke:#e6d900,color:#c9b800
     style F fill:#00ff9f,stroke:#00cc7f,color:#009966
+
 ```
 
 ### .NET Framework 时代：Windows 的特权
@@ -151,6 +153,7 @@ graph TD
 
     style D fill:#00fff5,stroke:#00b8b0,color:#008b82
     style I fill:#faff00,stroke:#e6d900,color:#c9b800
+
 ```
 
 **CoreCLR**：跨平台的通用语言运行时，负责 JIT 编译和内存管理。
@@ -175,6 +178,7 @@ dotnet run
 
 # 发布项目
 dotnet publish -c Release -r linux-x64
+
 ```
 
 ---
@@ -223,6 +227,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         .Property(e => e.Metadata)
         .HasJsonConversion();
 }
+
 ```
 
 **性能优化**：
@@ -249,6 +254,7 @@ options.UseSqlite("Data Source=app.db");
 
 // Cosmos DB - 云原生
 options.UseCosmos("endpoint", "key", "database");
+
 ```
 
 ### 代码示例：完整的 CRUD 操作
@@ -310,6 +316,7 @@ public class UserService
             .ToListAsync();
     }
 }
+
 ```
 
 ---
@@ -321,6 +328,7 @@ public class UserService
 #### Java 生态
 
 **Eureka**（Netflix）：
+
 ```yaml
 # application.yml
 eureka:
@@ -329,29 +337,35 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     preferIpAddress: true
+
 ```
 
 **Consul**（HashiCorp）：
+
 ```yaml
 cloud:
   consul:
     discovery:
       serviceName: user-service
       hostname: localhost
+
 ```
 
 **Nacos**（阿里）：
+
 ```yaml
 spring:
   cloud:
     nacos:
       discovery:
         server-addr: localhost:8848
+
 ```
 
 #### .NET 生态
 
 **Steeltoe**（Spring Cloud 的 .NET 移植）：
+
 ```csharp
 // Startup.cs
 public void ConfigureServices(IServiceCollection services)
@@ -383,9 +397,11 @@ public void Configure(IApplicationBuilder app)
     }
   }
 }
+
 ```
 
 **Consul 原生支持**：
+
 ```csharp
 services.AddConsulClient(options =>
 {
@@ -399,6 +415,7 @@ services.AddConsulServiceRegistration(options =>
     options.Address = "localhost";
     options.Port = 8010;
 });
+
 ```
 
 ### API 网关对比
@@ -433,6 +450,7 @@ var app = builder.Build();
 app.MapReverseProxy();
 
 app.Run();
+
 ```
 
 ```json
@@ -461,6 +479,7 @@ app.Run();
     }
   }
 }
+
 ```
 
 ### 配置中心
@@ -489,6 +508,7 @@ services.AddConsulConfig(options =>
 services.Configure<MyOptions>(
     Configuration.GetSection("MyOptions")
 );
+
 ```
 
 ### 链路追踪与监控
@@ -518,6 +538,7 @@ builder.Services.AddOpenTelemetryTracing(tracing =>
                options.Endpoint = new Uri("http://localhost:9411/api/v2/spans");
            });
 });
+
 ```
 
 ### 服务间通信
@@ -539,6 +560,7 @@ message HelloRequest {
 message HelloReply {
   string message = 1;
 }
+
 ```
 
 ```csharp
@@ -558,6 +580,7 @@ public class GreeterService : Greeter.GreeterBase
 
 // Program.cs
 app.MapGrpcService<GreeterService>();
+
 ```
 
 ```csharp
@@ -567,6 +590,7 @@ var client = new Greeter.GreeterClient(channel);
 
 var reply = await client.SayHelloAsync(
     new HelloRequest { Name = "World" });
+
 ```
 
 **gRPC vs REST API**：
@@ -605,6 +629,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:5.0
 WORKDIR /app
 COPY --from=build /app .
 ENTRYPOINT ["dotnet", "MyApp.dll"]
+
 ```
 
 #### Docker Compose 编排
@@ -640,6 +665,7 @@ services:
       - SA_PASSWORD=YourPassword123
     ports:
       - "1433:1433"
+
 ```
 
 ### Kubernetes 支持
@@ -698,6 +724,7 @@ spec:
   - port: 80
     targetPort: 80
   type: LoadBalancer
+
 ```
 
 #### Health Checks 实现
@@ -726,6 +753,7 @@ app.MapHealthChecks("/health/live", new HealthCheckOptions
 {
     Predicate = _ => false
 });
+
 ```
 
 ### Helm Charts
@@ -740,6 +768,7 @@ helm install user-service ./charts/user-service \
   --set image.tag=1.0.0 \
   --set replicaCount=3 \
   --set env.ASPNETCORE_ENVIRONMENT=Production
+
 ```
 
 ### 云服务集成对比
@@ -793,6 +822,7 @@ graph TD
 
     style F fill:#00ff9f,stroke:#00cc7f,color:#009966
     style G fill:#ff006e,stroke:#d6005c,color:#b3004e
+
 ```
 
 **关键数据**：
@@ -849,6 +879,7 @@ public async Task<Result<User>> GetUserAsync(int id)
             ? Result.Success(user)
             : Result.NotFound<User>();
 }
+
 ```
 
 ```java
@@ -862,6 +893,7 @@ public CompletableFuture<Result<User>> getUserAsync(int id) {
         .map(user -> Result.success(user))
         .orElse(Result.notFound());
 }
+
 ```
 
 ---
@@ -909,6 +941,7 @@ public CompletableFuture<Result<User>> getUserAsync(int id) {
 │                      数据层                                   │
 │     SQL Server / PostgreSQL / MongoDB / Redis               │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### .NET Core 服务接入 Eureka
@@ -918,6 +951,7 @@ public CompletableFuture<Result<User>> getUserAsync(int id) {
 ```bash
 dotnet add package Steeltoe.Discovery.ClientCore
 dotnet add package Steeltoe.Extensions.Configuration.ConfigServerCore
+
 ```
 
 #### 2. 配置服务注册
@@ -954,6 +988,7 @@ public class Startup
         app.UseDiscoveryClient();
     }
 }
+
 ```
 
 #### 3. 配置文件
@@ -982,6 +1017,7 @@ public class Startup
     }
   }
 }
+
 ```
 
 #### 4. 健康检查端点
@@ -1008,6 +1044,7 @@ public class HealthController : ControllerBase
         });
     }
 }
+
 ```
 
 ### 服务间调用示例
@@ -1047,6 +1084,7 @@ public class OrderController : ControllerBase
         }
     }
 }
+
 ```
 
 #### 使用 HttpClientFactory（推荐）
@@ -1091,6 +1129,7 @@ public class OrderController : ControllerBase
         return Ok(user);
     }
 }
+
 ```
 
 ### 配置中心集成
@@ -1106,6 +1145,7 @@ builder.Configuration.AddConfigServer(options =>
 });
 
 var app = builder.Build();
+
 ```
 
 ### 混合架构的最佳实践
@@ -1176,6 +1216,7 @@ API 网关        → 根据团队选择（Zuul / YARP）
                 • 高性能服务 → .NET Core
                 • 业务复杂服务 → Java Spring
                 • 数据处理服务 → Java / Go
+
 ```
 
 ### 技术决策框架
@@ -1190,6 +1231,7 @@ API 网关        → 根据团队选择（Zuul / YARP）
     .NET 经验丰富 → .NET Core
     Java 经验丰富 → Java
     混合团队        → 混合架构
+
 ```
 
 ---

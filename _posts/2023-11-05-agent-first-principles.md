@@ -33,6 +33,7 @@ tags: [Agent, AI, 大模型, 智能体]
 
 ```
 Prompt 工程 → Prompt Chain/Flow → Agent → Multi-Agent
+
 ```
 
 ### 第一阶段：Prompt 工程
@@ -107,6 +108,7 @@ AutoGPT 的横空出世标志着 Agent 时代的到来。它的核心思想：
 
 ```
 当前世界状态 → [目标驱动] → 目标世界状态
+
 ```
 
 在这个过程中：

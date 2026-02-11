@@ -24,6 +24,7 @@ Claude Code 采用了清晰的分层架构，这使其既强大又易于扩展�
 ├─────────────────────────────────────┤
 │      上下文管理 (Context)           │
 └─────────────────────────────────────┘
+
 ```
 
 ### 交互层
@@ -46,6 +47,7 @@ function processUserInput(input: string, mode: InputMode): UserMessage {
     return createUserMessage(input);
   }
 }
+
 ```
 
 - **输出渲染器**：使用 Ink 框架构建终端 UI，支持：
@@ -91,6 +93,7 @@ async function* query(
   // 5. 处理后续交互
   yield* await query()
 }
+
 ```
 
 ## 二、工具系统
@@ -115,6 +118,7 @@ interface Tool {
   inputSchema: z.ZodType;
   execute(params: any): Promise<ToolResult>;
 }
+
 ```
 
 ### 强大的 Bash 工具
@@ -134,6 +138,7 @@ const fileEncodingCache = new LRUCache<string, BufferEncoding>({
   ttlAutopurge: false,
   max: 1000,
 })
+
 ```
 
 ### 按需加载策略
@@ -160,6 +165,7 @@ async *call({ pattern, path }, { abortController }) {
     data: output,
   }
 }
+
 ```
 
 ### 结果截断处理
@@ -171,6 +177,7 @@ const MAX_LINES = 4
 const MAX_FILES = 1000
 const TRUNCATED_MESSAGE = `There are more than ${MAX_FILES} files...
 `
+
 ```
 
 ## 四、MCP 工具系统
@@ -195,6 +202,7 @@ export const getMCPTools = memoize(async (): Promise<Tool[]> => {
   // 聚合所有 MCP Server 的工具
   return aggregateTools(toolsList)
 })
+
 ```
 
 ## 五、子代理（Sub Agent）系统
@@ -217,6 +225,7 @@ Sub Agent 本质上是预配置的专业 AI 助手，每个都拥有：
 ├─────────────────────────────────────┤
 │     专业的领域知识                   │
 └─────────────────────────────────────┘
+
 ```
 
 这种设计使得每个 Sub Agent 都能专注于自己的专业领域，如代码审查、调试或数据分析等。
@@ -246,35 +255,42 @@ Sub Agent 本质上是预配置的专业 AI 助手，每个都拥有：
         ├── 安全检查结果
         └── 性能分析
     └── 返回简洁的审查结果给主对话
+
 ```
 
 #### 上下文隔离带来的好处
 
 **1. 保持主对话专注**
+
 ```
 主对话始终关注高层次的目标规划
     ↓
 Sub Agent 处理具体的技术细节
     ↓
 清晰的职责分离
+
 ```
 
 **2. 避免"上下文污染"**
+
 ```
 代码审查的细节不会影响
     ↓
 后续的架构讨论
     ↓
 每个 Sub Agent 都在自己的"沙盒"中工作
+
 ```
 
 **3. 并发处理多个任务**
+
 ```
 可以同时启动多个 Sub Agent
     ↓
 每个都有独立的上下文
     ↓
 互不干扰，并行执行
+
 ```
 
 ### 并发能力
@@ -289,6 +305,7 @@ Sub Agent 支持强大的并发执行，最多可同时运行 **49 个子代理*
 > 启动测试审查代理检查 tests/
 
 # 四个代理并发执行，各自独立
+
 ```
 
 这种并发能力使得大型项目的任务分解和并行执行成为可能。
@@ -320,6 +337,7 @@ color: red
 1. 运行 git diff 查看最近的更改
 2. 专注于已修改的文件
 3. 按优先级组织反馈（严重/警告/建议）
+
 ```
 
 ### 存储位置与优先级
@@ -347,6 +365,7 @@ Claude 识别这是一个代码审查任务
 Sub Agent 在独立上下文中完成审查
     ↓
 返回简洁的结果给主对话
+
 ```
 
 #### 2. 显式调用
@@ -356,11 +375,13 @@ Sub Agent 在独立上下文中完成审查
 > 用 code-reviewer 检查这个文件：main.py
 > 让 debugger 分析这个错误
 > 启动 data-scientist 分析销售数据
+
 ```
 
 ### 典型 Sub Agent 示例
 
 #### 代码审查专家
+
 ```yaml
 ---
 name: code-reviewer
@@ -368,9 +389,11 @@ description: 专注于代码质量、安全性和可维护性
 tools: file_search, bash, file_edit
 ---
 # 检查 PEP8 合规性、查找潜在 bug、提供优化建议
+
 ```
 
 #### 调试专家
+
 ```yaml
 ---
 name: debugger
@@ -378,9 +401,11 @@ description: 错误调试和问题排查专家
 tools: file_search, file_edit, bash
 ---
 # 分析错误日志、追踪问题根源、实施修复
+
 ```
 
 #### 数据科学家
+
 ```yaml
 ---
 name: data-scientist
@@ -388,6 +413,7 @@ description: 数据分析和 SQL 查询专家
 tools: bash, file_search, file_edit
 ---
 # 编写高效 SQL、数据清洗、统计分析、可视化
+
 ```
 
 ### Kiro 工作流：规范驱动开发
@@ -408,6 +434,7 @@ Sub Agent 最强大的应用之一是模仿 AWS Kiro 的规范驱动开发工作
 │      └── 读取规范、逐项实现、外科手术般的精确度            │
 │                                                           │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 这种方法通过引入结构化的"计划与执行"模式，取代随意的"氛围编程"（vibe coding），产生可维护、生产就绪的代码。
@@ -426,6 +453,7 @@ Skills 是一种**模块化的"能力包"机制**，可以将指令、脚本、�
 
 ```
 Skills = 知识 + 流程 + 模板 + 脚本/工具调用
+
 ```
 
 ### 核心技术原理
@@ -441,6 +469,7 @@ Skills = 知识 + 流程 + 模板 + 脚本/工具调用
                     ↓ 只有需要时才加载
 第三阶段（执行时）: 加载脚本/资源/模板
                     ↓ 按需加载，避免 token 爆炸
+
 ```
 
 这种分层披露策略使得即使安装了大量 Skills，也不会严重影响上下文窗口或性能。
@@ -460,6 +489,7 @@ Claude 可以依次或并行调用：
 ├── Chart Generation Skill  // 生成图表
 ├── PPT Skill               // 生成演示文稿
 └── PDF Skill               // 导出文档
+
 ```
 
 这种可组合性使得复杂、多步骤、跨工具的工作流自动化成为可能。
@@ -474,6 +504,7 @@ Claude 可以依次或并行调用：
 标准化企业流程
     ↓
 团队共享，一致输出
+
 ```
 
 ### Skill 文件结构
@@ -493,6 +524,7 @@ my_custom_skill/
 └── examples/             # 可选：示例输入/输出
     ├── sample_input.json
     └── expected_output.xlsx
+
 ```
 
 ### SKILL.md 示例
@@ -523,29 +555,36 @@ description: "为公司生成标准品牌格式的报告：读取 CSV 数据，�
 - 仅处理结构化数据（CSV/JSON）
 - 避免导入外部网络资源
 - 使用公司指定的颜色和字体
+
 ```
 
 ### 典型应用场景
 
 **1. 企业品牌/文档规范统一**
+
 ```
 将公司品牌字体、样式、排版规范封装为 Skill
     ↓
 所有生成文档都符合品牌标准
+
 ```
 
 **2. 自动化报告生成**
+
 ```
 原始数据 → Excel 分析 → 图表可视化 → 报告 → PDF 导出
     ↓
 一键完成，零人工干预
+
 ```
 
 **3. 合同/文档合规检查**
+
 ```
 输入合同 → Skill 检查合规性 → 检测敏感词 → 填充模板
     ↓
 标准化输出，降低风险
+
 ```
 
 ### 安全风险与治理
@@ -555,21 +594,25 @@ Skills 的强大功能也带来了严峻的安全挑战，这是使用时必须�
 #### ⚠️ 已知安全风险
 
 **1. 恶意代码注入**
+
 ```
 攻击者可以创建看似正常的 Skill
     ↓
 在脚本中嵌入勒索软件（如 MedusaLocker）
     ↓
 用户批准后，下载并执行恶意 payload
+
 ```
 
 **2. Prompt Injection**
+
 ```
 Skill 的 markdown 文件和脚本中
     ↓
 隐藏恶意指令
     ↓
 触发数据窃取或敏感信息泄露
+
 ```
 
 #### 🔐 治理对策
@@ -588,6 +631,7 @@ Skill 的 markdown 文件和脚本中
   代码审查: true
   安全审计: true
   回滚机制: true
+
 ```
 
 ### Skills 与 MCP 的对比
@@ -639,6 +683,7 @@ Skill 的 markdown 文件和脚本中
     └─ 需要并行处理多个任务？
         └─ → 使用多个 Sub Agent
             例：同时审查多个模块
+
 ```
 
 ### 实际应用示例
@@ -654,6 +699,7 @@ Claude 自动识别并调用 JSON Formatter Skill
 在主对话中直接完成
     ↓
 快速、简洁、不占用额外上下文
+
 ```
 
 #### 场景 2：全面代码审查 → 使用 Sub Agent
@@ -671,6 +717,7 @@ Sub Agent 在独立上下文中工作
 返回简洁的审查报告给主对话
     ↓
 主对话保持清爽，不被细节污染
+
 ```
 
 #### 场景 3：大型项目分析 → 使用多个 Sub Agent
@@ -688,6 +735,7 @@ Sub Agent 在独立上下文中工作
 互不干扰，同时完成
     ↓
 汇总结果给主对话
+
 ```
 
 ### 协同使用
@@ -706,32 +754,39 @@ Sub Agent（code-reviewer）：审查现有代码
 Skill（formatter）：格式化修改后的代码
     ↓
 主对话：汇总结果，生成报告
+
 ```
 
 ### 最佳实践建议
 
 **1. 优先使用 Skills 的场景**
+
 ```
 ✅ 程序化写作（文档生成、报告格式化）
 ✅ 简单的代码规范检查
 ✅ 固定流程的自动化
 ✅ 需要快速执行的小任务
+
 ```
 
 **2. 优先使用 Sub Agents 的场景**
+
 ```
 ✅ 需要深度分析的代码审查
 ✅ 复杂的多步骤任务
 ✅ 需要保持主对话清爽的大型任务
 ✅ 需要并行处理的多个任务
 ✅ 需要专业化知识的领域任务
+
 ```
 
 **3. 混合使用的场景**
+
 ```
 ✅ Sub Agent 完成复杂分析
 ✅ Skill 处理格式化和标准化
 ✅ 主对话负责高层次的规划和决策
+
 ```
 
 ## 九、Binary Feedback 机制
@@ -761,6 +816,7 @@ async function queryWithBinaryFeedback(
     return getBinaryFeedbackResponse(m1, m2)  // 模型犹豫，请求用户选择
   }
 }
+
 ```
 
 **核心思想**：如果 AI 对相同输入返回两个不同答案，说明模型对这次请求犹豫，需要用户选择。
@@ -786,6 +842,7 @@ export const getCommandSubcommandPrefix = memoize(
     ])
   }
 )
+
 ```
 
 ### 上下文压缩处理
@@ -815,6 +872,7 @@ async function generateTitle(description: string): Promise<string> {
   })
   return response.message.content[0]?.text || 'Bug Report'
 }
+
 ```
 
 ## 十二、技术启示

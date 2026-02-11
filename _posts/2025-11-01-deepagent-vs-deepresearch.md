@@ -27,6 +27,7 @@ tags: [Agent, DeepAgent, DeepResearch, AI]
 
 ```
 用户提问 → 选择工具 → 执行 → 返回结果
+
 ```
 
 **特征：**
@@ -43,6 +44,7 @@ DeepAgent 代表了下一代 Agent 的特征：**完全自主**。
 
 ```
 目标 → 动态规划 → 工具发现 → 执行 → 评估 → 迭代 → 完成
+
 ```
 
 **核心特征：**
@@ -75,6 +77,7 @@ result = agent.run("帮我降低公司的云成本")
 # EVAL -> 发现异常 -> inspect_logs()
 # EVAL -> 发现空闲实例 -> recommend_actions()
 # FINAL -> report_writer()
+
 ```
 
 ### DeepResearch Agent：结构化的研究者
@@ -83,6 +86,7 @@ DeepResearch Agent 是 Agent 的一个变体，专注于**结构化的多步骤�
 
 ```
 问题 → 收集 → 分析 → 综合 → 报告
+
 ```
 
 **核心特征：**
@@ -120,6 +124,7 @@ research_agent = create_deep_research_agent(
 # 运行固定的管道
 report = research_agent.run("帮我降低公司的云成本")
 # 输出：带有证据、置信度评分、详细建议的报告
+
 ```
 
 ## 关键差异：自主性 vs 可控性
@@ -141,6 +146,7 @@ report = research_agent.run("帮我降低公司的云成本")
 4. EVAL: 调用日志分析工具（运行时动态决定的新工具调用）
 5. RE-PLAN: 重新规划 → 提出优化方案（预留实例、修改自动扩展）
 6. ACTION: 生成行动项 + 简短报告
+
 ```
 
 **关键特点：**
@@ -171,6 +177,7 @@ report = research_agent.run("帮我降低公司的云成本")
 
 阶段 4 - REPORT（报告）
 └── 生成带证据、置信度评分、逐步建议的详细报告
+
 ```
 
 **关键特点：**
@@ -268,11 +275,13 @@ report = research_agent.run("帮我降低公司的云成本")
 - 难以预测的数据流路径
 
 **缓解措施：**
+
 ```
 - 严格的沙箱隔离
 - 工具权限细粒度控制
 - 审计日志和监控
 - 人工审批关键操作
+
 ```
 
 **2. 操作风险**
@@ -281,11 +290,13 @@ report = research_agent.run("帮我降低公司的云成本")
 - 资源过度消耗
 
 **缓解措施：**
+
 ```
 - 操作预览和确认机制
 - 资源限制和超时
 - 回滚能力
 - 多层验证
+
 ```
 
 ### DeepResearch Agent 的治理优势
@@ -351,6 +362,7 @@ class HybridAgent:
             result = self.human_execute(research.action_items)
 
         return result
+
 ```
 
 这种模式在保持可控性的同时，也获得了自主性带来的效率提升。

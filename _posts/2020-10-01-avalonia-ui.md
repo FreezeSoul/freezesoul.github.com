@@ -47,6 +47,7 @@ tags: [.NET, Avalonia, 跨平台, MVVM, WPF]
         <Button Content="点击我" Margin="0,10,0,0" />
     </StackPanel>
 </Window>
+
 ```
 
 - 支持强大的数据绑定和样式系统
@@ -173,6 +174,7 @@ dotnet new avalonia.app -n MyFirstAvaloniaApp
 # 运行项目
 cd MyFirstAvaloniaApp
 dotnet run
+
 ```
 
 ### 安装 Avalonia VS 扩展（可选）

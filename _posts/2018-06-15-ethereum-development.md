@@ -46,6 +46,7 @@ tags: [Ethereum, 区块链, 智能合约, DApp]
 │  • 可被审查、封禁                                   │
 │  • 信任第三方                                       │
 └─────────────────────────────────────────────────────┘
+
 ```
 
 ### Web3 架构（去中心化应用）
@@ -83,6 +84,7 @@ tags: [Ethereum, 区块链, 智能合约, DApp]
 │  │（文件存储）  │       （以太坊原生存储）        │  │
 │  └─────────────┴─────────────────────────────────┘  │
 └─────────────────────────────────────────────────────┘
+
 ```
 
 ### 核心差异对比
@@ -118,6 +120,7 @@ tags: [Ethereum, 区块链, 智能合约, DApp]
     ├── 有以太币余额
     ├── 不能主动发起交易
     └── 有关联的合约代码
+
 ```
 
 **账户结构**：
@@ -143,6 +146,7 @@ tags: [Ethereum, 区块链, 智能合约, DApp]
 │   └── 函数参数
 ├── nonce（发送者交易序号）
 └── v, r, s（签名值）
+
 ```
 
 **Gas 机制**：
@@ -165,6 +169,7 @@ graph TD
     B -->|包含| I[时间戳]
     B -->|包含| J[难度值/随机数]
     B -->|包含| K[矿工地址]
+
 ```
 
 ### 以太坊虚拟机（EVM）
@@ -219,6 +224,7 @@ EVM 是以太坊智能合约的执行环境：
 │  ├── Mocha/Chai（测试框架）                        │
 │  └── Ropsten/Rinkeby（测试网络）                  │
 └─────────────────────────────────────────────────────┘
+
 ```
 
 ### 安装步骤
@@ -231,6 +237,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 # 安装最新 LTS 版本的 Node.js
 nvm install --lts
+
 ```
 
 **2. 安装 Truffle 套件**
@@ -241,6 +248,7 @@ npm install -g truffle
 
 # 验证安装
 truffle version
+
 ```
 
 **3. 安装 Ganache（本地测试链）**
@@ -251,12 +259,14 @@ truffle version
 
 # 或使用命令行版本
 npm install -g ganache-cli
+
 ```
 
 **4. 安装 MetaMask 浏览器插件**
 
 ```
 Chrome/Firefox: https://metamask.io/
+
 ```
 
 ---
@@ -292,6 +302,7 @@ contract HelloWorld {
         return greeting;
     }
 }
+
 ```
 
 **数据类型**：
@@ -327,6 +338,7 @@ contract DataTypes {
     enum State { Created, Locked, Inactive }
     State public state;
 }
+
 ```
 
 ### 常见设计模式
@@ -350,6 +362,7 @@ contract Ownable {
         // 只有所有者可以调用
     }
 }
+
 ```
 
 **2. 状态机**：
@@ -369,6 +382,7 @@ contract StateMachine {
         state = State.Inactive;
     }
 }
+
 ```
 
 **3. 保险库模式（防止重入攻击）**：
@@ -388,6 +402,7 @@ contract ReentrancyGuard {
         // 提款逻辑
     }
 }
+
 ```
 
 ### ERC20 代币标准
@@ -436,6 +451,7 @@ contract ERC20Token {
         return true;
     }
 }
+
 ```
 
 ---
@@ -464,6 +480,7 @@ my-dapp/
 │   └── style.css
 ├── truffle-config.js  # Truffle 配置
 └── package.json       # npm 依赖
+
 ```
 
 ### 完整开发流程
@@ -481,6 +498,7 @@ truffle init
 # 安装依赖
 npm install --save-dev @truffle/hdwallet-provider
 npm install web3
+
 ```
 
 **2. 编写智能合约**（`contracts/SimpleToken.sol`）：
@@ -552,6 +570,7 @@ contract SimpleToken is Ownable {
         emit Mint(to, amount);
     }
 }
+
 ```
 
 **3. 编写测试**（`test/SimpleToken.test.js`）：
@@ -615,6 +634,7 @@ contract("SimpleToken", (accounts) => {
             web3.utils.toWei("1001000", "ether"));
     });
 });
+
 ```
 
 **4. 配置部署网络**（`truffle-config.js`）：
@@ -648,6 +668,7 @@ module.exports = {
         }
     }
 };
+
 ```
 
 **5. 前端集成**（`src/app.js`）：
@@ -732,6 +753,7 @@ window.addEventListener("load", async function() {
 
     await App.start();
 });
+
 ```
 
 ---
@@ -767,6 +789,7 @@ contract SimpleExchange {
         emit Trade(msg.sender, tokenGive, amountGive, tokenGet, amountGet);
     }
 }
+
 ```
 
 ### 2. 投票系统
@@ -850,6 +873,7 @@ contract Voting {
         winnerName_ = proposals[winningProposal()].name;
     }
 }
+
 ```
 
 ### 3. 众筹合约
@@ -932,6 +956,7 @@ contract Crowdfunding {
         emit Refund(projectId, msg.sender, pledged);
     }
 }
+
 ```
 
 ---
@@ -974,6 +999,7 @@ contract Secure {
         require(success);
     }
 }
+
 ```
 
 **2. 整数溢出**
@@ -999,6 +1025,7 @@ library SafeMath {
         return c;
     }
 }
+
 ```
 
 **3. 访问控制**
@@ -1027,6 +1054,7 @@ contract AccessControl {
         authorized[user] = true;
     }
 }
+
 ```
 
 ---

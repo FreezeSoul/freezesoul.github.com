@@ -40,6 +40,7 @@ graph TB
     style D fill:#faff00,stroke:#e6d900,color:#c9b800
     style E fill:#00ff9f,stroke:#00cc7f,color:#009966
     style F fill:#ff9500,stroke:#e65100,color:#bf360c
+
 ```
 
 ### 核心价值主张
@@ -92,6 +93,7 @@ graph TB
   </main>
 </body>
 </html>
+
 ```
 
 ### iframe 的优势
@@ -113,6 +115,7 @@ graph TB
 // iframe 内部路由变化不会同步到主应用 URL
 iframe.contentWindow.history.pushState({}, '', '/iframe-route');
 // 主应用 URL 没有变化，刷新后状态丢失
+
 ```
 
 #### 2. 全局上下文隔离
@@ -123,6 +126,7 @@ window.mainAppData = { user: 'alice' };
 
 // iframe 内部无法直接访问
 console.log(window.parent.mainAppData); // 可能因为跨域被阻止
+
 ```
 
 #### 3. 弹窗和遮罩问题
@@ -135,6 +139,7 @@ console.log(window.parent.mainAppData); // 可能因为跨域被阻止
   left: 0;
   /* 实际上只能在 iframe 范围内显示 */
 }
+
 ```
 
 #### 4. 性能问题
@@ -152,6 +157,7 @@ console.log(window.parent.mainAppData); // 可能因为跨域被阻止
 5. 加载 JS 资源
 6. 执行 JS 初始化
 // 每一步都阻塞，用户体验差
+
 ```
 
 ### iframe vs 微前端
@@ -188,6 +194,7 @@ graph TD
     style B fill:#ff006e,stroke:#d6005c,color:#b3004e
     style C fill:#00fff5,stroke:#00b8b0,color:#008b82
     style D fill:#faff00,stroke:#e6d900,color:#c9b800
+
 ```
 
 ### 演进时间线
@@ -203,6 +210,7 @@ graph LR
     style A fill:#ff006e,stroke:#d6005c,color:#b3004e
     style C fill:#00fff5,stroke:#00b8b0,color:#008b82
     style E fill:#faff00,stroke:#e6d900,color:#c9b800
+
 ```
 
 ## 四、主流微前端框架深度解析
@@ -257,6 +265,7 @@ registerApplication({
 
 // 启动
 start();
+
 ```
 
 ```javascript
@@ -284,6 +293,7 @@ export async function unmount(props) {
   console.log('app unmount');
   ReactDOM.unmountComponentAtNode(props.domElement || document.getElementById('root'));
 }
+
 ```
 
 #### 子应用打包配置
@@ -307,6 +317,7 @@ module.exports = {
     }
   }
 };
+
 ```
 
 #### 生命周期详解
@@ -322,6 +333,7 @@ bootstrap: 应用初始化，只执行一次
 mount: 应用激活，每次进入时执行
 unmount: 应用卸载，每次离开时执行
 update: 可选，应用更新时执行
+
 ```
 
 #### 优缺点分析
@@ -401,6 +413,7 @@ start({
     // experimentalStyleIsolation: true  // 实验性样式隔离
   }
 });
+
 ```
 
 ```javascript
@@ -408,6 +421,7 @@ start({
 if (window.__POWERED_BY_QIANKUN__) {
   __webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__;
 }
+
 ```
 
 ```javascript
@@ -450,6 +464,7 @@ export async function unmount(props) {
     container ? container.querySelector('#root') : document.querySelector('#root')
   );
 }
+
 ```
 
 #### 子应用打包配置
@@ -478,6 +493,7 @@ module.exports = {
     return config;
   },
 };
+
 ```
 
 #### JS 沙箱机制详解
@@ -523,6 +539,7 @@ class SnapshotSandbox {
     this.modifyPropsMap = modifyPropsMap;
   }
 }
+
 ```
 
 **特点**：
@@ -558,6 +575,7 @@ class LegacySandbox {
     });
   }
 }
+
 ```
 
 **特点**：
@@ -611,6 +629,7 @@ const sandbox2 = new ProxySandbox();
 })(sandbox2.proxy);
 
 console.log(window.a); // undefined - 真实的 window 没有被污染
+
 ```
 
 **特点**：
@@ -630,6 +649,7 @@ start({
     strictStyleIsolation: true
   }
 });
+
 ```
 
 实现原理：使用 WebComponent 的 Shadow DOM
@@ -644,6 +664,7 @@ function strictStyleIsolation(container) {
     }
   }
 }
+
 ```
 
 **优点**：
@@ -663,6 +684,7 @@ start({
     experimentalStyleIsolation: true
   }
 });
+
 ```
 
 实现原理：给子应用的所有样式规则添加特殊选择器
@@ -677,6 +699,7 @@ start({
 div[data-qiankun="subapp"] .title {
   font-size: 20px;
 }
+
 ```
 
 ```javascript
@@ -695,6 +718,7 @@ function scopedCSS(css, appName) {
     });
   });
 }
+
 ```
 
 **优点**：
@@ -730,6 +754,7 @@ const execScripts = () => {
 
 // 5. 获取生命周期
 const lifecycle = await execScripts();
+
 ```
 
 #### 优缺点分析
@@ -780,6 +805,7 @@ graph TB
     style A fill:#ff006e,stroke:#d6005c,color:#b3004e
     style B fill:#00fff5,stroke:#00b8b0,color:#008b82
     style C fill:#faff00,stroke:#e6d900,color:#c9b800
+
 ```
 
 #### 基本用法
@@ -801,6 +827,7 @@ WujieVue.setupApp({
 
 // 启动
 WujieVue.start();
+
 ```
 
 ```vue
@@ -837,6 +864,7 @@ export default {
   }
 };
 </script>
+
 ```
 
 ```javascript
@@ -862,6 +890,7 @@ export async function mount(app) {
 export async function unmount(app) {
   instance?.unmount();
 }
+
 ```
 
 #### 核心实现原理
@@ -887,6 +916,7 @@ function createIframe() {
 
   return { iframe, iframeWindow, iframeDocument };
 }
+
 ```
 
 ##### 2. DOM 在 Shadow DOM 中渲染
@@ -902,6 +932,7 @@ function createShadowRoot(host) {
 function renderApp(shadowRoot, html) {
   shadowRoot.innerHTML = html;
 }
+
 ```
 
 ##### 3. 代理 DOM 操作
@@ -927,6 +958,7 @@ function patchDocument(iframeWindow, shadowRoot) {
 
   iframeWindow.document = proxyDocument;
 }
+
 ```
 
 ##### 4. 路由同步机制
@@ -954,6 +986,7 @@ function syncPath(iframeWindow, appName) {
     iframeWindow.history.replaceState(null, '', subAppPath);
   }
 }
+
 ```
 
 #### 运行模式
@@ -1014,6 +1047,7 @@ microApp.start({
   'inline': true,             // 使用 inline 模式
   'iframe': true,             // 使用 iframe 沙箱（兼容 vite）
 });
+
 ```
 
 ```vue
@@ -1053,6 +1087,7 @@ export default {
   }
 };
 </script>
+
 ```
 
 #### 优缺点分析
@@ -1125,6 +1160,7 @@ export async function mount(props) {
   // 更新状态
   props.setGlobalState({ user: { name: 'Bob' } });
 }
+
 ```
 
 #### 2. EventBus 通信（wujie）
@@ -1147,6 +1183,7 @@ window.$wujie.bus.$on('data-change', (data) => {
 });
 
 window.$wujie.bus.$emit('data-change', { from: 'subapp' });
+
 ```
 
 #### 3. window.parent 直接通信
@@ -1167,6 +1204,7 @@ window.addEventListener('message', (event) => {
     console.log('收到子应用消息:', event.data);
   }
 });
+
 ```
 
 #### 4. Props 数据注入
@@ -1182,6 +1220,7 @@ window.addEventListener('message', (event) => {
 const props = window.$wujie.props;
 console.log(props.user);  // { name: 'Alice', ... }
 props.actions.someMethod();  // 调用主应用方法
+
 ```
 
 ### 5.3 路由同步方案
@@ -1211,6 +1250,7 @@ function routeChange() {
 // 监听路由变化
 window.addEventListener('popstate', routeChange);
 window.addEventListener('hashchange', routeChange);
+
 ```
 
 #### 方案二：URL 参数同步（wujie、micro-app）
@@ -1232,6 +1272,7 @@ function restoreSubAppPath(appName) {
 
 // 示例：
 // 主应用 URL: https://main.com/?app1_path=/dashboard&app2_path=/settings
+
 ```
 
 ```mermaid
@@ -1245,6 +1286,7 @@ graph LR
     style A fill:#ff006e,stroke:#d6005c,color:#b3004e
     style B fill:#00fff5,stroke:#00b8b0,color:#008b82
     style C fill:#faff00,stroke:#e6d900,color:#c9b800
+
 ```
 
 ### 5.4 资源加载优化
@@ -1264,6 +1306,7 @@ WujieVue.preloadApp({
   name: 'vue-app',
   url: 'http://localhost:7300/'
 });
+
 ```
 
 #### 子应用预执行（wujie）
@@ -1282,6 +1325,7 @@ WujieVue.setupApp({
   url: 'http://localhost:7300/',
   fiber: true  // 使用 requestIdleCallback 分段执行
 });
+
 ```
 
 #### 公共依赖共享
@@ -1303,6 +1347,7 @@ module.exports = {
     'lodash': 'root.sharedLibs.lodash'
   }
 };
+
 ```
 
 ## 六、微前端方案对比总结
@@ -1352,6 +1397,7 @@ graph TD
     style I fill:#ff006e,stroke:#d6005c,color:#b3004e
     style K fill:#faff00,stroke:#e6d900,color:#c9b800
     style G fill:#ff9500,stroke:#e65100,color:#bf360c
+
 ```
 
 ### 选型建议
@@ -1416,6 +1462,7 @@ output: {
   libraryTarget: 'umd',
   globalObject: 'window'
 }
+
 ```
 
 #### 可选改造
@@ -1438,6 +1485,7 @@ axios.defaults.baseURL = window.__POWERED_BY_QIANKUN__
 // 3. 全局样式适配
 // 避免使用全局 body、html 选择器
 // 使用 scoped 或 CSS Modules
+
 ```
 
 ### 7.2 性能优化策略
@@ -1460,6 +1508,7 @@ module.exports = {
     }
   }
 };
+
 ```
 
 #### 2. 预加载策略
@@ -1478,6 +1527,7 @@ start({ prefetch: ['app1', 'app3'] });
 const userBehavior = analyzeUserBehavior();
 const likelyApps = predictNextApps(userBehavior);
 start({ prefetch: likelyApps });
+
 ```
 
 #### 3. 缓存策略
@@ -1501,6 +1551,7 @@ self.addEventListener('fetch', (event) => {
     );
   }
 });
+
 ```
 
 ### 7.3 错误处理与监控
@@ -1542,6 +1593,7 @@ registerMicroApps([
     }
   }
 ]);
+
 ```
 
 ### 7.4 开发调试技巧
@@ -1562,6 +1614,7 @@ registerMicroApps([
     activeRule: '/app1'
   }
 ]);
+
 ```
 
 #### 2. 热更新支持
@@ -1573,6 +1626,7 @@ start({
     strictStyleIsolation: false  // 开发时关闭严格隔离，便于调试
   }
 });
+
 ```
 
 #### 3. Chrome DevTools 调试
@@ -1590,6 +1644,7 @@ console.log(
   'background: #ff006e; color: white; padding: 4px;',
   `[${window.__SUB_APP_NAME__}] 子应用日志`
 );
+
 ```
 
 ## 八、微前端架构的未来展望

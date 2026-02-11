@@ -55,6 +55,7 @@ SHELL封装: <a href="http://www.awesomium.com/">Awesomium</a>
 │  Native Bridge (MVP Platform)           │
 │  └── Bidirectional Message Passing      │
 └─────────────────────────────────────────┘
+
 ```
 
 ### Sea.js 模块系统
@@ -77,6 +78,7 @@ define(function(require, exports, module) {
     // 导出模块
     module.exports = DesktopApplicationView;
 });
+
 ```
 
 **模块配置** (`app/main.js`)：
@@ -99,6 +101,7 @@ seajs.config({
 seajs.use(['app/init'], function(init) {
     init.bootstrap();
 });
+
 ```
 
 **优势**：
@@ -144,6 +147,7 @@ var DesktopElements = Backbone.Collection.extend({
         return item.get('index');
     }
 });
+
 ```
 
 #### View 层：桌面元素的视图渲染
@@ -183,6 +187,7 @@ var DesktopApplicationView = DesktopElementView.extend({
         return this;
     }
 });
+
 ```
 
 #### 虚拟桌面系统
@@ -219,6 +224,7 @@ var DesktopLayersView = Backbone.View.extend({
         PubSub.publishSync(config.LayerChangedEvent, layerIndex);
     }
 });
+
 ```
 
 ### 事件驱动架构 (PubSub)
@@ -246,6 +252,7 @@ PubSub.subscribe(config.DesktopIsChangedEvent, function() {
     // 桌面变更时触发自动保存（防抖 500ms）
     debounce(saveDesktopConfig, 500)();
 });
+
 ```
 
 **常用事件定义**：
@@ -267,6 +274,7 @@ var config = {
     HideDesktopPopThings: 'HideDesktopPopThings',
     OpenAppStoreEvent: 'OpenAppStore'
 };
+
 ```
 
 ### MVP 平台桥接（原生集成）
@@ -305,6 +313,7 @@ PubSub.subscribe(config.NativeCallbackEvent, function(msg, data) {
             break;
     }
 });
+
 ```
 
 ### 模块化模板
@@ -320,6 +329,7 @@ define(function() {
     <div class="name"><%= name %></div>
 </div>`;
 });
+
 ```
 
 **在 View 中使用**：
@@ -336,6 +346,7 @@ define(function(require, exports, module) {
 
     module.exports = DesktopApplicationView;
 });
+
 ```
 
 ### 项目结构
@@ -366,6 +377,7 @@ WebDesktop/
     ├── jquery.js
     ├── backbone.js
     └── sea.js
+
 ```
 
 ### 技术要点总结

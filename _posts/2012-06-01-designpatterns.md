@@ -62,6 +62,7 @@ Factory Method (工厂方法)
     ├── Abstract Factory (抽象工厂) - 产品族变化
     ├── Builder (建造者) - 构建过程变化
     └── Prototype (原型) - 克隆方式变化
+
 ```
 
 ---
@@ -121,6 +122,7 @@ Factory Method (工厂方法)
         ↓
 需要增加控制层？
     YES → Proxy
+
 ```
 
 ---
@@ -200,6 +202,7 @@ Factory Method (工厂方法)
 识别变化点 → 简单设计 → 随演化重构 → 应用模式
     ↓           ↓          ↓           ↓
   哪里变化    先能工作   变化驱动   适时应用
+
 ```
 
 ---
@@ -258,6 +261,7 @@ Iterator - 迭代器
 Interpreter - 解释器
 Observer - 观察者
 Visitor - 访问者
+
 ```
 
 ### 核心思想

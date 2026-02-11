@@ -20,6 +20,7 @@ ReAct（Reasoning + Acting）可能是最经典的 Agent 范式。它的思想�
 
 ```
 思考 → 行动 → 观察 → 思考 → 行动 → ...
+
 ```
 
 ### 核心思想
@@ -51,6 +52,7 @@ while not task_complete:
 
     # 更新状态，继续循环
     current_state = update_state(observation)
+
 ```
 
 ### 经典案例：问答系统
@@ -127,6 +129,7 @@ if not task_complete:
         f"执行结果：{results}\n"
         "请根据执行结果调整计划"
     )
+
 ```
 
 ### 计划的表示形式
@@ -134,14 +137,17 @@ if not task_complete:
 计划可以有多种表示形式：
 
 **列表形式：**
+
 ```
 1. 搜索"Python 异步编程"
 2. 阅读前 5 个搜索结果
 3. 总结异步编程的核心概念
 4. 生成代码示例
+
 ```
 
 **结构化形式：**
+
 ```json
 {
   "goal": "解释 Python 异步编程",
@@ -160,9 +166,11 @@ if not task_complete:
     }
   ]
 }
+
 ```
 
 **伪代码形式：**
+
 ```
 FUNCTION explain_async_programming:
   SEARCH "Python async programming"
@@ -171,6 +179,7 @@ FUNCTION explain_async_programming:
   GENERATE code examples
   COMPOSE explanation
 END FUNCTION
+
 ```
 
 ### Plan-and-Solve 的优势
@@ -223,6 +232,7 @@ store_reflection(task, reflection)
 # 下次遇到类似任务时检索
 similar_tasks = find_similar_tasks(task)
 relevant_reflections = retrieve_reflections(similar_tasks)
+
 ```
 
 ### 反思的层次
@@ -230,36 +240,45 @@ relevant_reflections = retrieve_reflections(similar_tasks)
 Reflection 可以在不同层次进行：
 
 **任务级反思：**
+
 ```
 这个任务完成了吗？
 如果没有，哪里出了问题？
 如何修正？
+
 ```
 
 **策略级反思：**
+
 ```
 我的策略有效吗？
 有没有更好的方法？
 下次应该尝试什么不同的做法？
+
 ```
 
 **元认知反思：**
+
 ```
 我对这个类型的任务擅长吗？
 我应该先学习相关知识还是直接尝试？
 我是否需要寻求帮助？
+
 ```
 
 ### Reflection 的实现形式
 
 **文本形式：**
+
 ```
 反思：这次任务中，我在第三步犯了错误——过早地得出了结论。
 下次应该：在得出结论前，先验证所有关键信息。
 经验：对于数据分析任务，验证步骤必不可少。
+
 ```
 
 **结构化形式：**
+
 ```json
 {
   "task_id": "task_123",
@@ -268,6 +287,7 @@ Reflection 可以在不同层次进行：
   "lesson": "always verify before concluding",
   "action_item": "add verification step"
 }
+
 ```
 
 **向量存储：**
@@ -310,6 +330,7 @@ class Agent:
         store_reflection(task, final_reflection)
 
         return result
+
 ```
 
 ### 具体案例：代码生成智能体
@@ -317,6 +338,7 @@ class Agent:
 **任务**：实现一个用户认证系统
 
 **Phase 1: Plan-and-Solve（规划）**
+
 ```
 计划：
 1. 分析需求（用户注册、登录、登出）
@@ -325,9 +347,11 @@ class Agent:
 4. 实现登录接口
 5. 实现登出接口
 6. 添加错误处理
+
 ```
 
 **Phase 2: ReAct（执行）**
+
 ```
 Thought 1: 先设计数据库模型
 Action 1: 生成 User 模型代码
@@ -343,15 +367,18 @@ Adjust plan: 在每个 API 前增加验证步骤
 Thought 3: 重新生成注册接口，加入验证
 Action 3: 生成改进后的注册 API
 Observation 3: 成功
+
 ```
 
 **Phase 3: Reflection（反思）**
+
 ```
 反思：
 1. 成功之处：模块化设计，代码清晰
 2. 不足之处：一开始忘记输入验证
 3. 改进：以后生成 API 时，默认包含验证逻辑
 4. 经验存储：API 开发 checklist（验证、错误处理、日志）
+
 ```
 
 ### 融合的优势
@@ -394,6 +421,7 @@ Observation 3: 成功
 三种范式都会增加 LLM 调用次数，需要考虑成本：
 
 **策略一**：缓存和复用
+
 ```python
 # 缓存规划结果
 if similar_task in cache:
@@ -401,22 +429,27 @@ if similar_task in cache:
 else:
     plan = llm.generate_plan(task)
     cache[task] = plan
+
 ```
 
 **策略二**：分层调用
+
 ```python
 # 简单任务用小模型
 if complexity(task) == "low":
     model = "gpt-3.5"
 else:
     model = "gpt-4"
+
 ```
 
 **策略三**：提前终止
+
 ```python
 # 如果计划执行顺利，不需要每次都反思
 if error_rate < threshold:
     skip_reflection = True
+
 ```
 
 ## 未来展望

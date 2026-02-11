@@ -61,6 +61,7 @@ tags: [.NET, WPF, Prism, MVVM, WebDAV]
 │  ├── TransferStatusEvent               │
 │  └── LoginStatusEvent                  │
 └─────────────────────────────────────────┘
+
 ```
 
 ### 项目结构
@@ -82,6 +83,7 @@ CloudDriveShell/
 ├── CloudDriveShell.CloudSettingContent/ # 设置模块
 ├── CloudDriveShell.CloudOtherContent/   # 其他功能模块
 └── WebDAVClient/                 # WebDAV 协议实现
+
 ```
 
 ### Prism Bootstrapper 启动流程
@@ -148,6 +150,7 @@ public class CloudDriveShellBootstrapper : MefBootstrapper
         this.Shell.Show();
     }
 }
+
 ```
 
 ### MVVM 实现
@@ -174,6 +177,7 @@ public partial class CloudDriveContent : UserControl, IContentView
         }
     }
 }
+
 ```
 
 **ViewModel 基类继承**：
@@ -215,6 +219,7 @@ public class CloudDriveExplorerViewModel : BindableBase
     public DelegateCommand RefreshCommand { get; private set; }
     public DelegateCommand UploadCommand { get; private set; }
 }
+
 ```
 
 ### Region 与导航
@@ -239,6 +244,7 @@ public static class RegionNames
     // 设置模块嵌套区域
     public const string ActionCloudSettingRightRegion = "ActionCloudSettingRightRegion";
 }
+
 ```
 
 #### Shell XAML 定义 Region
@@ -255,6 +261,7 @@ public static class RegionNames
             "{x:Static inf:RegionNames.ActionContentRegion}" />
     </Grid>
 </Window>
+
 ```
 
 #### 导航服务实现
@@ -280,6 +287,7 @@ public class SwitchContentService : ISwitchContentService
         region.Activate(view);
     }
 }
+
 ```
 
 ### 事件驱动通信 (EventAggregator)
@@ -298,6 +306,7 @@ public class RefreshEvent : PubSubEvent<string> { }
 public class TransferStatusEvent : PubSubEvent<TransferActionInfo> { }
 public class LoginStatusEvent : PubSubEvent<bool> { }
 public class CreateFolderStatusEvent : PubSubEvent<bool> { }
+
 ```
 
 #### 事件订阅
@@ -329,6 +338,7 @@ public CloudDriveExplorerViewModel(
         this.ShowTransferMessage(info);
     });
 }
+
 ```
 
 #### 事件发布
@@ -343,6 +353,7 @@ this._eventAggregator.GetEvent<PasteFileEvent>().Publish(files);
 
 // 发布登录状态事件
 this._eventAggregator.GetEvent<LoginStatusEvent>().Publish(isSuccess);
+
 ```
 
 ### 模块自动发现机制
@@ -362,6 +373,7 @@ public sealed class ViewExportAttribute : ExportAttribute, IViewRegionRegistrati
 
     public string RegionName { get; set; }
 }
+
 ```
 
 #### 使用示例
@@ -373,6 +385,7 @@ public partial class CloudDriveContent : UserControl, IContentView
 {
     // View 实现...
 }
+
 ```
 
 #### AutoPopulateExportedViewsBehavior
@@ -406,6 +419,7 @@ public class AutoPopulateExportedViewsBehavior : RegionBehavior
         }
     }
 }
+
 ```
 
 ### 依赖注入模式
@@ -421,6 +435,7 @@ public CloudDriveExplorerViewModel(
 {
     // 依赖通过 MEF 自动注入
 }
+
 ```
 
 #### 属性注入
@@ -428,6 +443,7 @@ public CloudDriveExplorerViewModel(
 ```csharp
 [Import]
 public IRegionManager RegionManager { get; set; }
+
 ```
 
 #### ImportMany 集合注入
@@ -445,6 +461,7 @@ private void LoadNavigationMenus()
         this.LeftMenus.Add(menu);
     }
 }
+
 ```
 
 ### 自定义 Region Adapter
@@ -487,6 +504,7 @@ public class TransitionElementAdaptor : RegionAdapterBase<TransitionElement>
         return new SingleActiveRegion();
     }
 }
+
 ```
 
 ### 异步操作与 MVVM
@@ -515,6 +533,7 @@ private async void RefreshCurrentResource(string itemHref)
             .Publish(ex.Message);
     }
 }
+
 ```
 
 ### 技术要点总结

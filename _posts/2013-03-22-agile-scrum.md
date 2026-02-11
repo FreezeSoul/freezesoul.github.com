@@ -46,6 +46,7 @@ graph TD
     style A fill:#e1f5ff,stroke:#0288d1,color:#01579b
     style B fill:#fff4e1,stroke:#f57c00,color:#e65100
     style G fill:#ffe1e1,stroke:#d32f2f,color:#b71c1c
+
 ```
 
 **关键区别**：
@@ -79,6 +80,7 @@ graph LR
     style B fill:#fff3e0,stroke:#f57c00,color:#e65100
     style C fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
     style D fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
+
 ```
 
 **产品负责人**：
@@ -116,6 +118,7 @@ graph TD
     E --> I[总结经验、持续改进]
 
     style A fill:#ffebee,stroke:#d32f2f,color:#b71c1c
+
 ```
 
 **时间盒说明**：为了帮助建立约束和聚焦，每个 Scrum 事件都有预定义的时间限制。
@@ -273,6 +276,7 @@ graph TD
     D --> C
 
     style A fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
+
 ```
 
 **透明度**：工作中的重要方面必须对负责产出结果的人可见。透明度让决策基于相同的信息基础。
@@ -309,6 +313,7 @@ Scrum 的成功依赖于团队能否践行五种价值观：
 第 10 天（周五）   Sprint Review（2小时）+ Sprint Retrospective（1.5小时）
   ↓
 第 11 天（周一）   下一个 Sprint 开始
+
 ```
 
 ### Scrum 指标

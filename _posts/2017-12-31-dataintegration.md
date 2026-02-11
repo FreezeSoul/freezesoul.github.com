@@ -55,6 +55,7 @@ Kettle 提供了一套完整的数据集成解决方案：
 │            从资源库读取并执行                        │
 │                                                     │
 └─────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -82,6 +83,7 @@ graph TD
     style A fill:#ff006e,stroke:#d6005c,color:#b3004e
     style B fill:#00fff5,stroke:#00b8b0,color:#008b82
     style D fill:#faff00,stroke:#e6d900,color:#c9b800
+
 ```
 
 **传统调度方式的问题**：
@@ -106,6 +108,7 @@ graph TD
 │  ❌ 无法嵌入现有管理系统                            │
 │                                                     │
 └─────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -160,6 +163,7 @@ graph TD
 │  └───────────────────────────────────────────────────┘   │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -221,6 +225,7 @@ public class DiJob {
      */
     private Date updateTime;
 }
+
 ```
 
 #### REST API 设计
@@ -293,6 +298,7 @@ public class DiJobController {
         return Result.success();
     }
 }
+
 ```
 
 ---
@@ -378,6 +384,7 @@ public class QuartzManager {
         }
     }
 }
+
 ```
 
 #### Quartz 任务执行
@@ -402,6 +409,7 @@ public class KettleJob implements Job {
         // 包括：资源库连接、作业加载、执行、日志记录等
     }
 }
+
 ```
 
 ---
@@ -466,6 +474,7 @@ public class DiKettleService {
         // 返回 Repository 实例
     }
 }
+
 ```
 
 #### 执行状态监控
@@ -503,6 +512,7 @@ public class JobExecutionListener {
         // 触发告警
     }
 }
+
 ```
 
 ---
@@ -530,6 +540,7 @@ public class JobExecutionListener {
     ref="diKettleServiceImpl"
     timeout="300000"
     retries="0" />
+
 ```
 
 #### 服务消费者配置
@@ -546,6 +557,7 @@ public class JobExecutionListener {
     interface="com.datacolour.di.api.DiKettleService"
     timeout="300000"
     check="false" />
+
 ```
 
 ---
@@ -590,6 +602,7 @@ public class JobExecutionListener {
 │    └────────┘       └────────┘       └────────┘         │
 │                                                           │
 └───────────────────────────────────────────────────────────┘
+
 ```
 
 #### 服务注册与发现
@@ -621,6 +634,7 @@ public class ServiceRegistry {
         );
     }
 }
+
 ```
 
 ---

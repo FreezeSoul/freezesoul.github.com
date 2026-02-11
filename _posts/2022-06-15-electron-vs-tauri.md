@@ -18,6 +18,7 @@ tags: [Electron, Tauri, 跨平台, 桌面应用]
 早期 → NW.js (node-webkit) → Electron → Tauri
      ↓ 2013    ↓ 2013        ↓ 2014     ↓ 2021
      Intel    GitHub         GitHub    Tauri Apps
+
 ```
 
 ### 1.2 主要技术方案对比
@@ -43,6 +44,7 @@ graph TD
     A -->|Node.js APIs| D[系统API]
     B -->|Chromium| E[界面渲染]
     B -->|预加载脚本| A
+
 ```
 
 **主进程职责**：
@@ -87,6 +89,7 @@ graph TD
     B -->|OS WebView| E[Windows: WebView2]
     B -->|OS WebView| F[Linux: WebKitGTK]
     B -->|OS WebView| G[macOS: WKWebView]
+
 ```
 
 **关键技术决策**：
@@ -139,6 +142,7 @@ Tauri 应用组成：
 │ Rust 后端 (~5MB)        │
 └─────────────────────────┘
 WebView 由系统提供 ✓
+
 ```
 
 ### 4.2 开发体验
@@ -162,6 +166,7 @@ function createWindow() {
 }
 
 app.whenReady().then(createWindow)
+
 ```
 
 **Tauri**：
@@ -178,6 +183,7 @@ fn main() {
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
+
 ```
 
 ```typescript
@@ -186,6 +192,7 @@ import { invoke } from '@tauri-apps/api/tauri'
 
 // 调用 Rust 命令
 const result = await invoke('greet', { name: 'World' })
+
 ```
 
 ### 4.3 性能对比
@@ -198,6 +205,7 @@ graph LR
     D --> F[Electron: 120MB]
     G[CPU占用] --> H[两者相当]
     H --> I[Idle: ~1%]
+
 ```
 
 ### 4.4 渲染机制
@@ -230,6 +238,7 @@ module.exports = {
     })
   ]
 }
+
 ```
 
 ### 4.5 安全性
@@ -251,6 +260,7 @@ webPreferences: {
   sandbox: true,                  // 启用沙箱
   preload: path.join(__dirname, 'preload.js') // 使用预加载脚本
 }
+
 ```
 
 **Tauri 默认安全**：
@@ -263,6 +273,7 @@ fn greet(name: &str) -> String {
 }
 
 // 只有显式暴露的命令才能被前端调用
+
 ```
 
 ### 4.6 后端技术栈
@@ -290,6 +301,7 @@ NW.js（原名 node-webkit）是 Electron 的前辈：
     "height": 600
   }
 }
+
 ```
 
 **特点**：
@@ -307,6 +319,7 @@ graph TD
     A[Dart 代码] --> B[Flutter Engine]
     B --> C[Skia GPU 渲染]
     C --> D[Windows/macOS/Linux]
+
 ```
 
 **优势**：
@@ -331,6 +344,7 @@ await webView.EnsureCoreWebView2AsyncWithOptions(
         RuntimePath: runtimePath
     )
 );
+
 ```
 
 **分发模式**：
@@ -367,6 +381,7 @@ graph TD
     E --> J{是 .NET 应用?}
     J -->|是| K[WebView2]
     J -->|否| E
+
 ```
 
 ### 6.2 场景推荐
@@ -389,21 +404,22 @@ graph TD
 2. **重写后端逻辑**：Node.js → Rust
 3. **使用 Sidecar 模式**：如果无法重写，可将 Node 应用作为 Sidecar
 
-```toml
-# src-tauri/tauri.conf.json
-{
-  "tauri": {
-    "bundle": {
-      "externalBin": [
-        {
-          "src": "https://github.com/your/repo/releases/download/v1.0.0/server",
-          "dest": "server"
+    ```toml
+    # src-tauri/tauri.conf.json
+    {
+      "tauri": {
+        "bundle": {
+          "externalBin": [
+            {
+              "src": "https://github.com/your/repo/releases/download/v1.0.0/server",
+              "dest": "server"
+            }
+          ]
         }
-      ]
+      }
     }
-  }
-}
-```
+
+    ```
 
 ## 七、最佳实践
 
@@ -440,6 +456,7 @@ const { contextBridge, ipcRenderer } = require('electron')
 contextBridge.exposeInMainWorld('api', {
   readFile: (path) => ipcRenderer.invoke('read-file', path)
 })
+
 ```
 
 ### 7.2 Tauri 最佳实践
@@ -472,6 +489,7 @@ async fn fetch_data(url: String) -> Result<String, String> {
     let resp = reqwest::get(&url).await.map_err(|e| e.to_string())?;
     resp.text().await.map_err(|e| e.to_string())
 }
+
 ```
 
 ### 7.3 通用建议
@@ -494,6 +512,7 @@ async fn fetch_data(url: String) -> Result<String, String> {
   ✓ 打包体积优化
   ✓ 启动速度优化
   ✓ 更新服务器配置
+
 ```
 
 ## 八、未来展望
@@ -514,6 +533,7 @@ graph LR
     B --> D[未来: 多元共存]
     C --> D
     D --> E[按场景选择]
+
 ```
 
 ## 九、总结

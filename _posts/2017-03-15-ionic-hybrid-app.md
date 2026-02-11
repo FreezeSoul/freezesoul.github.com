@@ -23,6 +23,7 @@ tags: [Ionic, 混合应用, 跨平台, 移动开发, 前端开发]
 后续: Flutter DataColour 可视化 App
 
 当然过程中也尝试过一些原生应用的开发，不过本文重点还是以混合应用为主。
+
 ```
 
 **Sencha Touch 时代 (2012)**：当时开发了一个大屏控制端 H5 应用，通过渲染截屏传送 + WebSocket 通信控制大屏交互，实现命令传递的双向控制。那时的 H5 App 技术还处于早期探索阶段，也踩过很多坑。
@@ -57,6 +58,7 @@ graph LR
     style B fill:#00fff5,stroke:#00b8b0,color:#008b82
     style D fill:#4c8af5,stroke:#1a5fb4,color:#134a8f
     style G fill:#faff00,stroke:#e6d900,color:#c9b800
+
 ```
 
 ### 2017 年的技术格局
@@ -99,6 +101,7 @@ graph LR
   template: '...'
 })
 export class MyPage {}
+
 ```
 
 懒加载策略使初始加载时间从 6-30 秒降至 1-3 秒，通过分块加载显著提升了用户体验。
@@ -133,6 +136,7 @@ Ionic 的分层架构设计是其成功的关键：
 │  Native Platform                        │
 │  Android | iOS | Windows                │
 └─────────────────────────────────────────┘
+
 ```
 
 这种分层设计使得开发者可以专注于应用逻辑，而由框架处理平台差异。
@@ -155,6 +159,7 @@ ionic cordova platform add ios
 # 开发调试
 ionic lab         # 浏览器调试
 ionic cordova run android --device
+
 ```
 
 ---
@@ -196,6 +201,7 @@ my-plugin/
 │       └── MyPlugin.m
 └── www/
     └── MyPlugin.js      # JS 接口
+
 ```
 
 **创建自定义插件**：
@@ -204,6 +210,7 @@ my-plugin/
 # 使用 plugman 创建
 npm install -g plugman
 plugman create --name MyPlugin --plugin_id com.example.myplugin --plugin_version 1.0.0
+
 ```
 
 **plugin.xml 配置**：
@@ -228,6 +235,7 @@ plugman create --name MyPlugin --plugin_id com.example.myplugin --plugin_version
     <source-file src="src/android/MyPlugin.java" target-dir="src/com/example/" />
   </platform>
 </plugin>
+
 ```
 
 **Android 实现**：
@@ -260,6 +268,7 @@ public class MyPlugin extends CordovaPlugin {
     }
   }
 }
+
 ```
 
 **iOS 实现**：
@@ -286,6 +295,7 @@ public class MyPlugin extends CordovaPlugin {
 }
 
 @end
+
 ```
 
 ### 使用 Ionic Native 封装
@@ -325,6 +335,7 @@ async testPlugin() {
     console.error(error);
   }
 }
+
 ```
 
 ---
@@ -354,6 +365,7 @@ async testPlugin() {
     }
   }
 }
+
 ```
 
 **使用 Android Studio 打包**：
@@ -366,6 +378,7 @@ ionic cordova build android --release
 # 1. 打开 platforms/android
 # 2. Build -> Generate Signed APK
 # 3. 选择 keystore 和构建变体
+
 ```
 
 **友盟多渠道配置**：
@@ -375,6 +388,7 @@ ionic cordova build android --release
 <meta-data
     android:name="UMENG_CHANNEL"
     android:value="${CHANNEL_VALUE}" />
+
 ```
 
 ```groovy
@@ -390,6 +404,7 @@ android {
         flavor.manifestPlaceholders = [CHANNEL_VALUE: name]
     }
 }
+
 ```
 
 ### iOS 打包发布
@@ -405,6 +420,7 @@ ionic cordova platform add ios
 # 2. 创建 App ID
 # 3. 创建 Provisioning Profile
 # 4. 配置 Xcode 签名
+
 ```
 
 **使用 Xcode 打包**：
@@ -447,6 +463,7 @@ ionViewDidLoad() {
     console.log('更新状态', status);
   });
 }
+
 ```
 
 ---
@@ -515,6 +532,7 @@ ionViewDidLoad() {
 export class AnimationElementsComponent {
     constructor() {}
 }
+
 ```
 
 **使用 OnPush 变更检测策略**：
@@ -528,6 +546,7 @@ export class AnimationElementsComponent {
 export class HomePage {
   // OnPush 策略减少不必要的变更检测，提升性能
 }
+
 ```
 
 ### 音频服务
@@ -565,6 +584,7 @@ export class AudioPlayerService {
         this._nativeAudio.stop(key);
     }
 }
+
 ```
 
 ### 事件总线通信
@@ -589,6 +609,7 @@ this._events.subscribe('Notice_Main_Add', (res) => {
             break;
     }
 });
+
 ```
 
 ### 原生地图集成
@@ -613,6 +634,7 @@ export class BaiduMapService {
         return marker;
     }
 }
+
 ```
 
 ---
@@ -638,6 +660,7 @@ ionic-app/
 ├── config.xml                     # Cordova 配置
 ├── ionic.config.json              # Ionic 配置
 └── package.json                   # npm 依赖
+
 ```
 
 ### 核心依赖
@@ -656,6 +679,7 @@ ionic-app/
     "zone.js": "0.8.26"
   }
 }
+
 ```
 
 ### 生命周期钩子
@@ -699,6 +723,7 @@ export class HomePage implements OnInit {
     console.log('页面即将销毁');
   }
 }
+
 ```
 
 ### 导航控制
@@ -727,17 +752,21 @@ export class HomePage {
     this.navCtrl.setRoot(HomePage);
   }
 }
+
 ```
 
 ### 原生插件使用
 
 **安装插件**：
+
 ```bash
 ionic cordova plugin add cordova-plugin-camera
 npm install --save @ionic-native/camera
+
 ```
 
 **使用示例**：
+
 ```typescript
 import { Camera, CameraOptions } from '@ionic-native/camera';
 
@@ -762,6 +791,7 @@ export class PhotoPage {
     );
   }
 }
+
 ```
 
 ---
@@ -777,6 +807,7 @@ export class PhotoPage {
 import { enableProdMode } from '@angular/core';
 
 enableProdMode();
+
 ```
 
 **2. 跨域问题**
@@ -785,6 +816,7 @@ enableProdMode();
 <!-- config.xml -->
 <allow-navigation href="*" />
 <allow-intent href="*" />
+
 ```
 
 **3. 性能优化**
@@ -796,11 +828,13 @@ enableProdMode();
     {{ item.name }}
   </div>
 </ion-virtual-scroll>
+
 ```
 
 ### 打包与发布
 
 **Android 打包**：
+
 ```bash
 ionic cordova build android --release
 
@@ -814,12 +848,15 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 \
 zipalign -v 4 \
   platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk \
   app-release.apk
+
 ```
 
 **iOS 打包**：
+
 ```bash
 ionic cordova build ios
 # 在 Xcode 中打开项目进行签名和发布
+
 ```
 
 ---
@@ -851,6 +888,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 ```
 
 **热重载开发体验**：
@@ -869,6 +907,7 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+
 ```
 
 **渐变色卡片设计**：
@@ -900,6 +939,7 @@ Container(
     ),
   ),
 )
+
 ```
 
 **WebView 集成**：
@@ -927,6 +967,7 @@ class DashboardView extends StatefulWidget {
     );
   }
 }
+
 ```
 
 ### 状态管理
@@ -957,6 +998,7 @@ class ProjectModel {
     );
   }
 }
+
 ```
 
 ### 技术对比（2017年视角）

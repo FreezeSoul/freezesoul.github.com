@@ -57,6 +57,7 @@ tags: [JavaScript, 前端开发, Dashboard]
 │  ├── 悬停缩放                        │
 │  └── 过渡动画                        │
 └─────────────────────────────────────┘
+
 ```
 
 ### 核心实现要点
@@ -76,6 +77,7 @@ background-color: #00AAEF; /* 蓝色 */
 background-color: #42B618; /* 绿色 */
 background-color: #F78E00; /* 橙色 */
 background-color: #D62C29; /* 红色 */
+
 ```
 
 这个方案的优势在于：
@@ -99,6 +101,7 @@ background-color: #D62C29; /* 红色 */
     -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
     -webkit-filter: blur(2px);
 }
+
 ```
 
 配合 JavaScript 实现交错入场：
@@ -110,6 +113,7 @@ $("ul li .content").each(function(index) {
         $(this).removeClass("unloaded");
     }, 100 * index);
 });
+
 ```
 
 #### 3. 横向滚动体验
@@ -128,6 +132,7 @@ $("body").mousewheel(function(event, delta) {
     }
     event.preventDefault();
 });
+
 ```
 
 #### 4. Gridster 网格布局配置
@@ -152,6 +157,7 @@ $(".gridster ul").gridster({
         }
     }
 });
+
 ```
 
 #### 5. 悬停交互效果
@@ -162,6 +168,7 @@ div.widget:hover {
     border: 3px solid rgba(255, 255, 255, 0.4);
     -webkit-transform: scale(1.05);  /* 轻微放大 */
 }
+
 ```
 
 ---

@@ -67,6 +67,7 @@ OSGi.NET Client/
 ├── Tool/                       # 工具集
 ├── Help/                       # 帮助文档
 └── Config/                     # 配置文件
+
 ```
 
 ### 架构设计
@@ -85,6 +86,7 @@ graph TB
     H -->|通知| I[BundleListener]
     H -->|通知| J[ServiceListener]
     H -->|通知| K[ExtensionListener]
+
 ```
 
 ---
@@ -121,6 +123,7 @@ public interface IBundle
     IDictionary<string, string> GetManifest();      // 获取清单
     XmlNode GetBundleManifestData();               // 获取清单节点
 }
+
 ```
 
 #### Bundle 状态机
@@ -129,6 +132,7 @@ public interface IBundle
 INSTALLED → RESOLVED → STARTING → ACTIVE ←→ STOPPING → RESOLVED
                             ↓
                          UNINSTALLED
+
 ```
 
 ### 2. BundleContext（Bundle 上下文）
@@ -154,6 +158,7 @@ public interface IBundleContext
     ExtensionPoint GetExtensionPoint(string id);
     ExtensionData[] GetExtensionDatas(string extensionPointId);
 }
+
 ```
 
 ### 3. BundleActivator（Bundle 激活器）
@@ -166,6 +171,7 @@ public interface IBundleActivator
     void Start(IBundleContext context);     // Bundle 启动时调用
     void Stop(IBundleContext context);      // Bundle 停止时调用
 }
+
 ```
 
 **实现示例**：
@@ -190,6 +196,7 @@ public class MyBundleActivator : IBundleActivator
         // 清理资源
     }
 }
+
 ```
 
 ### 4. 服务机制
@@ -210,6 +217,7 @@ public interface IServiceReference
     object GetService();
     bool IsAssignableTo(string className);
 }
+
 ```
 
 **使用场景**：
@@ -239,6 +247,7 @@ public class ExtensionData
     public string BundleSymbolicName { get; set; } // 所属 Bundle
     public XmlNode Content { get; set; }          // 扩展内容
 }
+
 ```
 
 **典型应用**：
@@ -375,6 +384,7 @@ public class MyActivator : IBundleActivator
         Console.WriteLine("MyBundle Stopped!");
     }
 }
+
 ```
 
 ### 2. 配置 Manifest
@@ -386,6 +396,7 @@ public class MyActivator : IBundleActivator
     <Activator>MyNamespace.MyActivator</Activator>
     <StartLevel>2</StartLevel>
 </Bundle>
+
 ```
 
 ### 3. 启动 Framework
@@ -395,6 +406,7 @@ using OSGi.NET.Core.Root;
 
 IFramework framework = FrameworkFactory.NewFramework();
 framework.Start();
+
 ```
 
 ---

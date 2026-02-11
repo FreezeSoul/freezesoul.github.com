@@ -101,11 +101,13 @@ tags: [数据可视化, HTML5, AngularJS, 微服务, Dashboard]
 │  ├── Redis (缓存)                                       │
 │  └── Ehcache (本地缓存)                                  │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ### 项目结构
 
 **前端 (ClientCode):**
+
 ```
 ClientCode/
 ├── app/
@@ -132,9 +134,11 @@ ClientCode/
 │   └── main.js               # 应用入口
 ├── libs/                     # 第三方库
 └── doc/                      # GitBook 文档
+
 ```
 
 **后端 (DubboService):**
+
 ```
 DubboService/
 ├── dashboard-parent/         # 父 POM
@@ -142,6 +146,7 @@ DubboService/
 ├── dashboard-dao/            # 数据访问层
 ├── dashboard-service/        # Dubbo 服务提供者
 └── dashboard-web/            # Web 服务消费者
+
 ```
 
 ---
@@ -212,6 +217,7 @@ var Chart = Base.extend({
     getElement: function () { },
     getChart: function () { }
 });
+
 ```
 
 ### 插件清单文件
@@ -230,6 +236,7 @@ var Chart = Base.extend({
   "editorTpl": "editor/editor.tpl.html",
   "editorCss": "editor/editor.css"
 }
+
 ```
 
 ### 控件实现示例
@@ -261,6 +268,7 @@ define(['app/core/base'], function (Base) {
         }
     });
 });
+
 ```
 
 ### 属性系统 - 自动生成属性编辑器
@@ -304,6 +312,7 @@ var property = {
         }
     ]
 };
+
 ```
 
 **属性类型支持：**
@@ -332,9 +341,11 @@ var property = {
     measure: '',      // 度量列（Y 轴）
     tooltip: '配置与数据集的绑定关系'
 }
+
 ```
 
 **数据流向：**
+
 ```
 ┌─────────────┐    HTTP     ┌──────────────┐    Dubbo    ┌──────────┐
 │   前端控件   │ ────────► │ Web Controller │ ────────► │ Service  │
@@ -346,6 +357,7 @@ var property = {
                                                        ┌──────────┐
                                                        │ Database │
                                                        └──────────┘
+
 ```
 
 ### 插件注册表
@@ -381,6 +393,7 @@ var property = {
     }
   ]
 }
+
 ```
 
 ### 动态加载机制
@@ -402,6 +415,7 @@ function loadPluginModule(name) {
         deferred.resolve(bootstrap, module);
     });
 }
+
 ```
 
 ### RequireJS 模块管理系统
@@ -474,6 +488,7 @@ require.config({
         }
     }
 });
+
 ```
 
 #### 应用启动流程
@@ -495,6 +510,7 @@ loadScriptsInOrder(scripts).then(function() {
         'data-main': 'require.js'   // 入口配置文件
     });
 });
+
 ```
 
 #### 模块定义模式
@@ -526,6 +542,7 @@ define('controls/echarts/ebar', [
 ], function (echarts, Base) {
     // 控件实现
 });
+
 ```
 
 #### AngularJS 与 RequireJS 集成
@@ -558,6 +575,7 @@ app.config(['$stateProvider', function ($stateProvider) {
             }
         });
 }]);
+
 ```
 
 #### 依赖管理策略
@@ -581,6 +599,7 @@ libs/
 │   └── require.js
 └── underscore/
     └── underscore-1.8.3.min.js
+
 ```
 
 **Bower 管理依赖** (bower.json)：
@@ -600,6 +619,7 @@ libs/
     "moment": "~2.18.1"
   }
 }
+
 ```
 
 #### 插件按需加载
@@ -620,6 +640,7 @@ require(['plugins/config.json'], function (config) {
         });
     });
 });
+
 ```
 
 #### 循环依赖处理
@@ -645,6 +666,7 @@ define(['jquery', 'app/core/manager'], function ($, manager) {
 
     return getInstance();
 });
+
 ```
 
 #### 模块缓存清理
@@ -663,6 +685,7 @@ if (DEBUG_MODE) {
         require.undef(moduleId);
     }
 }
+
 ```
 
 ### RequireJS 管理优势
@@ -701,9 +724,11 @@ public class AdChartServiceImpl implements AdChartService {
         return adChartMapper.selectAdCharts();
     }
 }
+
 ```
 
 **application.properties:**
+
 ```properties
 server.port=8787
 
@@ -715,6 +740,7 @@ spring.dubbo.registry.protocol=zookeeper
 spring.dubbo.registry.address=127.0.0.1:2181
 spring.dubbo.base-package=org.dashboard.service.impl
 spring.dubbo.provider.timeout=60000
+
 ```
 
 ### 服务消费者配置
@@ -744,9 +770,11 @@ public class AdChartController {
         return JsonResponse.success(pageInfo);
     }
 }
+
 ```
 
 **application.properties:**
+
 ```properties
 server.port=8888
 
@@ -756,6 +784,7 @@ spring.dubbo.registry.protocol=zookeeper
 spring.dubbo.registry.address=127.0.0.1:2181
 spring.dubbo.consumer.timeout=60000
 spring.dubbo.consumer.check=false
+
 ```
 
 ### 服务分层架构
@@ -802,6 +831,7 @@ spring.dubbo.consumer.check=false
      ┌───────────────┐
      │ Service Registry│
      └───────────────┘
+
 ```
 
 ### 数据模型
@@ -836,6 +866,7 @@ public class AdChart {
     "option": [ /* 属性编辑器配置 */ ]
   }
 }
+
 ```
 
 ### 缓存策略
@@ -855,6 +886,7 @@ public class AdChartServiceImpl implements AdChartService {
         return adChartMapper.updateByPrimaryKey(chart);
     }
 }
+
 ```
 
 ---

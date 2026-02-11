@@ -68,6 +68,7 @@ AutoGenerateWinformUIT4/
     ├── XtraReportGenerator.tt # DevExpress 报表生成
     ├── MenuData.xml           # 菜单配置
     └── *.ttinclude            # T4 辅助模板
+
 ```
 
 ---
@@ -102,6 +103,7 @@ graph TB
     F -->|使用| I[DevExpress XtraGrid]
     G -->|使用| J[DevExpress LayoutControl]
     H -->|使用| K[DevExpress XtraReports]
+
 ```
 
 ---
@@ -147,6 +149,7 @@ public partial class Users
     public string Email { get; set; }
     public DateTime CreateTime { get; set; }
 }
+
 ```
 
 ### 2. DataAccessLogic - 数据访问层
@@ -181,6 +184,7 @@ public class UsersAdoDAL
         return AdoPagingHelper.GetPageList<Users>(where, parameters);
     }
 }
+
 ```
 
 ### 3. LogicLayer - 业务逻辑层
@@ -215,6 +219,7 @@ public class UsersAdoBLL
         return dal.GetList(where, parameters);
     }
 }
+
 ```
 
 ### 4. ApplicationMainForm - 界面层
@@ -241,6 +246,7 @@ public partial class Users_List_XtraUserControl : XtraUserControl
 
     // 增删改查按钮事件自动生成
 }
+
 ```
 
 **功能特性：**
@@ -279,6 +285,7 @@ public partial class Users_Edit_XtraUserControl : XtraUserControl
 
     // 数据绑定、验证自动生成
 }
+
 ```
 
 **功能特性：**
@@ -329,6 +336,7 @@ public partial class Users_Edit_XtraUserControl : XtraUserControl
 
 # 2. 配置数据库连接
 # 在 DomainModelLayer/App.Config 中配置连接字符串
+
 ```
 
 ### 2. 更新 EF 模型
@@ -337,6 +345,7 @@ public partial class Users_Edit_XtraUserControl : XtraUserControl
 1. 在 Visual Studio 中打开 DomainModel.edmx
 2. 从数据库更新模型
 3. 保存后自动运行 DomainModel.tt 生成实体类
+
 ```
 
 ### 3. 运行 T4 模板生成代码
@@ -346,6 +355,7 @@ public partial class Users_Edit_XtraUserControl : XtraUserControl
 2. 配置 MenuData.xml（选择要生成界面的表）
 3. 保存 T4 模板文件，自动生成代码
 4. 生成的代码会输出到各项目目录
+
 ```
 
 ### 4. 编译运行
@@ -381,6 +391,7 @@ public partial class Users_Edit_XtraUserControl : XtraUserControl
 自动生成：10 个表 × 1 分钟 = 10 分钟
 
 效率提升：180 倍！
+
 ```
 
 ---
