@@ -69,19 +69,19 @@ graph LR
 ```mermaid
 graph TD
     subgraph 接入层
-        WA[WhatsApp] --> C[Channel Adapter]
-        TG[Telegram] --> C
-        DC[Discord] --> C
-        FS[飞书] -->
+        WA[WhatsApp] --> CA[Channel Adapter]
+        TG[Telegram] --> CA
+        DC[Discord] --> CA
+        FS[飞书] --> CA
+    end
     
-    subgraph  C
-    end核心层
-        C --> R[Router]
+    subgraph 核心层
+        CA --> R[Router]
         R --> SM[Session Manager]
         SM --> MH[Message Handler]
     end
     
-    subgraph Agent 层
+    subgraph Agent层
         MH --> TO[Tool Orchestrator]
         TO --> AG[Agent Loop]
         AG -->|Tool Call| TO
@@ -96,7 +96,7 @@ graph TD
         TO --> T5[飞书]
     end
     
-    style C fill:#4dabf7,stroke:#1971c2,color:#fff
+    style CA fill:#4dabf7,stroke:#1971c2,color:#fff
     style R fill:#4dabf7,stroke:#1971c2,color:#fff
     style SM fill:#4dabf7,stroke:#1971c2,color:#fff
     style MH fill:#4dabf7,stroke:#1971c2,color:#fff
