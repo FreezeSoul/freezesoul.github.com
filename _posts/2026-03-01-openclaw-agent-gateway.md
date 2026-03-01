@@ -302,27 +302,21 @@ flowchart TD
 
 ```mermaid
 sequenceDiagram
-    User->>Manus: "帮我分析这份数据并生成报告"
+    participant User as 用户
+    participant Manus as Manus
     
-    rect fill:#555,bgColor:#555
-        Note over Manus: 自主规划阶段
-        Manus->>Manus: 理解任务 → 拆解步骤 → 制定计划
+    Note over User,Manus: === 自主规划阶段 ===
+    User->>Manus: "帮我分析这份数据"
+    Manus->>Manus: 理解任务 → 拆解步骤 → 制定计划
+    
+    Note over User,Manus: === 执行阶段 ===
+    loop 每个步骤
+        Manus->>Manus: 调用工具
+        Note over Manus: 浏览器/代码/文件
     end
     
-    rect fill:#666,bgColor:#666
-        Note over Manus: 执行阶段
-        loop 每个步骤
-            Manus->>Tool: 调用工具（浏览器/代码/文件）
-            Tool-->>Manus: 返回结果
-            Manus->>Manus: 验证结果 → 调整下一步
-        end
-    end
-    
-    rect fill:#777,bgColor:#777
-        Note over Manus: 交付阶段
-        Manus->>Manus: 整合结果 → 生成报告
-    end
-    
+    Note over User,Manus: === 交付阶段 ===
+    Manus->>Manus: 整合结果 → 生成报告
     Manus-->>User: 完成报告
 ```
 
