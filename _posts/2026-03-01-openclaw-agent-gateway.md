@@ -304,12 +304,12 @@ flowchart TD
 sequenceDiagram
     User->>Manus: "帮我分析这份数据并生成报告"
     
-    rect rgb(230, 230, 230)
+    rect fill:#555,bgColor:#555
         Note over Manus: 自主规划阶段
         Manus->>Manus: 理解任务 → 拆解步骤 → 制定计划
     end
     
-    rect rgb(220, 220, 220)
+    rect fill:#666,bgColor:#666
         Note over Manus: 执行阶段
         loop 每个步骤
             Manus->>Tool: 调用工具（浏览器/代码/文件）
@@ -318,7 +318,7 @@ sequenceDiagram
         end
     end
     
-    rect rgb(210, 210, 210)
+    rect fill:#777,bgColor:#777
         Note over Manus: 交付阶段
         Manus->>Manus: 整合结果 → 生成报告
     end
