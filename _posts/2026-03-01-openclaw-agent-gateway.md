@@ -470,69 +470,364 @@ Agent → MCP → 企业系统
 
 ## B 端挑战与应对
 
+
+
 ### C 端 vs B 端关注点
 
+
+
 | C 端关注 | B 端关注 |
+
 |----------|----------|
+
 | 好玩、快速 | 准确、可追溯 |
+
 | 个人助手 | 企业服务 |
+
 | 单一任务 | 复杂工作流 |
+
 | 低延迟 | 高并发 |
+
 | 低成本 | 安全合规 |
+
+
+
+### 安全机制体系
+
+
+
+OpenClaw 提供了一套完整的安全机制来保障企业级部署：
+
+
+
+```mermaid
+
+graph TD
+
+    subgraph 安全层
+
+        S1[命令白名单] --> S2[工具权限]
+
+        S2 --> S3[Workspace 隔离]
+
+        S3 --> S4[沙箱执行]
+
+        S4 --> S5[Docker 容器]
+
+    end
+
+```
+
+
+
+**1. 命令白名单**
+
+
+
+```json
+
+{
+
+  "commands": {
+
+    "deny": ["rm", "dd", "mkfs", "format"]
+
+  }
+
+}
+
+```
+
+
+
+- 危险命令直接禁用
+
+- 支持通配符匹配
+
+- 可按通道配置
+
+
+
+**2. 工具权限控制**
+
+
+
+```json
+
+{
+
+  "tools": {
+
+    "allow": ["read", "write", "exec"],
+
+    "deny": ["browser", "canvas", "nodes"]
+
+  }
+
+}
+
+```
+
+
+
+- 精细到每个工具的权限
+
+- 支持按 Agent 独立配置
+
+- 敏感工具可完全禁用
+
+
+
+**3. Workspace 隔离**
+
+
+
+```mermaid
+
+graph TD
+
+    subgraph 隔离方案
+
+        A[主 Workspace] --> B1[Agent A]
+
+        A --> B2[Agent B]
+
+        B1 --> C1[Session 1]
+
+        B1 --> C2[Session 2]
+
+        B2 --> C3[Session 3]
+
+    end
+
+    
+
+    style A fill:#4dabf7,stroke:#1971c2,color:#fff
+
+    style B1 fill:#51cf66,stroke:#2b8a3e,color:#fff
+
+    style B2 fill:#51cf66,stroke:#2b8a3e,color:#fff
+
+```
+
+
+
+- 每个 Agent 独立 Workspace
+
+- 每个 Session 独立上下文
+
+- 敏感数据物理隔离
+
+
+
+**4. Docker 沙箱**
+
+
+
+```json
+
+{
+
+  "agents": {
+
+    "defaults": {
+
+      "sandbox": {
+
+        "mode": "non-main",
+
+        "scope": "session",
+
+        "workspaceAccess": "none",
+
+        "docker": {
+
+          "image": "openclaw-sandbox:bookworm-slim"
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+```
+
+
+
+| 参数 | 选项 | 说明 |
+
+|------|------|------|
+
+| mode | off / non-main / all | 沙箱启用模式 |
+
+| scope | session / agent / shared | 容器复用策略 |
+
+| workspaceAccess | none / ro / rw | 工作目录访问权限 |
+
+
+
+**沙箱模式详解**：
+
+
+
+- `mode: "off"` - 不使用沙箱，工具在宿主机执行
+
+- `mode: "non-main"` - 仅非主会话使用沙箱（默认）
+
+- `mode: "all"` - 所有会话都使用沙箱
+
+- `scope: "session"` - 每个会话独立容器
+
+- `scope: "agent"` - 每个 Agent 独立容器
+
+- `workspaceAccess: "none"` - 只能访问沙箱内目录
+
+- `workspaceAccess: "ro"` - 只读挂载主 Workspace
+
+- `workspaceAccess: "rw"` - 读写挂载主 Workspace
+
+
+
+**5. 执行结果审核**
+
+
+
+```mermaid
+
+sequenceDiagram
+
+    User->>Agent: 执行任务
+
+    Agent->>Agent: 生成响应
+
+    Agent->>Reviewer: 提交审核
+
+    Reviewer->>Reviewer: 安全/准确性检查
+
+    Reviewer-->>Agent: 通过/拒绝
+
+    Agent-->>User: 最终响应
+
+```
+
+
+
+- 敏感操作可设置审核点
+
+- 支持人工 + AI 双审核
+
+- 审核日志完整留存
+
+
 
 ### 准确性保障
 
+
+
 ```mermaid
+
 graph TD
+
     A[用户请求] --> B{关键操作?}
+
     B -->|是| C[人工审批点]
+
     B -->|否| D[自动执行]
+
     
+
     C --> E[确认后执行]
+
     D --> F[执行]
+
     
+
     E --> G[记录日志]
+
     F --> G
+
     
+
     style C fill:#feca57,stroke:#fbc02d,color:#000
+
     style G fill:#74b9ff,stroke:#0984e3,color:#fff
+
 ```
+
+
 
 ### 可追溯性
 
+
+
 | 机制 | 说明 |
+
 |------|------|
+
 | **完整日志** | 每步操作记录 |
+
 | **执行轨迹** | Tool 调用链可视化 |
+
 | **结果留存** | 输出可复查 |
+
 | **审计日志** | 谁在什么时候做了什么 |
+
+
 
 ### 安全合规
 
+
+
 | 问题 | 应对 |
+
 |------|------|
+
 | **数据不出网** | 本地部署 |
+
 | **敏感操作** | 审批 + 白名单 |
+
 | **权限控制** | Workspace 隔离 |
+
 | **内容过滤** | 敏感词检测 |
+
 | **合规审计** | 操作日志留存 |
+
+
 
 ### 稳定性保障
 
+
+
 ```yaml
-# 生产配置示例
+
 gateway:
+
   rate_limit:
+
     requests_per_minute: 60
+
   timeout:
+
     default: 120s
+
     tool_execution: 60s
+
   retry:
+
     max_attempts: 3
+
     backoff: exponential
+
   circuit_breaker:
+
     enabled: true
+
     threshold: 10 failures
+
 ```
 
 ## 总结
