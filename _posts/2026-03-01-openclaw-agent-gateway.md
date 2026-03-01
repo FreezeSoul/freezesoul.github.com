@@ -3,7 +3,7 @@ layout: post
 title: "OpenClaw 架构解析：如何设计一个多通道 AI Agent 网关"
 permalink: "openclaw-agent-gateway-architecture"
 author: "FS.IO"
-date:   2026-03-01 20:30:00
+date:   2026-03-01 00:00:00
 categories: technology
 tags: [OpenClaw, AI Agent, Gateway, 架构设计, 多通道]
 ---
