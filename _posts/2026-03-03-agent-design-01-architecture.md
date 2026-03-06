@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "智能体设计思考（一）：架构与编排"
+title: "智能体设计思考（一）：智能体的架构与编排"
 permalink: "agent-design-01-architecture"
 author: "FS.IO"
 date: 2026-03-03 00:00:00
