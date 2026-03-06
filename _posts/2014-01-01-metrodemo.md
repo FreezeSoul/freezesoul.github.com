@@ -173,5 +173,47 @@ div.widget:hover {
 
 ---
 
-程序代码：<a href="https://github.com/FreezeSoul/MetroWebDashboard">Github Link</a>  
+## 相关布局组件推荐
+
+除了 Demo 中使用的 Gridster 和 GridList，还有许多优秀的 JavaScript 布局组件可供选择：
+
+### 拖拽网格类
+
+| 组件 | 特点 | 适用场景 |
+|------|------|----------|
+| [Gridstack.js](https://github.com/troolee/gridstack.js) | 支持 Bootstrap V3、响应式、触屏设备 | 现代 Dashboard |
+| [Packery](https://github.com/metafizzy/packery) | 使用 bin-packing 算法实现无缝隙布局 | 瀑布流、图片画廊 |
+| [jQuery Gridly](https://github.com/ksylvest/jquery-gridly) | 拖拽、交换、删除、调整大小 | 灵活布局 |
+| [Dazzle](https://github.com/Raathigesh/dazzle) | React 专用、UI 框架无关 | React 项目 |
+
+### 瀑布流类
+
+| 组件 | 特点 | 适用场景 |
+|------|------|----------|
+| [Masonry](https://github.com/desandro/masonry) | 去除不同高度元素间的空白 | 图片画廊、电商站点 |
+| [Freewall](https://github.com/kingshocc/freewall) | 跨浏览器、响应式、CSS3 动画、支持 Metro 风格 | 多类型网格布局 |
+| [Wookmark](https://github.com/GBKS/Wookmark-jQuery) | 瀑布流布局 | 图片列表 |
+| [Minigrid](https://github.com/henryqiao/minigrid) | 零依赖、仅 2KB | 轻量级项目 |
+
+### 高度对齐类
+
+| 组件 | 特点 |
+|------|------|
+| [MatchHeight.js](https://github.com/liabru/jquery-match-height) | 使元素高度相等，处理混合 padding、margin |
+| [Equal Height Blocks](https://github.com/mattbanks/Equal-Height-Blocks) | 响应式、高度统一 |
+
+### Angular/React 专用
+
+| 组件 | 框架 | 特点 |
+|------|------|------|
+| [Angular-Gridster](https://github.com/ManifestWebDesign/angular-gridster) | Angular | 双向数据绑定 |
+| [Dazzle](https://github.com/Raathigesh/dazzle) | React | 网格布局、组件化 |
+
+选择建议：
+- **jQuery 项目**：Gridstack.js 是 Gridster 的现代替代品，文档更完善
+- **React 项目**：推荐 Dazzle，组件化更友好
+- **轻量级需求**：Minigrid 仅 2KB，无外部依赖
+- **瀑布流需求**：Masonry 是经典选择，Freewall 功能更丰富
+
+程序代码：<a href="https://github.com/FreezeSoul/MetroWebDashboard">Github Link</a>
 

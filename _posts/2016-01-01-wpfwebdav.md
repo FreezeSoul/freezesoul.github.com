@@ -560,3 +560,307 @@ private async void RefreshCurrentResource(string itemHref)
 5. **内存管理**：显式视图生命周期控制和 GC 调用
 
 这套架构在WPF中算是一个比较成熟的企业级应用解决方案，通过 Prism 的 MVVM 模式和 MEF 的组合能力，实现了代码的可维护性和可扩展性。
+
+深入理解 Prism 框架的设计理念和 MEF 依赖注入机制，有助于更好地掌握桌面应用开发的最佳实践，下面结合项目实践详细介绍其架构体系。
+
+---
+
+## Prism MVVM 框架架构体系
+
+### 整体架构
+
+```mermaid
+flowchart TB
+    subgraph Shell["Shell (主窗口)"]
+        S1[MainWindow]
+        S2[Region 容器]
+    end
+    
+    subgraph Bootstrapper["Bootstrapper (启动器)"]
+        B1[MefBootstrapper]
+        B2[DryIocBootstrapper]
+        B3[UnityBootstrapper]
+    end
+    
+    subgraph Modules["模块系统"]
+        M1[IModule]
+        M2[ModuleCatalog]
+        M3[ModuleManager]
+    end
+    
+    subgraph MVVM["MVVM 核心"]
+        V[Views]
+        VM[ViewModels]
+        M[Models]
+    end
+    
+    subgraph Services["服务层"]
+        Svc1[NavigationService]
+        Svc2[EventAggregator]
+        Svc3[DialogService]
+        Svc4[DependencyService]
+    end
+    
+    subgraph DI["DI 容器"]
+        DI1[MEF]
+        DI2[DryIoc]
+        DI3[Unity]
+    end
+    
+    Bootstrapper -->|初始化| DI
+    DI -->|注入| Modules
+    Modules --> Shell
+    Shell -->|Region| V
+    V <-->|DataContext| VM
+    VM <-->|数据绑定| M
+    V -->|发布/订阅| Svc2
+```
+
+### MVVM 交互模式
+
+```mermaid
+sequenceDiagram
+    participant View as View (XAML)
+    participant VM as ViewModel
+    participant M as Model
+    participant EA as EventAggregator
+    participant Svc as Service
+    
+    View->>VM: DataContext 绑定
+    VM->>VM: INotifyPropertyChanged
+    VM->>VM: DelegateCommand CanExecute
+    
+    VM->>Svc: 调用服务
+    Svc-->>VM: 返回数据
+    VM->>M: 更新 Model
+    
+    M-->>VM: 属性变更通知
+    VM->>View: INotifyPropertyChanged
+    View->>View: 自动更新 UI
+    
+    VM->>EA: Publish Event
+    EA-->>VM: Subscribe 处理
+```
+
+### Prism 依赖注入
+
+```mermaid
+flowchart LR
+    subgraph MEF["MEF 容器"]
+        C1[AggregateCatalog]
+        C2[AssemblyCatalog]
+        C3[DirectoryCatalog]
+    end
+    
+    subgraph 注册方式
+        R1["[Export]"]
+        R2["[Import]"]
+        R3["[ImportingConstructor]"]
+    end
+    
+    subgraph 生命周期
+        P1[CreationPolicy.Shared]
+        P2[CreationPolicy.NonShared]
+        P3[CreationPolicy.Any]
+    end
+    
+    C1 --> R1
+    R1 --> P1
+    R1 --> P2
+```
+
+### Region 导航流程
+
+```mermaid
+flowchart TB
+    subgraph Navigation["导航流程"]
+        N1[RequestNavigate]
+        N2[UriQuery 参数]
+        N3[ViewRegistry 查找]
+        N4[Region 添加 View]
+        N5[Activate 激活]
+        N6[Deactivate 旧 View]
+    end
+    
+    subgraph RegionTypes["Region 类型"]
+        RT1[AllActiveRegion]
+        RT2[SingleActiveRegion]
+        RT3[NavigationRegion]
+    end
+    
+    N1 --> N2
+    N2 --> N3
+    N3 --> N4
+    N4 --> N5
+    N5 --> N6
+```
+
+### EventAggregator 事件机制
+
+```mermaid
+flowchart LR
+    subgraph Publisher["发布者"]
+        P1[PubSubEvent<T>]
+        P2[".Publish()"]
+    end
+    
+    subgraph EventAggregator["事件聚合器"]
+        EA[EventAggregator]
+    end
+    
+    subgraph Subscriber["订阅者"]
+        S1[".Subscribe()"]
+        S2[处理函数]
+    end
+    
+    subgraph ThreadOption["线程选项"]
+        TO1[PublisherThread]
+        TO2[BackgroundThread]
+        TO3[UIThread]
+    end
+    
+    P1 --> EA
+    EA --> S1
+    S1 --> TO1
+    S1 --> TO2
+    S1 --> TO3
+```
+
+---
+
+## MEF 依赖注入容器
+
+MEF（Managed Extensibility Framework）是 .NET 平台的依赖注入和插件系统，天然支持模块化应用开发。上述项目正是基于 MEF 实现依赖注入和模块自动发现，下面结合项目实践详细介绍其核心概念。
+
+### MEF 核心概念
+
+```mermaid
+graph TD
+    subgraph 目录编录
+        AC[AggregateCatalog]
+        DC[DirectoryCatalog]
+        PC[AssemblyCatalog]
+        TC[TypeCatalog]
+    end
+    
+    subgraph 导出标记
+        E1[Export]
+        E2[ExportMetadata]
+        E3[InheritedExport]
+    end
+    
+    subgraph 导入标记
+        I1[Import]
+        I2[ImportMany]
+        I3[ImportingConstructor]
+    end
+    
+    subgraph 生命周期策略
+        LP1[Shared]
+        LP2[NonShared]
+        LP3[Any]
+    end
+    
+    AC -->|组合| E1
+    E1 -->|注入| I1
+    I1 -->|控制| LP1
+```
+
+### MEF 组合流程
+
+```mermaid
+sequenceDiagram
+    participant App as Application
+    participant Boot as Bootstrapper
+    participant Cat as Catalog
+    participant Container as CompositionContainer
+    participant Part asComposablePart
+    participant Export as Export
+    participant Import as Import
+    
+    App->>Boot: 启动
+    Boot->>Cat: 配置目录编录
+    Cat->>Container: 创建容器
+    Container->>Part: 发现部件
+    Part->>Export: 暴露导出
+    Import->>Container: 请求导入
+    Container->>Export: 匹配
+    Export->>Import: 注入依赖
+    Container->>Boot: 返回组合结果
+```
+
+### 模块化架构
+
+```mermaid
+flowchart TB
+    subgraph Shell["主程序 Shell"]
+        Shell1[主窗口]
+        Shell2[Bootstrapper]
+        Shell3[MEF Container]
+    end
+    
+    subgraph Core["Core 模块"]
+        C1[Infrastructure]
+        C2[Services]
+        C3[Models]
+    end
+    
+    subgraph Features["功能模块"]
+        F1[LoginModule]
+        F2[CloudDriveModule]
+        F3[SettingModule]
+        F4[NavigationModule]
+    end
+    
+    subgraph Plugins["插件模块"]
+        P1[WebDAV Plugin]
+        P2[FTP Plugin]
+        P3[SFTP Plugin]
+    end
+    
+    Shell3 -->|发现| Core
+    Shell3 -->|发现| Features
+    Shell3 -->|发现| Plugins
+    
+    Features -->|依赖| Core
+    Plugins -->|依赖| Core
+```
+
+### MEF + Prism 集成
+
+```mermaid
+classDiagram
+    class MefBootstrapper {
+        +AggregateCatalog
+        +CompositionContainer
+        +CreateShell()
+        +ConfigureAggregateCatalog()
+    }
+    
+    class AggregateCatalog {
+        +Catalogs: Collection~ComposablePartCatalog~
+        +Add(catalog)
+    }
+    
+    class CompositionContainer {
+        +Compose(CompositionBatch)
+        +GetExportedValue~T~()
+        +GetExportedValues~T~()
+    }
+    
+    MefBootstrapper --> AggregateCatalog
+    MefBootstrapper --> CompositionContainer
+    
+    class ViewExportAttribute {
+        +RegionName: string
+    }
+    
+    class AutoPopulateExportedViewsBehavior {
+        +RegisteredViews: Lazy~object, IViewRegionRegistration~[]
+    }
+    
+    ViewExportAttribute --> MefBootstrapper
+    AutoPopulateExportedViewsBehavior --> MefBootstrapper
+```
+
+Prism 与 MEF 的结合为 WPF 应用提供了强大的模块化能力，通过声明式的 `[Export]` 和 `[Import]` 标记，配合 Prism 的 Region 导航和 EventAggregator 事件机制，可以构建出高内聚、低耦合的企业级桌面应用。

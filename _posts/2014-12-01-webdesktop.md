@@ -393,4 +393,292 @@ WebDesktop/
 | **状态持久化** | JSON 序列化 + 防抖保存 |
 | **虚拟桌面** | 多图层容器 + CSS 动画 |
 
-这套架构在 2014 年是一个相对成熟的 SPA 解决方案，通过 Backbone.js 的 MVC 模式和 Sea.js 的模块化能力，实现了代码的可维护性和可扩展性，同时也很好地支持了与原生客户端的集成。  
+这套架构在 2014 年是一个相对成熟的 SPA 解决方案，通过 Backbone.js 的 MVC 模式和 Sea.js 的模块化能力，实现了代码的可维护性和可扩展性，同时也很好地支持了与原生客户端的集成。
+
+深入理解 Backbone.js 的架构设计理念，有助于更好地掌握前端工程化的核心思想，下面结合项目实践详细介绍其架构体系。
+
+---
+
+## Backbone.js 架构体系详解
+
+### 整体架构
+
+```mermaid
+flowchart TB
+    subgraph View["View 层 - 视图渲染"]
+        V1[DesktopContainerView]
+        V2[DesktopLayersView]
+        V3[DesktopElementView]
+        V4[ApplicationView]
+    end
+    
+    subgraph Model["Model 层 - 数据模型"]
+        M1[DesktopElement]
+        M2[DesktopApplication]
+        M3[DesktopFolder]
+        M4[DesktopWidget]
+        M5[DesktopElements Collection]
+    end
+    
+    subgraph Controller["Controller - 路由控制"]
+        C1[Backbone.Router]
+        C2[DesktopRouter]
+    end
+    
+    subgraph Event["Event 事件系统"]
+        E1[Backbone.Events]
+        E2[PubSubJS]
+    end
+    
+    subgraph Storage["数据持久化"]
+        S1[localStorage]
+        S2[Server API]
+    end
+    
+    V1 -->|监听| E1
+    V2 -->|监听| E1
+    V3 -->|绑定| M1
+    M1 -->|触发| E1
+    M1 -->|同步| S1
+    C1 -->|导航| V1
+    E1 <-->|全局事件| E2
+```
+
+### MVC 数据流向
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant V as View
+    participant M as Model
+    participant C as Collection
+    participant S as Server
+    
+    U->>V: 用户交互 (点击/拖拽)
+    V->>V: 事件处理
+    V->>M: 修改数据 Model.set()
+    M->>C: Collection 更新
+    C->>M: 触发 change 事件
+    M->>V: 触发 change:attr 事件
+    V->>V: 重新渲染视图
+    M->>S: 同步到服务器
+    S-->>M: 返回确认
+```
+
+### 事件驱动架构
+
+```mermaid
+flowchart LR
+    subgraph 事件类型
+        Global[全局事件]
+        Scoped[作用域事件]
+        Model[Model 事件]
+        View[View 事件]
+    end
+    
+    subgraph PubSubJS 实现
+        PS[PubSub]
+    end
+    
+    Global --> PS
+    Scoped --> PS
+    Model --> PS
+    View --> PS
+    
+    PS -->|layer-0.CreateElement| L0[图层0处理器]
+    PS -->|layer-1.CreateElement| L1[图层1处理器]
+    PS -->|DesktopChanged| Save[自动保存]
+```
+
+### 模块依赖关系
+
+```mermaid
+graph TD
+    subgraph main["入口 main.js"]
+        M[seajs.use]
+    end
+    
+    subgraph init["初始化模块"]
+        M --> I[app/init.js]
+    end
+    
+    subgraph config["配置模块"]
+        I --> C[app/config.js]
+    end
+    
+    subgraph core["核心模块"]
+        I --> Backbone[jquery & backbone]
+        I --> PubSub[pubsub-js]
+    end
+    
+    subgraph desktop["桌面模块"]
+        I --> DV[desktopContainer.js]
+        DV --> DL[desktopLayer.js]
+        DV --> DE[desktopElBase.js]
+        DE --> DA[desktopApplication.js]
+        DE --> DF[desktopFolder.js]
+        DE --> DW[desktopWidget.js]
+    end
+    
+    subgraph templates["模板模块"]
+        T1[application_tpl]
+        T2[folder_tpl]
+        T3[widget_tpl]
+        T1 --> DA
+        T2 --> DF
+        T3 --> DW
+    end
+    
+    subgraph service["服务模块"]
+        I --> S1[desktopService.js]
+        I --> S2[appStoreService.js]
+        I --> S3[mvpService.js]
+    end
+```
+
+### Model 与 Collection 的关系
+
+```mermaid
+classDiagram
+    class DesktopElement {
+        +string id
+        +number appType
+        +string name
+        +string icon
+        +object position
+        +object size
+        +number zIndex
+        +get()
+        +set()
+        +toJSON()
+    }
+    
+    class DesktopApplication {
+        +string appId
+        +number openType
+        +string systemId
+    }
+    
+    class DesktopFolder {
+        +string parentId
+        +array children
+    }
+    
+    class DesktopWidget {
+        +string widgetType
+        +object config
+    }
+    
+    class DesktopElements {
+        +model DesktopElement
+        +add()
+        +remove()
+        +getById()
+        +sort()
+    }
+    
+    DesktopElement <|-- DesktopApplication
+    DesktopElement <|-- DesktopFolder
+    DesktopElement <|-- DesktopWidget
+    DesktopElements --> DesktopElement : contains
+```
+
+### View 继承体系
+
+```mermaid
+classDiagram
+    class Backbone_View {
+        +el
+        +$el
+        +template
+        +render()
+        +remove()
+        +setElement()
+    }
+    
+    class DesktopElementView {
+        +className
+        +events
+        +onDoubleClick()
+        +onContextMenu()
+        +onDragStart()
+    }
+    
+    class DesktopApplicationView {
+        +template
+        +render()
+    }
+    
+    class DesktopFolderView {
+        +openFolder()
+        +closeFolder()
+    }
+    
+    class DesktopWidgetView {
+        +refresh()
+        +getConfig()
+    }
+    
+    Backbone_View <|-- DesktopElementView
+    DesktopElementView <|-- DesktopApplicationView
+    DesktopElementView <|-- DesktopFolderView
+    DesktopElementView <|-- DesktopWidgetView
+```
+
+### 状态管理流程
+
+```mermaid
+stateDiagram-v2
+    [*] --> Initializing: 应用启动
+    Initializing --> LoadingConfig: 加载配置
+    LoadingConfig --> LoadingElements: 加载桌面元素
+    LoadingElements --> Rendering: 渲染视图
+    Rendering --> Ready: 桌面就绪
+    
+    Ready --> Dragging: 拖拽元素
+    Dragging --> Ready: 拖拽结束
+    
+    Ready --> OpeningApp: 打开应用
+    OpeningApp --> RunningApp: 应用运行中
+    RunningApp --> ClosingApp: 关闭应用
+    ClosingApp --> Ready
+    
+    Ready --> Changed: 元素变更
+    Changed --> Saving: 防抖保存
+    Saving --> Ready: 保存完成
+    
+    Ready --> Switching: 切换图层
+    Switching --> Ready: 切换完成
+```
+
+### 数据同步机制
+
+```mermaid
+flowchart TB
+    subgraph 本地操作
+        U[用户操作]
+        V[View]
+        M[Model]
+    end
+    
+    subgraph 缓存层
+        L[localStorage]
+    end
+    
+    subgraph 服务器
+        API[Server API]
+        DB[(Database)]
+    end
+    
+    U --> V
+    V --> M
+    M --> L
+    M --> API
+    API --> DB
+    
+    DB ---> API
+    API --->|响应| M
+    L -.->|恢复| M
+```
+
+Backbone.js 的这种架构设计，使得应用在保持轻量的同时，具备了良好的代码组织能力和扩展性。通过 Model-View-Presenter 的变体配合 PubSubJS，实现了复杂的前端交互逻辑。  
