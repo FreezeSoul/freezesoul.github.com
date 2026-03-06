@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "设计模式七大设计原则"
+title: "设计模式七大设计原则(SOLID+迪米特法则+合成复用原则)"
 permalink: "design-patterns-principles"
 author: "FS.IO"
 date: 2012-08-01 00:00:00
