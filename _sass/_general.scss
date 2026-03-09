@@ -3,16 +3,37 @@
    ======================================== */
 
 /* Cyberpunk Color Palette */
-$cyp-bg-dark: #0a0a0f;
-$cyp-bg-card: #12121a;
-$cyp-neon-pink: #ff006e;
-$cyp-neon-cyan: #00fff5;
-$cyp-neon-purple: #b537f2;
-$cyp-neon-yellow: #faff00;
-$cyp-neon-green: #00ff9f;
-$cyp-text-primary: #e0e0e0;
-$cyp-text-secondary: #8888aa;
-$cyp-border-glow: rgba(0, 255, 245, 0.3);
+$cyp-neon-pink: #e60066;
+$cyp-neon-cyan: #00e5cc;
+$cyp-neon-purple: #d455ff;
+$cyp-neon-yellow: #e6d900;
+$cyp-neon-green: #00e68f;
+$cyp-text-primary: #f0f0f5;
+$cyp-text-secondary: #9a9ab8;
+$cyp-bg-dark: #1a1a24;
+$cyp-bg-card: #22222e;
+$cyp-bg-content: #262632;
+$cyp-border-glow: rgba(0, 229, 204, 0.25);
+
+/* ========================================
+   LOCAL FONTS
+   ======================================== */
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('../css/Noto_Sans_SC/NotoSansSC-VariableFont_wght.ttf') format('truetype-variations'),
+       url('../css/Noto_Sans_SC/static/NotoSansSC-Regular.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('../css/Noto_Sans_SC/static/NotoSansSC-Italic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
 
 /* Modern Layout Wrapper */
 .cyber-wrapper {
@@ -29,6 +50,9 @@ $cyp-border-glow: rgba(0, 255, 245, 0.3);
   width: 100%;
   height: 100%;
   background: $cyp-bg-dark;
+  background-image:
+    linear-gradient(rgba(0, 229, 204, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 204, 0.015) 1px, transparent 1px);
   background-image:
     linear-gradient(rgba(0, 255, 245, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 255, 245, 0.02) 1px, transparent 1px);
@@ -168,7 +192,7 @@ body::before {
 /* Body base styles */
 body {
   background: $cyp-bg-dark;
-  font-family: 'Rajdhani', 'Share Tech Mono', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans SC', 'Rajdhani', 'Share Tech Mono', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -180,7 +204,7 @@ body {
 
 /* Content Box - Modern Card Style */
 .content-box {
-  background: rgba(18, 18, 26, 0.9);
+  background: rgba(34, 34, 46, 0.85);
   backdrop-filter: blur(20px);
   padding: 25px;
   border: 1px solid $cyp-border-glow;
@@ -188,9 +212,9 @@ body {
   position: relative;
   margin-bottom: 20px;
   box-shadow:
-    0 4px 30px rgba(0, 0, 0, 0.5),
-    0 0 20px rgba(0, 255, 245, 0.08),
-    inset 0 0 30px rgba(0, 0, 0, 0.3);
+    0 4px 30px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(0, 229, 204, 0.06),
+    inset 0 0 30px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   overflow: hidden;
 
