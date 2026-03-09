@@ -8,6 +8,8 @@ categories: technology
 tags: [AI编程, Copilot, Cursor, 软件工程]
 ---
 
+![](/images/postcover/ai-coding-paradigms-evolution.png)
+
 ## 引言
 
 2021年GitHub Copilot发布后，AI编程逐渐从实验性工具走向主流。在这LLM大火的这几年，AI Coding的出现，在软件开发领域又掀起了一场AI编程的进化，在这过程中我们从最初的Vibe coding，到后面的Spec Coding，再到各工具厂商提出的YOLO、SOLO等模式，开发者在软件工程中的作用产生了微妙又巨大的变化。

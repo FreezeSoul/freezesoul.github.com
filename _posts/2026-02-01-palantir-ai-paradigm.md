@@ -8,6 +8,8 @@ categories: technology
 tags: [本体论, Palantir, AI, 数据建模]
 ---
 
+![](/images/postcover/palantir-ai-paradigm.png)
+
 Palantir 在 2024 年股价翻了三倍，市值突破千亿美元。很多人归因于 AI 浪潮，但真正的秘密藏在一个概念背后——**本体论（Ontology）**。
 
 这不是哲学课上的"存在的本质"，而是软件开发范式的一次根本性转移。

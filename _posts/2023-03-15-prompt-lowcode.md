@@ -8,6 +8,8 @@ categories: technology
 tags: [Prompt, ChatGPT, AI编程, 低代码]
 ---
 
+![](/images/postcover/prompt-lowcode.png)
+
 传统的软件开发流程需要程序员编写大量代码，经历编码、测试、发布等一系列繁琐步骤。而随着 ChatGPT 等大语言模型的普及，一种新的编程范式正在浮现——**Prompt 编程**，它正在重新定义我们与计算机交互的方式。
 
 ## 什么是 Prompt？

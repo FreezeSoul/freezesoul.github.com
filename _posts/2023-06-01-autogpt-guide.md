@@ -8,6 +8,8 @@ categories: technology
 tags: [AutoGPT, AI, 自主智能体]
 ---
 
+![](/images/postcover/autogpt-guide.png)
+
 ChatGPT 的出现让我们看到了 AI 对话的强大能力，但你有没有想过：如果 AI 不仅能回答问题，还能自主规划、执行任务，会是什么样子？
 
 这就是 **AutoGPT** 正在做的事情——让 AI 从"被动回答"进化到"主动行动"。

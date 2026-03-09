@@ -8,6 +8,8 @@ categories: technology
 tags: [Agent, AI, 大模型, 智能体]
 ---
 
+![](/images/postcover/agent-first-principles.png)
+
 互联网时代，网站是核心载体；移动互联网时代，App 占据了人们的注意力中心。那么，智能时代呢？
 
 一个大胆的预测：**Agent 可能成为智能时代的核心载体**。

@@ -5,6 +5,7 @@ permalink: "agent-design-02-architecture-practice"
 author: "FS.IO"
 date: 2026-03-05 00:00:00
 categories: technology
+tags: [AI Agent, 架构设计]
 ---
 
 ## 引言

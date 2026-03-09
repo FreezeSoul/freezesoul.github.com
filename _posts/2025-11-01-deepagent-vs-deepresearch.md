@@ -8,6 +8,8 @@ categories: technology
 tags: [Agent, DeepAgent, DeepResearch, AI]
 ---
 
+![](/images/postcover/deepagent-vs-deepresearch.png)
+
 当 AI Agent 从"调用工具的脚本"进化到能够自主决策的系统时，一个关键的问题浮现出来：**你的 Agent 应该有多大的自主权？**
 
 这个问题将 Agent 设计划分为了两种不同的路径：

@@ -8,6 +8,8 @@ categories: technology
 tags: [Agent, ReAct, Plan-and-Solve, Reflection, AI]
 ---
 
+![](/images/postcover/agent-paradigms.png)
+
 如果说 2023 年是 AutoGPT 引爆 Agent 概念的一年，那么 2024 年则是这些概念逐渐沉淀、范式逐渐清晰的一年。
 
 在实践中，三种经典范式逐渐脱颖而出：**ReAct、Plan-and-Solve 和 Reflection**。

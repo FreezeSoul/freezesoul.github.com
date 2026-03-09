@@ -8,6 +8,8 @@ categories: technology
 tags: [OpenClaw, AI Agent, Gateway, 架构设计, 多通道]
 ---
 
+![](/images/postcover/openclaw-agent-gateway-architecture.png)
+
 ## 引言
 
 当我们谈论 AI Agent 时，通常关注的是 Agent 本身的能力——如何推理、如何使用工具、如何完成复杂任务。但有一个关键问题经常被忽视：**用户如何触达这个 Agent？**
@@ -15,6 +17,7 @@ tags: [OpenClaw, AI Agent, Gateway, 架构设计, 多通道]
 **OpenClaw** 是一个支持多通道的 AI Gateway，Agent 是它的核心能力。它让 AI Agent 能够通过任意渠道（WhatsApp、Telegram、Discord、飞书等）与用户交互。
 
 本文深入分析 OpenClaw 的架构设计，探讨它在 Agent 实现、速度优化等方面的设计思考，以及通用型 Agent 进入 B 端市场后带来的新变化。
+
 
 ## 问题的本质：多通道 Gateway 面临的挑战
 
