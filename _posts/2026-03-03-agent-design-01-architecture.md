@@ -5,7 +5,7 @@ permalink: "agent-design-01-architecture"
 author: "FS.IO"
 date: 2026-03-03 00:00:00
 categories: technology
-tags: [Agentic, AI Agent, 架构设计]
+tags: [Agentic, Agency, AI Agent, 架构设计]
 ---
 
 ![](/images/postcover/agent-design-01-architecture.png)

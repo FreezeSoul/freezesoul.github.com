@@ -5,7 +5,7 @@ permalink: "agent-design-04-sandbox-integration-architecture"
 author: "FS.IO"
 date: 2026-03-08 00:00:00
 categories: technology
-tags: [Agentic, AI Agent, 架构设计]
+tags: [Agentic, Agency, AI Agent, 架构设计]
 ---
 
 ![](/images/postcover/agent-design-04-sandbox-integration-architecture.png)
