@@ -3,5 +3,6 @@ _site
 .claude
 
 temp/
+temp/**
 
 CLAUDE.md
