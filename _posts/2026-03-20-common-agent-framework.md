@@ -102,7 +102,7 @@ orchestration:
 CAF 支持四种编排拓扑，自动适配不同的业务流程：
 
 ```mermaid
-graph TD
+graph LR
     subgraph FanOut["fan_out - 并行收集"]
         F1[子任务 A]
         F2[子任务 B]
