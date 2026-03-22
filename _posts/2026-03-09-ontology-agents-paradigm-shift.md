@@ -3,7 +3,7 @@ layout: post
 title: "当本体论遇见智能体：软件工程哲学的一次范式转移"
 permalink: "ontology-agents-paradigm-shift"
 author: "FS.IO"
-date:   2026-03-09 00:00:00
+date: 2026-03-09 00:00:00
 categories: technology
 tags: [本体论, Agent, 软件工程, CBC范式, ABC范式]
 ---
