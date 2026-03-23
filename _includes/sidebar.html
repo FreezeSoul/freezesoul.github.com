@@ -75,19 +75,19 @@
         </aside>
         <script>
           (function() {
-            const path = window.location.pathname;
-            const workerUrl = 'https://visitor-counter.freezesoul.workers.dev/badge' + path;
-
-            // 文章页隐藏侧边栏计数器（文章页会在标题下显示）
-            const isPostPage = document.querySelector('article.post footer');
+            // 检查是否是文章页（通过 URL 判断：文章页路径格式 /yyyy/mm/dd/xxxx）
+            const isPostPage = /^\/\d{4}\/\d{2}\/\d{2}\//.test(window.location.pathname);
             const counterBox = document.getElementById('visitor-counter');
 
             if (!isPostPage) {
               counterBox.style.display = 'block';
+              const path = window.location.pathname;
+              const workerUrl = 'https://visitor-counter.freezesoul.workers.dev/badge' + path;
               const img = document.createElement('img');
               img.src = workerUrl;
               img.alt = 'visits';
               img.style.width = '100%';
+              img.style.height = 'auto';
               document.getElementById('visit-badge').appendChild(img);
             }
           })();
