@@ -67,6 +67,32 @@
             </ul>
         </aside>
         {% endif %}
+
+        <!-- Visitor Counter (hidden on post pages) -->
+        <aside id="visitor-counter" class="content-box" style="display: none;">
+            <h5>Page Visits</h5>
+            <div id="visit-badge"></div>
+        </aside>
+        <script>
+          (function() {
+            const path = window.location.pathname;
+            const workerUrl = 'https://visitor-counter.freezesoul.workers.dev/badge' + path;
+
+            // 文章页隐藏侧边栏计数器（文章页会在标题下显示）
+            const isPostPage = document.querySelector('article.post footer');
+            const counterBox = document.getElementById('visitor-counter');
+
+            if (!isPostPage) {
+              counterBox.style.display = 'block';
+              const img = document.createElement('img');
+              img.src = workerUrl;
+              img.alt = 'visits';
+              img.style.width = '100%';
+              document.getElementById('visit-badge').appendChild(img);
+            }
+          })();
+        </script>
+
         {% if site.subscribe_widget %}
         <aside id="subscribe" class="content-box">
             <h5>Subscribe to posts</h5>

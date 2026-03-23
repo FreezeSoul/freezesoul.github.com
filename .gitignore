@@ -1,8 +1,18 @@
+# Jekyll
 _site
 .sass-cache
+
+# Cloudflare Workers
+cloudflare/
+
+# Wrangler cache (inside cloudflare dir, but explicit is clearer)
+.wrangler/
+
+# Claude
 .claude
 
+# Temp
 temp/
-temp/**
 
+# Project docs (optional - remove if you want to track it)
 CLAUDE.md

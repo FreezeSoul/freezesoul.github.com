@@ -7,6 +7,7 @@ layout: default
           <p><span class="post-meta">[AUTHOR1: <span class="author">{{ page.author }}</span>] [DATE: <time class="time"
                          pubdate datetime="{{ page.date | date: " %Y-%m-%d" }}">{{ page.date | date: "%Y-%m-%d"
                          }}</time>]</span></p>
+          <p class="post-visits" id="post-visit-badge"></p>
      </header>
      <p>{{ content }}</p>
      <footer>
@@ -89,3 +90,15 @@ layout: default
           {% endif %}
      </footer>
 </article>
+
+<script>
+  (function() {
+    const path = window.location.pathname;
+    const workerUrl = 'https://visitor-counter.freezesoul.workers.dev/badge' + path;
+    const img = document.createElement('img');
+    img.src = workerUrl;
+    img.alt = 'visits';
+    img.style.height = '20px';
+    document.getElementById('post-visit-badge').appendChild(img);
+  })();
+</script>
