@@ -3,7 +3,7 @@ layout: post
 title: "Common Agent Framework：给 B 端一套知道边界的智能体框架"
 permalink: "common-agent-framework-intro"
 author: "FS.IO"
-date: 2026-03-20 00:00:00
+date: 2026-02-28 00:00:00
 categories: technology
 ---
 
