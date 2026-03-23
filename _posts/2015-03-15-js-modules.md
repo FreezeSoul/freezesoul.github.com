@@ -12,6 +12,8 @@ tags: [JavaScript, CommonJS, ES Modules, 模块化]
 
 在 JavaScript 早期发展阶段，语言本身并没有内置的模块系统。这导致开发者在构建大型应用时面临着诸多挑战：
 
+<!-- more -->
+
 ### 全局命名空间污染
 
 ```javascript

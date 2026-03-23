@@ -19,6 +19,8 @@ ASP → VB → VB.NET → ASP.NET WebForms → WinForms → ASP.NET MVC → Silv
 
 ```
 
+<!-- more -->
+
 **早期时代**：从 ASP 的服务器端脚本起步，经历了 VB.NET 、WebForms、WinForms 的事件驱动与控件化抽象，虽然它屏蔽了底层细节，但开发效率是顶级的。
 
 **MVC 时代**：ASP.NET MVC 的发布让开发体验有了质的飞跃，分离关注点、可测试性，路由、中间件、过滤器、配置化这些概念至今仍在指导着我的架构设计。

@@ -12,6 +12,8 @@ tags: [RAG, AI, 检索增强生成, LLM]
 
 2024年，RAG（Retrieval-Augmented Generation，检索增强生成）技术已经成为AI应用的核心架构之一。从最初的Naive RAG到Advanced RAG，再到如今的Modular RAG，这条技术路线图清晰地展示了RAG技术的演进路径。
 
+<!-- more -->
+
 ## 一、为什么需要RAG？
 
 直接使用大语言模型存在诸多局限：

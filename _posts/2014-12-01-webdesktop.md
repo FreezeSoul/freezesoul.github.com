@@ -11,6 +11,8 @@ tags: [Web桌面, 混合应用, Awesomium, HTML5]
 
 本项目实现了一套Web桌面功能，整个项目采用B+C的架构，Shell部分采用了Awesomium，用户操作接口采用HTML5 SPA技术开发，涵盖了桌面的基本操作功能及文件夹管理、应用中心、复合应用、桌面组件等功能。
 
+<!-- more -->
+
 效果截图：
 
 <img src="/images/webdesktop.jpg" width="100%">

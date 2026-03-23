@@ -16,6 +16,8 @@ tags: [.NET, WPF, Prism, MVVM, WebDAV]
 
 没有 WebDAV 环境的，可以连接 dav.box.com 服务进行尝试，也可以连接自己搭建的云存储，如 ownCloud。
 
+<!-- more -->
+
 <img src="/images/webdav-300x200.png" width="100%">
 
 源码地址：<a href="https://github.com/FreezeSoul/CloudDriveShell">CloudDriveShell</a>

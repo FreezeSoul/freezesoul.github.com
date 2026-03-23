@@ -19,6 +19,8 @@ tags: [Agent, DeepAgent, DeepResearch, AI]
 
 这不仅仅是技术实现的差异，更是两种不同的 AI 哲学。让我们深入探讨。
 
+<!-- more -->
+
 ![Traditional Agent vs Deep Research Agent vs Deep Agent](/images/DeepResearchVsDeepAgent.png)
 
 ## 从传统到深度：理解 Agent 的进化

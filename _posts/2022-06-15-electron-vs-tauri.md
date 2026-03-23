@@ -10,6 +10,8 @@ tags: [Electron, Tauri, 跨平台, 桌面应用]
 
 在当今的软件开发领域，跨平台桌面应用开发已成为一个热门话题。随着 Web 技术的成熟，使用 HTML、CSS 和 JavaScript 构建桌面应用已成为主流选择。本文将深入对比当前最流行的两大框架——Electron 和 Tauri，同时探讨 NW.js、Flutter、Microsoft Edge WebView2 等其他技术方案。
 
+<!-- more -->
+
 ## 一、跨平台桌面应用开发生态
 
 ### 1.1 技术演进

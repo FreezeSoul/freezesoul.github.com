@@ -12,6 +12,8 @@ tags: [.NET, Avalonia, 跨平台, MVVM, WPF]
 
 [Avalonia UI](https://avaloniaui.net/) 是一个基于 .NET 的跨平台 UI 框架，允许开发者使用 XAML 构建可在 Windows、Linux、macOS、Web、Android 和 iOS 上运行的应用程序。它灵感来源于 WPF，但完全独立且跨平台。
 
+<!-- more -->
+
 <img src="/images/avaloniaframework.png" alt="Avalonia UI Logo" style="border-radius: 8px;" />
 
 ---

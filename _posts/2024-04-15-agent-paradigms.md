@@ -16,6 +16,8 @@ tags: [Agent, ReAct, Plan-and-Solve, Reflection, AI]
 
 它们不是相互替代的关系，而是可以组合在一起，构建出强大的智能体系统。
 
+<!-- more -->
+
 ## ReAct：推理与行动的交响
 
 ReAct（Reasoning + Acting）可能是最经典的 Agent 范式。它的思想简单而优雅：

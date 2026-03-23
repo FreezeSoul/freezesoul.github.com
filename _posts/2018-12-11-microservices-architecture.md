@@ -16,6 +16,8 @@ tags: [微服务, 架构设计, 分布式系统, 软件工程, Microservices]
 
 本文试图从工程实践的角度，系统梳理微服务架构的演进路径、设计模式和实践方法，帮助你在是否采用微服务这件事上做出更理性的判断。
 
+<!-- more -->
+
 <img src="/images/MicroservicePatternLanguage.jpg" width="100%">  
 
 ## 单体架构的困境

@@ -12,6 +12,8 @@ tags: [Claude Code, AI编程, SubAgent, Skills]
 
 2025年，Claude Code 的出现标志着 AI 编程助手进入了一个新的阶段。它不仅是一个代码生成工具，更是一个完整的技术架构范例。本文将深入分析 Claude Code 的几项关键技术。
 
+<!-- more -->
+
 ## 一、整体架构设计
 
 Claude Code 采用了清晰的分层架构，这使其既强大又易于扩展：

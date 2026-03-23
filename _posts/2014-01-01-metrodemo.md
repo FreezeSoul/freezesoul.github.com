@@ -11,6 +11,8 @@ tags: [JavaScript, 前端开发, Dashboard]
 这是之前花了1-2天时间完成一个Metro风格的Dashboard 高保真Demo效果，单看效果还不错，推介一下。
 演示主要用到了两个重要插件:
 
+<!-- more -->
+
 1. gridster <a href="http://gridster.net">link</a>(下面演示中，点击详情页可查看效果)
 2. gridList <a href="https://github.com/hootsuite/grid">link</a>(下面演示中，首页即是效果)
    

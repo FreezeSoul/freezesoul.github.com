@@ -12,6 +12,7 @@ tags: [.NET, WinForms, T4, DevExpress, Entity Framework, 代码生成]
 
 这是早期实现的一个基于 **T4 模板** 的 WinForm 快速开发脚手架，通过连接数据库，逆向生成完整的数据维护界面。结合 **DevExpress** 强大的 UI 组件和 **Entity Framework** 的数据访问能力，实现 **0 代码** 生成增删改查功能，极大提升团队开发效率。
 
+<!-- more -->
 ---
 
 ## 核心特性

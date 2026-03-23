@@ -19,6 +19,8 @@ tags: [OpenClaw, AI Agent, Gateway, 架构设计, 多通道]
 本文深入分析 OpenClaw 的架构设计，探讨它在 Agent 实现、速度优化等方面的设计思考，以及通用型 Agent 进入 B 端市场后带来的新变化。
 
 
+<!-- more -->
+
 ## 问题的本质：多通道 Gateway 面临的挑战
 
 ### 复杂性来源

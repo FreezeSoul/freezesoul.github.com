@@ -8,10 +8,12 @@ categories: note
 tags: [Jekyll, GitHub, 博客搭建]
 ---
 
+
 ## Hello, World!
 
 欢迎来到我的博客！这里是我记录学习、分享见解、沉淀思考的数字花园。
 
+<!-- more -->
 ---
 
 ## 关于这个博客

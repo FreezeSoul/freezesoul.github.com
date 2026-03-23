@@ -13,6 +13,8 @@ tags: [Kettle, ETL, Spring Boot, Dubbo, 数据集成]
 
 **Kettle**（Kettle Extraction Transportation Transformation Load），现称为 **Pentaho Data Integration**，是开源领域最著名的 ETL（Extract-Transform-Load）工具之一。作为数据处理引擎，它在企业数据仓库、数据集成、数据清洗等场景中扮演着重要角色。
 
+<!-- more -->
+
 ### Kettle 的核心组件
 
 Kettle 提供了一套完整的数据集成解决方案：

@@ -13,6 +13,9 @@ tags: [数据可视化, HTML5, AngularJS, 微服务, Dashboard]
 本项目基于 **HTML5 + AngularJS** 的前端技术栈，结合 **Dubbo 微服务架构** 的后端服务，构建面向桌面/移动多端的数据可视化平台。
 
 平台的核心特点是其**可扩展的插件化指标系统**，通过声明式配置即可新增图表控件，无需修改核心框架代码。
+
+<!-- more -->
+
 <img src="/images/dashboard1.jpg" width="100%">  
 <img src="/images/dashboard2.png" width="100%"> 
 
