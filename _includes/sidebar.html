@@ -68,9 +68,24 @@
         </aside>
         {% endif %}
 
+        {% if site.subscribe_widget %}
+        <aside id="subscribe" class="content-box">
+            <h5>Subscribe to posts</h5>
+            <div class="form-group">
+                <form action="{{ site.form_action }}" method="post" target="_blank">
+                    <fieldset class="form-group">
+                        <input id="subscription-email" name="EMAIL" class="form-control" type="email" placeholder="Email address" required>
+                        <div style="position: absolute; left: -5000px;"><input type="text" name="{{ site.list_id }}" tabindex="-1" value=""></div>
+                    </fieldset>
+                    <button type="submit" class="btn btn-primary btn-block subscribe-button">Subscribe</button>
+                </form>
+            </div>
+        </aside>
+        {% endif %}
+        
         <!-- Visitor Counter (hidden on post pages) -->
         <aside id="visitor-counter" class="content-box" style="display: none;">
-            <h5 style="display: inline-block;">Page Visits</h5>
+            <h6 style="display: inline-block;">Page Visits</h6>
             <div id="visit-badge" style="display: inline-block; float: right; line-height: 24px;"></div>
             <div style="clear: both;"></div>
         </aside>
@@ -87,27 +102,12 @@
               const img = document.createElement('img');
               img.src = workerUrl;
               img.alt = 'visits';
-              img.style.width = '100%';
+              img.style.width = 'auto';
               img.style.height = '20px';
               document.getElementById('visit-badge').appendChild(img);
             }
           })();
         </script>
-
-        {% if site.subscribe_widget %}
-        <aside id="subscribe" class="content-box">
-            <h5>Subscribe to posts</h5>
-            <div class="form-group">
-                <form action="{{ site.form_action }}" method="post" target="_blank">
-                    <fieldset class="form-group">
-                        <input id="subscription-email" name="EMAIL" class="form-control" type="email" placeholder="Email address" required>
-                        <div style="position: absolute; left: -5000px;"><input type="text" name="{{ site.list_id }}" tabindex="-1" value=""></div>
-                    </fieldset>
-                    <button type="submit" class="btn btn-primary btn-block subscribe-button">Subscribe</button>
-                </form>
-            </div>
-        </aside>
-        {% endif %}
 
         {% if site.copyright_notice %}
         <aside id="copyright">
