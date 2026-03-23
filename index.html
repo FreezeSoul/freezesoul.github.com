@@ -9,7 +9,8 @@ layout: default
                          pubdate datetime="{{ post.date | date: " %Y-%m-%d" }}">{{ post.date | date: "%Y-%m-%d"
                          }}</time>]</span></p>
      </header>
-     <p>{{ post.content }}</p>
+     <p>{{ post.excerpt }}</p>
+     <p><a href="{{ post.url | prepend: site.baseurl }}" class="btn-read-more">阅读全文 &raquo;</a></p>
 </article>
 {% endfor %}
 

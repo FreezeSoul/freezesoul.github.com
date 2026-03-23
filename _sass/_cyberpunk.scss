@@ -471,3 +471,29 @@ pre.mermaid {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
+
+/* Read More Link - Cyberpunk Style */
+.btn-read-more {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid $cyp-neon-pink;
+  color: $cyp-neon-pink;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  background: transparent;
+
+  &:hover {
+    background: $cyp-neon-pink;
+    color: $cyp-bg-dark;
+    box-shadow: 0 0 15px rgba(230, 0, 102, 0.4);
+    text-decoration: none;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
