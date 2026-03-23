@@ -96,7 +96,8 @@ layout: default
 <script>
   (function() {
     const path = window.location.pathname;
-    const workerUrl = 'https://visitor-counter.freezesoul.workers.dev/badge' + path;
+    // 添加时间戳参数防止缓存
+    const workerUrl = 'https://visitor-counter.freezesoul.workers.dev/badge' + path + '?t=' + Date.now();
     const img = document.createElement('img');
     img.src = workerUrl;
     img.alt = 'visits';

@@ -85,7 +85,7 @@
         
         <!-- Visitor Counter (hidden on post pages) -->
         <aside id="visitor-counter" class="content-box" style="display: none;">
-            <h6 style="display: inline-block;">Page Visits</h6>
+            <h6 style="display: inline-block;">Total Visits</h6>
             <div id="visit-badge" style="display: inline-block; float: right; line-height: 24px;"></div>
             <div style="clear: both;"></div>
         </aside>
@@ -97,8 +97,8 @@
 
             if (!isPostPage) {
               counterBox.style.display = 'block';
-              const path = window.location.pathname;
-              const workerUrl = 'https://visitor-counter.freezesoul.workers.dev/badge' + path;
+              // 固定路径 /total 记录总访问量
+              const workerUrl = 'https://visitor-counter.freezesoul.workers.dev/badge/total?t=' + Date.now();
               const img = document.createElement('img');
               img.src = workerUrl;
               img.alt = 'visits';
