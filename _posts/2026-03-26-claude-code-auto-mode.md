@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Claude Code Auto Mode：AI 终于有了'放行权'"
+title: "Claude Code Auto Mode：AI 编码再向自动化迈进一步"
 permalink: "claude-code-auto-mode"
 author: "FS.IO"
 date: 2026-03-26 00:00:00
