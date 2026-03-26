@@ -17,6 +17,8 @@ categories: technology
 
 2026 年 3 月 24 日 Anthropic 发布了 Claude Code 的 Auto Mode。它的思路是：让 AI 先判断哪些操作可以放行，而不是把每个决定都抛给用户。
 
+<!-- more -->
+
 ## 它不再问你"能不能"，而是直接"做完它"
 
 Auto Mode 的核心机制很直接：在你的主 Claude 会话之外，跑一个独立的分类器模型。这个分类器固定使用 Claude Sonnet 4.6，每次主 Claude 想执行操作前，它先看对话上下文和即将执行的操作，然后做三选一——自动放行、要求你确认、或者直接阻止。
