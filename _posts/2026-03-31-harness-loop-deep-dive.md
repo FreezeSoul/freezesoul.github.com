@@ -441,5 +441,5 @@ Harness 的行为由一组可配置参数控制，每个参数背后都有一个
 
 - [Harness design for long-running application development — Anthropic](https://www.anthropic.com/engineering/harness-design-for-long-running-application-development)
 - [Effective harnesses for long-running agents — Anthropic](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
-- [CAF — GitHub](https://github.com/freezesoul/CAF)
+- [Common-Agent-Framework — GitHub](https://github.com/freezesoul/common-agent-framework)
 - [Harness Engineering：构建让 AI Agent 可靠工作的系统工程](/agent-harness-engineering)
