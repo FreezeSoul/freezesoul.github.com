@@ -1,31 +1,16 @@
 $(document).ready(function(){
-  (toggleSticky = function() {
-    if ($(this).width() >= 768) {
-    	if (typeof window.sticky_sidebar === 'undefined') {
-    		$("#sticky").sticky({topSpacing:50});
-    	} else if (window.sticky_sidebar === 0) {
-    		$("#sticky").sticky({topSpacing:50});
-    	}
-    	window.sticky_sidebar = 1;
-    } else {
-    	if (typeof window.sticky_sidebar !== 'undefined') {
-    		$("#sticky").unstick();
-    	}
-    	window.sticky_sidebar = 0;
-    }
-  })();
-  $(window).on('resize', function(){
-    toggleSticky();
-  });
+  // Sticky sidebar is now handled by CSS position:sticky + js/sidebar-sticky.js
+  // Removed old jquery.sticky plugin (topSpacing:50) which conflicted with CSS sticky
+
   $('.subscribe-button-post').click(function() {
     $("aside:not('#subscribe'), #main").fadeTo('slow', 0.3);
-  
+
     if ($(document).width() <= 767) {
       $('html,body').animate({
         scrollTop: $('#subscribe').offset().top
       }, 1000);
     }
-  
+
     $('#subscription-email').focus();
 
     $('#subscribe').addClass('glowing');

@@ -39,7 +39,7 @@ $cyp-border-glow: rgba(0, 229, 204, 0.25);
 .cyber-wrapper {
   min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Full-width animated background */
@@ -199,7 +199,7 @@ body {
   color: $cyp-text-primary;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Content Box - Modern Card Style */
