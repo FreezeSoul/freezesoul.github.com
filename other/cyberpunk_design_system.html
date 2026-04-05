@@ -1,0 +1,1115 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap');
+
+  :root {
+    --cp-bg: #030712;
+    --cp-bg2: #0a0f1e;
+    --cp-bg3: #0f172a;
+    --cp-cyan: #00f5ff;
+    --cp-cyan2: #00bcd4;
+    --cp-magenta: #ff006e;
+    --cp-yellow: #ffea00;
+    --cp-green: #39ff14;
+    --cp-purple: #b400ff;
+    --cp-orange: #ff6b00;
+    --cp-text: #c8d6ef;
+    --cp-muted: #4a5568;
+    --cp-border: rgba(0,245,255,0.2);
+    --cp-border2: rgba(255,0,110,0.3);
+    --scan-dur: 4s;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cp-bg);
+    color: var(--cp-text);
+    font-family: 'Rajdhani', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Scanline overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.05) 2px, rgba(0,0,0,0.05) 4px);
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* Moving scan line */
+  body::after {
+    content: '';
+    position: fixed;
+    left: 0; right: 0;
+    height: 2px;
+    background: rgba(0,245,255,0.15);
+    animation: scanline var(--scan-dur) linear infinite;
+    pointer-events: none;
+    z-index: 1001;
+  }
+
+  @keyframes scanline {
+    0% { top: -2px; }
+    100% { top: 100vh; }
+  }
+
+  @keyframes glitch {
+    0%,100% { clip-path: none; transform: none; }
+    20% { clip-path: polygon(0 15%, 100% 15%, 100% 30%, 0 30%); transform: translateX(-4px); }
+    21% { clip-path: none; transform: none; }
+    60% { clip-path: polygon(0 65%, 100% 65%, 100% 75%, 0 75%); transform: translateX(3px); }
+    61% { clip-path: none; transform: none; }
+  }
+
+  @keyframes flicker {
+    0%,100% { opacity: 1; }
+    92% { opacity: 1; }
+    93% { opacity: 0.4; }
+    94% { opacity: 1; }
+    96% { opacity: 0.6; }
+    97% { opacity: 1; }
+  }
+
+  @keyframes neon-pulse {
+    0%,100% { text-shadow: 0 0 4px currentColor, 0 0 12px currentColor, 0 0 28px currentColor; }
+    50% { text-shadow: 0 0 8px currentColor, 0 0 20px currentColor, 0 0 50px currentColor, 0 0 80px currentColor; }
+  }
+
+  @keyframes border-flow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+
+  @keyframes data-stream {
+    0% { transform: translateY(-100%); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.6; }
+    100% { transform: translateY(100vh); opacity: 0; }
+  }
+
+  @keyframes cursor-blink {
+    0%,49% { opacity: 1; }
+    50%,100% { opacity: 0; }
+  }
+
+  @keyframes hue-shift {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+  }
+
+  @keyframes rgb-split {
+    0%,100% { text-shadow: -2px 0 #ff006e, 2px 0 #00f5ff; }
+    25% { text-shadow: 2px 0 #ff006e, -2px 0 #00f5ff; }
+    50% { text-shadow: 0 2px #ff006e, 0 -2px #00f5ff; }
+    75% { text-shadow: 0 -2px #ff006e, 0 2px #00f5ff; }
+  }
+
+  .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    text-align: center;
+    padding: 2.5rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,245,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,245,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: flicker 8s infinite;
+  }
+
+  .header-bg-grid::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 30%, var(--cp-bg) 80%);
+  }
+
+  .sys-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--cp-cyan);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    position: relative;
+  }
+
+  .main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2rem, 6vw, 3.8rem);
+    font-weight: 900;
+    color: var(--cp-cyan);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin: 0.5rem 0;
+    animation: neon-pulse 3s ease-in-out infinite, glitch 10s step-end infinite;
+    position: relative;
+  }
+
+  .sub-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    color: var(--cp-magenta);
+    letter-spacing: 3px;
+    animation: neon-pulse 4s ease-in-out infinite reverse;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin: 2.5rem 0;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--cp-cyan);
+    background: rgba(0,245,255,0.08);
+    border: 1px solid var(--cp-cyan);
+    padding: 2px 8px;
+    letter-spacing: 3px;
+    clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+  }
+
+  .section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cp-text);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* ── COLOR SYSTEM ── */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+  }
+
+  .color-card {
+    border: 1px solid rgba(255,255,255,0.06);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .color-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0,245,255,0.4);
+  }
+
+  .color-swatch {
+    height: 64px;
+    position: relative;
+  }
+
+  .color-swatch::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(0,0,0,0.1) 4px, rgba(0,0,0,0.1) 5px);
+  }
+
+  .color-info {
+    padding: 8px 10px;
+    background: var(--cp-bg2);
+  }
+
+  .color-name {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--cp-text);
+    display: block;
+  }
+
+  .color-hex {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--cp-muted);
+    margin-top: 1px;
+  }
+
+  .color-role {
+    font-size: 10px;
+    color: var(--cp-muted);
+    font-family: 'Rajdhani', sans-serif;
+    margin-top: 2px;
+  }
+
+  /* ── PROMPT CARD ── */
+  .prompt-card {
+    background: var(--cp-bg2);
+    border: 1px solid var(--cp-border);
+    padding: 1.2rem 1.4rem;
+    margin: 8px 0;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .prompt-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cp-cyan), transparent);
+    animation: border-flow 3s linear infinite;
+    background-size: 200% 100%;
+  }
+
+  .prompt-card:hover {
+    border-color: rgba(0,245,255,0.5);
+    background: rgba(0,245,255,0.03);
+  }
+
+  .prompt-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--cp-cyan);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .prompt-label::before {
+    content: '▶';
+    font-size: 8px;
+  }
+
+  .prompt-text {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: #a0b4cc;
+    line-height: 1.8;
+    white-space: pre-wrap;
+  }
+
+  .prompt-text .kw {
+    color: var(--cp-cyan);
+    font-weight: bold;
+  }
+
+  .prompt-text .val {
+    color: var(--cp-magenta);
+  }
+
+  .prompt-text .str {
+    color: var(--cp-yellow);
+  }
+
+  .prompt-text .cmt {
+    color: var(--cp-muted);
+  }
+
+  /* ── COPY BUTTON ── */
+  .copy-btn {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--cp-cyan);
+    background: transparent;
+    border: 1px solid rgba(0,245,255,0.3);
+    padding: 3px 10px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    margin-top: 10px;
+    clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+  }
+
+  .copy-btn:hover {
+    background: rgba(0,245,255,0.1);
+    border-color: var(--cp-cyan);
+    color: #fff;
+  }
+
+  /* ── FONT SHOWCASE ── */
+  .font-showcase {
+    display: grid;
+    gap: 10px;
+  }
+
+  .font-row {
+    background: var(--cp-bg2);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 1rem 1.2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .font-name {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--cp-cyan);
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+
+  .font-sample-1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--cp-cyan);
+    animation: neon-pulse 3s ease-in-out infinite;
+  }
+
+  .font-sample-2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cp-text);
+    letter-spacing: 2px;
+  }
+
+  .font-sample-3 {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+    color: var(--cp-green);
+  }
+
+  .font-use-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--cp-magenta);
+    background: rgba(255,0,110,0.08);
+    border: 1px solid rgba(255,0,110,0.2);
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+
+  /* ── EFFECT DEMOS ── */
+  .effects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+  }
+
+  .effect-demo {
+    background: var(--cp-bg2);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 1.2rem 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+
+  .effect-demo:hover { border-color: rgba(0,245,255,0.3); }
+
+  .effect-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--cp-muted);
+    letter-spacing: 2px;
+    margin-top: 10px;
+  }
+
+  .eff-neon {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cp-cyan);
+    animation: neon-pulse 2s ease-in-out infinite;
+  }
+
+  .eff-glitch {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cp-magenta);
+    animation: rgb-split 0.8s infinite, glitch 4s step-end infinite;
+  }
+
+  .eff-scanline {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cp-yellow);
+    position: relative;
+  }
+
+  .eff-scanline::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.4) 2px, rgba(0,0,0,0.4) 4px);
+  }
+
+  .eff-terminal {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+    color: var(--cp-green);
+    text-align: left;
+  }
+
+  .eff-terminal::after {
+    content: '█';
+    animation: cursor-blink 1s step-end infinite;
+    color: var(--cp-green);
+  }
+
+  .eff-hologram {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cp-purple);
+    animation: neon-pulse 2s ease-in-out infinite, hue-shift 6s linear infinite;
+  }
+
+  .eff-clip-border {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--cp-magenta);
+    padding: 6px 16px;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    display: inline-block;
+  }
+
+  /* ── DATA STREAM BG ── */
+  .data-stream-container {
+    position: fixed;
+    top: 0; right: 0;
+    width: 40px;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.3;
+    z-index: 0;
+  }
+
+  .data-char {
+    position: absolute;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--cp-cyan);
+    animation: data-stream linear infinite;
+  }
+
+  /* ── DIVIDER ── */
+  .cp-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cp-cyan), var(--cp-magenta), transparent);
+    margin: 2rem 0;
+    opacity: 0.3;
+  }
+
+  /* ── TABS ── */
+  .tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0,245,255,0.15);
+    overflow-x: auto;
+  }
+
+  .tab-btn {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--cp-muted);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .tab-btn:hover { color: var(--cp-cyan); }
+
+  .tab-btn.active {
+    color: var(--cp-cyan);
+    border-bottom-color: var(--cp-cyan);
+  }
+
+  .tab-pane { display: none; padding-top: 1.2rem; }
+  .tab-pane.active { display: block; }
+
+  /* ── CORNER DECORATION ── */
+  .corner-box {
+    position: relative;
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .corner-box::before,
+  .corner-box::after,
+  .corner-box > .c3,
+  .corner-box > .c4 {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: var(--cp-cyan);
+    border-style: solid;
+  }
+
+  .corner-box::before { top: 0; left: 0; border-width: 1px 0 0 1px; }
+  .corner-box::after  { top: 0; right: 0; border-width: 1px 1px 0 0; }
+  .corner-box > .c3   { bottom: 0; left: 0; border-width: 0 0 1px 1px; }
+  .corner-box > .c4   { bottom: 0; right: 0; border-width: 0 1px 1px 0; }
+
+  /* Status bar */
+  .status-bar {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--cp-muted);
+    border-top: 1px solid rgba(0,245,255,0.1);
+    padding: 8px 0;
+    display: flex;
+    gap: 20px;
+    margin-top: 3rem;
+  }
+
+  .status-ok { color: var(--cp-green); }
+  .status-warn { color: var(--cp-yellow); }
+
+  .pulse-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--cp-green);
+    animation: neon-pulse 1s ease-in-out infinite;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Data stream decoration -->
+<div class="data-stream-container" id="dataStream"></div>
+
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="site-header">
+    <div class="header-bg-grid"></div>
+    <div class="sys-label" style="position:relative">// DESIGN SYSTEM v2.0.77 //</div>
+    <div class="main-title">CYBERPUNK</div>
+    <div style="font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:700;color:var(--cp-magenta);letter-spacing:6px;animation:neon-pulse 3s ease-in-out infinite reverse;position:relative">DESIGN KIT</div>
+    <div class="sub-title" style="margin-top:8px;position:relative">[ NEON · GLITCH · DYSTOPIA · CHROME · NOIR ]</div>
+  </div>
+
+  <!-- Tab Nav -->
+  <div class="tabs" id="tabNav">
+    <button class="tab-btn active" onclick="switchTab('colors')">配色系统</button>
+    <button class="tab-btn" onclick="switchTab('fonts')">字体规范</button>
+    <button class="tab-btn" onclick="switchTab('effects')">视觉特效</button>
+    <button class="tab-btn" onclick="switchTab('prompts')">提示词库</button>
+    <button class="tab-btn" onclick="switchTab('vars')">CSS变量</button>
+  </div>
+
+  <!-- TAB: Colors -->
+  <div class="tab-pane active" id="tab-colors">
+    <div class="section">
+      <div class="section-header">
+        <span class="section-tag">01</span>
+        <span class="section-title">主色调 · Primary</span>
+      </div>
+      <div class="color-grid">
+        <div class="color-card" onclick="copyColor('#00F5FF')">
+          <div class="color-swatch" style="background:#00F5FF;box-shadow:inset 0 0 20px rgba(0,245,255,0.5)"></div>
+          <div class="color-info">
+            <span class="color-name">Neon Cyan</span>
+            <span class="color-hex">#00F5FF</span>
+            <span class="color-role">主高亮 / 边框 / 发光</span>
+          </div>
+        </div>
+        <div class="color-card" onclick="copyColor('#FF006E')">
+          <div class="color-swatch" style="background:#FF006E;box-shadow:inset 0 0 20px rgba(255,0,110,0.5)"></div>
+          <div class="color-info">
+            <span class="color-name">Hot Magenta</span>
+            <span class="color-hex">#FF006E</span>
+            <span class="color-role">警告 / 强调 / 活跃态</span>
+          </div>
+        </div>
+        <div class="color-card" onclick="copyColor('#B400FF')">
+          <div class="color-swatch" style="background:#B400FF;box-shadow:inset 0 0 20px rgba(180,0,255,0.5)"></div>
+          <div class="color-info">
+            <span class="color-name">Void Purple</span>
+            <span class="color-hex">#B400FF</span>
+            <span class="color-role">次级高亮 / 全息</span>
+          </div>
+        </div>
+        <div class="color-card" onclick="copyColor('#39FF14')">
+          <div class="color-swatch" style="background:#39FF14;box-shadow:inset 0 0 20px rgba(57,255,20,0.5)"></div>
+          <div class="color-info">
+            <span class="color-name">Matrix Green</span>
+            <span class="color-hex">#39FF14</span>
+            <span class="color-role">终端 / 成功 / 数据流</span>
+          </div>
+        </div>
+        <div class="color-card" onclick="copyColor('#FFEA00')">
+          <div class="color-swatch" style="background:#FFEA00;box-shadow:inset 0 0 20px rgba(255,234,0,0.5)"></div>
+          <div class="color-info">
+            <span class="color-name">Acid Yellow</span>
+            <span class="color-hex">#FFEA00</span>
+            <span class="color-role">警示 / 标注 / logo</span>
+          </div>
+        </div>
+        <div class="color-card" onclick="copyColor('#FF6B00')">
+          <div class="color-swatch" style="background:#FF6B00;box-shadow:inset 0 0 20px rgba(255,107,0,0.4)"></div>
+          <div class="color-info">
+            <span class="color-name">Toxic Orange</span>
+            <span class="color-hex">#FF6B00</span>
+            <span class="color-role">危险 / 破坏 / 火焰</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-tag">02</span>
+        <span class="section-title">背景层级 · Background</span>
+      </div>
+      <div class="color-grid">
+        <div class="color-card">
+          <div class="color-swatch" style="background:#030712;border:1px solid rgba(255,255,255,0.1)"></div>
+          <div class="color-info">
+            <span class="color-name">Void Black</span>
+            <span class="color-hex">#030712</span>
+            <span class="color-role">最底层背景</span>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background:#0A0F1E;border:1px solid rgba(255,255,255,0.08)"></div>
+          <div class="color-info">
+            <span class="color-name">Deep Space</span>
+            <span class="color-hex">#0A0F1E</span>
+            <span class="color-role">卡片 / 面板背景</span>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background:#0F172A;border:1px solid rgba(255,255,255,0.08)"></div>
+          <div class="color-info">
+            <span class="color-name">Midnight</span>
+            <span class="color-hex">#0F172A</span>
+            <span class="color-role">次级容器</span>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background:#1a2035;border:1px solid rgba(255,255,255,0.08)"></div>
+          <div class="color-info">
+            <span class="color-name">Dark Slate</span>
+            <span class="color-hex">#1A2035</span>
+            <span class="color-role">悬停态 / 选中态</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-tag">03</span>
+        <span class="section-title">文字层级 · Typography</span>
+      </div>
+      <div class="color-grid">
+        <div class="color-card">
+          <div class="color-swatch" style="background:#C8D6EF"></div>
+          <div class="color-info">
+            <span class="color-name">Steel White</span>
+            <span class="color-hex">#C8D6EF</span>
+            <span class="color-role">正文主色</span>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background:#6B7E99"></div>
+          <div class="color-info">
+            <span class="color-name">Chrome Gray</span>
+            <span class="color-hex">#6B7E99</span>
+            <span class="color-role">辅助文字</span>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background:#4A5568"></div>
+          <div class="color-info">
+            <span class="color-name">Dark Chrome</span>
+            <span class="color-hex">#4A5568</span>
+            <span class="color-role">禁用 / 占位符</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: Fonts -->
+  <div class="tab-pane" id="tab-fonts">
+    <div class="section">
+      <div class="font-showcase">
+        <div class="font-row">
+          <div>
+            <div class="font-name">ORBITRON — 标题 / LOGO / 品牌</div>
+            <div class="font-sample-1">CYBER 2077</div>
+          </div>
+          <div class="font-use-tag">font-weight: 900</div>
+        </div>
+        <div class="font-row">
+          <div>
+            <div class="font-name">RAJDHANI — 正文 / 导航 / 按钮</div>
+            <div class="font-sample-2">Neural Interface Active // Access Granted</div>
+          </div>
+          <div class="font-use-tag">font-weight: 600</div>
+        </div>
+        <div class="font-row">
+          <div>
+            <div class="font-name">SHARE TECH MONO — 数据 / 代码 / 终端</div>
+            <div class="font-sample-3">&gt;_ SYS.INIT loading... [████░░] 78%</div>
+          </div>
+          <div class="font-use-tag">monospace</div>
+        </div>
+      </div>
+
+      <div class="corner-box" style="margin-top:1.5rem">
+        <div class="c3"></div><div class="c4"></div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--cp-muted);line-height:2">
+          <span style="color:var(--cp-cyan)">// 字体层级规则</span><br>
+          H1: Orbitron 900 · 48-72px · letter-spacing: 0.05em · color: neon-cyan<br>
+          H2: Orbitron 700 · 28-40px · letter-spacing: 0.03em · color: text-primary<br>
+          H3: Rajdhani 700 · 20-24px · letter-spacing: 2px · uppercase<br>
+          Body: Rajdhani 400 · 16px · line-height: 1.7 · color: steel-white<br>
+          Code/Data: Share Tech Mono 400 · 13-14px · color: matrix-green<br>
+          Label: Share Tech Mono 400 · 10-11px · letter-spacing: 3px · uppercase
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: Effects -->
+  <div class="tab-pane" id="tab-effects">
+    <div class="effects-grid">
+      <div class="effect-demo">
+        <div class="eff-neon">NEON GLOW</div>
+        <div class="effect-label">text-shadow 霓虹发光</div>
+      </div>
+      <div class="effect-demo">
+        <div class="eff-glitch">GLITCH</div>
+        <div class="effect-label">RGB分裂故障效果</div>
+      </div>
+      <div class="effect-demo">
+        <div class="eff-scanline">SCANLINE</div>
+        <div class="effect-label">扫描线叠加遮罩</div>
+      </div>
+      <div class="effect-demo">
+        <div class="eff-terminal">&gt;_ ACCESS_OK</div>
+        <div class="effect-label">终端光标闪烁</div>
+      </div>
+      <div class="effect-demo">
+        <div class="eff-hologram">HOLOGRAM</div>
+        <div class="effect-label">全息色相循环</div>
+      </div>
+      <div class="effect-demo">
+        <div class="eff-clip-border">CLIP PATH</div>
+        <div class="effect-label">斜切角按钮形状</div>
+      </div>
+    </div>
+    <div class="corner-box" style="margin-top:1.5rem">
+      <div class="c3"></div><div class="c4"></div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--cp-muted);line-height:2.2">
+        <span style="color:var(--cp-cyan)">// 核心动效规则</span><br>
+        <span style="color:var(--cp-magenta)">扫描线:</span> body::before repeating-linear-gradient 2px/4px<br>
+        <span style="color:var(--cp-magenta)">CRT跑线:</span> body::after translateY(-2px → 100vh) 4s linear<br>
+        <span style="color:var(--cp-magenta)">霓虹脉冲:</span> text-shadow 0→8px→50px→80px 3s ease-in-out<br>
+        <span style="color:var(--cp-magenta)">故障抖动:</span> clip-path polygon + translateX(±4px) step-end<br>
+        <span style="color:var(--cp-magenta)">RGB分裂:</span> text-shadow -2px red / +2px cyan 0.8s<br>
+        <span style="color:var(--cp-magenta)">边框流光:</span> background-position 0%→200% linear-gradient<br>
+        <span style="color:var(--cp-magenta)">数据流:</span> 字符列 translateY(-100%→100vh) 随机延迟<br>
+        <span style="color:var(--cp-magenta)">频闪:</span> opacity 1→0.4→1 92%-97% keyframe spike
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: Prompts -->
+  <div class="tab-pane" id="tab-prompts">
+
+    <div class="prompt-card">
+      <div class="prompt-label">PROMPT-01 · 整体风格定义</div>
+      <div class="prompt-text" id="p1">Design a <span class="kw">cyberpunk</span> UI with the following specifications:
+
+<span class="cmt">// ATMOSPHERE</span>
+- Dark dystopian aesthetic, <span class="val">near-future neo-noir</span> city feel
+- Heavy use of <span class="str">neon glow effects</span> on interactive elements
+- <span class="val">CRT scanline overlay</span> across entire viewport (2px lines, 5% opacity)
+- Moving scan beam animation from top to bottom, <span class="str">4s loop</span>
+- Background: near-black (<span class="kw">#030712</span>), not pure black
+
+<span class="cmt">// COLOR LANGUAGE</span>
+- Primary accent: <span class="kw">Electric Cyan</span> (#00F5FF) — borders, glow, focus states
+- Secondary accent: <span class="kw">Hot Magenta</span> (#FF006E) — alerts, active, destructive
+- Tertiary: <span class="kw">Void Purple</span> (#B400FF) — decorative, hologram
+- Text: <span class="str">steel-tinted white</span> (#C8D6EF), never pure white
+
+<span class="cmt">// TYPOGRAPHY</span>
+- Display: Orbitron 900 weight, wide letter-spacing, ALL CAPS
+- UI text: Rajdhani 600, tracked uppercase for labels
+- Data/code: Share Tech Mono, matrix green (#39FF14)</div>
+      <button class="copy-btn" onclick="copyPrompt('p1')">[ COPY PROMPT ]</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-label">PROMPT-02 · 边框与容器</div>
+      <div class="prompt-text" id="p2"><span class="cmt">// BORDERS & CONTAINERS</span>
+- All borders: <span class="val">0.5–1px solid</span>, never thick
+- Default border color: <span class="kw">rgba(0,245,255,0.2)</span>
+- Hover border: <span class="kw">rgba(0,245,255,0.5)</span>
+- Active/focused: full <span class="kw">#00F5FF</span> with glow
+- Animated top border: <span class="val">linear-gradient flowing left→right</span>
+
+<span class="cmt">// CLIP-PATH SHAPES (斜切角)</span>
+clip-path: polygon(8px 0%, 100% 0%, calc(100%-8px) 100%, 0% 100%);
+<span class="cmt">— Use on: buttons, badges, labels, tags</span>
+
+<span class="cmt">// CORNER DECORATIONS</span>
+- Four corner L-brackets, 12×12px, 1px solid cyan
+- Position absolute on ::before ::after + pseudo elements
+- Creates "targeting reticle" framing effect
+
+<span class="cmt">// GLOW SHADOWS (box-shadow)</span>
+Panel glow:  <span class="val">0 0 20px rgba(0,245,255,0.05)</span>
+Hover glow:  <span class="val">0 0 30px rgba(0,245,255,0.15), inset 0 0 30px rgba(0,245,255,0.03)</span>
+Active glow: <span class="val">0 0 40px rgba(0,245,255,0.3), 0 0 80px rgba(0,245,255,0.1)</span></div>
+      <button class="copy-btn" onclick="copyPrompt('p2')">[ COPY PROMPT ]</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-label">PROMPT-03 · 动效系统</div>
+      <div class="prompt-text" id="p3"><span class="cmt">// ANIMATION SYSTEM</span>
+Mandatory global effects:
+1. <span class="kw">Scanline layer</span>: ::before repeating-linear-gradient, 4px repeat, 5% opacity
+2. <span class="kw">Running beam</span>: ::after element, height 2px, translateY 0→100vh, 4s linear infinite
+3. <span class="kw">Neon pulse</span>: @keyframes for text-shadow, 3s ease-in-out infinite
+
+Interaction effects:
+- <span class="val">Hover</span>: translateY(-2px) + increased glow intensity + border brightens
+- <span class="val">Click</span>: scale(0.97) + brief color invert flash 50ms
+- <span class="val">Focus</span>: animated dashed border, offset animation
+
+Glitch effect (apply sparingly to hero text):
+@keyframes glitch {
+  20% { clip-path: polygon(0 15%, 100% 15%, 100% 30%, 0 30%); transform: translateX(-4px) }
+  60% { clip-path: polygon(0 65%, 100% 65%, 100% 75%, 0 75%); transform: translateX(3px) }
+}
+<span class="cmt">— Trigger every 8–12s, duration 300ms</span>
+
+Data stream background:
+<span class="val">Vertical columns of random hex/binary characters</span>
+Font: monospace 10px, color: cyan at 30% opacity
+Animation: translateY(-100%→100vh), staggered delays, 3–8s duration</div>
+      <button class="copy-btn" onclick="copyPrompt('p3')">[ COPY PROMPT ]</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-label">PROMPT-04 · 按钮 / 输入框 / 表单</div>
+      <div class="prompt-text" id="p4"><span class="cmt">// BUTTONS</span>
+Primary button:
+  background: <span class="kw">transparent</span>
+  border: 1px solid #00F5FF
+  color: #00F5FF
+  font: Orbitron 700 11px, letter-spacing: 3px, UPPERCASE
+  clip-path: polygon(8px 0%, 100% 0%, calc(100%-8px) 100%, 0% 100%)
+  hover: background rgba(0,245,255,0.1), box-shadow 0 0 20px rgba(0,245,255,0.3)
+
+Danger button: same structure, swap cyan → <span class="val">#FF006E</span>
+
+<span class="cmt">// INPUT FIELDS</span>
+  background: rgba(0,245,255,0.03)
+  border: 1px solid rgba(0,245,255,0.2)
+  border-radius: 0  <span class="cmt">← no rounding, sharp corners</span>
+  color: #C8D6EF, font: Share Tech Mono 14px
+  border-left: 2px solid #00F5FF  <span class="cmt">← accent indicator</span>
+  focus: border-color #00F5FF, box-shadow 0 0 15px rgba(0,245,255,0.2)
+  placeholder: #4A5568, font: Share Tech Mono
+
+<span class="cmt">// LABELS & BADGES</span>
+  font: Share Tech Mono 10px, letter-spacing: 3px, UPPERCASE
+  background: rgba(0,245,255,0.08)
+  border: 1px solid rgba(0,245,255,0.3)
+  padding: 2px 10px
+  clip-path: hexagon or slanted parallelogram</div>
+      <button class="copy-btn" onclick="copyPrompt('p4')">[ COPY PROMPT ]</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-label">PROMPT-05 · 网格背景 / 纹理</div>
+      <div class="prompt-text" id="p5"><span class="cmt">// BACKGROUND TEXTURES</span>
+
+<span class="kw">Option A — Perspective grid (推荐)</span>:
+background:
+  linear-gradient(rgba(0,245,255,0.04) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(0,245,255,0.04) 1px, transparent 1px);
+background-size: 40px 40px;
+<span class="cmt">+ radial-gradient vignette at center to fade edges</span>
+
+<span class="kw">Option B — Diagonal hatching</span>:
+background: repeating-linear-gradient(
+  45deg, transparent, transparent 20px,
+  rgba(0,245,255,0.02) 20px, rgba(0,245,255,0.02) 21px
+);
+
+<span class="kw">Option C — Dot matrix</span>:
+background-image: radial-gradient(rgba(0,245,255,0.15) 1px, transparent 1px);
+background-size: 24px 24px;
+
+<span class="kw">Option D — Circuit lines</span>:
+SVG background with thin horizontal/vertical lines
+branching at 90° angles, cyan at 8% opacity
+Random "nodes" as 3px circles at intersections
+
+<span class="cmt">// NOISE GRAIN OVERLAY</span>
+::after { background: url(noise.png); opacity: 0.03; mix-blend-mode: overlay }
+<span class="cmt">— Adds organic grit, counters "too clean digital" look</span></div>
+      <button class="copy-btn" onclick="copyPrompt('p5')">[ COPY PROMPT ]</button>
+    </div>
+
+  </div>
+
+  <!-- TAB: CSS Vars -->
+  <div class="tab-pane" id="tab-vars">
+    <div class="prompt-card">
+      <div class="prompt-label">CSS CUSTOM PROPERTIES — 完整变量系统</div>
+      <div class="prompt-text" id="p6">:root {
+  <span class="cmt">/* ── BACKGROUNDS ── */</span>
+  <span class="kw">--cp-bg</span>:        <span class="val">#030712</span>;   <span class="cmt">/* void black, root */</span>
+  <span class="kw">--cp-bg-card</span>:    <span class="val">#0A0F1E</span>;   <span class="cmt">/* card surface */</span>
+  <span class="kw">--cp-bg-elevated</span>:<span class="val">#0F172A</span>;   <span class="cmt">/* elevated panels */</span>
+  <span class="kw">--cp-bg-hover</span>:   <span class="val">#1A2035</span>;   <span class="cmt">/* hover state */</span>
+
+  <span class="cmt">/* ── NEON ACCENTS ── */</span>
+  <span class="kw">--cp-cyan</span>:       <span class="val">#00F5FF</span>;   <span class="cmt">/* primary accent */</span>
+  <span class="kw">--cp-cyan-dim</span>:   <span class="val">#00BCD4</span>;   <span class="cmt">/* muted cyan */</span>
+  <span class="kw">--cp-magenta</span>:    <span class="val">#FF006E</span>;   <span class="cmt">/* hot pink */</span>
+  <span class="kw">--cp-purple</span>:     <span class="val">#B400FF</span>;   <span class="cmt">/* void purple */</span>
+  <span class="kw">--cp-green</span>:      <span class="val">#39FF14</span>;   <span class="cmt">/* matrix green */</span>
+  <span class="kw">--cp-yellow</span>:     <span class="val">#FFEA00</span>;   <span class="cmt">/* acid yellow */</span>
+  <span class="kw">--cp-orange</span>:     <span class="val">#FF6B00</span>;   <span class="cmt">/* toxic orange */</span>
+
+  <span class="cmt">/* ── TYPOGRAPHY ── */</span>
+  <span class="kw">--cp-text</span>:       <span class="val">#C8D6EF</span>;   <span class="cmt">/* body text */</span>
+  <span class="kw">--cp-text-dim</span>:   <span class="val">#6B7E99</span>;   <span class="cmt">/* secondary text */</span>
+  <span class="kw">--cp-text-muted</span>: <span class="val">#4A5568</span>;   <span class="cmt">/* disabled/placeholder */</span>
+
+  <span class="cmt">/* ── BORDERS ── */</span>
+  <span class="kw">--cp-border</span>:     <span class="val">rgba(0,245,255,0.2)</span>;
+  <span class="kw">--cp-border-hover</span>:<span class="val">rgba(0,245,255,0.5)</span>;
+  <span class="kw">--cp-border-active</span>:<span class="val">#00F5FF</span>;
+
+  <span class="cmt">/* ── GLOW TEXT-SHADOW ── */</span>
+  <span class="kw">--cp-glow-sm</span>:  <span class="val">0 0 4px currentColor, 0 0 12px currentColor</span>;
+  <span class="kw">--cp-glow-md</span>:  <span class="val">0 0 8px currentColor, 0 0 20px currentColor, 0 0 50px currentColor</span>;
+  <span class="kw">--cp-glow-lg</span>:  <span class="val">0 0 8px currentColor, 0 0 30px currentColor, 0 0 80px currentColor</span>;
+
+  <span class="cmt">/* ── FONTS ── */</span>
+  <span class="kw">--font-display</span>: <span class="val">'Orbitron'</span>, sans-serif;
+  <span class="kw">--font-ui</span>:      <span class="val">'Rajdhani'</span>, sans-serif;
+  <span class="kw">--font-mono</span>:    <span class="val">'Share Tech Mono'</span>, monospace;
+
+  <span class="cmt">/* ── TIMING ── */</span>
+  <span class="kw">--t-fast</span>:  <span class="val">150ms</span>;
+  <span class="kw">--t-base</span>:  <span class="val">250ms</span>;
+  <span class="kw">--t-slow</span>:  <span class="val">500ms</span>;
+  <span class="kw">--ease-cp</span>: <span class="val">cubic-bezier(0.25, 0.46, 0.45, 0.94)</span>;
+}</div>
+      <button class="copy-btn" onclick="copyPrompt('p6')">[ COPY ALL VARS ]</button>
+    </div>
+  </div>
+
+  <hr class="cp-divider">
+
+  <!-- Status bar -->
+  <div class="status-bar">
+    <span><span class="pulse-dot"></span><span class="status-ok">SYSTEM ONLINE</span></span>
+    <span class="status-ok">DESIGN_SYS v2.0</span>
+    <span class="status-warn">NEON_GRID: ACTIVE</span>
+    <span>// 点击色块复制 HEX</span>
+  </div>
+
+</div>
+
+<script>
+  // Generate data stream
+  const chars = '01アイウエオカキクケコ∑∆∏∫#@!%';
+  const container = document.getElementById('dataStream');
+  for(let i = 0; i < 6; i++) {
+    const col = document.createElement('div');
+    col.style.cssText = `position:absolute;left:${i*7}px;top:0;display:flex;flex-direction:column;gap:4px;animation:data-stream ${3+Math.random()*5}s linear ${Math.random()*4}s infinite`;
+    for(let j = 0; j < 20; j++) {
+      const c = document.createElement('span');
+      c.textContent = chars[Math.floor(Math.random()*chars.length)];
+      c.style.cssText = `font-family:'Share Tech Mono',monospace;font-size:9px;color:#00f5ff;line-height:1.4;display:block`;
+      col.appendChild(c);
+    }
+    container.appendChild(col);
+  }
+
+  function switchTab(id) {
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-'+id).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  function copyColor(hex) {
+    navigator.clipboard.writeText(hex).catch(()=>{});
+    const all = document.querySelectorAll('.color-card');
+    // visual feedback
+    const el = event.currentTarget;
+    el.style.borderColor = '#00f5ff';
+    setTimeout(() => el.style.borderColor = '', 600);
+  }
+
+  function copyPrompt(id) {
+    const el = document.getElementById(id);
+    const text = el.innerText;
+    navigator.clipboard.writeText(text).catch(()=>{});
+    const btn = event.target;
+    const orig = btn.textContent;
+    btn.textContent = '[ ✓ COPIED ]';
+    btn.style.color = '#39FF14';
+    btn.style.borderColor = '#39FF14';
+    setTimeout(() => {
+      btn.textContent = orig;
+      btn.style.color = '';
+      btn.style.borderColor = '';
+    }, 1500);
+  }
+</script>
+</body>
+</html>
