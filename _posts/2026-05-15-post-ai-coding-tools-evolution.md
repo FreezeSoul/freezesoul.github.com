@@ -407,6 +407,9 @@ graph TB
 
 三条线——Agent 环境（编辑器/终端收敛）、移动控制（从噱头到必备）、多 Agent 编排（从选配到标配）——互相咬合，形成闭环。开发者在这个闭环中的角色不再是"操作工具的人"，而是"编排 Agent 的人"。
 
+
+![](/images/post-ai-coding-tools-evolution5.png)
+
 ---
 
 ## 参考资料
