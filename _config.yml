@@ -51,6 +51,12 @@ formspree_form_action: "https://formspree.io/f/mvzzkwgy"
 sass:
     style: compressed
 
+# Local working dirs (not published)
+exclude:
+  - temp
+  - .claude
+  - vendor
+
 # Gems
 gems:
   - jekyll-paginate
