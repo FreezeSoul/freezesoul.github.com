@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "把 Agent 当团队来管：构建 SAF 五个月后的几个判断"
+title: "把 Agent 当团队来管：五个月构建的企业级 SOP Agent 平台"
 permalink: "common-agent-framework-v2-platform"
 author: "FS.IO"
 date: 2026-10-16 19:30:00 +0800
