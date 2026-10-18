@@ -6,10 +6,17 @@ $cyp-neon-yellow: #e6d900;
 $cyp-neon-green: #00e68f;
 $cyp-text-primary: #f0f0f5;
 $cyp-text-secondary: #9a9ab8;
-$cyp-bg-dark: #1a1a24;
-$cyp-bg-card: #22222e;
-$cyp-bg-content: #262632;
+$cyp-bg-dark: #0c0c14;
+$cyp-bg-card: #13131d;
+$cyp-bg-content: #16161f;
 $cyp-border-glow: rgba(0, 229, 204, 0.25);
+
+/* Text-grade neon variants: same hue as the saturated neons, raised lightness
+   so headline/quote text passes contrast on #262632 while borders and
+   decorations keep the saturated neon values. */
+$cyp-neon-purple-text: #dd8cff;
+$cyp-neon-pink-text: #ff5c99;
+$cyp-text-soft: #b8bcd9;
 
 /* Blog posts */
 .post {
@@ -77,7 +84,7 @@ $cyp-border-glow: rgba(0, 229, 204, 0.25);
 
 .post header p {
   margin: 0 35px 25px 35px;
-  color: $cyp-text-secondary;
+  color: $cyp-text-soft;
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.85rem;
   padding: 12px 18px;
@@ -103,7 +110,7 @@ $cyp-border-glow: rgba(0, 229, 204, 0.25);
   transition: all 0.3s ease;
 
   &:hover {
-    color: $cyp-neon-pink;
+    color: $cyp-neon-pink-text;
     text-shadow:
       0 0 12px rgba(230, 0, 102, 0.5),
       0 0 24px rgba(230, 0, 102, 0.3);
@@ -121,11 +128,11 @@ $cyp-border-glow: rgba(0, 229, 204, 0.25);
   padding-top: 10px;
 }
 
+/* Article images: no frame, centered, plain */
 .post > p img {
   max-width: 100%;
-  border: 2px solid $cyp-neon-cyan;
-  box-shadow: 0 0 15px rgba(0, 229, 204, 0.2);
-  border-radius: 0;
+  display: block;
+  margin: 12px auto;
 }
 
 .post > p a {
@@ -135,7 +142,7 @@ $cyp-border-glow: rgba(0, 229, 204, 0.25);
   transition: all 0.3s ease;
 
   &:hover {
-    color: $cyp-neon-pink;
+    color: $cyp-neon-pink-text;
     border-bottom-color: $cyp-neon-pink;
     text-shadow: 0 0 8px rgba(230, 0, 102, 0.3);
   }
@@ -146,8 +153,8 @@ blockquote {
   padding: 20px 25px;
   margin: 30px 35px;
   font-style: italic;
-  color: $cyp-text-secondary;
-  background: rgba(230, 0, 102, 0.05);
+  color: $cyp-text-soft;
+  background: rgba(230, 0, 102, 0.07);
   border-radius: 0 4px 4px 0;
   position: relative;
 
@@ -161,6 +168,25 @@ blockquote {
     text-shadow: 0 0 8px rgba(230, 0, 102, 0.3);
     opacity: 0.5;
   }
+}
+
+/* Key statements (承重判断句) get a brighter tone than body text */
+.post strong,
+.post b {
+  color: #ffffff;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  margin: 35px;
+  background: linear-gradient(90deg,
+    transparent,
+    $cyp-neon-cyan 30%,
+    $cyp-neon-purple 70%,
+    transparent
+  );
+  box-shadow: 0 0 8px rgba(0, 229, 204, 0.15);
 }
 
 code {
@@ -194,7 +220,7 @@ iframe {
 
 .post > h2, .post > h3, .post > h4, .post > h5, .post > h6 {
   margin: 40px 35px 20px 35px;
-  color: $cyp-neon-purple;
+  color: $cyp-neon-purple-text;
   font-family: 'Orbitron', 'Rajdhani', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -213,7 +239,7 @@ iframe {
 
 .post > h3 {
   font-size: 1.5rem;
-  color: $cyp-neon-pink;
+  color: $cyp-neon-pink-text;
   border-left: 3px solid $cyp-neon-pink;
   padding-left: 12px;
 }
@@ -345,16 +371,16 @@ iframe {
 
 #next_post a p {
   font-weight: 400;
-  color: $cyp-text-secondary;
+  color: $cyp-text-soft;
 }
 
 #next_post a:hover h2 {
-  color: $cyp-neon-pink;
+  color: $cyp-neon-pink-text;
   text-shadow: 0 0 12px rgba(230, 0, 102, 0.3);
 }
 
 #next_post a:hover span {
-  color: $cyp-neon-pink;
+  color: $cyp-neon-pink-text;
   border-color: $cyp-neon-pink;
   background: rgba(230, 0, 102, 0.15);
   box-shadow: 0 0 15px rgba(230, 0, 102, 0.2);
@@ -448,8 +474,8 @@ table {
 }
 
 th {
-  background: rgba(212, 85, 255, 0.18);
-  color: $cyp-neon-cyan;
+  background: rgba(212, 85, 255, 0.15);
+  color: #efe9ff;
   padding: 15px;
   text-align: left;
   text-transform: uppercase;
@@ -466,7 +492,6 @@ td {
 
 tr:hover td {
   background: rgba(0, 229, 204, 0.04);
-  color: $cyp-neon-cyan;
 }
 
 /* Form elements */

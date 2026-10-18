@@ -6,8 +6,9 @@ $cyp-neon-yellow: #e6d900;
 $cyp-neon-green: #00e68f;
 $cyp-text-primary: #f0f0f5;
 $cyp-text-secondary: #9a9ab8;
-$cyp-bg-dark: #1a1a24;
+$cyp-bg-dark: #0c0c14;
 $cyp-border-glow: rgba(0, 229, 204, 0.25);
+$cyp-neon-pink-text: #ff5c99;
 
 /* ========================================
    CYBERPUNK SPECIAL EFFECTS
@@ -317,15 +318,13 @@ $cyp-border-glow: rgba(0, 229, 204, 0.25);
 
 /* Selection Styling */
 ::selection {
-  background: rgba(230, 0, 102, 0.25);
-  color: $cyp-neon-cyan;
-  text-shadow: 0 0 4px rgba(0, 229, 204, 0.35);
+  background: rgba(230, 0, 102, 0.4);
+  color: #ffffff;
 }
 
 ::-moz-selection {
-  background: rgba(230, 0, 102, 0.25);
-  color: $cyp-neon-cyan;
-  text-shadow: 0 0 4px rgba(0, 229, 204, 0.35);
+  background: rgba(230, 0, 102, 0.4);
+  color: #ffffff;
 }
 
 /* Link Underline Animation */
@@ -335,12 +334,14 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 
+  /* Visited links stay readable cyan; the old dim purple made mid-article
+     links look dead against the dark background */
   &:visited {
-    color: $cyp-neon-purple;
+    color: $cyp-neon-cyan;
   }
 
   &:hover {
-    color: $cyp-neon-pink;
+    color: $cyp-neon-pink-text;
   }
 
   &::after {
@@ -357,6 +358,12 @@ a {
   &:hover::after {
     width: 100%;
   }
+}
+
+/* In-article links already carry a border-bottom; suppress the animated
+   ::after underline there so they don't render a double underline */
+.post a::after {
+  display: none;
 }
 
 /* Loading Animation */

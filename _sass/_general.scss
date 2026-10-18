@@ -10,9 +10,9 @@ $cyp-neon-yellow: #e6d900;
 $cyp-neon-green: #00e68f;
 $cyp-text-primary: #f0f0f5;
 $cyp-text-secondary: #9a9ab8;
-$cyp-bg-dark: #1a1a24;
-$cyp-bg-card: #22222e;
-$cyp-bg-content: #262632;
+$cyp-bg-dark: #0c0c14;
+$cyp-bg-card: #13131d;
+$cyp-bg-content: #16161f;
 $cyp-border-glow: rgba(0, 229, 204, 0.25);
 
 /* ========================================
@@ -80,7 +80,8 @@ $cyp-border-glow: rgba(0, 229, 204, 0.25);
   100% { opacity: 1; transform: scale(1.1); }
 }
 
-/* Scanline effect */
+/* Scanline effect - lives in the background layer (above the grid at -2,
+   below all content) so it never masks text or light images */
 body::before {
   content: '';
   position: fixed;
@@ -92,11 +93,11 @@ body::before {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 0, 0, 0.1) 2px,
-    rgba(0, 0, 0, 0.1) 4px
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
   );
   pointer-events: none;
-  z-index: 9999;
+  z-index: -1;
   animation: scanlines 8s linear infinite;
 }
 
@@ -204,7 +205,7 @@ body {
 
 /* Content Box - Modern Card Style */
 .content-box {
-  background: rgba(34, 34, 46, 0.85);
+  background: rgba(17, 17, 27, 0.88);
   backdrop-filter: blur(20px);
   padding: 25px;
   border: 1px solid $cyp-border-glow;
@@ -278,15 +279,13 @@ html {
 
 /* Selection styling */
 ::selection {
-  background: rgba(255, 0, 110, 0.3);
-  color: $cyp-neon-cyan;
-  text-shadow: 0 0 5px rgba(0, 255, 245, 0.5);
+  background: rgba(255, 0, 110, 0.4);
+  color: #ffffff;
 }
 
 ::-moz-selection {
-  background: rgba(255, 0, 110, 0.3);
-  color: $cyp-neon-cyan;
-  text-shadow: 0 0 5px rgba(0, 255, 245, 0.5);
+  background: rgba(255, 0, 110, 0.4);
+  color: #ffffff;
 }
 
 /* Focus visible for accessibility */
