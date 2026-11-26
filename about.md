@@ -55,6 +55,7 @@ permalink: /about/
         <div class="about-tags">
             <span class="chip">System Architect</span>
             <span class="chip">Frontend &amp; App Engineering</span>
+            <span class="chip">Python</span>
             <span class="chip">Backend &amp; Platform Engineering</span>
             <span class="chip">DDD &amp; Microservice Design</span>
             <span class="chip">Linux-based Deployment</span>
