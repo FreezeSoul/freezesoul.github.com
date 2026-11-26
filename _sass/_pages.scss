@@ -409,7 +409,7 @@
 .about-fact:nth-child(1) strong { color: var(--accent-text); }
 .about-fact:nth-child(2) strong { color: var(--success); }
 .about-fact:nth-child(3) strong { color: var(--warning); }
-.about-fact:nth-child(4) strong { color: var(--muted); }
+.about-fact:nth-child(4) strong { color: var(--muted); font-size: clamp(20px, 2.2vw, 28px); white-space: nowrap; }
 
 .about-grid {
   display: grid;
