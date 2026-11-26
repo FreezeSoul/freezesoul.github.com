@@ -238,7 +238,11 @@
     filter: blur(2px);
   }
 
-  /* Index number riding with each moon: keeps the 01–04 mapping legible. */
+  /* Index number riding with each moon: counter-rotates against the orbit
+     group so the digits stay upright while revolving.
+     Keyframe math: forward orbits spin +θ, so their labels run the
+     counter keyframes in REVERSE (0 → -360). Reverse orbits (rev-2) spin
+     -θ, so their labels run the plain forward spin (0 → +360) to cancel. */
   .moon-idx {
     fill: var(--text-secondary);
     font-family: var(--font-mono);
@@ -249,6 +253,20 @@
     stroke: var(--bg-base);
     stroke-width: 3px;
     stroke-linejoin: round;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: hero-spin-rev 70s linear infinite reverse;
+  }
+
+  .rev-2 .moon-idx {
+    animation-name: hero-spin;
+    animation-direction: normal;
+    animation-duration: 46s;
+  }
+
+  .rev-3 .moon-idx,
+  .rev-4 .moon-idx {
+    animation-duration: 30s;
   }
 
   /* Each moon revolves along its tilted orbit. Revolution = rotate the group
@@ -296,6 +314,15 @@
     opacity: 0.75;
   }
 
+  /* Chinese gloss under each dimension label. */
+  text.label-cn {
+    fill: var(--text-secondary);
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 3px;
+  }
+
   text.label-main {
     fill: var(--accent-text);
     font-size: 20px;
@@ -320,6 +347,12 @@
 
 @keyframes hero-spin {
   to { transform: rotate(360deg); }
+}
+
+/* Counter-rotation: keeps riding labels upright while the orbit group spins. */
+@keyframes hero-spin-rev {
+  from { transform: rotate(-360deg); }
+  to { transform: rotate(0deg); }
 }
 
 /* Slow axial wobble of the whole planet system. */
