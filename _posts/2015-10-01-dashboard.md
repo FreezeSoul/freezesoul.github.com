@@ -19,8 +19,6 @@ tags: [数据可视化, HTML5, AngularJS, 微服务, Dashboard]
 <img src="/images/dashboard1.jpg" width="100%">  
 <img src="/images/dashboard2.png" width="100%"> 
 
-<script src="/js/jquery.bxslider.min.js"></script>
-<link href="/css/jquery.bxslider.css" rel="stylesheet" />
 
 <ul class="bxsliderIndex">
   <li><img src="/images/dashboards/1.PNG" /></li>
@@ -33,18 +31,6 @@ tags: [数据可视化, HTML5, AngularJS, 微服务, Dashboard]
   <li><img src="/images/dashboards/8.PNG" /></li>
 </ul>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-  		$('.bxsliderIndex').bxSlider({
-               maxSlides: 1,
-  			slideWidth: 800,
-  			infiniteLoop: false,
-  			hideControlOnEnd: true,
-  			responsive: true,
-  			touchEnabled: true
-          });
-	});
-</script>
 
 前端程序：<a href="https://gitee.com/DataColour/DashboardClient">DashboardClient</a>
 后端程序：<a href="https://gitee.com/DataColour/DashboardService">DashboardService</a>

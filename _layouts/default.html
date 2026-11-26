@@ -1,27 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
     {% include head.html %}
-    <body>
-        <div class="cyber-wrapper">
-            <!-- Full-width background with grid pattern -->
-            <div class="cyber-background"></div>
-
-            <!-- Modern flexible container -->
-            <div class="cyber-container">
-                <div class="cyber-layout">
-                    {% if site.sidebar == 'left' %}
-                    <aside class="cyber-sidebar">{% include sidebar.html %}</aside>
-                    {% endif %}
-
-                    <main class="cyber-main" id="main">{{ content }}</main>
-
-                    {% if site.sidebar == 'right' %}
-                    <aside class="cyber-sidebar">{% include sidebar.html %}</aside>
-                    {% endif %}
-                </div>
-            </div>
+    <body class="layout-{{ page.layout }} {{ page.body_class }}">
+        <div class="site-shell">
+            {% include header.html %}
+            <main class="site-main" id="main">{{ content }}</main>
+            {% include footer.html %}
         </div>
-    <script src="/js/sidebar-sticky.js" defer></script>
-    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/3cbaec778b9f7d17102c88bca/24f9395e1ac6daf4f9d0d8eaa.js");</script>
+        <script src="{{ '/js/theme.js' | prepend: site.baseurl }}" defer></script>
+        {% if page.layout == 'post' %}<script src="{{ '/js/article.js' | prepend: site.baseurl }}" defer></script>{% endif %}
     </body>
 </html>

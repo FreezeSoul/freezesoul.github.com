@@ -1,0 +1,54 @@
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <div class="footer-title">About</div>
+                <div class="footer-brand"><span class="brand-mark">FS</span> {{ site.author_name }}</div>
+                <p>{{ site.meta_description }}</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-title">Connect</div>
+                <ul>
+                    {% if site.github_username %}<li><a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a></li>{% endif %}
+                    {% if site.twitter_username %}<li><a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener">Twitter</a></li>{% endif %}
+                    {% if site.weibo_username %}<li><a href="https://www.weibo.com/{{ site.weibo_username }}" target="_blank" rel="noopener">Weibo</a></li>{% endif %}
+                    <li><a href="{{ '/contact/' | prepend: site.baseurl }}">Contact</a></li>
+                </ul>
+            </div>
+
+            {% if site.subscribe_widget %}
+            <div class="footer-subscribe">
+                <div class="footer-title">Subscribe</div>
+                <p>新文章发布时收到一封邮件，不打扰、随时可退订。</p>
+                <form class="subscribe-form" action="{{ site.form_action }}" method="post" target="_blank">
+                    <input class="form-input" id="subscription-email" name="EMAIL" type="email" placeholder="you@example.com" required>
+                    <button class="btn btn-primary" type="submit">订阅</button>
+                    <div class="hp-field" aria-hidden="true"><input type="text" name="{{ site.list_id }}" tabindex="-1" value=""></div>
+                </form>
+                <div class="subscribe-note">via Mailchimp</div>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="footer-bottom">
+            <span>© {{ site.time | date: "%Y" }} {{ site.author_name }}</span>
+            <span class="visitor-count"><span id="visit-badge"></span></span>
+            <span>Jekyll · {{ site.posts | size }} 篇文章</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+  (function () {
+    var badge = document.getElementById('visit-badge');
+    if (!badge) return;
+    var img = document.createElement('img');
+    img.loading = 'lazy';
+    img.alt = '';
+    img.onerror = function () { badge.style.display = 'none'; };
+    img.onload = function () { badge.style.display = ''; };
+    img.src = 'https://visitor-counter.freezesoul.workers.dev/badge/total?t=' + Date.now();
+    badge.appendChild(img);
+  })();
+</script>

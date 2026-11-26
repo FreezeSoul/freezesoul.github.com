@@ -1,109 +1,75 @@
 ---
 layout: default
 ---
-<article class="content-box post">
-     <header>
-          <h1>{{ page.title }}</h1>
-          <p class="post-meta">
-            <span>[AUTHOR1: <span class="author">{{ page.author }}</span>] [DATE: <time class="time"
-                         pubdate datetime="{{ page.date | date: " %Y-%m-%d" }}">{{ page.date | date: "%Y-%m-%d"
-                         }}</time>]</span>
-            <span class="post-visits" id="post-visit-badge" style="float: right;"></span>
-          </p>
-     </header>
-     <p>{{ content }}</p>
-     <footer>
-          {% if page.next.url %}
-          <aside id="next_post">
-               <a href="{{page.next.url}}">
-                    <div>
-                         <span>Read This Next</span>
-                         <h2>{{ page.next.title }}</h2>
-                         <p>{{ page.next.content | markdownify | strip_html | strip_newlines | truncate: 160 }}</p>
-                    </div>
-               </a>
-          </aside>
-          {% endif %}
+{% assign words = content | strip_html | size %}
+{% assign minutes = words | divided_by: 600 | plus: 1 %}
 
-          {% if site.subscribe_widget %}
-          <button class="btn btn-primary btn-block subscribe-button subscribe-button-post">Subscribe to posts</button>
-          {% endif %}
+<div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
 
-          {% if site.share_buttons %}
-          <aside id="social_buttons">
-               <div class="col-sm-4" id="facebook-button">
-                    <div id="fb-root"></div>
-                    <script>(function (d, s, id) {
-                              var js, fjs = d.getElementsByTagName(s)[0];
-                              if (d.getElementById(id)) return;
-                              js = d.createElement(s); js.id = id;
-                              js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-                              fjs.parentNode.insertBefore(js, fjs);
-                         }(document, 'script', 'facebook-jssdk'));</script>
-                    <style>
-                         .fb-like.fb_iframe_widget span {
-                              vertical-align: top !important;
-                         }
-                    </style>
-                    <div class="fb-like" data-href="{{ post.url | prepend: site.baseurl | prepend: site.url }}"
-                         data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-               </div>
+<article class="post">
+    <header class="post-header">
+        <a class="post-back" href="{{ '/' | prepend: site.baseurl }}"><span aria-hidden="true">←</span> BACK TO INDEX</a>
+        <div class="post-kicker">
+            <span>FIELD NOTE</span>
+            <span class="meta-dot">/</span>
+            {% if page.categories %}<span>{{ page.categories | first }}</span>{% else %}<span>TECHNOLOGY</span>{% endif %}
+            <span class="meta-dot">/</span>
+            <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y.%m.%d' }}</time>
+        </div>
+        <h1>{{ page.title }}</h1>
+        <p class="post-deck">{{ page.excerpt | strip_html | normalize_whitespace | remove_first: '引言 ' | truncate: 180 }}</p>
+        <div class="post-byline">
+            <img class="post-avatar" src="{{ site.author_image }}" alt="{{ site.author_name }}" width="38" height="38">
+            <div class="post-author">
+                <strong>{{ page.author | default: site.author_name }}</strong>
+                <span>{{ site.author_description }} · 约 {{ minutes }} 分钟读完</span>
+            </div>
+            <span class="post-visits" id="post-visit-badge"></span>
+        </div>
+    </header>
 
-               <div class="col-sm-4" id="tweet-button">
-                    <script>window.twttr = (function (d, s, id) {
-                              var js, fjs = d.getElementsByTagName(s)[0],
-                                   t = window.twttr || {};
-                              if (d.getElementById(id)) return t;
-                              js = d.createElement(s);
-                              js.id = id;
-                              js.src = "https://platform.twitter.com/widgets.js";
-                              fjs.parentNode.insertBefore(js, fjs);
+    <div class="post-layout" id="post-layout">
+        <div class="post-main">
+            <div class="prose" id="article-content">{{ content }}</div>
 
-                              t._e = [];
-                              t.ready = function (f) {
-                                   t._e.push(f);
-                              };
+            <footer class="post-footer">
+                {% if page.next.url %}
+                <a class="next-post" href="{{ page.next.url | prepend: site.baseurl }}">
+                    <span class="next-label">NEXT FIELD NOTE / 继续阅读</span>
+                    <h2>{{ page.next.title }}</h2>
+                    <p>{{ page.next.content | markdownify | strip_html | strip_newlines | truncate: 120 }}</p>
+                </a>
+                {% endif %}
 
-                              return t;
-                         }(document, "script", "twitter-wjs"));</script>
-                    <a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
-               </div>
+                {% if site.subscribe_widget %}
+                <div class="post-cta">
+                    <p>如果这篇记录对你有用，可以通过邮件收到下一篇。</p>
+                    <a class="btn" href="#subscription-email">订阅更新 <span aria-hidden="true">↗</span></a>
+                </div>
+                {% endif %}
+            </footer>
+        </div>
 
-               <div class="col-sm-4" id="gplus-button">
-                    <script src="https://apis.google.com/js/platform.js" async defer></script>
-                    <div class="g-plusone" data-size="medium"></div>
-               </div>
-          </aside>
-          {% endif %}
-
-          {% if site.disqus_shortname %}
-          <div id="disqus_thread"></div>
-          <script type="text/javascript">
-               /* * * CONFIGURATION VARIABLES * * */
-               var disqus_shortname = '{{ site.disqus_shortname }}';
-
-               /* * * DON'T EDIT BELOW THIS LINE * * */
-               (function () {
-                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-               })();
-          </script>
-          {% endif %}
-     </footer>
+        <aside class="post-aside" aria-label="文章导航">
+            <div class="toc">
+                <div class="toc-title">On this page / 本页目录</div>
+                <nav id="post-toc" aria-label="本页目录"></nav>
+                <a class="toc-top" href="#main"><span aria-hidden="true">↑</span> 回到顶部</a>
+            </div>
+        </aside>
+    </div>
 </article>
 
 <script>
-  (function() {
-    const path = window.location.pathname;
-    // 添加时间戳参数防止缓存
-    const workerUrl = 'https://visitor-counter.freezesoul.workers.dev/badge' + path + '?t=' + Date.now();
-    const img = document.createElement('img');
-    img.src = workerUrl;
-    img.alt = 'visits';
-    img.style.height = '20px';
-    img.style.width = 'auto';
-    img.style.verticalAlign = 'middle';
-    document.getElementById('post-visit-badge').appendChild(img);
+  (function () {
+    var badge = document.getElementById('post-visit-badge');
+    if (!badge) return;
+    var img = document.createElement('img');
+    img.loading = 'lazy';
+    img.alt = '';
+    img.onerror = function () { badge.style.display = 'none'; };
+    img.onload = function () { badge.style.display = ''; };
+    img.src = 'https://visitor-counter.freezesoul.workers.dev/badge' + window.location.pathname + '?t=' + Date.now();
+    badge.appendChild(img);
   })();
 </script>

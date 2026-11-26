@@ -1,0 +1,168 @@
+/* Detail layer: browser-level polish and embedded content. */
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 6px;
+  border: 2px solid var(--bg-base);
+
+  &:hover {
+    background: var(--text-tertiary);
+  }
+}
+
+/* Mermaid diagrams are treated as an embedded "paper" plate, deliberately
+   light in BOTH site themes. Many posts carry inline `style ... fill:#e1f5ff`
+   colours authored for light backgrounds; a stable light canvas keeps those
+   semantic colours readable instead of fighting the dark page. */
+pre.mermaid {
+  background: #fbfcfe;
+  border: 1px solid #e3e7ef;
+  border-radius: var(--radius-md);
+  padding: var(--space-8) var(--space-6);
+  margin: var(--space-8) 0;
+  text-align: center;
+  overflow-x: auto;
+  color: #1f2937;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05), 0 10px 30px rgba(16, 24, 40, 0.05);
+
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Neutralise dark-theme leftovers on edge labels (the grey chips with
+     light text) and keep every label legible on the light plate. */
+  .edgeLabel,
+  .edgeLabel .label,
+  .edgeLabel .label div,
+  .edgeLabel span,
+  .edgeLabel p,
+  .labelBkg,
+  .cluster-label,
+  .nodeLabel {
+    color: #33405a !important;
+    background-color: transparent !important;
+  }
+
+  .labelBkg {
+    fill: #fbfcfe !important;
+  }
+}
+
+iframe {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 0;
+  height: 0;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin: var(--space-8) 0;
+
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+/* Legacy image lists from older posts: static grid instead of a jQuery slider */
+ul[class^="bxslider"] {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-6) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-3);
+
+  li {
+    margin: 0;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+  }
+}
+
+/* Gist embeds from jekyll-gist */
+.gist {
+  font-size: 13px;
+
+  .gist-file,
+  .gist-data {
+    border: 0 !important;
+    background: var(--bg-raised) !important;
+  }
+
+  .gist-meta {
+    background: var(--bg-raised) !important;
+    border-top: 1px solid var(--border-subtle) !important;
+    color: var(--text-tertiary) !important;
+    font-family: var(--font-mono) !important;
+
+    a {
+      color: var(--accent-text) !important;
+    }
+  }
+}
+
+/* Shared table styling for prose and standalone pages */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-6) 0;
+  font-size: 14px;
+}
+
+th {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+}
+
+tbody tr:hover td {
+  background: var(--bg-hover);
+}
+
+/* Utility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}

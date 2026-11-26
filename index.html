@@ -1,59 +1,206 @@
 ---
 layout: default
+body_class: home
 ---
+{% assign total_posts = site.posts | size %}
+
 {% if paginator.page == 1 %}
-<article class="content-box post" style="position:relative;overflow:hidden;border:1px solid rgba(108,140,255,.4);border-radius:10px;background:linear-gradient(120deg,rgba(108,140,255,.12),rgba(62,214,192,.05) 60%,rgba(12,12,20,.9));padding:20px 22px;margin-bottom:22px">
-  <div style="display:flex;align-items:center;gap:9px;margin-bottom:10px;position:relative">
-    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true" style="flex:none">
-      <rect x="2" y="2" width="28" height="28" rx="8" fill="#6C8CFF" opacity=".14"/>
-      <path d="M8 21V11l8 6 8-6v10" stroke="#6C8CFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M8 25h16" stroke="#3ED6C0" stroke-width="2.2" stroke-linecap="round"/>
-    </svg>
-    <span style="font-size:17px;font-weight:700;color:#f0f0f5">MediaStack · 自媒体技能库</span>
-    <span style="font:11px 'Share Tech Mono',monospace;color:#3ED6C0;border:1px solid rgba(62,214,192,.42);border-radius:4px;padding:1px 6px">v2026.11</span>
-  </div>
-  <p style="margin:0 0 14px;font-size:13.5px;line-height:1.7;color:#9a9ab8;position:relative">
-    收录面向中文自媒体工作流的 Agent Skill、MCP Server 与配套工具，按 6 个能力域 × 4 级可用性组织。
-    支持场景选型、成本与合规风险评估，以及方向 / 可用性 / 类型筛选与全文搜索。
-  </p>
-  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;position:relative">
-    <a href="{{ '/mediastack.html' | prepend: site.baseurl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:7px;background:#6C8CFF;color:#071022;font-size:13px;font-weight:700">打开技能库 ↗</a>
-    <span style="font:11px 'Share Tech Mono',monospace;color:#6b6b88">6 能力域 · 4 级可用性 · 3 种形态 · /mediastack.html</span>
-  </div>
-</article>
-{% endif %}
-{% for post in paginator.posts %}
-<article class="content-box post">
-     <header>
-          <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-          <p><span class="post-meta">[AUTHOR: <span class="author">{{ post.author }}</span>] [DATE: <time class="time"
-                         pubdate datetime="{{ post.date | date: " %Y-%m-%d" }}">{{ post.date | date: "%Y-%m-%d"
-                         }}</time>]</span></p>
-     </header>
-     <p>{{ post.excerpt }}</p>
-     <p><a href="{{ post.url | prepend: site.baseurl }}" class="btn-read-more">阅读全文 &raquo;</a></p>
-</article>
-{% endfor %}
+<section class="home-hero">
+    <div class="hero-copy">
+        <div class="hero-kicker"><span class="status-dot"></span> Independent notes on applied AI</div>
+        <h1>让智能，成为<br><span>可靠的工程。</span></h1>
+        <p class="hero-intro">不只讨论 AI 能做什么，更关注它如何进入真实系统。<br>这里记录 Agent、软件架构与开发工具背后的实践和判断。</p>
+        <div class="hero-actions">
+            <a class="hero-primary" href="#latest">阅读最新文章 <span aria-hidden="true">↓</span></a>
+            <a class="hero-secondary" href="{{ '/about/' | prepend: site.baseurl }}">认识 FreezeSoul <span aria-hidden="true">↗</span></a>
+        </div>
+    </div>
 
-{% if paginator.total_pages > 1 %}
-<nav>
-     <ul class="pager">
-          {% if paginator.previous_page %}
-          <li class="pager-prev">
-               <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"
-                    aria-label="Previous">
-                    <span aria-hidden="true">&laquo; Newer</span>
-               </a>
-          </li>
-          {% endif %}
+    <div class="hero-visual" aria-hidden="true">
+        <div class="visual-caption visual-caption-top">HUMAN × MACHINE</div>
+        <svg viewBox="0 0 480 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle class="orbit orbit-outer" cx="240" cy="208" r="142"/>
+            <circle class="orbit" cx="240" cy="208" r="96"/>
+            <circle class="orbit orbit-inner" cx="240" cy="208" r="49"/>
+            <path class="axis" d="M240 28V388M60 208H420"/>
+            <path class="connection" d="M135 112L240 208L356 121M240 208L347 307M240 208L118 290"/>
+            <path class="connection faint" d="M135 112L356 121L347 307L118 290L135 112Z"/>
+            <rect class="node node-main" x="225" y="193" width="30" height="30" rx="4"/>
+            <rect class="node" x="126" y="103" width="18" height="18" rx="3"/>
+            <rect class="node" x="347" y="112" width="18" height="18" rx="3"/>
+            <rect class="node" x="338" y="298" width="18" height="18" rx="3"/>
+            <rect class="node" x="109" y="281" width="18" height="18" rx="3"/>
+            <circle class="satellite" cx="240" cy="66" r="4"/>
+            <circle class="satellite" cx="382" cy="208" r="4"/>
+            <circle class="satellite" cx="240" cy="350" r="4"/>
+            <text x="240" y="258" text-anchor="middle">AGENT</text>
+            <text x="105" y="88">CONTEXT</text>
+            <text x="340" y="98">REASON</text>
+            <text x="329" y="338">ACTION</text>
+            <text x="82" y="320">MEMORY</text>
+        </svg>
+        <div class="visual-caption visual-caption-bottom">SYSTEM DIAGRAM / 001</div>
+    </div>
 
-          {% if paginator.next_page %}
-          <li class="pager-next">
-               <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Next">
-                    <span aria-hidden="true">Older &raquo;</span>
-               </a>
-          </li>
-          {% endif %}
-     </ul>
-</nav>
+    <div class="hero-facts">
+        <div class="hero-fact"><strong>{{ total_posts }}</strong><span>篇深度记录</span></div>
+        <div class="hero-fact"><strong>2013</strong><span>开始持续写作</span></div>
+        <div class="hero-fact hero-fact-wide"><strong>AI · Agent · Systems</strong><span>长期关注的技术议题</span></div>
+    </div>
+</section>
+
+{% assign featured = paginator.posts[0] %}
+{% assign featured_words = featured.content | strip_html | size %}
+{% assign featured_minutes = featured_words | divided_by: 600 | plus: 1 %}
+{% assign featured_cover = featured.cover | strip %}
+{% if featured_cover == nil or featured_cover == '' %}
+  {% assign featured_img_parts = featured.content | split: '<img' %}
+  {% if featured_img_parts.size > 1 %}
+    {% assign featured_img_tag = featured_img_parts[1] | split: '>' | first %}
+    {% assign featured_src_parts = featured_img_tag | split: 'src="' %}
+    {% if featured_src_parts.size > 1 %}
+      {% assign featured_cover = featured_src_parts[1] | split: '"' | first | strip %}
+    {% else %}
+      {% assign featured_src_parts = featured_img_tag | split: "src='" %}
+      {% if featured_src_parts.size > 1 %}
+        {% assign featured_cover = featured_src_parts[1] | split: "'" | first | strip %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
 {% endif %}
+<section class="spotlight-section" id="latest">
+    <div class="section-topline">
+        <span class="section-index">01</span>
+        <span>最新发布</span>
+        <span class="section-line"></span>
+        <span class="section-english">Latest field note</span>
+    </div>
+    <a class="spotlight" href="{{ featured.url | prepend: site.baseurl }}">
+        <div class="spotlight-content">
+            <div class="spotlight-meta">
+                {% if featured.categories %}<span>{{ featured.categories | first }}</span><span class="meta-dot">/</span>{% endif %}
+                <time datetime="{{ featured.date | date: '%Y-%m-%d' }}">{{ featured.date | date: '%Y.%m.%d' }}</time>
+                <span class="meta-dot">/</span>
+                <span>{{ featured_minutes }} min read</span>
+            </div>
+            <h2>{{ featured.title }}</h2>
+            <p>{{ featured.excerpt | strip_html | normalize_whitespace | remove_first: '引言 ' | truncate: 170 }}</p>
+            <span class="spotlight-link">深入阅读 <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="spotlight-aside{% if featured_cover != '' %} has-image{% endif %}" aria-hidden="true">
+            {% if featured_cover != '' %}
+                <img class="spotlight-cover" src="{{ featured_cover }}" alt="" loading="eager" decoding="async">
+                <span>FIELD NOTE / {{ total_posts | prepend: '000' | slice: -3, 3 }} · {{ featured.date | date: '%Y' }}</span>
+            {% else %}
+                <span>FIELD NOTE</span>
+                <strong>{{ total_posts | prepend: '000' | slice: -3, 3 }}</strong>
+                <span>{{ featured.date | date: '%Y' }} / FREEZESOUL</span>
+            {% endif %}
+            <i></i>
+        </div>
+    </a>
+</section>
+{% else %}
+<header class="pagination-head">
+    <span class="hero-kicker">THE ARCHIVE</span>
+    <h1>文章索引</h1>
+    <p>第 {{ paginator.page }} 页，共 {{ paginator.total_pages }} 页。按时间浏览全部技术记录。</p>
+</header>
+{% endif %}
+
+<div class="home-content">
+    <section class="posts-section">
+        <div class="posts-heading">
+            <div><span class="section-index">02</span><h2>文章索引</h2></div>
+            <a href="{{ '/archive/' | prepend: site.baseurl }}">完整归档 <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <ul class="post-list">
+            {% for post in paginator.posts %}
+            {% unless paginator.page == 1 and forloop.first %}
+            {% assign words = post.content | strip_html | size %}
+            {% assign minutes = words | divided_by: 600 | plus: 1 %}
+            {% assign row_cover = post.cover | strip %}
+            {% if row_cover == nil or row_cover == '' %}
+              {% assign row_img_parts = post.content | split: '<img' %}
+              {% if row_img_parts.size > 1 %}
+                {% assign row_img_tag = row_img_parts[1] | split: '>' | first %}
+                {% assign row_src_parts = row_img_tag | split: 'src="' %}
+                {% if row_src_parts.size > 1 %}
+                  {% assign row_cover = row_src_parts[1] | split: '"' | first | strip %}
+                {% else %}
+                  {% assign row_src_parts = row_img_tag | split: "src='" %}
+                  {% if row_src_parts.size > 1 %}
+                    {% assign row_cover = row_src_parts[1] | split: "'" | first | strip %}
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            {% endif %}
+            <li class="post-row">
+                <a class="post-row-link{% if row_cover != '' %} has-thumb{% endif %}" href="{{ post.url | prepend: site.baseurl }}">
+                    <time class="post-row-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">
+                        <span>{{ post.date | date: '%m.%d' }}</span>
+                        <small>{{ post.date | date: '%Y' }}</small>
+                    </time>
+                    <div class="post-row-body">
+                        <div class="post-row-meta">
+                            {% if post.categories %}<span>{{ post.categories | first }}</span><span class="meta-dot">·</span>{% endif %}
+                            <span>约 {{ minutes }} 分钟</span>
+                        </div>
+                        <h3>{{ post.title }}</h3>
+                        <p>{{ post.excerpt | strip_html | normalize_whitespace | remove_first: '引言 ' | truncate: 120 }}</p>
+                    </div>
+                    {% if row_cover != '' %}
+                    <span class="post-row-thumb" aria-hidden="true">
+                        <img src="{{ row_cover }}" alt="" loading="lazy" decoding="async">
+                    </span>
+                    {% endif %}
+                    <span class="post-row-arrow" aria-hidden="true">↗</span>
+                </a>
+            </li>
+            {% endunless %}
+            {% endfor %}
+        </ul>
+
+        {% if paginator.total_pages > 1 %}
+        <nav class="pager" aria-label="文章分页">
+            <ul>
+                {% if paginator.previous_page %}
+                <li class="pager-prev"><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">← 较新文章</a></li>
+                {% endif %}
+                <li class="pager-position">{{ paginator.page }} / {{ paginator.total_pages }}</li>
+                {% if paginator.next_page %}
+                <li class="pager-next"><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">较早文章 →</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </section>
+
+    <aside class="home-rail">
+        <section class="rail-section rail-focus">
+            <div class="rail-label">Current focus</div>
+            <h2>关注智能，<br>也关注落地。</h2>
+            <p>比起追逐概念，更关心系统是否可靠、工具是否真正提高效率。</p>
+            <ul class="focus-list">
+                <li><span>01</span>AI Agent 与多智能体系统</li>
+                <li><span>02</span>软件架构与工程方法</li>
+                <li><span>03</span>开发工具与人机协作</li>
+            </ul>
+        </section>
+
+        <a class="rail-project" href="{{ '/mediastack.html' | prepend: site.baseurl }}">
+            <div class="rail-project-head"><span>FEATURED PROJECT</span><span aria-hidden="true">↗</span></div>
+            <div class="project-glyph" aria-hidden="true"><i></i><i></i><i></i></div>
+            <h3>MediaStack</h3>
+            <p>面向中文自媒体工作流的 Agent Skills、MCP Server 与工具导航。</p>
+            <div class="rail-project-stats"><span><b>6</b> 能力域</span><span><b>4</b> 级可用性</span><span><b>3</b> 种形态</span></div>
+        </a>
+
+        <section class="rail-section rail-about">
+            <div class="rail-label">Behind the notes</div>
+            <p>FreezeSoul，全栈开发者。持续记录技术实践，也偶尔回望那些塑造今天的旧系统。</p>
+            <a href="{{ '/about/' | prepend: site.baseurl }}">更多关于我 <span aria-hidden="true">↗</span></a>
+        </section>
+    </aside>
+</div>

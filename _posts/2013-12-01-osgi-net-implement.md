@@ -333,8 +333,6 @@ OSGi.NET 提供了三种监听器：
 
 ## 功能演示
 
-<script src="/js/jquery.bxslider.min.js"></script>
-<link href="/css/jquery.bxslider.css" rel="stylesheet" />
 
 <ul class="bxslider">
   <li><img src="/images/osginetintro/image2.PNG" /></li>
@@ -352,18 +350,6 @@ OSGi.NET 提供了三种监听器：
   <li><img src="/images/osginetintro/image16.PNG" /></li>
 </ul>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-  		$('.bxslider').bxSlider({
-               maxSlides: 1,
-  			slideWidth: 800,
-  			infiniteLoop: false,
-  			hideControlOnEnd: true,
-  			responsive: true,
-  			touchEnabled: true
-          });
-	});
-</script>
 
 ---
 

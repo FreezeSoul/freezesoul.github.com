@@ -1,20 +1,23 @@
 ---
 ---
 
-/* Bourbon 4.2.4 */
-@import "bourbon/bourbon";
+/* Design tokens - must come first */
+@import 'tokens';
 
 /* Code highlighting */
 @import 'highlight';
 
-/* General */
+/* Base: reset, typography, layout shell, shared primitives */
 @import 'general';
 
-/* Sidebar */
-@import 'sidebar';
+/* Site chrome: header + footer */
+@import 'chrome';
 
-/* Main content */
+/* Home list, article typography, pagination */
 @import 'main';
 
-/* Cyberpunk Special Effects */
-@import 'cyberpunk';
+/* Standalone pages: archive / contact / about */
+@import 'pages';
+
+/* Browser polish: scrollbar, selection, mermaid, embeds */
+@import 'detail';

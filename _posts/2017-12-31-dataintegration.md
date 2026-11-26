@@ -658,8 +658,6 @@ public class ServiceRegistry {
 
 ## 系统界面  
 
-<script src="/js/jquery.bxslider.min.js"></script>
-<link href="/css/jquery.bxslider.css" rel="stylesheet" />
 
 
 <ul class="bxsliderData">
@@ -670,17 +668,5 @@ public class ServiceRegistry {
   <li><img src="/images/dataintegration5.png" /></li>
 </ul>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-  		$('.bxsliderData').bxSlider({
-  			maxSlides: 1,
-  			slideWidth: 800,
-  			infiniteLoop: false,
-  			hideControlOnEnd: true,
-  			responsive: true,
-  			touchEnabled: true
-  		});
-	});
-</script>
 
 演示程序：<a href="/files/NoDownload">NoPublic</a>  

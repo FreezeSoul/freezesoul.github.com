@@ -4,7 +4,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "{{ page.title }}",
-  "image": "{{ site.author_image }}",
+  "image": "{{ site.author_image | prepend: site.baseurl | prepend: site.url }}",
   "datePublished": "{{ page.date | date_to_xmlschema }}",
   "dateModified": "{{ page.date | date_to_xmlschema }}",
   "author": {
@@ -16,7 +16,7 @@
     "name": "{{ site.title }}",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ site.author_image }}"
+      "url": "{{ site.author_image | prepend: site.baseurl | prepend: site.url }}"
     }
   },
   "description": "{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}{{ site.meta_description }}{% endif %}",
