@@ -12,7 +12,7 @@ layout: default
         <div class="post-kicker">
             <span>FIELD NOTE</span>
             <span class="meta-dot">/</span>
-            {% if page.categories %}<span>{{ page.categories | first }}</span>{% else %}<span>TECHNOLOGY</span>{% endif %}
+            {% if page.categories %}<span class="kicker-cat">{{ page.categories | first }}</span>{% else %}<span class="kicker-cat">TECHNOLOGY</span>{% endif %}
             <span class="meta-dot">/</span>
             <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y.%m.%d' }}</time>
         </div>

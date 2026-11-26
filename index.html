@@ -78,7 +78,7 @@ body_class: home
     <a class="spotlight" href="{{ featured.url | prepend: site.baseurl }}">
         <div class="spotlight-content">
             <div class="spotlight-meta">
-                {% if featured.categories %}<span>{{ featured.categories | first }}</span><span class="meta-dot">/</span>{% endif %}
+                {% if featured.categories %}<span class="spotlight-cat">{{ featured.categories | first }}</span><span class="meta-dot">/</span>{% endif %}
                 <time datetime="{{ featured.date | date: '%Y-%m-%d' }}">{{ featured.date | date: '%Y.%m.%d' }}</time>
                 <span class="meta-dot">/</span>
                 <span>{{ featured_minutes }} min read</span>

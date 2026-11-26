@@ -406,6 +406,11 @@
   }
 }
 
+.about-fact:nth-child(1) strong { color: var(--accent-text); }
+.about-fact:nth-child(2) strong { color: var(--success); }
+.about-fact:nth-child(3) strong { color: var(--warning); }
+.about-fact:nth-child(4) strong { color: var(--muted); }
+
 .about-grid {
   display: grid;
 }
@@ -502,6 +507,12 @@
       border: 1px solid var(--accent);
     }
   }
+
+  li:nth-child(5n+1)::before { border-color: var(--success); }
+  li:nth-child(5n+2)::before { border-color: var(--warning); }
+  li:nth-child(5n+3)::before { border-color: var(--danger); }
+  li:nth-child(5n+4)::before { border-color: var(--muted); }
+  li:nth-child(5n+5)::before { border-color: var(--accent); }
 }
 
 .project-list {

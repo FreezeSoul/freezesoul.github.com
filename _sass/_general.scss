@@ -138,6 +138,35 @@ hr {
   letter-spacing: 0.04em;
 }
 
+/* ---------- Semantic status colors (shared with the skills library) ---------- */
+
+.t-success { color: var(--success); }
+.t-warning { color: var(--warning); }
+.t-danger { color: var(--danger); }
+.t-muted { color: var(--muted); }
+
+.badge-success,
+.badge-warning,
+.badge-danger,
+.badge-muted {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1.6;
+  padding: 1px 9px;
+  border-radius: 6px;
+}
+
+.badge-success { background: rgba(131, 199, 161, 0.14); color: var(--success); }
+.badge-warning { background: rgba(217, 178, 106, 0.14); color: var(--warning); }
+.badge-danger { background: rgba(224, 138, 138, 0.14); color: var(--danger); }
+.badge-muted { background: rgba(124, 138, 166, 0.16); color: var(--muted); }
+
+[data-theme="light"] .badge-success { background: rgba(52, 124, 87, 0.12); }
+[data-theme="light"] .badge-warning { background: rgba(149, 102, 31, 0.12); }
+[data-theme="light"] .badge-danger { background: rgba(163, 76, 76, 0.12); }
+[data-theme="light"] .badge-muted { background: rgba(107, 114, 128, 0.14); }
+
 .btn {
   display: inline-flex;
   align-items: center;

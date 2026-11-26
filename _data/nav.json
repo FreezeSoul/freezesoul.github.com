@@ -1,0 +1,1663 @@
+{
+  "categories": [
+    {
+      "slug": "chat",
+      "name": "AI 对话",
+      "count": 50
+    },
+    {
+      "slug": "coding",
+      "name": "AI 编程",
+      "count": 17
+    },
+    {
+      "slug": "models",
+      "name": "模型与算力",
+      "count": 33
+    },
+    {
+      "slug": "multimodal",
+      "name": "多模态生成",
+      "count": 39
+    },
+    {
+      "slug": "agent",
+      "name": "智能体 / MCP",
+      "count": 52
+    },
+    {
+      "slug": "dev",
+      "name": "开发工具",
+      "count": 18
+    },
+    {
+      "slug": "cloud",
+      "name": "云服务",
+      "count": 6
+    },
+    {
+      "slug": "design",
+      "name": "设计创意",
+      "count": 10
+    },
+    {
+      "slug": "community",
+      "name": "社区资讯",
+      "count": 30
+    },
+    {
+      "slug": "productivity",
+      "name": "效率办公",
+      "count": 6
+    },
+    {
+      "slug": "media",
+      "name": "影音娱乐",
+      "count": 6
+    }
+  ],
+  "items": [
+    {
+      "name": "ClawBot",
+      "url": "https://openclaw.ai",
+      "favicon": "https://openclaw.ai/favicon.svg",
+      "category": "coding"
+    },
+    {
+      "name": "QoderWork",
+      "url": "https://www.qoderwork.org",
+      "favicon": "https://www.qoderwork.org/images/favicon.svg",
+      "category": "coding"
+    },
+    {
+      "name": "CodeBuddy",
+      "url": "https://www.codebuddy.com",
+      "favicon": "https://cdn.prod.website-files.com/65a6a15ecd9b4909597c6be5/66d8b355e5b8498ef34d790c_32x32.png",
+      "category": "coding"
+    },
+    {
+      "name": "Antigravity",
+      "url": "https://antigravity.google",
+      "favicon": "https://antigravity.google/assets/image/antigravity-logo.png",
+      "category": "coding"
+    },
+    {
+      "name": "Windsurf",
+      "url": "https://windsurf.com",
+      "favicon": "https://windsurf.com/favicon.svg",
+      "category": "coding"
+    },
+    {
+      "name": "Comate",
+      "url": "https://comate.baidu.com",
+      "favicon": "https://comate.baidu.com/favicon.ico",
+      "category": "coding"
+    },
+    {
+      "name": "Cursor",
+      "url": "https://cursor.com",
+      "favicon": "https://cursor.com/marketing-static/favicon.svg",
+      "category": "coding"
+    },
+    {
+      "name": "Qoder",
+      "url": "https://qoder.com",
+      "favicon": "https://g.alicdn.com/qbase/qoder/0.0.223/favIcon.svg",
+      "category": "coding"
+    },
+    {
+      "name": "Trae",
+      "url": "https://www.trae.ai",
+      "favicon": "https://lf-static.traecdn.us/obj/trae-ai-tx/trae_website/favicon.png",
+      "category": "coding"
+    },
+    {
+      "name": "Kiro",
+      "url": "https://kiro.dev",
+      "favicon": "https://kiro.dev/favicon.ico",
+      "category": "coding"
+    },
+    {
+      "name": "ClaudeUnpacked",
+      "url": "https://ccunpacked.dev",
+      "favicon": "https://ccunpacked.dev/favicon.svg",
+      "category": "agent"
+    },
+    {
+      "name": "MiniMaxAgent",
+      "url": "https://agent.minimaxi.com",
+      "favicon": "https://agent.minimaxi.com/assets/logo/favicon_v2.png?v=4",
+      "category": "agent"
+    },
+    {
+      "name": "MetaGptMGX",
+      "url": "https://mgx.dev",
+      "favicon": "https://mgx.dev/favicon.ico",
+      "category": "agent"
+    },
+    {
+      "name": "DevinAIAgent",
+      "url": "https://devin.ai",
+      "favicon": "https://devin.ai/icon.png",
+      "category": "agent"
+    },
+    {
+      "name": "PublicPrompts",
+      "url": "https://www.publicprompts.art",
+      "favicon": "https://www.publicprompts.art/logo.svg",
+      "category": "agent"
+    },
+    {
+      "name": "PromptPerfect",
+      "url": "https://promptperfect.jina.ai/interactive",
+      "favicon": "https://promptperfect.jina.ai/icons/favicon-128x128.png",
+      "category": "agent"
+    },
+    {
+      "name": "SnackPrompt",
+      "url": "https://snackprompt.com",
+      "favicon": "https://snackprompt.com/favicon.ico?favicon.776b8559.ico",
+      "category": "agent"
+    },
+    {
+      "name": "PromptsChat",
+      "url": "https://prompts.chat",
+      "favicon": "https://prompts.chat/favicon/favicon.svg",
+      "category": "agent"
+    },
+    {
+      "name": "PromptHunt",
+      "url": "https://www.prompthunt.com/explore",
+      "favicon": "https://www.prompthunt.com/favicon.png",
+      "category": "agent"
+    },
+    {
+      "name": "PromptBase",
+      "url": "https://promptbase.com",
+      "favicon": "https://promptbase.com/assets/favicon/favicon-32x32.png",
+      "category": "agent"
+    },
+    {
+      "name": "PromptPilot",
+      "url": "https://promptpilot.volcengine.com/home",
+      "favicon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/lm_sth/ljhwZthlaukjlkulzlp/autope/logo/prompt-pilot.png",
+      "category": "agent"
+    },
+    {
+      "name": "DshMarket",
+      "url": "https://awesome-dsh-plugin.com",
+      "favicon": "https://awesome-dsh-plugin.com/logo.svg",
+      "category": "agent"
+    },
+    {
+      "name": "DshPlugins",
+      "url": "https://dsh-plugins.net",
+      "favicon": "https://dsh-plugins.net/icon.svg",
+      "category": "agent"
+    },
+    {
+      "name": "PiAgent",
+      "url": "https://pi.dev/packages",
+      "favicon": "https://pi.dev/favicon.svg",
+      "category": "agent"
+    },
+    {
+      "name": "MCPSO",
+      "url": "https://mcp.so",
+      "favicon": "https://mcp.so/favicon.ico",
+      "category": "agent"
+    },
+    {
+      "name": "PulseMCP",
+      "url": "https://www.pulsemcp.com",
+      "favicon": "https://www.pulsemcp.com/favicon.svg",
+      "category": "agent"
+    },
+    {
+      "name": "GlamaMCP",
+      "url": "https://glama.ai/mcp/servers",
+      "favicon": "https://glama.ai/favicon.ico",
+      "category": "agent"
+    },
+    {
+      "name": "HigressMCP",
+      "url": "https://mcp.higress.ai",
+      "favicon": "https://framerusercontent.com/images/FD5yBobiBj4Evn0qf11X7iQ9csk.png",
+      "category": "agent"
+    },
+    {
+      "name": "MCPMarket",
+      "url": "https://mcpmarket.com",
+      "favicon": "https://mcpmarket.com/favicon.svg",
+      "category": "agent"
+    },
+    {
+      "name": "MCPServers",
+      "url": "https://mcpservers.org",
+      "favicon": "https://mcpservers.org/icon.png",
+      "category": "agent"
+    },
+    {
+      "name": "SmitheryMCP",
+      "url": "https://smithery.ai/servers",
+      "favicon": "https://smithery.ai/icon.svg?icon.2e4c651c.svg",
+      "category": "agent"
+    },
+    {
+      "name": "ComposioMCP",
+      "url": "https://mcp.composio.dev",
+      "favicon": "https://mcp.composio.dev/favicon.ico",
+      "category": "agent"
+    },
+    {
+      "name": "TemplateBot",
+      "url": "https://templatebot.lol",
+      "favicon": "https://templatebot.lol/favicon.svg",
+      "category": "agent"
+    },
+    {
+      "name": "memU",
+      "url": "https://memu.pro",
+      "favicon": "https://memu.pro/local/memu-logo-u.svg",
+      "category": "agent"
+    },
+    {
+      "name": "EvoMap",
+      "url": "https://evomap.ai",
+      "favicon": "https://evomap.ai/icon.svg",
+      "category": "agent"
+    },
+    {
+      "name": "Taskade",
+      "url": "https://www.taskade.com/ai/agents",
+      "favicon": "https://www.taskade.com/favicon.svg",
+      "category": "agent"
+    },
+    {
+      "name": "Moltbot",
+      "url": "https://www.molt.bot",
+      "favicon": "https://www.molt.bot/favicon.svg",
+      "category": "agent"
+    },
+    {
+      "name": "SkillHub",
+      "url": "https://www.skillhub.club",
+      "favicon": "https://www.skillhub.club/favicon-192x192.png",
+      "category": "agent"
+    },
+    {
+      "name": "LobeHub",
+      "url": "https://lobehub.com",
+      "favicon": "https://lobehub.com/favicon-32x32.png",
+      "category": "agent"
+    },
+    {
+      "name": "AgentsMd",
+      "url": "https://agents.md",
+      "favicon": "https://agents.md/favicon-dark.png",
+      "category": "agent"
+    },
+    {
+      "name": "ClawdHub",
+      "url": "https://clawdhub.com",
+      "favicon": "https://clawdhub.com/favicon.ico",
+      "category": "agent"
+    },
+    {
+      "name": "AgentSkills",
+      "url": "https://skillsmp.com",
+      "favicon": "https://skillsmp.com/favicon.ico",
+      "category": "agent"
+    },
+    {
+      "name": "AliSkillPay",
+      "url": "https://skillpay.alipay.com",
+      "favicon": "https://gw.alipayobjects.com/render/p/yuyan/180020010001296536/favicon.svg",
+      "category": "agent"
+    },
+    {
+      "name": "TxSkillHub",
+      "url": "https://skillhub.cloud.tencent.com",
+      "favicon": "https://cloudcache.tencent-cloud.com/qcloud/ui/static/other_external_resource/2e166ec6-6f47-4c6d-9915-3f0d75192b56.png",
+      "category": "agent"
+    },
+    {
+      "name": "AgentSkillsSh",
+      "url": "https://skills.sh",
+      "favicon": "https://www.skills.sh/favicon.ico?favicon.0x3dzn~oxb6tn.ico",
+      "category": "agent"
+    },
+    {
+      "name": "CCTemplates",
+      "url": "https://www.aitmpl.com/agents",
+      "favicon": "https://www.aitmpl.com/static/favicon/android-chrome-512x512.png",
+      "category": "agent"
+    },
+    {
+      "name": "KiroIDEPowers",
+      "url": "https://kiro.dev/powers",
+      "favicon": "https://kiro.dev/favicon.ico",
+      "category": "agent"
+    },
+    {
+      "name": "CursorDirectory",
+      "url": "https://cursor.directory",
+      "favicon": "https://cdn.midday.ai/cursor/favicon.png",
+      "category": "agent"
+    },
+    {
+      "name": "CodebuffAgent",
+      "url": "https://www.codebuff.com/store",
+      "favicon": "https://www.codebuff.com/favicon/favicon-16x16.ico",
+      "category": "agent"
+    },
+    {
+      "name": "N8NWorkFlows",
+      "url": "https://n8nworkflows.xyz",
+      "favicon": "https://n8nworkflows.xyz/icon.webp",
+      "category": "agent"
+    },
+    {
+      "name": "GoogleOpal",
+      "url": "https://opal.google",
+      "favicon": "https://opal.google/images/favicon.png",
+      "category": "agent"
+    },
+    {
+      "name": "LangChain",
+      "url": "https://www.langchain.com/langsmith/agent-builder",
+      "favicon": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/65c50ca4352352dd6a747e69_favicon.png",
+      "category": "agent"
+    },
+    {
+      "name": "FlowGram",
+      "url": "https://flowgram.ai/en",
+      "favicon": "https://flowgram.ai/flowgram-logo.svg",
+      "category": "agent"
+    },
+    {
+      "name": "FlowiseAI",
+      "url": "https://www.flowiseai.com",
+      "favicon": "https://flowiseai.com/favicon.ico",
+      "category": "agent"
+    },
+    {
+      "name": "Langflow",
+      "url": "https://www.langflow.org",
+      "favicon": "https://www.langflow.org/favicon.ico",
+      "category": "agent"
+    },
+    {
+      "name": "ToolifyAI",
+      "url": "https://www.toolify.ai",
+      "favicon": "https://www.toolify.ai/favicon.ico",
+      "category": "agent"
+    },
+    {
+      "name": "Zapier",
+      "url": "https://zapier.com",
+      "favicon": "https://zapier.com/l/favicon-128.png?v=1",
+      "category": "agent"
+    },
+    {
+      "name": "SimAI",
+      "url": "https://www.sim.ai",
+      "favicon": "https://www.sim.ai/icon.svg",
+      "category": "agent"
+    },
+    {
+      "name": "Make",
+      "url": "https://www.make.com",
+      "favicon": "https://www.make.com/favicon.ico",
+      "category": "agent"
+    },
+    {
+      "name": "Refly",
+      "url": "https://refly.ai",
+      "favicon": "https://framerusercontent.com/images/dmiSNNYCGnQ8iwaXtAVZeWyZ7ek.png",
+      "category": "agent"
+    },
+    {
+      "name": "N8N",
+      "url": "https://n8n.io",
+      "favicon": "https://n8n.io/favicon.ico",
+      "category": "agent"
+    },
+    {
+      "name": "Dify",
+      "url": "https://cloud.dify.ai/apps",
+      "favicon": "https://cloud.dify.ai/icon-192x192.png",
+      "category": "agent"
+    },
+    {
+      "name": "Wan",
+      "url": "https://wan.video",
+      "favicon": "https://g.alicdn.com/sail-web/wan-static-resources/0.0.30/images/favicon.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "Sora",
+      "url": "https://sora.com",
+      "favicon": "https://sora.com/favicon.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "PixAI",
+      "url": "https://pixai.art",
+      "favicon": "https://pixai.art/favicon.anniversary.svg",
+      "category": "multimodal"
+    },
+    {
+      "name": "LibLib",
+      "url": "https://www.liblib.art",
+      "favicon": "https://www.liblib.art/favicon.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "PikaAI",
+      "url": "https://pika.art/pikaffects",
+      "favicon": "https://pika.art/favicon.ico?favicon.3e7abfbd.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "CivitAI",
+      "url": "https://civitai.com",
+      "favicon": "https://civitai.com/favicon-blue.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "NoizAI",
+      "url": "https://noiz.ai/tts/creation",
+      "favicon": "https://noiz.ai/favicon.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "LovArt",
+      "url": "https://www.lovart.ai",
+      "favicon": "https://www.lovart.ai/favicon.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "HaiLuo",
+      "url": "https://hailuoai.com/video",
+      "favicon": "https://cdn.hailuoai.com/hailuo-video-web/public_assets/favicon.png",
+      "category": "multimodal"
+    },
+    {
+      "name": "TusiArt",
+      "url": "https://tusiart.com",
+      "favicon": "https://tusi.cn/tusiart.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "KreaAI",
+      "url": "https://www.krea.ai",
+      "favicon": "https://www.krea.ai/favicon/favicon-128-dark.png",
+      "category": "multimodal"
+    },
+    {
+      "name": "ViduAI",
+      "url": "https://www.vidu.cn",
+      "favicon": "https://www.vidu.cn/logo.svg",
+      "category": "multimodal"
+    },
+    {
+      "name": "UdioAI",
+      "url": "https://www.udio.com",
+      "favicon": "https://www.udio.com/favicon.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "PolloAI",
+      "url": "https://pollo.ai",
+      "favicon": "https://pollo.ai/icons/favicon.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "TripoAI",
+      "url": "https://www.tripo3d.ai",
+      "favicon": "https://www.tripo3d.ai/logo-48x48.png",
+      "category": "multimodal"
+    },
+    {
+      "name": "JanusAI",
+      "url": "https://janusai.pro",
+      "favicon": "https://janusai.pro/wp-content/uploads/2025/01/cropped-cropped-Slice-114-192x192.png",
+      "category": "multimodal"
+    },
+    {
+      "name": "Runway",
+      "url": "https://app.runwayml.com",
+      "favicon": "https://app.runwayml.com/favicon-white.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "Suno AI",
+      "url": "https://suno.com",
+      "favicon": "https://cdn-o.suno.com/favicon-512x512.png",
+      "category": "multimodal"
+    },
+    {
+      "name": "HeyGen",
+      "url": "https://app.heygen.com/home",
+      "favicon": "https://app.heygen.com/favicon-32x32.png",
+      "category": "multimodal"
+    },
+    {
+      "name": "KLingAI",
+      "url": "https://app.klingai.com/global",
+      "favicon": "https://p2-kling.klingai.com/kcdn/cdn-kcdn112452/kling-web-prod/favicon.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "OiiOiiAI",
+      "url": "https://www.oiioii.ai",
+      "favicon": "https://www.oiioii.ai/favicon.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "LumaAI",
+      "url": "https://lumalabs.ai",
+      "favicon": "https://lumalabs.ai/favicons/favicon-black.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "FormaAI",
+      "url": "https://forma.yingdao.com/create",
+      "favicon": "https://winrobot-pub-a.oss-cn-hangzhou.aliyuncs.com/static/forma-web/online/354/assets/favicon-w1amiMdk.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "AgnesAI",
+      "url": "https://agnes-ai.com",
+      "favicon": "https://agnes-ai.com/images/biglogo.png",
+      "category": "multimodal"
+    },
+    {
+      "name": "PixVerse",
+      "url": "https://app.pixverse.ai/onboard",
+      "favicon": "https://cdn.pixverse.ai/app/app-pixverse/favicon.svg",
+      "category": "multimodal"
+    },
+    {
+      "name": "JMengAI",
+      "url": "https://jimeng.jianying.com",
+      "favicon": "https://lf3-lv-buz.vlabstatic.com/obj/image-lvweb-buz/common/images/dreamina-v1.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "LibLibTV",
+      "url": "https://www.liblib.tv",
+      "favicon": "https://www.liblib.tv/favicon.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "YouArtAI",
+      "url": "https://youart.ai",
+      "favicon": "https://youart.ai/imgs/logos/youart_logo_on_dark.svg",
+      "category": "multimodal"
+    },
+    {
+      "name": "Hunyuan",
+      "url": "https://hunyuan.tencent.com",
+      "favicon": "https://cdn-portal.hunyuan.tencent.com/public/static/logo/favicon.png",
+      "category": "multimodal"
+    },
+    {
+      "name": "MiniMax",
+      "url": "https://www.minimax.io",
+      "favicon": "https://filecdn.minimax.chat/public/25289820-59cd-4365-9829-a3f32b365451.ico",
+      "category": "chat"
+    },
+    {
+      "name": "ShanJian",
+      "url": "https://app.shanjian.tv",
+      "favicon": "https://bhb-frontend.bhbcdn.com/static/files/ef7f93e7614245b7f22841b1d92b525d.png",
+      "category": "multimodal"
+    },
+    {
+      "name": "SkyFallAI",
+      "url": "https://skyfall.ai",
+      "favicon": "https://skyfall.ai/favicon.svg",
+      "category": "multimodal"
+    },
+    {
+      "name": "TapNowAI",
+      "url": "https://app.tapnow.ai",
+      "favicon": "https://fe-assets.tapnow.media/18dd465a28835d69ec656002d0cca6221a804666/assets/favicons/favicon-32x32.png",
+      "category": "multimodal"
+    },
+    {
+      "name": "RenoiseAI",
+      "url": "https://renoise.ai",
+      "favicon": "https://renoise.ai/favicon.svg",
+      "category": "multimodal"
+    },
+    {
+      "name": "Higgsfield",
+      "url": "https://higgsfield.ai",
+      "favicon": "https://higgsfield.ai/favicon.ico",
+      "category": "multimodal"
+    },
+    {
+      "name": "ListenHub",
+      "url": "https://listenhub.ai",
+      "favicon": "https://listenhub.ai/favicon.svg",
+      "category": "multimodal"
+    },
+    {
+      "name": "ElevenLabs",
+      "url": "https://elevenlabs.io",
+      "favicon": "https://elevenlabs.io/favicon.ico?9c55860cee08706b",
+      "category": "multimodal"
+    },
+    {
+      "name": "Midjourney",
+      "url": "https://www.midjourney.com",
+      "favicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADpUlEQVRYhe2WDUyUdRzHP4fHUXfcAcEhnS68LjKcLdcbRC+SK9udUmsWwjId1RyryC2tIS8OIyWzTGMmWBkzmZY4sCR7oaSR4ViuF14ixANGEXB3tHvuBO+4g/Y8bfayO+9s3GiN3/bf83//f/Z7+e6Rjbk9k0yjhU3n4zMAMwBBATid56YX4LEnnqKwuJShYUtIAGSBdOBEYxOtre38MvAri264nuysh6YUIKAH0hffwVlzD9vKNhMZqSK/oASr1caq1WvZ/+5BvF5vaAFkMhnJyfPp/OkMGcuNPJ7zKCUvlLGp6Hlq646xMjuHwcGh0AGIds+SdBobm6R+UpKBgvwN7CqvoOKN1wgPD2fds/l0dXWHDsBg0NPT23dhrNMlsGF9Hi+/soudO8qIiY5m9563/hVEUABiGMT2V9PPS2SZ6T4++PA4y0xLSU25mfLdexkYGJx6AH+25O67pOpYuHABzadaKNy4nq0vvXpJiRk0wOSk72pdl5dLReU+sjJX0PDFl2StXME7VdVTC+B0OlGpVD7XYmKi0emuJDbuClpaTnN7Wgrd3WZGRn4LCiCgEInW8Hkjbrcbk3Gpz3VRF/ZU7uMagx69PhGtNo7a2mNSogayoDzwWcMJ0hffyfj4OJ2dXXx18hRfN7dwpvusNBcXF4vdbsdovJfjHzdguFqPxWrl3OhowLvlgTb80NpOX1+/JD7yWXJJB7TaWCYmJujo6KSqpxqX201//8/YrCN4PB7yN5ZgNvdSX/8JmQ8/eNH7LxoCMfHW5OSSkWHkgQwTCoXC777vvm9lXuJVREQosNsFqTpE8KgojZQnN9246NIAHA4n5p5eBEFAEJzYBQGH4JC+guDA6/EyyR9HZcikvqgVSuXlaNRqNFEaXOddHK6pY0tpMampt/gE8BuCb05/y6H3j3D/chMajZq5c3VEaTRSX2xyuf/oieGpOXKUtrYODla/TXy81u/eWUXFm0p8ekBwUHe0XkouUenE2KvVkew/cIjDNbW4XC7mX5sk7a3/6FP2vlkl5Yvo/tfLK6VKEO9oOtnMnDk6aezLfIagdMt2LotQ8ExeLmNj5ynbtkPSgaGhYVY9ksltqbdyoPo96UHR7QuSr2PN6mza2n+koHAzaWkpDA9bKCp4DqVSyYtbt5OQEM/TT64NDkCs+X8mnMPhkCDCwv6s3NHRMSkBVSrlhTmPx4vNZmP27Pi/nbdYrD69EJQQhdL++3/FMwD/e4DfAf5WhGt8Cd3XAAAAAElFTkSuQmCC",
+      "category": "multimodal"
+    },
+    {
+      "name": "NanoBanana",
+      "url": "https://nano-banana.org",
+      "favicon": "https://nano-banana.org/favicon.svg",
+      "category": "multimodal"
+    },
+    {
+      "name": "RunningHub",
+      "url": "https://www.runninghub.cn",
+      "favicon": "https://www.runninghub.cn/favicon.ico?v=1.1",
+      "category": "multimodal"
+    },
+    {
+      "name": "DeepSeek",
+      "url": "https://chat.deepseek.com",
+      "favicon": "https://fe-static.deepseek.com/chat/favicon.svg",
+      "category": "chat"
+    },
+    {
+      "name": "QwenChat",
+      "url": "https://chat.qwen.ai",
+      "favicon": "https://assets.alicdn.com/g/qwenweb/qwen-chat-fe/0.1.31/favicon.png",
+      "category": "chat"
+    },
+    {
+      "name": "ChatGLM",
+      "url": "https://chatglm.cn",
+      "favicon": "https://chatglm.cn/img/icons/favicon.svg",
+      "category": "chat"
+    },
+    {
+      "name": "WxYiYan",
+      "url": "https://yiyan.baidu.com",
+      "favicon": "https://eb-static.cdn.bcebos.com/logo/favicon.ico",
+      "category": "chat"
+    },
+    {
+      "name": "Bohrium",
+      "url": "https://www.bohrium.com",
+      "favicon": "https://cdn1.deepmd.net/bohrium/web/images/8c4ab8c9/browser-fav.png",
+      "category": "chat"
+    },
+    {
+      "name": "AMinder",
+      "url": "https://www.aminer.cn",
+      "favicon": "https://originalfileserver.aminer.cn/sys/aminer/favicon.ico",
+      "category": "chat"
+    },
+    {
+      "name": "YuanBao",
+      "url": "https://yuanbao.tencent.com/chat",
+      "favicon": "https://static.yuanbao.tencent.com/m/yuanbao-web/favicon@32.png",
+      "category": "chat"
+    },
+    {
+      "name": "XingHuo",
+      "url": "https://xinghuo.xfyun.cn/desk",
+      "favicon": "https://xinghuo.xfyun.cn/spark-icon.ico",
+      "category": "chat"
+    },
+    {
+      "name": "Skywork",
+      "url": "https://skywork.ai",
+      "favicon": "https://static-s3.skyworkcdn.com/prod-skywork-web-homepage-bundle/favicon.ico",
+      "category": "chat"
+    },
+    {
+      "name": "MetaSO",
+      "url": "https://metaso.cn",
+      "favicon": "https://metaso.cn/favicon.ico",
+      "category": "chat"
+    },
+    {
+      "name": "DouBao",
+      "url": "https://www.doubao.com",
+      "favicon": "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/favicon/192x192.png",
+      "category": "chat"
+    },
+    {
+      "name": "YuanQi",
+      "url": "https://yuanqi.tencent.com",
+      "favicon": "https://cdn.xiaowei.qq.com/lke/assets/static/favicon_yuanqi.png",
+      "category": "chat"
+    },
+    {
+      "name": "SCNet",
+      "url": "https://chat.scnet.cn",
+      "favicon": "https://www.scnet.cn/acx/resource/sites/isclogo?logoType=ico",
+      "category": "chat"
+    },
+    {
+      "name": "ZhiHu",
+      "url": "https://zhida.zhihu.com",
+      "favicon": "https://pic1.zhimg.com/v2-7e3856b1a6d415224ca95814132a3612.png",
+      "category": "chat"
+    },
+    {
+      "name": "NaMi",
+      "url": "https://www.n.cn",
+      "favicon": "https://p1.ssl.qhimg.com/t11098f6bcdb3c1c166a74ad70c.png",
+      "category": "chat"
+    },
+    {
+      "name": "IFlow",
+      "url": "https://iflow.cn",
+      "favicon": "https://img.alicdn.com/imgextra/i4/O1CN01yBfg3x1iNi4YggwIt_!!6000000004401-2-tps-72-72.png",
+      "category": "chat"
+    },
+    {
+      "name": "Coze",
+      "url": "https://www.coze.com/home",
+      "favicon": "https://sf-coze-web-cdn.coze.com/obj/coze-web-sg/obric/coze/favicon.1970.png",
+      "category": "chat"
+    },
+    {
+      "name": "Kimi",
+      "url": "https://kimi.moonshot.cn",
+      "favicon": "https://statics.moonshot.cn/kimi-web-seo/favicon.ico",
+      "category": "chat"
+    },
+    {
+      "name": "VllmAI",
+      "url": "https://recipes.vllm.ai",
+      "favicon": "https://docs.vllm.ai/en/latest/assets/logos/vllm-logo-only-light.ico",
+      "category": "models"
+    },
+    {
+      "name": "LLMBase",
+      "url": "https://llmbase.ai/leaderboard/intelligent",
+      "favicon": "https://llmbase.ai/favicon.svg",
+      "category": "models"
+    },
+    {
+      "name": "LLMRank",
+      "url": "https://llmrank.cn",
+      "favicon": "https://llmrank.cn/favicon.ico",
+      "category": "models"
+    },
+    {
+      "name": "AIAnalysis ",
+      "url": "https://artificialanalysis.ai",
+      "favicon": "https://artificialanalysis.ai/favicon.ico",
+      "category": "models"
+    },
+    {
+      "name": "SuperCLUE",
+      "url": "https://www.superclueai.com/generalpage",
+      "favicon": "https://www.superclueai.com/icon.png",
+      "category": "models"
+    },
+    {
+      "name": "CanLLMRun",
+      "url": "https://www.canirun.ai",
+      "favicon": "https://www.canirun.ai/favicon.svg",
+      "category": "models"
+    },
+    {
+      "name": "CanRunLLM",
+      "url": "https://canrunllm.com/zh/models",
+      "favicon": "https://canrunllm.com/icon.svg?icon.3klvyih178n7x.svg",
+      "category": "models"
+    },
+    {
+      "name": "DataLearner",
+      "url": "https://www.datalearner.com/leaderboards",
+      "favicon": "https://www.datalearner.com/favicon.ico",
+      "category": "models"
+    },
+    {
+      "name": "LLMComputer",
+      "url": "https://apxml.com/zh/tools/vram-calculator",
+      "favicon": "https://apxml.com/favicon.ico",
+      "category": "models"
+    },
+    {
+      "name": "LMLeaderboard",
+      "url": "https://lmarena.ai",
+      "favicon": "https://lmarena.ai/images/favicon-dark.ico?v=1",
+      "category": "models"
+    },
+    {
+      "name": "ArtificialAnalysis",
+      "url": "https://artificialanalysis.ai/trends",
+      "favicon": "https://artificialanalysis.ai/favicon.ico",
+      "category": "models"
+    },
+    {
+      "name": "GithubModels",
+      "url": "https://github.com/marketplace/models",
+      "favicon": "https://github.githubassets.com/favicons/favicon-dark.svg",
+      "category": "models"
+    },
+    {
+      "name": "TongYiModels",
+      "url": "https://tongyi.aliyun.com",
+      "favicon": "https://img.alicdn.com/imgextra/i4/O1CN01Qd3F9s1ilWmLJo56P_!!6000000004453-55-tps-51-51.svg",
+      "category": "models"
+    },
+    {
+      "name": "NvidiaModels",
+      "url": "https://build.nvidia.com",
+      "favicon": "https://build.nvidia.com/favicon.ico",
+      "category": "models"
+    },
+    {
+      "name": "AliyunBailian",
+      "url": "https://bailian.console.aliyun.com/?tab=model",
+      "favicon": "https://gw.alicdn.com/imgextra/i4/O1CN01vVn7g32134zNZEeAR_!!6000000006928-55-tps-24-24.svg",
+      "category": "models"
+    },
+    {
+      "name": "SiliconCloud",
+      "url": "https://cloud.siliconflow.cn",
+      "favicon": "https://www.siliconflow.cn/favicon.ico",
+      "category": "models"
+    },
+    {
+      "name": "ModelScope",
+      "url": "https://modelscope.cn/home",
+      "favicon": "https://g.alicdn.com/sail-web/maas/2.11.44/favicon/128.ico",
+      "category": "models"
+    },
+    {
+      "name": "BaiduPaddle",
+      "url": "https://aistudio.baidu.com",
+      "favicon": "https://paddlepaddle-org-cn.cdn.bcebos.com/paddle-site-front/favicon-128.png",
+      "category": "models"
+    },
+    {
+      "name": "OpenModel",
+      "url": "https://www.openmodel.ai",
+      "favicon": "https://www.openmodel.ai/icon.ico",
+      "category": "models"
+    },
+    {
+      "name": "OpenRouter",
+      "url": "https://openrouter.ai",
+      "favicon": "https://openrouter.ai/favicon.ico",
+      "category": "models"
+    },
+    {
+      "name": "EasyRouter",
+      "url": "https://easyrouter.io",
+      "favicon": "https://easyrouter.io/logo.png",
+      "category": "models"
+    },
+    {
+      "name": "WorldClaw",
+      "url": "https://worldclaw.ai",
+      "favicon": "https://worldclaw.ai/favicon.ico?favicon.9abd531d.ico",
+      "category": "models"
+    },
+    {
+      "name": "VolcEngine",
+      "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/overview",
+      "favicon": "https://res.volccdn.com/obj/volc-console-fe/images/favicon.52bcaa41.png",
+      "category": "models"
+    },
+    {
+      "name": "AntDigital",
+      "url": "https://maas.antdigital.com",
+      "favicon": "",
+      "category": "models"
+    },
+    {
+      "name": "RouteWay",
+      "url": "https://routeway.ai",
+      "favicon": "https://routeway.ai/favicon.ico",
+      "category": "models"
+    },
+    {
+      "name": "DeepInfra",
+      "url": "https://deepinfra.com",
+      "favicon": "https://deepinfra.com/fav-64.png",
+      "category": "models"
+    },
+    {
+      "name": "AIHubMix",
+      "url": "https://aihubmix.com",
+      "favicon": "https://aihubmix.com/favicon.ico?v=2",
+      "category": "models"
+    },
+    {
+      "name": "Modelers",
+      "url": "https://modelers.cn/models",
+      "favicon": "https://modelers.cn/favicon.ico?v=2",
+      "category": "models"
+    },
+    {
+      "name": "Replicate",
+      "url": "https://replicate.com",
+      "favicon": "https://static.replicateassets.com/fe/c39ad217cce40ddcf3f21975e3b6bb37e1da6810/favicon-CKiqAkf2.png",
+      "category": "models"
+    },
+    {
+      "name": "HyperAI",
+      "url": "https://hyper.ai",
+      "favicon": "https://hyper.ai/favicon.ico",
+      "category": "models"
+    },
+    {
+      "name": "GiteeAI",
+      "url": "https://ai.gitee.com",
+      "favicon": "https://ai.gitee.com/web-app-manifest-512x512.png",
+      "category": "models"
+    },
+    {
+      "name": "BAI",
+      "url": "https://b.ai",
+      "favicon": "https://b.ai/favicon.ico",
+      "category": "models"
+    },
+    {
+      "name": "HuggingChat",
+      "url": "https://huggingface.co/chat",
+      "favicon": "https://huggingface.co/chat/huggingchat/favicon-dark.svg",
+      "category": "chat"
+    },
+    {
+      "name": "GithubCopilot",
+      "url": "https://github.com/copilot",
+      "favicon": "https://github.com/favicons/favicon-copilot-dark.svg",
+      "category": "coding"
+    },
+    {
+      "name": "FormulatorAI",
+      "url": "https://data-formulator.ai",
+      "favicon": "https://data-formulator.ai/favicon.ico",
+      "category": "chat"
+    },
+    {
+      "name": "Perplexity",
+      "url": "https://www.perplexity.ai",
+      "favicon": "https://www.perplexity.ai/favicon.svg",
+      "category": "chat"
+    },
+    {
+      "name": "Genspark",
+      "url": "https://www.genspark.ai",
+      "favicon": "https://www.genspark.ai/favicon.ico",
+      "category": "chat"
+    },
+    {
+      "name": "LovableAI",
+      "url": "https://lovable.dev",
+      "favicon": "https://lovable.dev/favicon.svg",
+      "category": "coding"
+    },
+    {
+      "name": "Deckedit",
+      "url": "https://deckedit.com",
+      "favicon": "https://deckedit.com/favicon-32x32.png",
+      "category": "chat"
+    },
+    {
+      "name": "LibreChat",
+      "url": "https://www.librechat.ai",
+      "favicon": "https://www.librechat.ai/favicon-32x32.png",
+      "category": "chat"
+    },
+    {
+      "name": "LobeChat",
+      "url": "https://lobechat.com",
+      "favicon": "https://lobechat.com/favicon-32x32.ico?v=1",
+      "category": "chat"
+    },
+    {
+      "name": "MonicaAI",
+      "url": "https://monica.im",
+      "favicon": "https://monica.im/logo.png",
+      "category": "chat"
+    },
+    {
+      "name": "LeChatAI",
+      "url": "https://chat.mistral.ai/chat",
+      "favicon": "https://chat.mistral.ai/favicons/favicon-32x32.png",
+      "category": "chat"
+    },
+    {
+      "name": "NapkinAI",
+      "url": "https://www.napkin.ai",
+      "favicon": "https://www.napkin.ai/favicon-16x16.png?v=2",
+      "category": "chat"
+    },
+    {
+      "name": "MemoAI",
+      "url": "https://www.memo.cards",
+      "favicon": "https://www.memo.cards/assets/images/favicon/favicon-32x32.png",
+      "category": "chat"
+    },
+    {
+      "name": "ZChatAI",
+      "url": "https://chat.z.ai",
+      "favicon": "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+      "category": "chat"
+    },
+    {
+      "name": "MusetAI",
+      "url": "https://www.muset.ai",
+      "favicon": "https://www.muset.ai/website/assets/favicon-150.png",
+      "category": "chat"
+    },
+    {
+      "name": "GrokBot",
+      "url": "https://x.ai/bot",
+      "favicon": "https://x.ai/favicon.ico?favicon.2023htx52lx-a.ico?dpl=0c0ac50f3a8cd1b1c0fd97673f29885397d81b96",
+      "category": "chat"
+    },
+    {
+      "name": "AnyGen",
+      "url": "https://www.anygen.io",
+      "favicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFrSURBVHgBvVLLbcJAEF1b5iMk5M2B/yFLBaEE6IB0QCoIVAB0EHfgMriFDuIO2AMgH/do+Zs3lp34I0WWIjHSyDuz857fzCxj/zStSZEQggdBsMHx+Xa77RoTACgA3CdJsslS6n6/P5UIMvY1zhyFvHSpae/VXBzHc9d1ZUnBbDb7ROGyIkDBLfi+mNR1fXW9Xs8/cfbdsbpxFFPhkf1hKQEG40CuVZF/NgzDQc8Hko34Lc/VCMhardYBBSoLjyBdSSnTmHrGnYnjIoqiUkulLUynUyKhoUn4C1yA+JWIcHdBS6LT6bB+v791HMeqEWAjC9/3v0oSMTTIlmEYXgjMOWfD4VCNRqO5bdtKLxZ7nqdYxbCdPWQvCWyaJoHZZDLhULStKRiPxwJ/vFQ4VK/XOwO8HgwGCVauAUyrT1UYxcput6vQwu+AMFQosNCCjb53p9NJVhXWnjLYkxzYbrc/8k00NtoEPW/2KPsGk8KQ+FS9FsAAAAAASUVORK5CYII=",
+      "category": "chat"
+    },
+    {
+      "name": "MuseAI",
+      "url": "https://muse.ai",
+      "favicon": "https://muse.ai/images/favicon/app-squiggle.svg",
+      "category": "chat"
+    },
+    {
+      "name": "Flowith",
+      "url": "https://flowith.io",
+      "favicon": "https://flowith.io/favicon-32x32.png",
+      "category": "chat"
+    },
+    {
+      "name": "Manus",
+      "url": "https://manus.im/app",
+      "favicon": "https://manus.im/favicon.ico",
+      "category": "chat"
+    },
+    {
+      "name": "BoltAI",
+      "url": "https://bolt.new",
+      "favicon": "https://bolt.new/static/favicon.svg",
+      "category": "coding"
+    },
+    {
+      "name": "Vercel",
+      "url": "https://v0.app",
+      "favicon": "https://v0.app/assets/icon.svg",
+      "category": "coding"
+    },
+    {
+      "name": "Groq",
+      "url": "https://groq.com",
+      "favicon": "https://groq.com/favicon.svg",
+      "category": "chat"
+    },
+    {
+      "name": "YOU",
+      "url": "https://you.com",
+      "favicon": "https://cdn.prod.website-files.com/687f2dca0cbe61df74670d33/688bc526788878e1fc86574e_favicon.png",
+      "category": "chat"
+    },
+    {
+      "name": "Poe",
+      "url": "https://poe.com",
+      "favicon": "https://psc2.cf2.poecdn.net/assets/favicon.svg",
+      "category": "chat"
+    },
+    {
+      "name": "Pi",
+      "url": "https://pi.ai",
+      "favicon": "https://pi.ai/pi-logo-192.png?v=4",
+      "category": "chat"
+    },
+    {
+      "name": "ChatGPT",
+      "url": "https://chatgpt.com",
+      "favicon": "https://chatgpt.com/cdn/assets/favicon-dark.cdf009c235.svg",
+      "category": "chat"
+    },
+    {
+      "name": "Gemini",
+      "url": "https://gemini.google.com",
+      "favicon": "https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png",
+      "category": "chat"
+    },
+    {
+      "name": "Claude",
+      "url": "https://claude.ai",
+      "favicon": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cd02a42d9-Vq_H3mgS.svg",
+      "category": "chat"
+    },
+    {
+      "name": "Grok",
+      "url": "https://grok.com",
+      "favicon": "https://grok.com/images/favicon.svg",
+      "category": "chat"
+    },
+    {
+      "name": "MetaAI",
+      "url": "https://www.meta.ai",
+      "favicon": "https://www.meta.ai/favicon.ico?v=3",
+      "category": "chat"
+    },
+    {
+      "name": "Copilot",
+      "url": "https://copilot.microsoft.com",
+      "favicon": "https://copilot.microsoft.com/static/cmc/favicon.svg",
+      "category": "chat"
+    },
+    {
+      "name": "NotebookLM",
+      "url": "https://notebooklm.google.com",
+      "favicon": "https://notebooklm.google.com/_/static/branding/v5/dark_mode/favicon/favicon.svg",
+      "category": "chat"
+    },
+    {
+      "name": "GoogleAiStudio",
+      "url": "https://aistudio.google.com",
+      "favicon": "https://www.gstatic.com/images/branding/productlogos/ai_studio/v1/web-32dp/logo_ai_studio_color_1x_web_32dp.png",
+      "category": "chat"
+    },
+    {
+      "name": "AiHot 资讯",
+      "url": "https://aihot.news",
+      "favicon": "https://aihot.news/icon.png",
+      "category": "community"
+    },
+    {
+      "name": "Replit",
+      "url": "https://replit.com",
+      "favicon": "https://replit.com/public/icons/favicon-prompt-192.png",
+      "category": "coding"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com",
+      "favicon": "https://github.githubassets.com/favicons/favicon-dark.svg",
+      "category": "dev"
+    },
+    {
+      "name": "VS Code",
+      "url": "https://vscode.dev",
+      "favicon": "https://vscode.dev/static/stable/favicon.ico",
+      "category": "dev"
+    },
+    {
+      "name": "Kaggle Data",
+      "url": "https://www.kaggle.com",
+      "favicon": "https://www.kaggle.com/static/images/favicon.ico",
+      "category": "dev"
+    },
+    {
+      "name": "Google Labs",
+      "url": "https://labs.google",
+      "favicon": "https://labs.google/assets/icons/favicon-48x48.png",
+      "category": "dev"
+    },
+    {
+      "name": "Google Jules",
+      "url": "https://jules.google.com",
+      "favicon": "https://www.gstatic.com/labs-code/code-app/favicon-48x48.png",
+      "category": "coding"
+    },
+    {
+      "name": "Google Skills",
+      "url": "https://www.skills.google",
+      "favicon": "https://cdn.qwiklabs.com/X46FrQX4iLxHW5MxL8jICvgZM0evMEKscCeQO%2BazGdo%3D",
+      "category": "dev"
+    },
+    {
+      "name": "Google Colab",
+      "url": "https://colab.research.google.com",
+      "favicon": "https://ssl.gstatic.com/colaboratory-static/common/dd2456337eecbafae522c885e55edd02/img/favicon.ico",
+      "category": "dev"
+    },
+    {
+      "name": "Google Board",
+      "url": "https://mixboard.google.com",
+      "favicon": "https://www.gstatic.com/canvas/mixboard_favicon_32x32.png",
+      "category": "dev"
+    },
+    {
+      "name": "Hugging Face",
+      "url": "https://huggingface.co",
+      "favicon": "https://huggingface.co/favicon.ico",
+      "category": "models"
+    },
+    {
+      "name": "OpenAI LaTeX",
+      "url": "https://prism.openai.com",
+      "favicon": "https://prism.openai.com/favicon.ico",
+      "category": "dev"
+    },
+    {
+      "name": "Google StitchUI",
+      "url": "http://stitch.withgoogle.com",
+      "favicon": "https://www.gstatic.com/labs-code/favicon-512x512.png",
+      "category": "dev"
+    },
+    {
+      "name": "ESP32Simulator",
+      "url": "https://wokwi.com",
+      "favicon": "",
+      "category": "dev"
+    },
+    {
+      "name": "DEV Community",
+      "url": "https://dev.to",
+      "favicon": "https://media2.dev.to/dynamic/image/width=128,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "category": "community"
+    },
+    {
+      "name": "StackOverflow",
+      "url": "https://stackoverflow.com",
+      "favicon": "https://stackoverflow.com/Content/Sites/stackoverflow/Img/favicon.ico?v=562fb39d93c8",
+      "category": "community"
+    },
+    {
+      "name": "Product Hunt",
+      "url": "https://www.producthunt.com",
+      "favicon": "https://ph-static.imgix.net/ph-favicon-brand-500.svg",
+      "category": "community"
+    },
+    {
+      "name": "Hacker News",
+      "url": "https://news.ycombinator.com",
+      "favicon": "https://news.ycombinator.com/y18.svg",
+      "category": "community"
+    },
+    {
+      "name": "ByteByteGo",
+      "url": "https://bytebytego.com",
+      "favicon": "https://bytebytego.com/favicon-32x32.png",
+      "category": "dev"
+    },
+    {
+      "name": "CheatSheet",
+      "url": "https://cheatography.com",
+      "favicon": "https://cheatography.com/favicon.png",
+      "category": "dev"
+    },
+    {
+      "name": "GitDiagram",
+      "url": "https://gitdiagram.com",
+      "favicon": "https://gitdiagram.com/favicon.ico",
+      "category": "dev"
+    },
+    {
+      "name": "Project IDX",
+      "url": "https://idx.google.com",
+      "favicon": "https://www.gstatic.com/monospace/250314/macos-icon-512.png",
+      "category": "coding"
+    },
+    {
+      "name": "OpenMAIC",
+      "url": "https://open.maic.chat",
+      "favicon": "https://open.maic.chat/favicon.ico?favicon.6b6a8546.ico",
+      "category": "chat"
+    },
+    {
+      "name": "Roadmap",
+      "url": "https://roadmap.sh",
+      "favicon": "https://roadmap.sh/manifest/icon16.png",
+      "category": "dev"
+    },
+    {
+      "name": "AiDrawIO",
+      "url": "https://next-ai-drawio.jiang.jp",
+      "favicon": "https://next-ai-drawio.jiang.jp/favicon.ico",
+      "category": "dev"
+    },
+    {
+      "name": "DeepWiki",
+      "url": "https://deepwiki.org",
+      "favicon": "https://deepwiki.org/favicon.ico",
+      "category": "dev"
+    },
+    {
+      "name": "Graphify",
+      "url": "https://graphify.net",
+      "favicon": "https://graphify.net/favicon.ico",
+      "category": "dev"
+    },
+    {
+      "name": "ZreadAI",
+      "url": "https://zread.ai",
+      "favicon": "https://zread.ai/favicon.ico",
+      "category": "dev"
+    },
+    {
+      "name": "AliYunCloud",
+      "url": "https://home.console.aliyun.com",
+      "favicon": "",
+      "category": "cloud"
+    },
+    {
+      "name": "TencentCloud",
+      "url": "https://cloud.tencent.com",
+      "favicon": "https://cloudcache.tencent-cloud.com/qcloud/favicon.ico?t=201902181234",
+      "category": "cloud"
+    },
+    {
+      "name": "HuaWeiCloud",
+      "url": "https://console.huaweicloud.com/console",
+      "favicon": "",
+      "category": "cloud"
+    },
+    {
+      "name": "VolcEngineCloud",
+      "url": "https://console.volcengine.com",
+      "favicon": "https://res.volccdn.com/obj/volc-console-fe/images/favicon.52bcaa41.png",
+      "category": "cloud"
+    },
+    {
+      "name": "ChinaUnicomCloud",
+      "url": "https://console.cucloud.cn/console/home",
+      "favicon": "https://console.cucloud.cn/favicon.ico",
+      "category": "cloud"
+    },
+    {
+      "name": "163",
+      "url": "https://mail.163.com",
+      "favicon": "https://mail.163.com/favicon.ico",
+      "category": "productivity"
+    },
+    {
+      "name": "QQ",
+      "url": "https://mail.qq.com",
+      "favicon": "https://mail.qq.com/zh_CN/htmledition/images/favicon/qqmail_favicon_16h.png",
+      "category": "productivity"
+    },
+    {
+      "name": "IYF",
+      "url": "https://www.iyf.tv",
+      "favicon": "https://www.iyf.tv/android-icon-196x196.png",
+      "category": "media"
+    },
+    {
+      "name": "Kick",
+      "url": "https://kick.com",
+      "favicon": "https://kick.com/favicon.ico",
+      "category": "media"
+    },
+    {
+      "name": "BiliBili",
+      "url": "https://www.bilibili.com",
+      "favicon": "https://i0.hdslb.com/bfs/static/jinkela/long/images/favicon.ico",
+      "category": "media"
+    },
+    {
+      "name": "Twitch",
+      "url": "https://www.twitch.tv",
+      "favicon": "https://assets.twitch.tv/assets/favicon-16-52e571ffea063af7a7f4.png",
+      "category": "media"
+    },
+    {
+      "name": "TikTok",
+      "url": "https://www.tiktok.com",
+      "favicon": "https://www.tiktok.com/favicon.ico",
+      "category": "media"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com",
+      "favicon": "https://www.youtube.com/s/desktop/d05d3b16/img/favicon_144x144.png",
+      "category": "media"
+    },
+    {
+      "name": "Pixso",
+      "url": "https://pixso.cn",
+      "favicon": "https://cms.pixso.cn/images/favicon.ico",
+      "category": "design"
+    },
+    {
+      "name": "Figma",
+      "url": "https://www.figma.com",
+      "favicon": "https://static.figma.com/app/icon/1/favicon.svg",
+      "category": "design"
+    },
+    {
+      "name": "ZCOOL",
+      "url": "https://www.zcool.com.cn",
+      "favicon": "https://public-static.zcool.com.cn/git_z/z/site/favicon.ico?version=1618914637608",
+      "category": "design"
+    },
+    {
+      "name": "Penpot",
+      "url": "https://design.penpot.app",
+      "favicon": "https://design.penpot.app/images/favicon.png?version=2.14.1-RC1-1774440923",
+      "category": "design"
+    },
+    {
+      "name": "Dribbble",
+      "url": "https://dribbble.com",
+      "favicon": "https://cdn.dribbble.com/assets/favicon-99944ff731bb44d3a947810ca8728f177f8deac035a3a4342120c385fd7acb9d.svg",
+      "category": "design"
+    },
+    {
+      "name": "IconFont",
+      "url": "https://www.iconfont.cn",
+      "favicon": "https://img.alicdn.com/imgextra/i4/O1CN01Z5paLz1O0zuCC7osS_!!6000000001644-55-tps-83-82.svg",
+      "category": "design"
+    },
+    {
+      "name": "ArtStation",
+      "url": "https://www.artstation.com",
+      "favicon": "https://www.artstation.com/assets/favicon.ico",
+      "category": "design"
+    },
+    {
+      "name": "DesignMD",
+      "url": "https://getdesign.md",
+      "favicon": "https://getdesign.md/favicon-16.png?v=2",
+      "category": "design"
+    },
+    {
+      "name": "DeviantArt",
+      "url": "https://www.deviantart.com",
+      "favicon": "https://st.deviantart.net/eclipse/icons/android-192.png",
+      "category": "design"
+    },
+    {
+      "name": "GemDesign",
+      "url": "https://design.gemcoder.com",
+      "favicon": "https://design.gemcoder.com/logo.ico",
+      "category": "design"
+    },
+    {
+      "name": "X",
+      "url": "https://twitter.com",
+      "favicon": "https://abs.twimg.com/favicons/twitter-pip.3.ico",
+      "category": "community"
+    },
+    {
+      "name": "V2EX",
+      "url": "https://www.v2ex.com",
+      "favicon": "https://www.v2ex.com/static/icon-192.png",
+      "category": "community"
+    },
+    {
+      "name": "LXDO",
+      "url": "https://linux.do",
+      "favicon": "https://linux.do/uploads/default/optimized/4X/c/c/d/ccd8c210609d498cbeb3d5201d4c259348447562_2_32x32.png",
+      "category": "community"
+    },
+    {
+      "name": "Skool",
+      "url": "https://www.skool.com",
+      "favicon": "https://www.skool.com/favicon.ico",
+      "category": "community"
+    },
+    {
+      "name": "Reddit",
+      "url": "https://www.reddit.com",
+      "favicon": "https://www.reddit.com/favicon.ico",
+      "category": "community"
+    },
+    {
+      "name": "Tumblr",
+      "url": "https://www.tumblr.com",
+      "favicon": "https://assets.tumblr.com/pop/manifest/favicon-cfddd25f.svg",
+      "category": "community"
+    },
+    {
+      "name": "Discord",
+      "url": "https://discord.com",
+      "favicon": "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62fddf0fde45a8baedcc7ee5_847541504914fd33810e70a0ea73177e%20(2)-1.png",
+      "category": "community"
+    },
+    {
+      "name": "Bluesky",
+      "url": "https://bsky.app",
+      "favicon": "https://web-cdn.bsky.app/static/favicon-32x32.png",
+      "category": "community"
+    },
+    {
+      "name": "Threads",
+      "url": "https://www.threads.com",
+      "favicon": "https://static.cdninstagram.com/rsrc.php/ye/r/lEu8iVizmNW.ico",
+      "category": "community"
+    },
+    {
+      "name": "Medium",
+      "url": "https://medium.com",
+      "favicon": "https://miro.medium.com/v2/5d8de952517e8160e40ef9841c781cdc14a5db313057fa3c3de41c6f5b494b19",
+      "category": "community"
+    },
+    {
+      "name": "Mastodon",
+      "url": "https://mastodon.social",
+      "favicon": "https://mastodon.social/packs/assets/favicon-48x48-DMnduFKh.png",
+      "category": "community"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com",
+      "favicon": "https://static.cdninstagram.com/rsrc.php/v4/yI/r/VsNE-OHk_8a.png",
+      "category": "community"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com",
+      "favicon": "https://static.xx.fbcdn.net/rsrc.php/yx/r/e9sqr8WnkCf.ico",
+      "category": "community"
+    },
+    {
+      "name": "ChirperAI",
+      "url": "https://chirper.ai",
+      "favicon": "https://chirper.ai/favicon-32x32.png",
+      "category": "community"
+    },
+    {
+      "name": "Moltbook",
+      "url": "https://www.moltbook.com",
+      "favicon": "https://www.moltbook.com/icon.png?icon.0gxfc2ev0p-x1.png",
+      "category": "community"
+    },
+    {
+      "name": "ModeVol",
+      "url": "https://www.modevol.com",
+      "favicon": "https://www.modevol.com/favicon.svg",
+      "category": "community"
+    },
+    {
+      "name": "ShowMeAI",
+      "url": "https://www.showmeai.tech",
+      "favicon": "https://www.showmeai.tech/favicon.ico",
+      "category": "community"
+    },
+    {
+      "name": "AIGCWeekly",
+      "url": "https://quaily.com/op7418",
+      "favicon": "https://quaily.com/favicon.ico",
+      "category": "community"
+    },
+    {
+      "name": "Bestblogs",
+      "url": "https://www.bestblogs.dev",
+      "favicon": "https://www.bestblogs.dev/favicon.ico",
+      "category": "community"
+    },
+    {
+      "name": "NewSnow",
+      "url": "https://newsnow.busiyi.world/c/hottest",
+      "favicon": "https://newsnow.busiyi.world/icon.svg",
+      "category": "community"
+    },
+    {
+      "name": "AiBotCn",
+      "url": "https://ai-bot.cn",
+      "favicon": "https://ai-bot.cn/wp-content/uploads/2023/03/ai-bot-square-logo.png",
+      "category": "community"
+    },
+    {
+      "name": "AiNews",
+      "url": "https://www.theunwindai.com",
+      "favicon": "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/publication/logo/84ac330c-894c-4f61-ac66-e747ce8b32eb/thumb_logo.png",
+      "category": "community"
+    },
+    {
+      "name": "Tophub",
+      "url": "https://tophub.today",
+      "favicon": "https://file.ipadown.com/tophub/assets/images/favicon/android-icon-192x192.png",
+      "category": "community"
+    },
+    {
+      "name": "HotTop",
+      "url": "https://hot.imsyy.top",
+      "favicon": "https://hot.imsyy.top/ico/favicon.png",
+      "category": "community"
+    },
+    {
+      "name": "AiHot 榜单",
+      "url": "https://aihot.virxact.com",
+      "favicon": "https://aihot.virxact.com/icon.png?563ecdc289c6873d",
+      "category": "community"
+    },
+    {
+      "name": "WenKu",
+      "url": "https://wenku.baidu.com",
+      "favicon": "https://edu-wenku.bdimg.com/v1/pc/2020%E6%96%B0%E9%A6%96%E9%A1%B5/wenku-header-icon.svg",
+      "category": "productivity"
+    },
+    {
+      "name": "FeiShu",
+      "url": "https://www.feishu.cn/next/messenger",
+      "favicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAk1BMVEX///////////////////////////9HcEz///////8A1rkycP////8SPJooa/8PN5iB6dmRr/+mv/9Bev/e6fLT4P8AMpcdRqLA9e3l7f8cZv+a7uEPe6dgjv8bS7q9z/85Yqoxa++84vWbt/9+kcNu5tSNrP9Q4cuXqdXBy+M1VaglW9mJm8wGvrV869hSbLFUdsm/H60/AAAACnRSTlOyMD0+hSc4ALfpS1ffjwAAAPFJREFUKJF909tygyAQBmDSJtHU9QQIYqImk/P0+P5PV7YIagn5b7/ZXQYWEi2WMXmQeLmKyHoDgWxeSBwygJiEDWDA+lzYbD2E85tL4SFsR609hNrh1ceJ1j6Onb+Ac26QVlYLY5+7vZTy+4Z4SZxe0XZpjhF3xLJh/YAcLU8x4vTXtsyS5OjGDpYK7rBpTWu+t3YCh0nGLgrgbi2XfILI9CZFOhR+wAx178N7p0+q68SP+o8Y7bLrDgoeoRlQueujzdzsyc3dUpaNxQ2j8/dUtNWOYS1V/iZUPS2PtK9gmucL9nQ1X8NLvSbRKvQdFtEvn3colZHw1FMAAAAASUVORK5CYII=",
+      "category": "productivity"
+    },
+    {
+      "name": "AutoDLCloud",
+      "url": "https://www.autodl.com",
+      "favicon": "https://www.autodl.com/favicon.png",
+      "category": "cloud"
+    },
+    {
+      "name": "Gmail",
+      "url": "https://mail.google.com",
+      "favicon": "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico",
+      "category": "productivity"
+    },
+    {
+      "name": "Outlook",
+      "url": "https://outlook.live.com",
+      "favicon": "https://outlook.live.com/mail/favicon.ico",
+      "category": "productivity"
+    }
+  ]
+}

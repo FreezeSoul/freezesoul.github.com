@@ -30,7 +30,7 @@ permalink: /archive/
                                 <div class="archive-date">{{ post.date | date: "%m-%d" }}</div>
                                 <a href="{{ post.url | prepend: site.baseurl }}" class="archive-title">{{ post.title }}</a>
                                 <div class="archive-meta">
-                                    {% if post.categories %}<span class="archive-category">{{ post.categories | first }}</span>{% endif %}
+                                    {% if post.categories %}<span class="archive-category badge-muted">{{ post.categories | first }}</span>{% endif %}
                                 </div>
                             </div>
                         {% endfor %}
