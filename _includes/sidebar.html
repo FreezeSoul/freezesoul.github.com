@@ -7,6 +7,43 @@
             <h5>{{ site.author_name }}</h5>
             <p>{{ site.author_description }}</p>
         </aside>
+        <style>
+          #ms-entry{position:relative;overflow:hidden;margin-bottom:14px;padding:15px 16px;
+            border:1px solid rgba(108,140,255,.4);border-radius:10px;
+            background:linear-gradient(140deg,rgba(108,140,255,.13),rgba(62,214,192,.05) 58%,rgba(12,12,20,.92));
+            box-shadow:0 6px 22px rgba(0,0,0,.3)}
+          #ms-entry::after{content:"";position:absolute;right:-40px;top:-50px;width:150px;height:150px;
+            border-radius:50%;background:radial-gradient(circle,rgba(108,140,255,.22),transparent 70%);pointer-events:none}
+          #ms-entry .ms-e-head{display:flex;align-items:center;gap:9px;margin-bottom:9px;position:relative}
+          #ms-entry .ms-e-logo{width:26px;height:26px;flex:0 0 26px}
+          #ms-entry .ms-e-name{font-size:15px;font-weight:700;color:#f0f0f5;letter-spacing:-.01em}
+          #ms-entry .ms-e-tag{font:11px 'Share Tech Mono',monospace;color:#3ED6C0;
+            border:1px solid rgba(62,214,192,.42);border-radius:4px;padding:1px 5px}
+          #ms-entry .ms-e-desc{font-size:12px;line-height:1.62;color:#9a9ab8;margin:0 0 11px;position:relative}
+          #ms-entry .ms-e-stat{display:flex;gap:13px;margin-bottom:12px;position:relative;
+            font:11px 'Share Tech Mono',monospace;color:#7b7b98}
+          #ms-entry .ms-e-stat b{color:#8AA2FF;font-weight:600;font-size:13px}
+          #ms-entry .ms-e-btn{position:relative;display:flex;align-items:center;justify-content:space-between;
+            padding:9px 12px;border-radius:7px;background:#6C8CFF;color:#071022;
+            font-size:12.5px;font-weight:700;transition:background .18s,transform .18s}
+          #ms-entry .ms-e-btn:hover{background:#8AA2FF;transform:translateY(-1px);color:#071022}
+          #ms-entry .ms-e-foot{position:relative;margin-top:9px;font:10.5px 'Share Tech Mono',monospace;color:#6b6b88}
+        </style>
+        <aside id="ms-entry" class="content-box">
+          <div class="ms-e-head">
+            <svg class="ms-e-logo" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <rect x="2" y="2" width="28" height="28" rx="8" fill="#6C8CFF" opacity=".14"/>
+              <path d="M8 21V11l8 6 8-6v10" stroke="#6C8CFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 25h16" stroke="#3ED6C0" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+            <span class="ms-e-name">MediaStack</span>
+            <span class="ms-e-tag">v2026.11</span>
+          </div>
+          <p class="ms-e-desc">自媒体技能库 · 面向中文自媒体工作流的 Agent Skill、MCP Server 与配套工具，按能力域与场景选型，附成本与合规风险。</p>
+          <div class="ms-e-stat"><span><b>6</b> 能力域</span><span><b>4</b> 级可用性</span><span><b>3</b> 种形态</span></div>
+          <a class="ms-e-btn" href="{{ '/mediastack.html' | prepend: site.baseurl }}" target="_blank" rel="noopener"><span>打开技能库</span><span>↗</span></a>
+          <div class="ms-e-foot">/mediastack.html · 独立全屏应用 · v2026.11</div>
+        </aside>
         <nav id="navigation" class="content-box">
             <ul>
                 {% for page in site.pages %}

@@ -1,6 +1,27 @@
 ---
 layout: default
 ---
+{% if paginator.page == 1 %}
+<article class="content-box post" style="position:relative;overflow:hidden;border:1px solid rgba(108,140,255,.4);border-radius:10px;background:linear-gradient(120deg,rgba(108,140,255,.12),rgba(62,214,192,.05) 60%,rgba(12,12,20,.9));padding:20px 22px;margin-bottom:22px">
+  <div style="display:flex;align-items:center;gap:9px;margin-bottom:10px;position:relative">
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true" style="flex:none">
+      <rect x="2" y="2" width="28" height="28" rx="8" fill="#6C8CFF" opacity=".14"/>
+      <path d="M8 21V11l8 6 8-6v10" stroke="#6C8CFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8 25h16" stroke="#3ED6C0" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+    <span style="font-size:17px;font-weight:700;color:#f0f0f5">MediaStack · 自媒体技能库</span>
+    <span style="font:11px 'Share Tech Mono',monospace;color:#3ED6C0;border:1px solid rgba(62,214,192,.42);border-radius:4px;padding:1px 6px">v2026.11</span>
+  </div>
+  <p style="margin:0 0 14px;font-size:13.5px;line-height:1.7;color:#9a9ab8;position:relative">
+    收录面向中文自媒体工作流的 Agent Skill、MCP Server 与配套工具，按 6 个能力域 × 4 级可用性组织。
+    支持场景选型、成本与合规风险评估，以及方向 / 可用性 / 类型筛选与全文搜索。
+  </p>
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;position:relative">
+    <a href="{{ '/mediastack.html' | prepend: site.baseurl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:7px;background:#6C8CFF;color:#071022;font-size:13px;font-weight:700">打开技能库 ↗</a>
+    <span style="font:11px 'Share Tech Mono',monospace;color:#6b6b88">6 能力域 · 4 级可用性 · 3 种形态 · /mediastack.html</span>
+  </div>
+</article>
+{% endif %}
 {% for post in paginator.posts %}
 <article class="content-box post">
      <header>
