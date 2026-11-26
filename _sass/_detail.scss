@@ -109,7 +109,7 @@ ul[class^="bxslider"] {
 
 /* Gist embeds from jekyll-gist */
 .gist {
-  font-size: 13px;
+  font-size: var(--text-sm);
 
   .gist-file,
   .gist-data {
@@ -134,7 +134,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin: var(--space-6) 0;
-  font-size: 14px;
+  font-size: var(--text-base);
 }
 
 th {
@@ -144,7 +144,7 @@ th {
   color: var(--text-secondary);
   font-weight: 500;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--text-xs);
 }
 
 td {

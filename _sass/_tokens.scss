@@ -11,7 +11,7 @@
 
   --text-primary: #f1f2f4;
   --text-secondary: #a4abb7;
-  --text-tertiary: #707986;
+  --text-tertiary: #818995;
 
   --border-subtle: rgba(255, 255, 255, 0.075);
   --border-default: rgba(255, 255, 255, 0.13);
@@ -33,9 +33,32 @@
     "MiSans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
     "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
   --font-display: var(--font-sans);
+  /* Serif carries Latin and numerals only; never set Chinese copy in it. */
   --font-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  /* The sans families at the tail catch Chinese glyphs inside mono labels. */
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", "JetBrains Mono",
-    "Cascadia Code", Consolas, "Liberation Mono", monospace;
+    "Cascadia Code", Consolas, "Liberation Mono",
+    "HarmonyOS Sans SC", "MiSans", "PingFang SC", "Microsoft YaHei", monospace;
+
+  /* Type scale: nothing renders below --text-xs. */
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-md: 16px;
+  --text-prose: 17px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 28px;
+  --text-4xl: 32px;
+  --text-5xl: 44px;
+  --text-6xl: 58px;
+
+  /* Fluid display sizes. */
+  --text-display-sm: clamp(24px, 2.5vw, 32px);
+  --text-display-md: clamp(32px, 3.4vw, 46px);
+  --text-display-lg: clamp(38px, 4.8vw, 56px);
+  --text-display-xl: clamp(52px, 5.7vw, 78px);
 
   --radius-sm: 5px;
   --radius-md: 10px;
@@ -67,21 +90,21 @@
   --header-bg: rgba(246, 246, 243, 0.88);
 
   --text-primary: #17191d;
-  --text-secondary: #5c626c;
-  --text-tertiary: #858b93;
+  --text-secondary: #4f555f;
+  --text-tertiary: #656a70;
 
   --border-subtle: rgba(20, 25, 32, 0.09);
   --border-default: rgba(20, 25, 32, 0.16);
   --border-strong: rgba(20, 25, 32, 0.28);
 
-  --accent: #536a9e;
+  --accent: #51689b;
   --accent-text: #405887;
   --accent-soft: rgba(83, 106, 158, 0.09);
   --accent-on: #ffffff;
-  --success: #347c57;
-  --warning: #95661f;
+  --success: #317653;
+  --warning: #8c601d;
   --danger: #a34c4c;
-  --muted: #6b7280;
+  --muted: #626976;
 
   --grid-line: rgba(20, 25, 32, 0.055);
   --hero-visual: rgba(64, 88, 135, 0.52);
