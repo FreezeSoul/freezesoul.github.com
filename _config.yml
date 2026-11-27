@@ -51,6 +51,7 @@ exclude:
   - temp
   - .claude
   - vendor
+  - tools
 
 # Plugins
 plugins:
