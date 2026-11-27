@@ -2,6 +2,7 @@
 layout: page
 title: Archive
 permalink: /archive/
+body_class: layout-archive
 ---
 
 <div class="page-head">

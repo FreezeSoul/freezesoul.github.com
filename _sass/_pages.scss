@@ -16,6 +16,14 @@
   border-top: 1px solid var(--border-subtle);
 }
 
+/* 归档页：图例已是页眉的一部分，页眉底线不再需要，
+   列表自身的分隔线（月份标题线）承担分段，避免图例下方留一条线又空一片 */
+.layout-archive .page-head {
+  border-bottom: 0;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
 .archive-legend-label {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
