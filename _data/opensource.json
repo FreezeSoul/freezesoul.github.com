@@ -8,7 +8,7 @@
   {
    "slug": "llm",
    "name": "大模型学习资料",
-   "count": 17
+   "count": 16
   },
   {
    "slug": "code",
@@ -23,7 +23,7 @@
   {
    "slug": "discover",
    "name": "发现与热榜",
-   "count": 6
+   "count": 5
   }
  ],
  "items": [
@@ -58,14 +58,14 @@
    "pushed": "2025-09"
   },
   {
-   "name": "Agentic 设计模式",
-   "repo": "xindoo/agentic-design-patterns",
-   "url": "https://github.com/xindoo/agentic-design-patterns",
-   "d": "谷歌新书《Agentic Design Patterns》中文精读",
+   "name": "Agentic 设计模式（中文版）",
+   "repo": "ningg/Agentic-Design-Patterns-CN",
+   "url": "https://github.com/ningg/Agentic-Design-Patterns-CN",
+   "d": "《Agentic Design Patterns 智能体设计模式》最佳中文版 PDF（原文 + 中文批注）",
    "category": "agent",
-   "stars": 8577,
-   "starStr": "8.6k",
-   "pushed": "2026-11"
+   "stars": 337,
+   "starStr": "337",
+   "pushed": "2026-08"
   },
   {
    "name": "AI Agent Handbook",
@@ -103,7 +103,7 @@
    "url": "https://github.com/langchain-ai/langgraph",
    "d": "构建弹性语言 Agent 的编排框架",
    "category": "agent",
-   "stars": 45482,
+   "stars": 45483,
    "starStr": "45.5k",
    "pushed": "2026-11"
   },
@@ -173,7 +173,7 @@
    "url": "https://github.com/jingyaogong/minimind",
    "d": "2 小时从零训练 64M 参数的小 GPT",
    "category": "llm",
-   "stars": 71673,
+   "stars": 71681,
    "starStr": "71.7k",
    "pushed": "2026-11"
   },
@@ -213,7 +213,7 @@
    "url": "https://github.com/Lordog/dive-into-llms",
    "d": "《动手学大模型》系列编程实践教程",
    "category": "llm",
-   "stars": 61315,
+   "stars": 61316,
    "starStr": "61.3k",
    "pushed": "2025-10"
   },
@@ -288,16 +288,6 @@
    "pushed": "2026-09"
   },
   {
-   "name": "Awesome ChatGPT Prompts",
-   "repo": "f/awesome-chatgpt-prompts",
-   "url": "https://github.com/f/awesome-chatgpt-prompts",
-   "d": "最经典的 ChatGPT 提示词合集",
-   "category": "llm",
-   "stars": 178604,
-   "starStr": "178.6k",
-   "pushed": "2026-11"
-  },
-  {
    "name": "DL 论文路线图",
    "repo": "floodsung/Deep-Learning-Papers-Reading-Roadmap",
    "url": "https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap",
@@ -363,7 +353,7 @@
    "url": "https://github.com/kamranahmedse/developer-roadmap",
    "d": "交互式开发者成长路线图",
    "category": "code",
-   "stars": 372844,
+   "stars": 372845,
    "starStr": "372.8k",
    "pushed": "2026-11"
   },
@@ -403,7 +393,7 @@
    "url": "https://github.com/codecrafters-io/build-your-own-x",
    "d": "从零实现 Redis/Git/引擎来学编程",
    "category": "code",
-   "stars": 565779,
+   "stars": 565781,
    "starStr": "565.8k",
    "pushed": "2026-11"
   },
@@ -433,7 +423,7 @@
    "url": "https://github.com/labuladong/fucking-algorithm",
    "d": "算法刷题套路手册",
    "category": "code",
-   "stars": 136101,
+   "stars": 136102,
    "starStr": "136.1k",
    "pushed": "2026-10"
   },
@@ -483,7 +473,7 @@
    "url": "https://github.com/sindresorhus/awesome",
    "d": "Awesome 清单的总目录",
    "category": "lists",
-   "stars": 543461,
+   "stars": 543463,
    "starStr": "543.5k",
    "pushed": "2026-09"
   },
@@ -493,7 +483,7 @@
    "url": "https://github.com/public-apis/public-apis",
    "d": "免费 API 大全",
    "category": "lists",
-   "stars": 501678,
+   "stars": 501680,
    "starStr": "501.7k",
    "pushed": "2026-11"
   },
@@ -513,7 +503,7 @@
    "url": "https://github.com/Awesome-Selfhosted/Awesome-Selfhosted",
    "d": "可自托管的网络服务与软件清单",
    "category": "lists",
-   "stars": 340823,
+   "stars": 340827,
    "starStr": "340.8k",
    "pushed": "2026-11"
   },
@@ -563,7 +553,7 @@
    "url": "https://github.com/TapXWorld/ChinaTextbook",
    "d": "全国小初高与大学 PDF 教材",
    "category": "lists",
-   "stars": 85113,
+   "stars": 85114,
    "starStr": "85.1k",
    "pushed": "2026-10"
   },
@@ -616,16 +606,6 @@
    "stars": null,
    "starStr": "",
    "pushed": ""
-  },
-  {
-   "name": "科技爱好者周刊",
-   "repo": "ruanyf/weekly",
-   "url": "https://github.com/ruanyf/weekly",
-   "d": "阮一峰的每周科技与开发者的免费周刊",
-   "category": "discover",
-   "stars": 108797,
-   "starStr": "108.8k",
-   "pushed": "2026-11"
   },
   {
    "name": "GitHub Hot Hub",

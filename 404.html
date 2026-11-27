@@ -7,3 +7,14 @@ layout: default
     </header>
     <p>We couldn't find what you were looking for!</p>
 </article>
+<script>
+  // 旧路径迁移：页面地址统一为目录式后，旧链接在此兜底跳转
+  (function () {
+    var map = {
+      '/nav.html': '/nav/',
+      '/mediastack.html': '/mediastack/'
+    };
+    var to = map[window.location.pathname];
+    if (to) window.location.replace(to);
+  })();
+</script>

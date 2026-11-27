@@ -18,5 +18,5 @@
               {% endunless %}
           {% endfor %}  
       {% endif %}
-      <url><loc>{{ site.url }}{{ '/mediastack.html' | prepend: site.baseurl }}</loc><lastmod>2026-11-26</lastmod></url>
+      <url><loc>{{ site.url }}{{ '/mediastack/' | prepend: site.baseurl }}</loc><lastmod>2026-11-26</lastmod></url>
 </urlset>

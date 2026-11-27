@@ -38,6 +38,10 @@ body_class: layout-games
 (function () {
     'use strict';
     var DATA = {{ site.data.games | jsonify }};
+    /* 分类计数由条目实时重算，避免静态计数漂移 */
+    DATA.categories.forEach(function (c) {
+        c.count = DATA.items.filter(function (i) { return i.category === c.slug; }).length;
+    });
     var grid = document.getElementById('games-grid');
     var meta = document.getElementById('games-meta');
     var empty = document.getElementById('games-empty');
