@@ -35,8 +35,8 @@ permalink: /about/
 </div>
 
 <div class="about-facts">
-    <div class="about-fact"><strong>18</strong><span>个自研项目</span></div>
-    <div class="about-fact"><strong>{{ post_count }}</strong><span>篇技术记录</span></div>
+    <div class="about-fact"><strong>20+</strong><span>个自研项目</span></div>
+    <div class="about-fact"><strong>{{ post_count | divided_by: 10 | times: 10 }}+</strong><span>篇技术记录</span></div>
     <div class="about-fact"><strong>03</strong><span>长期关注议题</span></div>
     <div class="about-fact"><strong>.NET / Java / AI</strong><span>主要技术栈</span></div>
 </div>
