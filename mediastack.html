@@ -357,7 +357,8 @@ html.embed .app{padding-bottom:48px}
       if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
     } catch (e) {}
   })();
-  (function () {
+  // 按钮在 body 里才存在，等 DOM 就绪再绑定，否则 getElementById 拿到 null
+  document.addEventListener('DOMContentLoaded', function () {
     var root = document.documentElement;
     var btn = document.getElementById('theme-toggle');
     if (!btn) return;
@@ -368,7 +369,7 @@ html.embed .app{padding-bottom:48px}
       else root.removeAttribute('data-theme');
       try { localStorage.setItem('theme', next); } catch (e) {}
     });
-  })();
+  });
 </script>
 </head>
 <body>
