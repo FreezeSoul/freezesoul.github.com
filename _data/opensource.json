@@ -43,7 +43,7 @@
    "url": "https://github.com/bojieli/ai-agent-book",
    "d": "《深入理解 AI Agent：设计原理与工程实践》开源全书",
    "category": "agent",
-   "stars": 60023,
+   "stars": 60024,
    "starStr": "60k",
    "pushed": "2026-11"
   },
@@ -73,7 +73,7 @@
    "url": "https://github.com/aliyun/ai-agent-handbook",
    "d": "阿里云出品的 Agent 工程实践手册",
    "category": "agent",
-   "stars": 3714,
+   "stars": 3716,
    "starStr": "3.7k",
    "pushed": "2026-11"
   },
@@ -83,7 +83,7 @@
    "url": "https://github.com/badlogic/pi-mono",
    "d": "AI agent 工具包：coding agent CLI 与统一 LLM 接口",
    "category": "agent",
-   "stars": 124087,
+   "stars": 124093,
    "starStr": "124.1k",
    "pushed": "2026-11"
   },
@@ -173,7 +173,7 @@
    "url": "https://github.com/jingyaogong/minimind",
    "d": "2 小时从零训练 64M 参数的小 GPT",
    "category": "llm",
-   "stars": 71681,
+   "stars": 71690,
    "starStr": "71.7k",
    "pushed": "2026-11"
   },
@@ -183,7 +183,7 @@
    "url": "https://github.com/datawhalechina/self-llm",
    "d": "面向 Linux 环境的开源大模型快速部署教程",
    "category": "llm",
-   "stars": 32872,
+   "stars": 32873,
    "starStr": "32.9k",
    "pushed": "2026-11"
   },
@@ -213,7 +213,7 @@
    "url": "https://github.com/Lordog/dive-into-llms",
    "d": "《动手学大模型》系列编程实践教程",
    "category": "llm",
-   "stars": 61316,
+   "stars": 61317,
    "starStr": "61.3k",
    "pushed": "2025-10"
   },
@@ -283,8 +283,8 @@
    "url": "https://github.com/langgptai/LangGPT",
    "d": "结构化提示词编写方法论",
    "category": "llm",
-   "stars": 12749,
-   "starStr": "12.7k",
+   "stars": 12750,
+   "starStr": "12.8k",
    "pushed": "2026-09"
   },
   {
@@ -333,7 +333,7 @@
    "url": "https://github.com/donnemartin/system-design-primer",
    "d": "系统设计入门经典",
    "category": "code",
-   "stars": 379376,
+   "stars": 379378,
    "starStr": "379.4k",
    "pushed": "2026-09"
   },
@@ -393,7 +393,7 @@
    "url": "https://github.com/codecrafters-io/build-your-own-x",
    "d": "从零实现 Redis/Git/引擎来学编程",
    "category": "code",
-   "stars": 565781,
+   "stars": 565784,
    "starStr": "565.8k",
    "pushed": "2026-11"
   },
@@ -438,14 +438,14 @@
    "pushed": "2026-06"
   },
   {
-   "name": "leetcode-all-lan",
-   "repo": "FreezeSoul/leetcode-all-lan",
-   "url": "https://github.com/FreezeSoul/leetcode-all-lan",
-   "d": "多语言 LeetCode 题解（作者本人维护）",
+   "name": "doocs/leetcode",
+   "repo": "doocs/leetcode",
+   "url": "https://github.com/doocs/leetcode",
+   "d": "LeetCode 多语言题解与算法图解（原始版本，持续更新）",
    "category": "code",
-   "stars": 1,
-   "starStr": "1",
-   "pushed": "2024-08"
+   "stars": 36780,
+   "starStr": "36.8k",
+   "pushed": "2026-11"
   },
   {
    "name": "专业程序员之路",
@@ -473,7 +473,7 @@
    "url": "https://github.com/sindresorhus/awesome",
    "d": "Awesome 清单的总目录",
    "category": "lists",
-   "stars": 543463,
+   "stars": 543468,
    "starStr": "543.5k",
    "pushed": "2026-09"
   },
@@ -493,7 +493,7 @@
    "url": "https://github.com/ripienaar/free-for-dev",
    "d": "开发者免费额度大全",
    "category": "lists",
-   "stars": 143760,
+   "stars": 143761,
    "starStr": "143.8k",
    "pushed": "2026-11"
   },
@@ -503,7 +503,7 @@
    "url": "https://github.com/Awesome-Selfhosted/Awesome-Selfhosted",
    "d": "可自托管的网络服务与软件清单",
    "category": "lists",
-   "stars": 340827,
+   "stars": 340828,
    "starStr": "340.8k",
    "pushed": "2026-11"
   },
