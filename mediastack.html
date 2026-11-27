@@ -423,7 +423,7 @@ html.embed .app{padding-bottom:48px}
     <div class="hero-grid">
       <div class="hero-copy">
         <div class="eyebrow">OPEN SOURCE · AGENT SKILLS · SELF-MEDIA</div>
-        <h1>把 <span id="heroTotal">89</span> 个自媒体技能<br>变成一套<span class="grad">可执行的选型系统</span></h1>
+        <h1>把 <span id="heroTotal">80+</span> 个自媒体技能<br>变成一套<span class="grad">可执行的选型系统</span></h1>
         <p class="hero-sub">从排版、文案、短视频到分发与合规。用统一口径评估每个开源项目的能力、成本与风险，按场景直接给出可落地的组合，而不是让你在仓库列表里自己猜。</p>
         <div class="hero-cta">
           <a class="btn primary" href="#library">进入技能库 <span>→</span></a>
@@ -725,12 +725,13 @@ function gh(n){return "https://github.com/"+n;}
 function byName(n){return D.find(x=>x.n===n);}
 
 const sc={};D.forEach(x=>sc[x.tier]=(sc[x.tier]||0)+1);
-document.getElementById("heroTotal").textContent=D.length;
-document.getElementById("donutNum").textContent=D.length;
-document.getElementById("liveCount").textContent=D.length+" 项已收录";
-document.getElementById("footTotal").textContent=D.length;
-document.getElementById("mapTotal").textContent=D.length+" 个项目";
-document.getElementById("libTotal").textContent=D.length+" 个项目";
+const NP=Math.floor(D.length/10)*10+"+";
+document.getElementById("heroTotal").textContent=NP;
+document.getElementById("donutNum").textContent=NP;
+document.getElementById("liveCount").textContent=NP+" 项已收录";
+document.getElementById("footTotal").textContent=NP;
+document.getElementById("mapTotal").textContent=NP+" 个项目";
+document.getElementById("libTotal").textContent=NP+" 个项目";
 document.getElementById("riskTotal").textContent=(sc.red+sc.gray)+" 项需留意";
 
 let acc=0,stops=[];
@@ -741,7 +742,7 @@ document.getElementById("legend").innerHTML=TIERKEYS.map(t=>
  '<span class="ln">'+TIERS[t][0]+'</span><span class="lv">'+(sc[t]||0)+'</span></div>').join("");
 
 const KPIS=[
- {l:"收录项目",n:D.length,d:"覆盖 6 个能力域",c:"var(--primary)"},
+ {l:"收录项目",n:NP,d:"覆盖 6 个能力域",c:"var(--primary)"},
  {l:"开箱即用",n:sc.green||0,d:"无需 key 与账号",c:"var(--green)"},
  {l:"真 Agent Skill",n:D.filter(x=>x.t==="skill").length,d:"另有 MCP 与工具",c:"var(--cyan)"},
  {l:"需登录态",n:sc.red||0,d:"存在封号与条款风险",c:"var(--red)"},
