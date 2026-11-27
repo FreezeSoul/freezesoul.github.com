@@ -95,6 +95,16 @@ body_class: layout-games
 
     scoreTotal.textContent = pad(DATA.items.length, 6);
 
+    /* 每个分区的关卡编号 */
+    var stageNo = {};
+    DATA.categories.forEach(function (c, i) { stageNo[c.slug] = pad(i + 1, 2); });
+
+    /* 源图不到显示尺寸一半时按像素放大（复古点阵感），否则平滑缩放 */
+    window.gIconLoad = function (img) {
+        var need = 48 * (window.devicePixelRatio || 1);
+        if (img.naturalWidth && img.naturalWidth * 2 <= need) img.classList.add('is-pixel');
+    };
+
     /* 标签上的计数跟着真实数据走 */
     chips.forEach(function (btn) {
         var i = catIndex(btn.getAttribute('data-cat'));
@@ -126,15 +136,14 @@ body_class: layout-games
         grid.innerHTML = items.map(function (it) {
             var letter = letterFor(it.name);
             var icon = it.favicon
-                ? '<span class="g-favicon"><img src="' + it.favicon + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.innerHTML=\'' + letter + '\'; this.parentNode.classList.add(\'is-fallback\');"></span>'
-                : '<span class="g-favicon">' + letter + '</span>';
+                ? '<span class="g-favicon" data-letter="' + letter + '"><img src="' + it.favicon + '" alt="" loading="lazy" referrerpolicy="no-referrer" onload="gIconLoad(this)" onerror="this.parentNode.classList.add(\'is-fallback\'); this.remove();"></span>'
+                : '<span class="g-favicon is-fallback" data-letter="' + letter + '"></span>';
             return '<a class="g-tile stage-' + it.category + '" href="' + it.url + '" target="_blank" rel="noopener noreferrer">' +
-                '<span class="g-pips" aria-hidden="true"><i></i><i></i><i></i></span>' +
-                '<span class="g-top">' +
-                    '<span class="g-cursor" aria-hidden="true">▶</span>' + icon +
-                    '<span class="g-name">' + it.name + '</span>' +
+                '<span class="g-art">' + icon + '<span class="g-lv">' + (stageNo[it.category] || '--') + '</span></span>' +
+                '<span class="g-caption">' +
+                    '<span class="g-title"><span class="g-cursor" aria-hidden="true">▶</span><span class="g-name">' + it.name + '</span></span>' +
+                    '<span class="g-host">' + hostOf(it.url) + '</span>' +
                 '</span>' +
-                '<span class="g-host">' + hostOf(it.url) + '</span>' +
             '</a>';
         }).join('');
     }

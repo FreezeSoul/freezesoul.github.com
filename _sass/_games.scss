@@ -294,26 +294,26 @@
   b { color: var(--text-secondary); font-weight: 500; }
 }
 
-/* ---------- 游戏库卡片：卡带 + 硬阴影 ---------- */
+/* ---------- 游戏库卡片：封面区 + 标题区 ---------- */
 
 .games-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(236px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(184px, 1fr));
   gap: 14px;
 }
 
 .g-tile {
   --sc: var(--arc-blue);
+  --sc-soft: rgba(143, 180, 255, 0.12);
   --sc-shadow: rgba(143, 180, 255, 0.22);
 
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 15px 16px 13px;
+  overflow: hidden;
+  text-align: center;
   background: var(--bg-surface);
   border: 1px solid var(--border-default);
-  border-top: 3px solid var(--sc);
   border-radius: var(--radius-sm);
   box-shadow: 3px 3px 0 0 var(--sc-shadow);
   color: var(--text-primary);
@@ -328,6 +328,12 @@
 
     .g-cursor { width: 14px; }
     .g-name { color: var(--sc); }
+
+    /* 图标跟着跳一下 */
+    .g-favicon {
+      transform: translateY(-3px);
+      border-color: var(--sc);
+    }
   }
 
   &:active {
@@ -336,87 +342,108 @@
   }
 }
 
-.g-pips {
-  position: absolute;
-  top: 9px;
-  right: 10px;
-  display: flex;
-  gap: 3px;
-
-  i {
-    width: 4px;
-    height: 4px;
-    background: var(--sc);
-
-    &:nth-child(2) { opacity: 0.55; }
-    &:nth-child(3) { opacity: 0.25; }
-  }
-}
-
-.g-top {
+/* 封面区：关卡色底带 + 点阵纹理，大图标居中，关卡编号作左上角标 */
+.g-art {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  height: 96px;
+  background-color: var(--sc-soft);
+  background-image: radial-gradient(var(--sc-shadow) 1px, transparent 1px);
+  background-size: 10px 10px;
+  border-bottom: 1px solid var(--sc-shadow);
+}
+
+.g-lv {
+  position: absolute;
+  top: 7px;
+  left: 9px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: var(--sc);
+}
+
+/* 标题区 */
+.g-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-width: 0;
-  padding-right: 34px;
+  padding: 12px 12px 13px;
+}
+
+.g-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .g-cursor {
   flex: 0 0 auto;
   width: 0;
   overflow: hidden;
-  align-self: center;
   font-size: 10px;
   line-height: 1;
   color: var(--sc);
   transition: width 0.15s ease;
 }
 
+/* 图标当主角：48px 图标放在 64px 的框里，像游戏启动器 */
 .g-favicon {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  flex: 0 0 36px;
-  border-radius: 4px;
-  background: var(--bg-raised);
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  border-radius: var(--radius-md);
+  background: var(--bg-base);
   border: 1px solid var(--border-default);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  color: var(--text-secondary);
+  box-shadow: 2px 2px 0 0 var(--sc-shadow);
   overflow: hidden;
+  transition: transform 0.15s ease, border-color 0.15s ease;
 
   img {
-    width: 22px;
-    height: 22px;
+    width: 48px;
+    height: 48px;
     object-fit: contain;
+
+    /* 源图太小时按像素放大，出来是复古点阵而不是糊图 */
+    &.is-pixel { image-rendering: pixelated; }
   }
 
-  /* 右下角一枚关卡色像素 */
-  &::after {
-    content: '';
-    position: absolute;
-    right: 2px;
-    bottom: 2px;
-    width: 4px;
-    height: 4px;
-    background: var(--sc);
+  /* 图标加载失败：用首字母当徽记 */
+  &.is-fallback::before {
+    content: attr(data-letter);
+    font-family: var(--font-mono);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--sc);
   }
 }
 
 .g-name {
-  font-size: var(--text-base);
-  font-weight: 550;
+  min-width: 0;
+  font-size: var(--text-md);
+  font-weight: 600;
+  line-height: 1.35;
   letter-spacing: -0.01em;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
   transition: color 0.15s ease;
 }
 
 .g-host {
+  max-width: 100%;
+  margin-top: 4px;
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   color: var(--text-tertiary);
@@ -511,10 +538,25 @@
   .games-search { min-width: 0; }
 
   .games-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 10px;
   }
 
-  .g-tile { padding: 12px 12px 11px; box-shadow: 2px 2px 0 0 var(--sc-shadow); }
-  .g-favicon { width: 32px; height: 32px; flex-basis: 32px; }
+  .g-tile {
+    box-shadow: 2px 2px 0 0 var(--sc-shadow);
+  }
+
+  .g-art { height: 84px; }
+
+  .g-caption { padding: 10px 10px 11px; }
+
+  .g-favicon {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+
+    img { width: 40px; height: 40px; }
+  }
+
+  .g-name { font-size: var(--text-base); }
 }
