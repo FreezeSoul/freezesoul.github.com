@@ -44,9 +44,10 @@
   border: 1px solid var(--border-strong);
   color: var(--text-primary);
   font-family: var(--font-mono);
-  font-size: var(--text-xs);
+  /* 徽标里的 4 个字母属图形标识，不是可读文本，可以小于 12px 正文下限 */
+  font-size: 10px;
   font-weight: 500;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.04em;
   transition: border-color 0.18s ease, background-color 0.18s ease;
 }
 
