@@ -10,7 +10,7 @@ body_class: layout-nav
         <div class="toolbox-head-copy">
             <div class="toolbox-eyebrow">TOOLBOX / 我的导航</div>
             <h1>AI 工具箱</h1>
-            <p>267 个精选站点，按功能归类：AI 对话、编程、模型平台、多模态生成、智能体、开发、设计、社区与效率工具。搜索或点分类快速定位。</p>
+            <p>{{ site.data.nav.items | size }} 个精选站点，按功能归类：AI 对话、编程、模型平台、多模态生成、智能体、开发、设计、社区与效率工具。搜索或点分类快速定位。</p>
         </div>
         <div class="toolbox-search">
             <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
@@ -34,7 +34,7 @@ body_class: layout-nav
         </aside>
 
         <div class="toolbox-content">
-            <div class="toolbox-meta" id="toolbox-meta">共 267 个站点</div>
+            <div class="toolbox-meta" id="toolbox-meta">共 {{ site.data.nav.items | size }} 个站点</div>
             <div class="toolbox-grid" id="toolbox-grid"></div>
             <div class="toolbox-empty" id="toolbox-empty" hidden>
                 <p>没有匹配「<span id="toolbox-empty-query"></span>」的结果</p>

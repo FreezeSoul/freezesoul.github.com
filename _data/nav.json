@@ -13,7 +13,7 @@
     {
       "slug": "models",
       "name": "模型与算力",
-      "count": 33
+      "count": 32
     },
     {
       "slug": "multimodal",
@@ -835,12 +835,6 @@
       "name": "LMLeaderboard",
       "url": "https://lmarena.ai",
       "favicon": "https://lmarena.ai/images/favicon-dark.ico?v=1",
-      "category": "models"
-    },
-    {
-      "name": "ArtificialAnalysis",
-      "url": "https://artificialanalysis.ai/trends",
-      "favicon": "https://artificialanalysis.ai/favicon.ico",
       "category": "models"
     },
     {
