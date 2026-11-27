@@ -5,15 +5,15 @@
 /* 分类色系：与游戏库关卡色同一组色相，保持两页视觉一致。
    这是"分类色"（标识文章属于哪一类），不是技能库那套"风险色"。
    注意：必须排在 .archive-legend-item / .archive-category 之后（同优先级，靠顺序覆盖）。 */
+/* 分类图例：并入页眉区块，不自带上下横线，避免与页眉底线/年份组顶线重复 */
 .archive-legend {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px 18px;
-  padding: 16px 0 20px;
-  margin-bottom: 8px;
-  border-top: 1px solid var(--border-default);
-  border-bottom: 1px solid var(--border-subtle);
+  gap: 9px 18px;
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border-subtle);
 }
 
 .archive-legend-label {
@@ -57,6 +57,12 @@
   gap: 48px;
   padding: 44px 0 64px;
   border-top: 1px solid var(--border-default);
+}
+
+/* 首个年份组紧接页眉底线，不再重复一条分隔线 */
+.archive-year:first-child {
+  border-top: 0;
+  padding-top: 8px;
 }
 
 .archive-year-head {

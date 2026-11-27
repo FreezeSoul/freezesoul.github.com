@@ -8,14 +8,14 @@ permalink: /archive/
     <div class="eyebrow">ARCHIVE / SINCE 2013</div>
     <h1>全部文章</h1>
     <p>按年月归档，共 {{ site.posts | size }} 篇。技术会变化，思考与实践留下轨迹。</p>
-</div>
 
-{% assign cat_groups = site.posts | group_by_exp: "post", "post.categories | first" | sort: "name" %}
-<div class="archive-legend">
-    <span class="archive-legend-label">分类</span>
-    {% for g in cat_groups %}
-    <span class="archive-legend-item cat-{{ g.name }}"><i aria-hidden="true"></i>{{ g.name }}<b>{{ g.items | size }}</b></span>
-    {% endfor %}
+    {% assign cat_groups = site.posts | group_by_exp: "post", "post.categories | first" | sort: "name" %}
+    <div class="archive-legend">
+        <span class="archive-legend-label">分类</span>
+        {% for g in cat_groups %}
+        <span class="archive-legend-item cat-{{ g.name }}"><i aria-hidden="true"></i>{{ g.name }}<b>{{ g.items | size }}</b></span>
+        {% endfor %}
+    </div>
 </div>
 
 <div class="archive-container">
