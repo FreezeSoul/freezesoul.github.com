@@ -2,6 +2,55 @@
 
 /* ---------- Archive ---------- */
 
+/* 分类色系：与游戏库关卡色同一组色相，保持两页视觉一致。
+   这是"分类色"（标识文章属于哪一类），不是技能库那套"风险色"。
+   注意：必须排在 .archive-legend-item / .archive-category 之后（同优先级，靠顺序覆盖）。 */
+.archive-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  padding: 16px 0 20px;
+  margin-bottom: 8px;
+  border-top: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.archive-legend-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.archive-legend-item {
+  --c: var(--muted);
+  --cs: rgba(124, 138, 166, 0.14);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+
+  i {
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+    background: var(--c);
+  }
+
+  b {
+    margin-left: 3px;
+    font-weight: 400;
+    color: var(--text-tertiary);
+  }
+}
+
 .archive-year {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
@@ -56,6 +105,13 @@
   gap: 20px;
   padding: 18px 0;
   border-bottom: 1px solid var(--border-subtle);
+  transition: background-color 0.16s ease;
+
+  &:hover {
+    background: var(--bg-surface);
+
+    .archive-date { color: var(--accent-text); }
+  }
 }
 
 .archive-date {
@@ -86,8 +142,46 @@
 }
 
 .archive-category {
-  color: var(--text-tertiary);
+  --c: var(--muted);
+  --cs: rgba(124, 138, 166, 0.14);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 10px 3px 8px;
+  border-radius: 999px;
+  background: var(--cs);
+  color: var(--c);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: help;
+
+  i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--c);
+  }
 }
+
+/* 分类色定义（放在组件之后，避免被组件里的默认色覆盖） */
+.cat-technology { --c: #8fb4ff; --cs: rgba(143, 180, 255, 0.13); }
+.cat-project { --c: #5fe3a1; --cs: rgba(95, 227, 161, 0.13); }
+.cat-architecture { --c: #c7a6ff; --cs: rgba(199, 166, 255, 0.13); }
+.cat-language { --c: #ffd166; --cs: rgba(255, 209, 102, 0.12); }
+.cat-psychology { --c: #ff7b8a; --cs: rgba(255, 123, 138, 0.13); }
+.cat-note { --c: #8fa0bd; --cs: rgba(143, 160, 189, 0.13); }
+
+[data-theme="light"] .cat-technology { --c: #3b63c4; --cs: rgba(59, 99, 196, 0.1); }
+[data-theme="light"] .cat-project { --c: #0b7349; --cs: rgba(11, 115, 73, 0.1); }
+[data-theme="light"] .cat-architecture { --c: #7443d6; --cs: rgba(116, 67, 214, 0.1); }
+[data-theme="light"] .cat-language { --c: #8a5f00; --cs: rgba(138, 95, 0, 0.1); }
+[data-theme="light"] .cat-psychology { --c: #d42a4c; --cs: rgba(212, 42, 76, 0.1); }
+[data-theme="light"] .cat-note { --c: #5a6478; --cs: rgba(90, 100, 120, 0.1); }
 
 /* ---------- Contact ---------- */
 

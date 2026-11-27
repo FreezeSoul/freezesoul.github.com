@@ -10,6 +10,14 @@ permalink: /archive/
     <p>按年月归档，共 {{ site.posts | size }} 篇。技术会变化，思考与实践留下轨迹。</p>
 </div>
 
+{% assign cat_groups = site.posts | group_by_exp: "post", "post.categories | first" | sort: "name" %}
+<div class="archive-legend">
+    <span class="archive-legend-label">分类</span>
+    {% for g in cat_groups %}
+    <span class="archive-legend-item cat-{{ g.name }}"><i aria-hidden="true"></i>{{ g.name }}<b>{{ g.items | size }}</b></span>
+    {% endfor %}
+</div>
+
 <div class="archive-container">
     {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
     {% for year_group in posts_by_year %}
@@ -30,7 +38,7 @@ permalink: /archive/
                                 <div class="archive-date">{{ post.date | date: "%m-%d" }}</div>
                                 <a href="{{ post.url | prepend: site.baseurl }}" class="archive-title">{{ post.title }}</a>
                                 <div class="archive-meta">
-                                    {% if post.categories %}<span class="archive-category badge-muted">{{ post.categories | first }}</span>{% endif %}
+                                    {% if post.categories %}<span class="archive-category cat-{{ post.categories | first }}"{% if post.tags != empty %} title="{{ post.tags | join: ' · ' }}"{% endif %}><i aria-hidden="true"></i>{{ post.categories | first }}</span>{% endif %}
                                 </div>
                             </div>
                         {% endfor %}
