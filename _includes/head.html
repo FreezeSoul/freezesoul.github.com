@@ -20,7 +20,9 @@
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
+    <!-- 版本号随每次构建变化，避免浏览器复用旧样式表 -->
+    {% assign asset_v = site.time | date: '%Y%m%d%H%M%S' %}
+    <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}?v={{ asset_v }}">
 
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" defer></script>
     <script>

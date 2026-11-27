@@ -7,7 +7,7 @@
             <main class="site-main" id="main">{{ content }}</main>
             {% include footer.html %}
         </div>
-        <script src="{{ '/js/theme.js' | prepend: site.baseurl }}" defer></script>
-        {% if page.layout == 'post' %}<script src="{{ '/js/article.js' | prepend: site.baseurl }}" defer></script>{% endif %}
+        <script src="{{ '/js/theme.js' | prepend: site.baseurl }}?v={{ asset_v }}" defer></script>
+        {% if page.layout == 'post' %}<script src="{{ '/js/article.js' | prepend: site.baseurl }}?v={{ asset_v }}" defer></script>{% endif %}
     </body>
 </html>
