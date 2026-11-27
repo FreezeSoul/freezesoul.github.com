@@ -1,0 +1,671 @@
+{
+ "categories": [
+  {
+   "slug": "agent",
+   "name": "Agent 与 LLM 工程",
+   "count": 13
+  },
+  {
+   "slug": "llm",
+   "name": "大模型学习资料",
+   "count": 17
+  },
+  {
+   "slug": "code",
+   "name": "编程与算法",
+   "count": 15
+  },
+  {
+   "slug": "lists",
+   "name": "实用清单",
+   "count": 13
+  },
+  {
+   "slug": "discover",
+   "name": "发现与热榜",
+   "count": 6
+  }
+ ],
+ "items": [
+  {
+   "name": "Hello Agents",
+   "repo": "datawhalechina/hello-agents",
+   "url": "https://github.com/datawhalechina/hello-agents",
+   "d": "Datawhale《从零开始构建智能体》：智能体原理与实践",
+   "category": "agent",
+   "stars": 88030,
+   "starStr": "88k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "AI Agent Book",
+   "repo": "bojieli/ai-agent-book",
+   "url": "https://github.com/bojieli/ai-agent-book",
+   "d": "《深入理解 AI Agent：设计原理与工程实践》开源全书",
+   "category": "agent",
+   "stars": 60023,
+   "starStr": "60k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "12 Factor Agents",
+   "repo": "humanlayer/12-factor-agents",
+   "url": "https://github.com/humanlayer/12-factor-agents",
+   "d": "Agent 应用的十二条工程原则",
+   "category": "agent",
+   "stars": 27444,
+   "starStr": "27.4k",
+   "pushed": "2025-09"
+  },
+  {
+   "name": "Agentic 设计模式",
+   "repo": "xindoo/agentic-design-patterns",
+   "url": "https://github.com/xindoo/agentic-design-patterns",
+   "d": "谷歌新书《Agentic Design Patterns》中文精读",
+   "category": "agent",
+   "stars": 8577,
+   "starStr": "8.6k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "AI Agent Handbook",
+   "repo": "aliyun/ai-agent-handbook",
+   "url": "https://github.com/aliyun/ai-agent-handbook",
+   "d": "阿里云出品的 Agent 工程实践手册",
+   "category": "agent",
+   "stars": 3714,
+   "starStr": "3.7k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "pi-mono",
+   "repo": "badlogic/pi-mono",
+   "url": "https://github.com/badlogic/pi-mono",
+   "d": "AI agent 工具包：coding agent CLI 与统一 LLM 接口",
+   "category": "agent",
+   "stars": 124087,
+   "starStr": "124.1k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "Learn Claude Code",
+   "repo": "shareAI-lab/learn-claude-code",
+   "url": "https://github.com/shareAI-lab/learn-claude-code",
+   "d": "Bash is all you need：Claude Code 原理拆解",
+   "category": "agent",
+   "stars": 80951,
+   "starStr": "81k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "LangGraph",
+   "repo": "langchain-ai/langgraph",
+   "url": "https://github.com/langchain-ai/langgraph",
+   "d": "构建弹性语言 Agent 的编排框架",
+   "category": "agent",
+   "stars": 45482,
+   "starStr": "45.5k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "LangChain 中文教程",
+   "repo": "liaokongVFX/LangChain-Chinese-Getting-Started-Guide",
+   "url": "https://github.com/liaokongVFX/LangChain-Chinese-Getting-Started-Guide",
+   "d": "LangChain 中文入门指南",
+   "category": "agent",
+   "stars": 9148,
+   "starStr": "9.1k",
+   "pushed": "2026-04"
+  },
+  {
+   "name": "Second-Me",
+   "repo": "mindverse/Second-Me",
+   "url": "https://github.com/mindverse/Second-Me",
+   "d": "训练你的 AI 分身",
+   "category": "agent",
+   "stars": 15704,
+   "starStr": "15.7k",
+   "pushed": "2025-09"
+  },
+  {
+   "name": "FDE 指南手册",
+   "repo": "xdash/FDE-the-Guidance-Book-of-Forward-Deployed-Engineer",
+   "url": "https://github.com/xdash/FDE-the-Guidance-Book-of-Forward-Deployed-Engineer",
+   "d": "落地部署工程师（FDE）方法论开源书",
+   "category": "agent",
+   "stars": 5687,
+   "starStr": "5.7k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "AI Agents 权威指南",
+   "repo": "Nicolepcx/ai-agents-the-definitive-guide",
+   "url": "https://github.com/Nicolepcx/ai-agents-the-definitive-guide",
+   "d": "《AI Agents: The Definitive Guide》配套仓库",
+   "category": "agent",
+   "stars": 3038,
+   "starStr": "3k",
+   "pushed": "2026-08"
+  },
+  {
+   "name": "Loop Engineering",
+   "repo": "cobusgreyling/loop-engineering",
+   "url": "https://github.com/cobusgreyling/loop-engineering",
+   "d": "Agent 循环工程实用模式与起点模板",
+   "category": "agent",
+   "stars": 11843,
+   "starStr": "11.8k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "LLaMA-Factory",
+   "repo": "hiyouga/LLaMA-Factory",
+   "url": "https://github.com/hiyouga/LLaMA-Factory",
+   "d": "大模型微调一站式工具链",
+   "category": "llm",
+   "stars": 76296,
+   "starStr": "76.3k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "minimind",
+   "repo": "jingyaogong/minimind",
+   "url": "https://github.com/jingyaogong/minimind",
+   "d": "2 小时从零训练 64M 参数的小 GPT",
+   "category": "llm",
+   "stars": 71673,
+   "starStr": "71.7k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "开源大模型食用指南",
+   "repo": "datawhalechina/self-llm",
+   "url": "https://github.com/datawhalechina/self-llm",
+   "d": "面向 Linux 环境的开源大模型快速部署教程",
+   "category": "llm",
+   "stars": 32872,
+   "starStr": "32.9k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "Prompt Engineering",
+   "repo": "datawhalechina/prompt-engineering-for-developers",
+   "url": "https://github.com/datawhalechina/prompt-engineering-for-developers",
+   "d": "吴恩达大模型系列课程中文版",
+   "category": "llm",
+   "stars": 24947,
+   "starStr": "24.9k",
+   "pushed": "2025-06"
+  },
+  {
+   "name": "大模型基础",
+   "repo": "ZJU-LLMs/Foundations-of-LLMs",
+   "url": "https://github.com/ZJU-LLMs/Foundations-of-LLMs",
+   "d": "浙大《大模型基础》教材配套仓库",
+   "category": "llm",
+   "stars": 18651,
+   "starStr": "18.7k",
+   "pushed": "2025-12"
+  },
+  {
+   "name": "Dive into LLMs",
+   "repo": "Lordog/dive-into-llms",
+   "url": "https://github.com/Lordog/dive-into-llms",
+   "d": "《动手学大模型》系列编程实践教程",
+   "category": "llm",
+   "stars": 61315,
+   "starStr": "61.3k",
+   "pushed": "2025-10"
+  },
+  {
+   "name": "深度学习 500 问",
+   "repo": "scutan90/DeepLearning-500-questions",
+   "url": "https://github.com/scutan90/DeepLearning-500-questions",
+   "d": "以问答形式覆盖深度学习知识点",
+   "category": "llm",
+   "stars": 57732,
+   "starStr": "57.7k",
+   "pushed": "2024-06"
+  },
+  {
+   "name": "LLM For Everybody",
+   "repo": "luhengshiwo/LLMForEverybody",
+   "url": "https://github.com/luhengshiwo/LLMForEverybody",
+   "d": "人人都能看懂的大模型知识，面试向",
+   "category": "llm",
+   "stars": 7587,
+   "starStr": "7.6k",
+   "pushed": "2026-08"
+  },
+  {
+   "name": "LLM 资料大全",
+   "repo": "WangRongsheng/awesome-LLM-resourses",
+   "url": "https://github.com/WangRongsheng/awesome-LLM-resourses",
+   "d": "全世界最好的 LLM 资料总结",
+   "category": "llm",
+   "stars": 9109,
+   "starStr": "9.1k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "中文 LLM 榜单",
+   "repo": "jeinlee1991/chinese-llm-benchmark",
+   "url": "https://github.com/jeinlee1991/chinese-llm-benchmark",
+   "d": "203 个大模型的中文实测对比",
+   "category": "llm",
+   "stars": 6532,
+   "starStr": "6.5k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "DeepSeek SFT 指南",
+   "repo": "ScienceOne-AI/DeepSeek-671B-SFT-Guide",
+   "url": "https://github.com/ScienceOne-AI/DeepSeek-671B-SFT-Guide",
+   "d": "DeepSeek 671B 全参微调开源方案",
+   "category": "llm",
+   "stars": 812,
+   "starStr": "812",
+   "pushed": "2025-03"
+  },
+  {
+   "name": "AI Guide",
+   "repo": "Hoper-J/AI-Guide-and-Demos-zh_CN",
+   "url": "https://github.com/Hoper-J/AI-Guide-and-Demos-zh_CN",
+   "d": "AI/LLM 入门逐步指南与示例代码",
+   "category": "llm",
+   "stars": 4842,
+   "starStr": "4.8k",
+   "pushed": "2026-10"
+  },
+  {
+   "name": "LangGPT",
+   "repo": "langgptai/LangGPT",
+   "url": "https://github.com/langgptai/LangGPT",
+   "d": "结构化提示词编写方法论",
+   "category": "llm",
+   "stars": 12749,
+   "starStr": "12.7k",
+   "pushed": "2026-09"
+  },
+  {
+   "name": "Awesome ChatGPT Prompts",
+   "repo": "f/awesome-chatgpt-prompts",
+   "url": "https://github.com/f/awesome-chatgpt-prompts",
+   "d": "最经典的 ChatGPT 提示词合集",
+   "category": "llm",
+   "stars": 178604,
+   "starStr": "178.6k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "DL 论文路线图",
+   "repo": "floodsung/Deep-Learning-Papers-Reading-Roadmap",
+   "url": "https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap",
+   "d": "深度学习论文阅读路线图",
+   "category": "llm",
+   "stars": 39610,
+   "starStr": "39.6k",
+   "pushed": "2022-11"
+  },
+  {
+   "name": "现代强化学习导论",
+   "repo": "walkinglabs/hands-on-modern-rl",
+   "url": "https://github.com/walkinglabs/hands-on-modern-rl",
+   "d": "开源动手学强化学习教程",
+   "category": "llm",
+   "stars": 4968,
+   "starStr": "5k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "LLM 应用开发",
+   "repo": "phodal/aigc",
+   "url": "https://github.com/phodal/aigc",
+   "d": "《构筑大语言模型应用》开源电子书",
+   "category": "llm",
+   "stars": 1649,
+   "starStr": "1.6k",
+   "pushed": "2024-01"
+  },
+  {
+   "name": "CS-Notes",
+   "repo": "CyC2018/CS-Notes",
+   "url": "https://github.com/CyC2018/CS-Notes",
+   "d": "面试必备基础知识：算法、操作系统、网络",
+   "category": "code",
+   "stars": 186601,
+   "starStr": "186.6k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "System Design Primer",
+   "repo": "donnemartin/system-design-primer",
+   "url": "https://github.com/donnemartin/system-design-primer",
+   "d": "系统设计入门经典",
+   "category": "code",
+   "stars": 379376,
+   "starStr": "379.4k",
+   "pushed": "2026-09"
+  },
+  {
+   "name": "System Design 101",
+   "repo": "ByteByteGoHq/system-design-101",
+   "url": "https://github.com/ByteByteGoHq/system-design-101",
+   "d": "图解系统设计",
+   "category": "code",
+   "stars": 91419,
+   "starStr": "91.4k",
+   "pushed": "2025-04"
+  },
+  {
+   "name": "Developer Roadmaps",
+   "repo": "kamranahmedse/developer-roadmap",
+   "url": "https://github.com/kamranahmedse/developer-roadmap",
+   "d": "交互式开发者成长路线图",
+   "category": "code",
+   "stars": 372844,
+   "starStr": "372.8k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "Java 设计模式",
+   "repo": "iluwatar/java-design-patterns",
+   "url": "https://github.com/iluwatar/java-design-patterns",
+   "d": "Java 设计模式最佳实践合集",
+   "category": "code",
+   "stars": 94913,
+   "starStr": "94.9k",
+   "pushed": "2026-10"
+  },
+  {
+   "name": "Design Patterns for Humans",
+   "repo": "kamranahmedse/design-patterns-for-humans",
+   "url": "https://github.com/kamranahmedse/design-patterns-for-humans",
+   "d": "超通俗的设计模式讲解",
+   "category": "code",
+   "stars": 48978,
+   "starStr": "49k",
+   "pushed": "2024-12"
+  },
+  {
+   "name": "Awesome Design Patterns",
+   "repo": "DovAmir/awesome-design-patterns",
+   "url": "https://github.com/DovAmir/awesome-design-patterns",
+   "d": "软件与架构设计模式清单",
+   "category": "code",
+   "stars": 49914,
+   "starStr": "49.9k",
+   "pushed": "2024-10"
+  },
+  {
+   "name": "Build Your Own X",
+   "repo": "codecrafters-io/build-your-own-x",
+   "url": "https://github.com/codecrafters-io/build-your-own-x",
+   "d": "从零实现 Redis/Git/引擎来学编程",
+   "category": "code",
+   "stars": 565779,
+   "starStr": "565.8k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "Project-Based Learning",
+   "repo": "practical-tutorials/project-based-learning",
+   "url": "https://github.com/practical-tutorials/project-based-learning",
+   "d": "项目式学习教程清单",
+   "category": "code",
+   "stars": 290552,
+   "starStr": "290.6k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "freeCodeCamp",
+   "repo": "freeCodeCamp/freeCodeCamp",
+   "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+   "d": "免费开源的编程学习平台",
+   "category": "code",
+   "stars": 459677,
+   "starStr": "459.7k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "labuladong 算法",
+   "repo": "labuladong/fucking-algorithm",
+   "url": "https://github.com/labuladong/fucking-algorithm",
+   "d": "算法刷题套路手册",
+   "category": "code",
+   "stars": 136101,
+   "starStr": "136.1k",
+   "pushed": "2026-10"
+  },
+  {
+   "name": "LeetCodeAnimation",
+   "repo": "MisterBooo/LeetCodeAnimation",
+   "url": "https://github.com/MisterBooo/LeetCodeAnimation",
+   "d": "LeetCode 动画题解",
+   "category": "code",
+   "stars": 76714,
+   "starStr": "76.7k",
+   "pushed": "2026-06"
+  },
+  {
+   "name": "leetcode-all-lan",
+   "repo": "FreezeSoul/leetcode-all-lan",
+   "url": "https://github.com/FreezeSoul/leetcode-all-lan",
+   "d": "多语言 LeetCode 题解（作者本人维护）",
+   "category": "code",
+   "stars": 1,
+   "starStr": "1",
+   "pushed": "2024-08"
+  },
+  {
+   "name": "专业程序员之路",
+   "repo": "stanzhai/be-a-professional-programmer",
+   "url": "https://github.com/stanzhai/be-a-professional-programmer",
+   "d": "成为专业程序员所需资料合集",
+   "category": "code",
+   "stars": 9928,
+   "starStr": "9.9k",
+   "pushed": "2023-02"
+  },
+  {
+   "name": "微前端实战",
+   "repo": "phodal/microfrontends",
+   "url": "https://github.com/phodal/microfrontends",
+   "d": "Micro-frontend Architecture in Action",
+   "category": "code",
+   "stars": 3106,
+   "starStr": "3.1k",
+   "pushed": "2021-10"
+  },
+  {
+   "name": "Awesome",
+   "repo": "sindresorhus/awesome",
+   "url": "https://github.com/sindresorhus/awesome",
+   "d": "Awesome 清单的总目录",
+   "category": "lists",
+   "stars": 543461,
+   "starStr": "543.5k",
+   "pushed": "2026-09"
+  },
+  {
+   "name": "Public APIs",
+   "repo": "public-apis/public-apis",
+   "url": "https://github.com/public-apis/public-apis",
+   "d": "免费 API 大全",
+   "category": "lists",
+   "stars": 501678,
+   "starStr": "501.7k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "Free for Dev",
+   "repo": "ripienaar/free-for-dev",
+   "url": "https://github.com/ripienaar/free-for-dev",
+   "d": "开发者免费额度大全",
+   "category": "lists",
+   "stars": 143760,
+   "starStr": "143.8k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "Awesome Selfhosted",
+   "repo": "Awesome-Selfhosted/Awesome-Selfhosted",
+   "url": "https://github.com/Awesome-Selfhosted/Awesome-Selfhosted",
+   "d": "可自托管的网络服务与软件清单",
+   "category": "lists",
+   "stars": 340823,
+   "starStr": "340.8k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "Awesome Cheatsheets",
+   "repo": "LeCoupa/awesome-cheatsheets",
+   "url": "https://github.com/LeCoupa/awesome-cheatsheets",
+   "d": "编程语言与工具速查表合集",
+   "category": "lists",
+   "stars": 46713,
+   "starStr": "46.7k",
+   "pushed": "2026-10"
+  },
+  {
+   "name": "Awesome Cursorrules",
+   "repo": "PatrickJS/awesome-cursorrules",
+   "url": "https://github.com/PatrickJS/awesome-cursorrules",
+   "d": "Cursor 规则文件合集",
+   "category": "lists",
+   "stars": 41200,
+   "starStr": "41.2k",
+   "pushed": "2026-05"
+  },
+  {
+   "name": "Awesome Vibe Coding",
+   "repo": "filipecalegario/awesome-vibe-coding",
+   "url": "https://github.com/filipecalegario/awesome-vibe-coding",
+   "d": "Vibe Coding 资料清单",
+   "category": "lists",
+   "stars": 5458,
+   "starStr": "5.5k",
+   "pushed": "2026-04"
+  },
+  {
+   "name": "Awesome LowCode",
+   "repo": "taowen/awesome-lowcode",
+   "url": "https://github.com/taowen/awesome-lowcode",
+   "d": "国内低代码平台清单",
+   "category": "lists",
+   "stars": 14750,
+   "starStr": "14.8k",
+   "pushed": "2024-11"
+  },
+  {
+   "name": "ChinaTextbook",
+   "repo": "TapXWorld/ChinaTextbook",
+   "url": "https://github.com/TapXWorld/ChinaTextbook",
+   "d": "全国小初高与大学 PDF 教材",
+   "category": "lists",
+   "stars": 85113,
+   "starStr": "85.1k",
+   "pushed": "2026-10"
+  },
+  {
+   "name": "SharedCourses",
+   "repo": "mewcoder/SharedCourses",
+   "url": "https://github.com/mewcoder/SharedCourses",
+   "d": "大学课程共享计划",
+   "category": "lists",
+   "stars": 462,
+   "starStr": "462",
+   "pushed": "2022-02"
+  },
+  {
+   "name": "University",
+   "repo": "nwuzmedoutlook/university",
+   "url": "https://github.com/nwuzmedoutlook/university",
+   "d": "120+ 国内高校课程资源整理",
+   "category": "lists",
+   "stars": 1238,
+   "starStr": "1.2k",
+   "pushed": "2026-09"
+  },
+  {
+   "name": "chinese-poetry",
+   "repo": "chinese-poetry/chinese-poetry",
+   "url": "https://github.com/chinese-poetry/chinese-poetry",
+   "d": "最全的中文诗歌语料库",
+   "category": "lists",
+   "stars": 54582,
+   "starStr": "54.6k",
+   "pushed": "2026-06"
+  },
+  {
+   "name": "Awesome AI Tools",
+   "repo": "ikaijua/Awesome-AITools",
+   "url": "https://github.com/ikaijua/Awesome-AITools",
+   "d": "AI 工具清单",
+   "category": "lists",
+   "stars": 6388,
+   "starStr": "6.4k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "HelloGitHub",
+   "repo": null,
+   "url": "https://hellogithub.com/",
+   "d": "每月开源项目精选月刊",
+   "category": "discover",
+   "stars": null,
+   "starStr": "",
+   "pushed": ""
+  },
+  {
+   "name": "科技爱好者周刊",
+   "repo": "ruanyf/weekly",
+   "url": "https://github.com/ruanyf/weekly",
+   "d": "阮一峰的每周科技与开发者的免费周刊",
+   "category": "discover",
+   "stars": 108797,
+   "starStr": "108.8k",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "GitHub Hot Hub",
+   "repo": "SnailDev/github-hot-hub",
+   "url": "https://github.com/SnailDev/github-hot-hub",
+   "d": "GitHub 热门仓库小时榜",
+   "category": "discover",
+   "stars": 111,
+   "starStr": "111",
+   "pushed": "2026-11"
+  },
+  {
+   "name": "DailyHotApi",
+   "repo": "imsyy/DailyHotApi",
+   "url": "https://github.com/imsyy/DailyHotApi",
+   "d": "今日热榜聚合 API，支持 RSS",
+   "category": "discover",
+   "stars": 4114,
+   "starStr": "4.1k",
+   "pushed": "2026-03"
+  },
+  {
+   "name": "BestBlogs",
+   "repo": "ginobefun/BestBlogs",
+   "url": "https://github.com/ginobefun/BestBlogs",
+   "d": "优质编程与 AI 文章精选（bestblogs.dev）",
+   "category": "discover",
+   "stars": 4094,
+   "starStr": "4.1k",
+   "pushed": "2026-07"
+  },
+  {
+   "name": "ai_quant_trade",
+   "repo": "charliedream1/ai_quant_trade",
+   "url": "https://github.com/charliedream1/ai_quant_trade",
+   "d": "股票 AI 操盘手：学习、模拟到实盘一站式",
+   "category": "discover",
+   "stars": 6790,
+   "starStr": "6.8k",
+   "pushed": "2026-11"
+  }
+ ]
+}

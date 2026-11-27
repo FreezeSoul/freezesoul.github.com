@@ -21,6 +21,10 @@ nav:
     url: /mediastack.html
   - title: 工具箱
     url: /nav.html
+  - title: 游戏库
+    url: /games/
+  - title: 开源推荐
+    url: /opensource/
   - title: 关于
     url: /about/
   - title: 联系

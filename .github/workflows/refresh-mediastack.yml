@@ -22,16 +22,18 @@ jobs:
       - name: Fetch real repo stats
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node tools/refresh-mediastack.js
+        run: |
+          node tools/refresh-mediastack.js
+          node tools/refresh-opensource.js
 
       - name: Commit refreshed data
         run: |
-          if git diff --quiet -- _data/mediastack.json; then
+          if git diff --quiet -- _data/mediastack.json _data/opensource.json; then
             echo "no changes"
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add _data/mediastack.json
-            git commit -m "chore: 刷新技能库仓库数据（定时任务）"
+            git add _data/mediastack.json _data/opensource.json
+            git commit -m "chore: 刷新技能库与开源推荐仓库数据（定时任务）"
             git push
           fi

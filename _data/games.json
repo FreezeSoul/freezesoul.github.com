@@ -1,0 +1,751 @@
+{
+ "categories": [
+  {
+   "slug": "emu",
+   "name": "模拟器与复古生态",
+   "count": 23
+  },
+  {
+   "slug": "res",
+   "name": "资源下载",
+   "count": 46
+  },
+  {
+   "slug": "online",
+   "name": "在线开玩",
+   "count": 15
+  },
+  {
+   "slug": "db",
+   "name": "资料库与工具",
+   "count": 24
+  },
+  {
+   "slug": "community",
+   "name": "社区与媒体",
+   "count": 12
+  }
+ ],
+ "items": [
+  {
+   "name": "Batocera",
+   "url": "https://batocera.org/",
+   "favicon": "https://favicon.im/batocera.org?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "EmuELEC 中文网",
+   "url": "https://www.emuelec.cn/",
+   "favicon": "https://favicon.im/emuelec.cn?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "EmuELEC 社区",
+   "url": "https://emuelec.discourse.group/",
+   "favicon": "https://favicon.im/emuelec.discourse.group?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "RetroBat",
+   "url": "https://www.retrobat.org/",
+   "favicon": "https://favicon.im/retrobat.org?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "Lakka",
+   "url": "https://www.lakka.tv/",
+   "favicon": "https://favicon.im/lakka.tv?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "EmuDeck",
+   "url": "https://www.emudeck.com/",
+   "favicon": "https://favicon.im/emudeck.com?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "OpenEmu",
+   "url": "https://openemu.org/",
+   "favicon": "https://favicon.im/openemu.org?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "PPSSPP",
+   "url": "https://www.ppsspp.org/",
+   "favicon": "https://favicon.im/ppsspp.org?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "Pegasus",
+   "url": "https://pegasus-frontend.org/",
+   "favicon": "https://favicon.im/pegasus-frontend.org?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "LaunchBox 社区",
+   "url": "https://forums.launchbox-app.com/",
+   "favicon": "https://favicon.im/forums.launchbox-app.com?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "Skraper",
+   "url": "https://www.skraper.net/",
+   "favicon": "https://favicon.im/skraper.net?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "PortMaster",
+   "url": "https://portmaster.games/",
+   "favicon": "https://favicon.im/portmaster.games?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "Flashpoint Archive",
+   "url": "https://flashpointarchive.org/",
+   "favicon": "https://favicon.im/flashpointarchive.org?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "模拟器通用 Wiki",
+   "url": "https://emulation.gametechwiki.com/index.php/Main_Page",
+   "favicon": "https://favicon.im/emulation.gametechwiki.com?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "Retro Games Nexus",
+   "url": "https://retrogamesnexus.com/",
+   "favicon": "https://favicon.im/retrogamesnexus.com?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "simUI 前端",
+   "url": "https://www.simui.net/",
+   "favicon": "https://favicon.im/simui.net?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "Happy Chick",
+   "url": "https://xiaoji001.org/?s=09",
+   "favicon": "https://favicon.im/xiaoji001.org?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "Pixelcade",
+   "url": "https://pixelcade.org/",
+   "favicon": "https://favicon.im/pixelcade.org?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "AmberELEC",
+   "url": "https://amberelec.org/portmaster",
+   "favicon": "https://favicon.im/amberelec.org?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "RetroPie",
+   "url": "https://retropie.org.uk/",
+   "favicon": "https://favicon.im/retropie.org.uk?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "MEmu 模拟器",
+   "url": "https://www.memuplay.com/",
+   "favicon": "https://favicon.im/memuplay.com?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "Switch 固件库",
+   "url": "https://darthsternie.net/switch-firmwares/",
+   "favicon": "https://favicon.im/darthsternie.net?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "Switch Prod Keys",
+   "url": "https://prodkeys.net/",
+   "favicon": "https://favicon.im/prodkeys.net?larger=true",
+   "category": "emu"
+  },
+  {
+   "name": "FitGirl Repacks",
+   "url": "https://fitgirl-repacks.site/popular-repacks/",
+   "favicon": "https://favicon.im/fitgirl-repacks.site?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "DODI Repacks",
+   "url": "https://dodi-repacks.site/",
+   "favicon": "https://favicon.im/dodi-repacks.site?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "KaOsKrew",
+   "url": "https://kaoskrew.org/home",
+   "favicon": "https://favicon.im/kaoskrew.org?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "Skidrow & Reloaded",
+   "url": "https://www.skidrowreloaded.com/",
+   "favicon": "https://favicon.im/skidrowreloaded.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "Byrut",
+   "url": "https://byrut.org.ru/",
+   "favicon": "https://favicon.im/byrut.org.ru?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "GamePCFull",
+   "url": "https://gamepcfull.com/",
+   "favicon": "https://favicon.im/gamepcfull.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "AnkerGames",
+   "url": "https://ankergames.net/",
+   "favicon": "https://favicon.im/ankergames.net?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "蒸汽游戏宝库",
+   "url": "https://www.steambk.com/",
+   "favicon": "https://favicon.im/steambk.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "极游库",
+   "url": "https://www.jiyouku.com/",
+   "favicon": "https://favicon.im/jiyouku.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "胖达游戏",
+   "url": "https://www.pangdagame.com/",
+   "favicon": "https://favicon.im/pangdagame.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "GameFreer",
+   "url": "https://www.gamefreer.com/",
+   "favicon": "https://favicon.im/gamefreer.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "flysheep",
+   "url": "https://www.flysheep6.com/",
+   "favicon": "https://favicon.im/flysheep6.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "acgknow",
+   "url": "https://acgknow.me/page/1",
+   "favicon": "https://favicon.im/acgknow.me?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "小妖怪分享",
+   "url": "https://www.xyg688.com/page/1",
+   "favicon": "https://favicon.im/xyg688.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "单机游戏仓库",
+   "url": "https://www.rpg.ink/",
+   "favicon": "https://favicon.im/rpg.ink?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "游侠网",
+   "url": "https://www.ali213.net/",
+   "favicon": "https://favicon.im/ali213.net?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "3DM MOD 站",
+   "url": "https://mod.3dmgame.com/",
+   "favicon": "https://favicon.im/mod.3dmgame.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "NS 中文网",
+   "url": "https://www.ns211.com/",
+   "favicon": "https://favicon.im/ns211.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "Switch520",
+   "url": "https://www.gamer520.com/",
+   "favicon": "https://favicon.im/gamer520.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "小叽资源",
+   "url": "https://steamzg.com/",
+   "favicon": "https://favicon.im/steamzg.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "上游世界",
+   "url": "https://www.vgter.net/",
+   "favicon": "https://favicon.im/vgter.net?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "游戏星辰",
+   "url": "https://www.2023game.com/",
+   "favicon": "https://favicon.im/2023game.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "遊戲年代",
+   "url": "https://gmerago.com/",
+   "favicon": "https://favicon.im/gmerago.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "MAYFLYGAME",
+   "url": "https://www.mayflyyx.com/",
+   "favicon": "https://favicon.im/mayflyyx.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "YCC Game",
+   "url": "https://www.ycc.ink/",
+   "favicon": "https://favicon.im/ycc.ink?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "游戏圣地",
+   "url": "https://youxishengdi.com/",
+   "favicon": "https://favicon.im/youxishengdi.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "围炉Go",
+   "url": "https://www.wlgooo.com/",
+   "favicon": "https://favicon.im/wlgooo.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "老男人游戏网",
+   "url": "https://www.oldmantvg.net/",
+   "favicon": "https://favicon.im/oldmantvg.net?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "老男人论坛",
+   "url": "https://bbs.oldmantvg.net/",
+   "favicon": "https://favicon.im/bbs.oldmantvg.net?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "午后少年",
+   "url": "https://9ioldgame.com/",
+   "favicon": "https://favicon.im/9ioldgame.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "掌机迷",
+   "url": "https://www.gbarom.cn/",
+   "favicon": "https://favicon.im/gbarom.cn?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "Kemu 模拟器资源",
+   "url": "https://www.lwemu.com/#",
+   "favicon": "https://favicon.im/lwemu.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "Edge Emulation",
+   "url": "https://edgeemu.net/",
+   "favicon": "https://favicon.im/edgeemu.net?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "EmuParadise",
+   "url": "https://www.emuparadise.me/",
+   "favicon": "https://favicon.im/emuparadise.me?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "Arcade Punks",
+   "url": "https://www.arcadepunks.com/",
+   "favicon": "https://favicon.im/arcadepunks.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "CoinOPS Wiki",
+   "url": "https://coinops.dev/",
+   "favicon": "https://favicon.im/coinops.dev?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "Arcade Systems",
+   "url": "https://arcadesystems.co.uk/",
+   "favicon": "https://favicon.im/arcadesystems.co.uk?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "HappyMod",
+   "url": "https://happymod.com/",
+   "favicon": "https://favicon.im/happymod.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "ApkVision",
+   "url": "https://apkvision.org/",
+   "favicon": "https://favicon.im/apkvision.org?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "ACG港湾",
+   "url": "https://www.acggw.me/",
+   "favicon": "https://favicon.im/acggw.me?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "游戏天堂",
+   "url": "https://www.zzzzz688.com/",
+   "favicon": "https://favicon.im/zzzzz688.com?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "5858Game",
+   "url": "https://5858game.cn/",
+   "favicon": "https://favicon.im/5858game.cn?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "梓澪の妙妙屋",
+   "url": "https://zi0.cc/",
+   "favicon": "https://favicon.im/zi0.cc?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "Hydra Links",
+   "url": "https://hydralinks.cloud/",
+   "favicon": "https://favicon.im/hydralinks.cloud?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "Hydra Library",
+   "url": "https://library.hydra.wiki/library",
+   "favicon": "https://favicon.im/library.hydra.wiki?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "MKDEV",
+   "url": "https://mkdev.info/",
+   "favicon": "https://favicon.im/mkdev.info?larger=true",
+   "category": "res"
+  },
+  {
+   "name": "小霸王",
+   "url": "https://www.yikm.net/",
+   "favicon": "https://favicon.im/yikm.net?larger=true",
+   "category": "online"
+  },
+  {
+   "name": "80 街机",
+   "url": "https://wgame80.com/",
+   "favicon": "https://favicon.im/wgame80.com?larger=true",
+   "category": "online"
+  },
+  {
+   "name": "4399 小游戏",
+   "url": "https://www.4399.com/",
+   "favicon": "https://favicon.im/4399.com?larger=true",
+   "category": "online"
+  },
+  {
+   "name": "Poki",
+   "url": "https://poki.com/zh",
+   "favicon": "https://favicon.im/poki.com?larger=true",
+   "category": "online"
+  },
+  {
+   "name": "Slowroads",
+   "url": "https://slowroads.io/",
+   "favicon": "https://favicon.im/slowroads.io?larger=true",
+   "category": "online"
+  },
+  {
+   "name": "GeoFS 飞行模拟",
+   "url": "https://www.geo-fs.com/",
+   "favicon": "https://favicon.im/geo-fs.com?larger=true",
+   "category": "online"
+  },
+  {
+   "name": "网页红警",
+   "url": "https://www.ra2web.com/",
+   "favicon": "https://favicon.im/ra2web.com?larger=true",
+   "category": "online"
+  },
+  {
+   "name": "Chrono Divide",
+   "url": "https://chronodivide.com/",
+   "favicon": "https://favicon.im/chronodivide.com?larger=true",
+   "category": "online"
+  },
+  {
+   "name": "CS 1.6 Online",
+   "url": "https://play-cs.com/en/servers",
+   "favicon": "https://favicon.im/play-cs.com?larger=true",
+   "category": "online"
+  },
+  {
+   "name": "RetroGames.cc",
+   "url": "https://www.retrogames.cc/",
+   "favicon": "https://favicon.im/retrogames.cc?larger=true",
+   "category": "online"
+  },
+  {
+   "name": "GAM.ONL",
+   "url": "https://gam.onl/",
+   "favicon": "https://favicon.im/gam.onl?larger=true",
+   "category": "online"
+  },
+  {
+   "name": "Play Online Retro",
+   "url": "https://www.retrogames.onl/",
+   "favicon": "https://favicon.im/retrogames.onl?larger=true",
+   "category": "online"
+  },
+  {
+   "name": "老游戏在线玩",
+   "url": "https://zaixianwan.app/",
+   "favicon": "https://favicon.im/zaixianwan.app?larger=true",
+   "category": "online"
+  },
+  {
+   "name": "PCOL 斯诺克",
+   "url": "http://www.heyzxz.me/pcol/",
+   "favicon": "https://favicon.im/heyzxz.me?larger=true",
+   "category": "online"
+  },
+  {
+   "name": "AI Dungeon",
+   "url": "https://play.aidungeon.com/",
+   "favicon": "https://favicon.im/play.aidungeon.com?larger=true",
+   "category": "online"
+  },
+  {
+   "name": "SteamDB",
+   "url": "https://steamdb.info/",
+   "favicon": "https://favicon.im/steamdb.info?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "SteamSpy",
+   "url": "https://steamspy.com/",
+   "favicon": "https://favicon.im/steamspy.com?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "PCGamingWiki",
+   "url": "https://www.pcgamingwiki.com/wiki/Home",
+   "favicon": "https://favicon.im/pcgamingwiki.com?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "MobyGames",
+   "url": "https://www.mobygames.com/",
+   "favicon": "https://favicon.im/mobygames.com?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "VGChartz",
+   "url": "https://www.vgchartz.com/",
+   "favicon": "https://favicon.im/vgchartz.com?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "VGTimes",
+   "url": "https://vgtimes.com/",
+   "favicon": "https://favicon.im/vgtimes.com?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "Fandom",
+   "url": "https://www.fandom.com/",
+   "favicon": "https://favicon.im/fandom.com?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "灰机 Wiki",
+   "url": "https://www.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5",
+   "favicon": "https://favicon.im/huijiwiki.com?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "萌娘百科",
+   "url": "https://zh.moegirl.org.cn/Mainpage#/flow",
+   "favicon": "https://favicon.im/zh.moegirl.org.cn?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "Bangumi 番组计划",
+   "url": "https://bangumi.tv/",
+   "favicon": "https://favicon.im/bangumi.tv?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "CnGal",
+   "url": "https://www.cngal.org/",
+   "favicon": "https://favicon.im/cngal.org?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "VG百科",
+   "url": "https://www.vgbaike.com/",
+   "favicon": "https://favicon.im/vgbaike.com?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "Map Genie",
+   "url": "https://mapgenie.io/",
+   "favicon": "https://favicon.im/mapgenie.io?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "Diablo2.io",
+   "url": "https://diablo2.io/",
+   "favicon": "https://favicon.im/diablo2.io?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "poe2.ninja",
+   "url": "https://poe2.ninja/",
+   "favicon": "https://favicon.im/poe2.ninja?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "流亡编年史",
+   "url": "https://poedb.tw/tw/chinese",
+   "favicon": "https://favicon.im/poedb.tw?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "暗黑百科",
+   "url": "https://wiki.d.163.com/index.php?title=Runewords_(Diablo2)",
+   "favicon": "https://favicon.im/wiki.d.163.com?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "矮人要塞 Wiki",
+   "url": "https://dfzh.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5",
+   "favicon": "https://favicon.im/dfzh.huijiwiki.com?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "GameHacking",
+   "url": "https://gamehacking.org/",
+   "favicon": "https://favicon.im/gamehacking.org?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "Astrocade Gallery",
+   "url": "https://www.astrocade.com/",
+   "favicon": "https://favicon.im/astrocade.com?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "手机博物馆",
+   "url": "https://www.mobilephonemuseum.com/",
+   "favicon": "https://favicon.im/mobilephonemuseum.com?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "Futbin",
+   "url": "https://www.futbin.com/",
+   "favicon": "https://favicon.im/futbin.com?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "FUT.GG",
+   "url": "https://www.fut.gg/",
+   "favicon": "https://favicon.im/fut.gg?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "EasySBC",
+   "url": "https://www.easysbc.io/",
+   "favicon": "https://favicon.im/easysbc.io?larger=true",
+   "category": "db"
+  },
+  {
+   "name": "NGA 玩家社区",
+   "url": "https://ngabbs.com/",
+   "favicon": "https://favicon.im/ngabbs.com?larger=true",
+   "category": "community"
+  },
+  {
+   "name": "奶牛关",
+   "url": "https://cowlevel.net/feed",
+   "favicon": "https://favicon.im/cowlevel.net?larger=true",
+   "category": "community"
+  },
+  {
+   "name": "触乐",
+   "url": "https://www.chuapp.com/",
+   "favicon": "https://favicon.im/chuapp.com?larger=true",
+   "category": "community"
+  },
+  {
+   "name": "游民星空",
+   "url": "https://www.gamersky.com/",
+   "favicon": "https://favicon.im/gamersky.com?larger=true",
+   "category": "community"
+  },
+  {
+   "name": "IGN 中国",
+   "url": "https://www.ign.com.cn/",
+   "favicon": "https://favicon.im/ign.com.cn?larger=true",
+   "category": "community"
+  },
+  {
+   "name": "凯恩之角论坛",
+   "url": "https://bbs.d.163.com/",
+   "favicon": "https://favicon.im/bbs.d.163.com?larger=true",
+   "category": "community"
+  },
+  {
+   "name": "爆棚小组",
+   "url": "https://www.playgm.cc/forum.php",
+   "favicon": "https://favicon.im/playgm.cc?larger=true",
+   "category": "community"
+  },
+  {
+   "name": "FM Scout",
+   "url": "https://www.fmscout.com/",
+   "favicon": "https://favicon.im/fmscout.com?larger=true",
+   "category": "community"
+  },
+  {
+   "name": "暗黑2战网",
+   "url": "http://bbs.anhei2.com/index.php",
+   "favicon": "https://favicon.im/bbs.anhei2.com?larger=true",
+   "category": "community"
+  },
+  {
+   "name": "游戏宝藏导航",
+   "url": "https://game.baozangdh.com/",
+   "favicon": "https://favicon.im/game.baozangdh.com?larger=true",
+   "category": "community"
+  },
+  {
+   "name": "The Game Awards",
+   "url": "https://thegameawards.com/",
+   "favicon": "https://favicon.im/thegameawards.com?larger=true",
+   "category": "community"
+  },
+  {
+   "name": "GDCA",
+   "url": "https://gamechoiceawards.com/",
+   "favicon": "https://favicon.im/gamechoiceawards.com?larger=true",
+   "category": "community"
+  }
+ ]
+}
