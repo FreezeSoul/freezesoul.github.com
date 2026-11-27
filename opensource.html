@@ -9,9 +9,11 @@ body_class: layout-opensource
 
 <div class="opensource">
     <header class="games-head">
-        <div class="eyebrow">OPEN SOURCE / 开源推荐</div>
-        <h1>开源推荐</h1>
-        <p>{{ os_total }} 个值得收藏的开源仓库，带一句人话简介；星数为每周自动刷新的真实数据。</p>
+        <div class="games-head-main">
+            <div class="dir-eyebrow">OPEN SOURCE / 开源推荐</div>
+            <h1>开源推荐</h1>
+            <p>{{ os_total }} 个值得收藏的开源仓库，带一句人话简介；星数为每周自动刷新的真实数据。</p>
+        </div>
     </header>
 
     <div class="games-toolbar">
@@ -40,6 +42,11 @@ body_class: layout-opensource
     /* 分类计数由条目实时重算，避免静态计数漂移 */
     DATA.categories.forEach(function (c) {
         c.count = DATA.items.filter(function (i) { return i.category === c.slug; }).length;
+    });
+    Array.prototype.slice.call(document.querySelectorAll('#os-chips .games-chip')).forEach(function (btn) {
+        var c = DATA.categories.filter(function (x) { return x.slug === btn.getAttribute('data-cat'); })[0];
+        var b = btn.querySelector('b');
+        if (c && b) b.textContent = c.count;
     });
     var sections = document.getElementById('os-sections');
     var empty = document.getElementById('os-empty');

@@ -14,6 +14,8 @@
           if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
         } catch (e) {}
       })();
+      /* ?embed=1：技能库被外站嵌入时隐藏站点页头页脚，须在绘制前判定 */
+      if (/[?&]embed=1(?:&|$)/.test(location.search)) document.documentElement.classList.add('embed');
     </script>
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
